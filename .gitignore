@@ -2,6 +2,7 @@ node_modules/
 dist/
 cosmos-export/
 .cosmos/
+.benchmark/
 work/
 *.log
 .DS_Store

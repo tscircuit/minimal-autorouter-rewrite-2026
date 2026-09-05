@@ -1,0 +1,928 @@
+{
+  "version": 1,
+  "datasets": [
+    {
+      "name": "dataset01",
+      "repository": "https://github.com/tscircuit/autorouting-dataset-01",
+      "commit": "b97f5052a2359ab2da3f186765c6a5e839535efb",
+      "samples": [
+        {
+          "name": "circuit001",
+          "file": "dataset01/circuit001.simple-route.json",
+          "sha256": "f471f6ea8d1e6eaf6a46f6e3a1a762d51e6c53d0742b43dd190530a7d720eda7",
+          "layerCount": 2,
+          "connectionCount": 4,
+          "terminalCount": 10,
+          "obstacleCount": 30
+        },
+        {
+          "name": "circuit002",
+          "file": "dataset01/circuit002.simple-route.json",
+          "sha256": "494c073e772bdef423343210595f75cf969afa9983b361800ef9298fa550c91d",
+          "layerCount": 2,
+          "connectionCount": 18,
+          "terminalCount": 58,
+          "obstacleCount": 58
+        },
+        {
+          "name": "circuit003",
+          "file": "dataset01/circuit003.simple-route.json",
+          "sha256": "9a7e1fc231f6d96c3458ccd6a80cf4e4632ac9a58c597414b4b94f0f7ba621b6",
+          "layerCount": 2,
+          "connectionCount": 12,
+          "terminalCount": 32,
+          "obstacleCount": 65
+        },
+        {
+          "name": "circuit004",
+          "file": "dataset01/circuit004.simple-route.json",
+          "sha256": "5936f1e89ac71f59a0e7c51016a939d877c70f539fce706c9cc222ffa8a27e64",
+          "layerCount": 2,
+          "connectionCount": 12,
+          "terminalCount": 55,
+          "obstacleCount": 67
+        },
+        {
+          "name": "circuit005",
+          "file": "dataset01/circuit005.simple-route.json",
+          "sha256": "e83586f66f9d636cdc9824127b80d9e31dd37a2b508d0c20fef93388c4c9daa4",
+          "layerCount": 2,
+          "connectionCount": 5,
+          "terminalCount": 13,
+          "obstacleCount": 11
+        },
+        {
+          "name": "circuit006",
+          "file": "dataset01/circuit006.simple-route.json",
+          "sha256": "b5c0f36acc06f565d3ea5975e6cd47d41cc0a57895e2993556ddc2fedfe15f8b",
+          "layerCount": 2,
+          "connectionCount": 5,
+          "terminalCount": 14,
+          "obstacleCount": 14
+        },
+        {
+          "name": "circuit007",
+          "file": "dataset01/circuit007.simple-route.json",
+          "sha256": "ea50c25f6635344d84603b13167cb27696022e3b41d89070436ea8b16370ef2c",
+          "layerCount": 2,
+          "connectionCount": 6,
+          "terminalCount": 14,
+          "obstacleCount": 12
+        },
+        {
+          "name": "circuit010",
+          "file": "dataset01/circuit010.simple-route.json",
+          "sha256": "fd13f4fff86519b7b6f6ec2147b4a7091b907df59076655d2f113f5119a338c7",
+          "layerCount": 2,
+          "connectionCount": 9,
+          "terminalCount": 34,
+          "obstacleCount": 40
+        },
+        {
+          "name": "circuit011",
+          "file": "dataset01/circuit011.simple-route.json",
+          "sha256": "08fe38cd04875cd5245d8a9be2640c71ff699ba8caa84ea57e938d6b09dcec2b",
+          "layerCount": 2,
+          "connectionCount": 4,
+          "terminalCount": 18,
+          "obstacleCount": 22
+        },
+        {
+          "name": "circuit012",
+          "file": "dataset01/circuit012.simple-route.json",
+          "sha256": "c2ddb93ad2e09546afa018758a2cfbce47e8d88d5f904c5bcf1fcc722ab800cb",
+          "layerCount": 2,
+          "connectionCount": 6,
+          "terminalCount": 17,
+          "obstacleCount": 15
+        },
+        {
+          "name": "circuit013",
+          "file": "dataset01/circuit013.simple-route.json",
+          "sha256": "08b145e8d55ae7c4a5a19e954e964a6ee3559dd33beca7cbc0e817d7072b3951",
+          "layerCount": 2,
+          "connectionCount": 4,
+          "terminalCount": 12,
+          "obstacleCount": 12
+        },
+        {
+          "name": "circuit014",
+          "file": "dataset01/circuit014.simple-route.json",
+          "sha256": "24f6b804ab58f1de69760bf762002fea9421d6b65338a48f37c9ea720ea38c6e",
+          "layerCount": 2,
+          "connectionCount": 8,
+          "terminalCount": 16,
+          "obstacleCount": 22
+        },
+        {
+          "name": "circuit015",
+          "file": "dataset01/circuit015.simple-route.json",
+          "sha256": "a585d63b60ddb59c5a0e6afbad6f45b873625eeb2afec98388d2b4c12e7789b0",
+          "layerCount": 2,
+          "connectionCount": 9,
+          "terminalCount": 28,
+          "obstacleCount": 28
+        },
+        {
+          "name": "circuit018",
+          "file": "dataset01/circuit018.simple-route.json",
+          "sha256": "ce8a5c41c04d2b98bb1e14abd12a7bd75b472cccb3fd018d439855c05a6c74c6",
+          "layerCount": 2,
+          "connectionCount": 52,
+          "terminalCount": 101,
+          "obstacleCount": 100
+        },
+        {
+          "name": "circuit019",
+          "file": "dataset01/circuit019.simple-route.json",
+          "sha256": "81648b3c78c771e36e596991e0adca8ff7cb05d35405e67c78f6c688bf3b7314",
+          "layerCount": 2,
+          "connectionCount": 5,
+          "terminalCount": 10,
+          "obstacleCount": 12
+        },
+        {
+          "name": "circuit020",
+          "file": "dataset01/circuit020.simple-route.json",
+          "sha256": "7b60e7fd36d3691ac603230f56089ff2dd545bc14f6609cf4d60d50833c1b40e",
+          "layerCount": 2,
+          "connectionCount": 5,
+          "terminalCount": 6,
+          "obstacleCount": 12
+        },
+        {
+          "name": "circuit021",
+          "file": "dataset01/circuit021.simple-route.json",
+          "sha256": "589934e75f71b8fc4ec28e81c1acc489bd148cf870a305211efe90f09f7f6251",
+          "layerCount": 2,
+          "connectionCount": 11,
+          "terminalCount": 22,
+          "obstacleCount": 26
+        },
+        {
+          "name": "circuit100",
+          "file": "dataset01/circuit100.simple-route.json",
+          "sha256": "10fb37f5d25cbd1f5a25006877304234050957defdb0068846e2a335bbdce1dd",
+          "layerCount": 2,
+          "connectionCount": 17,
+          "terminalCount": 53,
+          "obstacleCount": 74
+        },
+        {
+          "name": "circuit101",
+          "file": "dataset01/circuit101.simple-route.json",
+          "sha256": "f78b8b06f40d854f6ebb172af27b876c812943590e72460d2624f96e666148e1",
+          "layerCount": 2,
+          "connectionCount": 19,
+          "terminalCount": 55,
+          "obstacleCount": 68
+        },
+        {
+          "name": "circuit102",
+          "file": "dataset01/circuit102.simple-route.json",
+          "sha256": "be2f7dd05c3701c70375c19e22cfc88678bf2fa50f80dff045297d7577363e4e",
+          "layerCount": 2,
+          "connectionCount": 20,
+          "terminalCount": 56,
+          "obstacleCount": 82
+        },
+        {
+          "name": "circuit103",
+          "file": "dataset01/circuit103.simple-route.json",
+          "sha256": "fedeb54557b3adac1220a4a505023d94483cf247b0675abfd67926da78a3a90d",
+          "layerCount": 2,
+          "connectionCount": 24,
+          "terminalCount": 73,
+          "obstacleCount": 108
+        },
+        {
+          "name": "circuit104",
+          "file": "dataset01/circuit104.simple-route.json",
+          "sha256": "d4de57758671922a05ffe1773d16b68fbcb853131f29496cf231c0f3ae977520",
+          "layerCount": 2,
+          "connectionCount": 13,
+          "terminalCount": 42,
+          "obstacleCount": 50
+        },
+        {
+          "name": "circuit105",
+          "file": "dataset01/circuit105.simple-route.json",
+          "sha256": "5556d909301b3c0dd54af060a549a9c8a8ad865bc8b539cd8617f5512360003d",
+          "layerCount": 2,
+          "connectionCount": 24,
+          "terminalCount": 71,
+          "obstacleCount": 74
+        },
+        {
+          "name": "circuit106",
+          "file": "dataset01/circuit106.simple-route.json",
+          "sha256": "85833ed9d00578a9f07ebcd010493fda782c0705b02c14d20341b5ed11af00ea",
+          "layerCount": 2,
+          "connectionCount": 14,
+          "terminalCount": 47,
+          "obstacleCount": 60
+        },
+        {
+          "name": "circuit107",
+          "file": "dataset01/circuit107.simple-route.json",
+          "sha256": "921c05dd389288c6ff37a4ded88034008123e90c280beca06c67bccea45ca928",
+          "layerCount": 2,
+          "connectionCount": 10,
+          "terminalCount": 29,
+          "obstacleCount": 38
+        },
+        {
+          "name": "circuit108",
+          "file": "dataset01/circuit108.simple-route.json",
+          "sha256": "ba25f7b19ec12b2e17389b7856bd506a5e51835f74966be72176cb84531824d1",
+          "layerCount": 2,
+          "connectionCount": 16,
+          "terminalCount": 49,
+          "obstacleCount": 62
+        },
+        {
+          "name": "circuit109",
+          "file": "dataset01/circuit109.simple-route.json",
+          "sha256": "1ae22defac9345590eadca3e6489291ce9e685b9730271f16e70f099cce45af2",
+          "layerCount": 2,
+          "connectionCount": 26,
+          "terminalCount": 88,
+          "obstacleCount": 100
+        },
+        {
+          "name": "circuit110",
+          "file": "dataset01/circuit110.simple-route.json",
+          "sha256": "2ee6da3f3c4a719a7918706288dcb9e3631f250ad6542720ddccabcef4ad59ab",
+          "layerCount": 2,
+          "connectionCount": 7,
+          "terminalCount": 22,
+          "obstacleCount": 22
+        },
+        {
+          "name": "circuit111",
+          "file": "dataset01/circuit111.simple-route.json",
+          "sha256": "eb864c3eecce9708f47c5a79855c990c7b0b1da5e33662859ba18cdeff0bd6b0",
+          "layerCount": 2,
+          "connectionCount": 16,
+          "terminalCount": 55,
+          "obstacleCount": 102
+        },
+        {
+          "name": "circuit112",
+          "file": "dataset01/circuit112.simple-route.json",
+          "sha256": "aeb3b0b6ab0fabd2ae573a2dc4ab6f19c9bf6ac552ea52e9865c342ace513fd3",
+          "layerCount": 2,
+          "connectionCount": 9,
+          "terminalCount": 29,
+          "obstacleCount": 32
+        },
+        {
+          "name": "circuit113",
+          "file": "dataset01/circuit113.simple-route.json",
+          "sha256": "8777f4dbf6361861990749f96722c66ea1d4c9b3fb6d54ef6da9502108e981f1",
+          "layerCount": 2,
+          "connectionCount": 13,
+          "terminalCount": 41,
+          "obstacleCount": 48
+        },
+        {
+          "name": "circuit114",
+          "file": "dataset01/circuit114.simple-route.json",
+          "sha256": "402fc8281d39106decbf77580273904cdc0ca5140cb65377735e513687206b1c",
+          "layerCount": 2,
+          "connectionCount": 34,
+          "terminalCount": 99,
+          "obstacleCount": 126
+        },
+        {
+          "name": "circuit115",
+          "file": "dataset01/circuit115.simple-route.json",
+          "sha256": "75baebd1e47db0e8cda146bb456b0202151dad170b80608a98519792cfc3735f",
+          "layerCount": 2,
+          "connectionCount": 3,
+          "terminalCount": 10,
+          "obstacleCount": 18
+        },
+        {
+          "name": "circuit116",
+          "file": "dataset01/circuit116.simple-route.json",
+          "sha256": "01d4cae77a67c52756dadd2d3ab03704825a9c9a69e7f81fb2b1576bd5a23d82",
+          "layerCount": 2,
+          "connectionCount": 8,
+          "terminalCount": 24,
+          "obstacleCount": 44
+        },
+        {
+          "name": "circuit118",
+          "file": "dataset01/circuit118.simple-route.json",
+          "sha256": "843c64299d2cd264594ab07b1cf340e513e7af6d511526b0138762e7fa2d0f58",
+          "layerCount": 2,
+          "connectionCount": 18,
+          "terminalCount": 52,
+          "obstacleCount": 60
+        },
+        {
+          "name": "circuit119",
+          "file": "dataset01/circuit119.simple-route.json",
+          "sha256": "79504b720eb772aaf5d6c101aa92e5a8ddd3c0d5db9d2ee67f57d9ea7d4621ca",
+          "layerCount": 2,
+          "connectionCount": 2,
+          "terminalCount": 6,
+          "obstacleCount": 8
+        },
+        {
+          "name": "circuit120",
+          "file": "dataset01/circuit120.simple-route.json",
+          "sha256": "87dde683d42acd789e7ee83c11c35bf1af0b9c31c1d8b07bdf13bd001bcef441",
+          "layerCount": 2,
+          "connectionCount": 31,
+          "terminalCount": 101,
+          "obstacleCount": 130
+        },
+        {
+          "name": "circuit121",
+          "file": "dataset01/circuit121.simple-route.json",
+          "sha256": "933ff7e80636ae676aaba714e835f3c89ab0035c34c30b6ddbe13bfb81cbad00",
+          "layerCount": 2,
+          "connectionCount": 10,
+          "terminalCount": 32,
+          "obstacleCount": 42
+        },
+        {
+          "name": "circuit123",
+          "file": "dataset01/circuit123.simple-route.json",
+          "sha256": "05a287f33c0aa8acbf8469f1e7a618c96a8299209bab3136cd65b1caf921a514",
+          "layerCount": 2,
+          "connectionCount": 22,
+          "terminalCount": 63,
+          "obstacleCount": 74
+        },
+        {
+          "name": "circuit124",
+          "file": "dataset01/circuit124.simple-route.json",
+          "sha256": "8ca9c157c4ee84c2b24730e011368f1b15b7d18069278a4b3ad10532d494b516",
+          "layerCount": 2,
+          "connectionCount": 10,
+          "terminalCount": 30,
+          "obstacleCount": 38
+        },
+        {
+          "name": "circuit125",
+          "file": "dataset01/circuit125.simple-route.json",
+          "sha256": "ccfeaae308002b1ade03cc9d01f92904af0c08c76b0d420ecddccff94d51914a",
+          "layerCount": 2,
+          "connectionCount": 17,
+          "terminalCount": 53,
+          "obstacleCount": 56
+        },
+        {
+          "name": "circuit126",
+          "file": "dataset01/circuit126.simple-route.json",
+          "sha256": "abb409eda6764df41e22f2131087840f687445ea459ca195a993ef3d62f7a1a4",
+          "layerCount": 2,
+          "connectionCount": 7,
+          "terminalCount": 16,
+          "obstacleCount": 16
+        },
+        {
+          "name": "circuit127",
+          "file": "dataset01/circuit127.simple-route.json",
+          "sha256": "c1f013e54b061b0f4bb704886eccfda4f4df4e02f591f65f3c03b27b2744b68c",
+          "layerCount": 2,
+          "connectionCount": 3,
+          "terminalCount": 10,
+          "obstacleCount": 22
+        },
+        {
+          "name": "circuit128",
+          "file": "dataset01/circuit128.simple-route.json",
+          "sha256": "589628717058a8f791434f06d95d7e9ff990b03b7f51cfd934b2e1117ce006aa",
+          "layerCount": 2,
+          "connectionCount": 15,
+          "terminalCount": 49,
+          "obstacleCount": 58
+        },
+        {
+          "name": "circuit129",
+          "file": "dataset01/circuit129.simple-route.json",
+          "sha256": "2eb30a7297833a2a19ad88753bb7e2e08d162976f78786a7c960ad65aff1ff6d",
+          "layerCount": 2,
+          "connectionCount": 4,
+          "terminalCount": 13,
+          "obstacleCount": 16
+        },
+        {
+          "name": "circuit131",
+          "file": "dataset01/circuit131.simple-route.json",
+          "sha256": "130ce8c6191b9aedbae67fc7396239c1560dd735c117e264a954a3efe93b5409",
+          "layerCount": 2,
+          "connectionCount": 5,
+          "terminalCount": 16,
+          "obstacleCount": 24
+        },
+        {
+          "name": "circuit132",
+          "file": "dataset01/circuit132.simple-route.json",
+          "sha256": "7bf890d61d4adac982f0d0c2b700f675ee80a7db89c0fd223c12f850acff9f34",
+          "layerCount": 2,
+          "connectionCount": 7,
+          "terminalCount": 19,
+          "obstacleCount": 34
+        },
+        {
+          "name": "circuit133",
+          "file": "dataset01/circuit133.simple-route.json",
+          "sha256": "23b085fab42bcec045a96944bd238da659674c969a42a99b0e94be96be60ab87",
+          "layerCount": 2,
+          "connectionCount": 7,
+          "terminalCount": 18,
+          "obstacleCount": 20
+        },
+        {
+          "name": "circuit134",
+          "file": "dataset01/circuit134.simple-route.json",
+          "sha256": "543822be4cde06a5a5a8f1cb2d08057d6ebe96ae1d01e24c7263b45613fcb200",
+          "layerCount": 2,
+          "connectionCount": 27,
+          "terminalCount": 88,
+          "obstacleCount": 94
+        },
+        {
+          "name": "circuit135",
+          "file": "dataset01/circuit135.simple-route.json",
+          "sha256": "892f83a53f614d5ed7e37a67d33a69d8e0435092f17d84d59aab373f83569701",
+          "layerCount": 2,
+          "connectionCount": 10,
+          "terminalCount": 30,
+          "obstacleCount": 40
+        },
+        {
+          "name": "circuit136",
+          "file": "dataset01/circuit136.simple-route.json",
+          "sha256": "4a32282793d5aed90455ee741932981cbe52a28fc0a98d8d7a1d4fc12f5c554c",
+          "layerCount": 2,
+          "connectionCount": 7,
+          "terminalCount": 20,
+          "obstacleCount": 22
+        },
+        {
+          "name": "circuit137",
+          "file": "dataset01/circuit137.simple-route.json",
+          "sha256": "37fd9ecbf7d2b12a6d795c249769760b86374214fbf3b91abc35152687d39102",
+          "layerCount": 2,
+          "connectionCount": 22,
+          "terminalCount": 65,
+          "obstacleCount": 94
+        },
+        {
+          "name": "circuit138",
+          "file": "dataset01/circuit138.simple-route.json",
+          "sha256": "91ad4a0cc0ad1915c861c517965c57b7a57ab478c736fb6c48c3ffeccc8c7ae4",
+          "layerCount": 2,
+          "connectionCount": 21,
+          "terminalCount": 70,
+          "obstacleCount": 96
+        },
+        {
+          "name": "circuit139",
+          "file": "dataset01/circuit139.simple-route.json",
+          "sha256": "d34e31050f6b6e73d3a4b0b5c8ccd6ef3909bdcb2bb4eea08b8ebdcbac49c105",
+          "layerCount": 2,
+          "connectionCount": 28,
+          "terminalCount": 79,
+          "obstacleCount": 100
+        },
+        {
+          "name": "circuit140",
+          "file": "dataset01/circuit140.simple-route.json",
+          "sha256": "4a96d38191bc6c85cb4c4ec6732eb6607fecd2916d2611cd14e7bf5bd1744127",
+          "layerCount": 2,
+          "connectionCount": 27,
+          "terminalCount": 75,
+          "obstacleCount": 86
+        },
+        {
+          "name": "circuit141",
+          "file": "dataset01/circuit141.simple-route.json",
+          "sha256": "ee6df3d9ad213dbb9a92b566990aeb91943985778d8f45ae252ebb5ff66e415c",
+          "layerCount": 2,
+          "connectionCount": 22,
+          "terminalCount": 68,
+          "obstacleCount": 88
+        },
+        {
+          "name": "circuit142",
+          "file": "dataset01/circuit142.simple-route.json",
+          "sha256": "1308500695f39fdd7a37866e8032f0d4f2e388f670431fe7a017eaa78d3968b9",
+          "layerCount": 2,
+          "connectionCount": 22,
+          "terminalCount": 63,
+          "obstacleCount": 76
+        },
+        {
+          "name": "circuit143",
+          "file": "dataset01/circuit143.simple-route.json",
+          "sha256": "31e31fd41af1ec43f4851d833e3140706af0a230a2e94ed76661be41f98774fb",
+          "layerCount": 2,
+          "connectionCount": 30,
+          "terminalCount": 88,
+          "obstacleCount": 94
+        },
+        {
+          "name": "circuit144",
+          "file": "dataset01/circuit144.simple-route.json",
+          "sha256": "dbd928b56d45480fc664278b2ae7bed2ebfc7775eb049522ffedcf2cfe1df672",
+          "layerCount": 2,
+          "connectionCount": 14,
+          "terminalCount": 47,
+          "obstacleCount": 58
+        },
+        {
+          "name": "circuit145",
+          "file": "dataset01/circuit145.simple-route.json",
+          "sha256": "fadb40fd7de213a82c713d9fa3fa85554289caf303e5f02799732703e17e9605",
+          "layerCount": 2,
+          "connectionCount": 20,
+          "terminalCount": 61,
+          "obstacleCount": 84
+        },
+        {
+          "name": "circuit146",
+          "file": "dataset01/circuit146.simple-route.json",
+          "sha256": "6f373086b9f2de56c102b72b80e167c3f0b24d9a9354931626764cd50c8d6d19",
+          "layerCount": 2,
+          "connectionCount": 27,
+          "terminalCount": 78,
+          "obstacleCount": 96
+        },
+        {
+          "name": "circuit147",
+          "file": "dataset01/circuit147.simple-route.json",
+          "sha256": "41862aa1061e63c8ddcb21c2205e00cc2d590be76e21809aee097fb54bb09ef7",
+          "layerCount": 2,
+          "connectionCount": 4,
+          "terminalCount": 8,
+          "obstacleCount": 20
+        },
+        {
+          "name": "circuit148",
+          "file": "dataset01/circuit148.simple-route.json",
+          "sha256": "99d68fc7c9ff6e2b3244c501be7a0086b0aab6372a6909763ae7984d0c9c70e9",
+          "layerCount": 2,
+          "connectionCount": 11,
+          "terminalCount": 31,
+          "obstacleCount": 40
+        },
+        {
+          "name": "circuit149",
+          "file": "dataset01/circuit149.simple-route.json",
+          "sha256": "3a3c563ca6512262695f584049b2932ff94ea124a04ab6ac24cb2e4c6cd9f222",
+          "layerCount": 2,
+          "connectionCount": 17,
+          "terminalCount": 51,
+          "obstacleCount": 66
+        },
+        {
+          "name": "circuit150",
+          "file": "dataset01/circuit150.simple-route.json",
+          "sha256": "d5df8669f80d18933a9627d3a775a958f61e2d1225cc688a31430d2c54826102",
+          "layerCount": 2,
+          "connectionCount": 5,
+          "terminalCount": 14,
+          "obstacleCount": 16
+        },
+        {
+          "name": "circuit151",
+          "file": "dataset01/circuit151.simple-route.json",
+          "sha256": "b72ee3d0e0cc8d20192617bf2451807cda3c4338b49be0f397f28433ae9fa122",
+          "layerCount": 2,
+          "connectionCount": 34,
+          "terminalCount": 103,
+          "obstacleCount": 112
+        },
+        {
+          "name": "circuit152",
+          "file": "dataset01/circuit152.simple-route.json",
+          "sha256": "f330ab77f4fe2ab5ca16893dbb7f18c1810bbf6194021838a905e60f1e94da30",
+          "layerCount": 2,
+          "connectionCount": 31,
+          "terminalCount": 91,
+          "obstacleCount": 112
+        },
+        {
+          "name": "circuit155",
+          "file": "dataset01/circuit155.simple-route.json",
+          "sha256": "8e3e2abd5349c7f10b7f84f29a4ec552cd3f44c34ab74c8b1eb0c3bb46c9a626",
+          "layerCount": 2,
+          "connectionCount": 20,
+          "terminalCount": 60,
+          "obstacleCount": 74
+        },
+        {
+          "name": "circuit156",
+          "file": "dataset01/circuit156.simple-route.json",
+          "sha256": "c41f883409c4dffb8664a8919ab359eb21709ae41c7cf29961da72dad028c158",
+          "layerCount": 2,
+          "connectionCount": 29,
+          "terminalCount": 87,
+          "obstacleCount": 98
+        },
+        {
+          "name": "circuit157",
+          "file": "dataset01/circuit157.simple-route.json",
+          "sha256": "64fe859fe0f3426b16f97fc20a141809214edd24c7987f9654f9867bdc855582",
+          "layerCount": 2,
+          "connectionCount": 10,
+          "terminalCount": 31,
+          "obstacleCount": 38
+        },
+        {
+          "name": "circuit158",
+          "file": "dataset01/circuit158.simple-route.json",
+          "sha256": "37c3bf0ec878ded7a5ab32a8092466187d472e9c57eb55ade07fb363ab8e2922",
+          "layerCount": 2,
+          "connectionCount": 20,
+          "terminalCount": 59,
+          "obstacleCount": 76
+        },
+        {
+          "name": "circuit162",
+          "file": "dataset01/circuit162.simple-route.json",
+          "sha256": "d159db3c515cb21c4945beeaef0fef589365c40b9803c8aab50b5b7f416b900a",
+          "layerCount": 2,
+          "connectionCount": 11,
+          "terminalCount": 33,
+          "obstacleCount": 56
+        },
+        {
+          "name": "circuit164",
+          "file": "dataset01/circuit164.simple-route.json",
+          "sha256": "a4e9c8154019f8862ad231abff8cb166a4f5c81cfe76a9387ae25f5726505473",
+          "layerCount": 2,
+          "connectionCount": 26,
+          "terminalCount": 81,
+          "obstacleCount": 88
+        },
+        {
+          "name": "circuit165",
+          "file": "dataset01/circuit165.simple-route.json",
+          "sha256": "c7de6a3db47e5efcce509cbae0d13f3c4e229858d64c93db2460dcaf7a82184b",
+          "layerCount": 2,
+          "connectionCount": 3,
+          "terminalCount": 10,
+          "obstacleCount": 16
+        },
+        {
+          "name": "circuit168",
+          "file": "dataset01/circuit168.simple-route.json",
+          "sha256": "5768a9c6a065217aa19aecc36a8959fae5b091182e5f05143776e8cec1989f41",
+          "layerCount": 2,
+          "connectionCount": 6,
+          "terminalCount": 14,
+          "obstacleCount": 16
+        },
+        {
+          "name": "circuit172",
+          "file": "dataset01/circuit172.simple-route.json",
+          "sha256": "35a56393b195f2445466d10fc756710b8aa91f611602bd41117fab705bb6e195",
+          "layerCount": 2,
+          "connectionCount": 6,
+          "terminalCount": 17,
+          "obstacleCount": 20
+        },
+        {
+          "name": "circuit173",
+          "file": "dataset01/circuit173.simple-route.json",
+          "sha256": "a366c29aefdbdd803e18504ddf8b0d8a83e34e944002bcd47e0af38e5577d752",
+          "layerCount": 2,
+          "connectionCount": 32,
+          "terminalCount": 99,
+          "obstacleCount": 118
+        },
+        {
+          "name": "circuit174",
+          "file": "dataset01/circuit174.simple-route.json",
+          "sha256": "c9aaf48b95beea856502eb4d11e840b7b3593928d681b668947293115a7fe40c",
+          "layerCount": 2,
+          "connectionCount": 5,
+          "terminalCount": 15,
+          "obstacleCount": 22
+        },
+        {
+          "name": "circuit175",
+          "file": "dataset01/circuit175.simple-route.json",
+          "sha256": "71bed57f1792c0a7ac988024d07cb0a25c8286cfbf0df4de86d1552fab0ca5fa",
+          "layerCount": 2,
+          "connectionCount": 13,
+          "terminalCount": 36,
+          "obstacleCount": 42
+        },
+        {
+          "name": "circuit176",
+          "file": "dataset01/circuit176.simple-route.json",
+          "sha256": "f17d72c279d4800bcb892db04f9440ac9b0e2eb9e6bfa15f10241625b25e4611",
+          "layerCount": 2,
+          "connectionCount": 19,
+          "terminalCount": 55,
+          "obstacleCount": 66
+        },
+        {
+          "name": "circuit177",
+          "file": "dataset01/circuit177.simple-route.json",
+          "sha256": "dff5904d61f6b071081e59f7ff78f6af7883fbbfe6fe3d321c511a2127d47966",
+          "layerCount": 2,
+          "connectionCount": 6,
+          "terminalCount": 18,
+          "obstacleCount": 20
+        },
+        {
+          "name": "circuit178",
+          "file": "dataset01/circuit178.simple-route.json",
+          "sha256": "561fc8ed604f8e171955cfd9e778e7f98d2731bb54a40185b05fdbdf81ffc2ad",
+          "layerCount": 2,
+          "connectionCount": 27,
+          "terminalCount": 82,
+          "obstacleCount": 106
+        },
+        {
+          "name": "circuit179",
+          "file": "dataset01/circuit179.simple-route.json",
+          "sha256": "2befe75b99c5a20c92eab98fa1766e95a65afc0cab2766592d5ea5c06d969f09",
+          "layerCount": 2,
+          "connectionCount": 16,
+          "terminalCount": 46,
+          "obstacleCount": 60
+        },
+        {
+          "name": "circuit180",
+          "file": "dataset01/circuit180.simple-route.json",
+          "sha256": "e5217950cfa70c1bd1a85e1c66d0c448ef2d4c0f66fcf5d7e5894dd00885c7eb",
+          "layerCount": 2,
+          "connectionCount": 7,
+          "terminalCount": 22,
+          "obstacleCount": 32
+        },
+        {
+          "name": "circuit181",
+          "file": "dataset01/circuit181.simple-route.json",
+          "sha256": "27b27bc3cf6b5dd6751e5f4db57c7fdfd66a3f7364364e8a43771feb583b16b7",
+          "layerCount": 2,
+          "connectionCount": 30,
+          "terminalCount": 91,
+          "obstacleCount": 116
+        }
+      ]
+    },
+    {
+      "name": "dataset-srj18",
+      "repository": "https://github.com/tscircuit/dataset-srj18",
+      "commit": "c0aad90256a95256fcac814f9f7da81a82a2fdea",
+      "samples": [
+        {
+          "name": "sample001",
+          "file": "dataset-srj18/sample001.json",
+          "sha256": "21a09454dd05b86464cd2d882ea96de7461260bd473e67c87a0e46011e508ea9",
+          "layerCount": 2,
+          "connectionCount": 115,
+          "terminalCount": 377,
+          "obstacleCount": 279
+        },
+        {
+          "name": "sample002",
+          "file": "dataset-srj18/sample002.json",
+          "sha256": "2e2f6e8619e884afde2102e987cffcda8e7197ef2c63f8358aa5dd7cb14c8101",
+          "layerCount": 2,
+          "connectionCount": 264,
+          "terminalCount": 624,
+          "obstacleCount": 411
+        },
+        {
+          "name": "sample003",
+          "file": "dataset-srj18/sample003.json",
+          "sha256": "c5abc751ef4ee68f0369df3d747174c527e47771fb673c61b72bbca0b93bc843",
+          "layerCount": 4,
+          "connectionCount": 103,
+          "terminalCount": 301,
+          "obstacleCount": 211
+        },
+        {
+          "name": "sample004",
+          "file": "dataset-srj18/sample004.json",
+          "sha256": "be67af8cc71fb962e9c1cf6a6de00b416eb057750b52f4cdd0f95c46f930b083",
+          "layerCount": 2,
+          "connectionCount": 105,
+          "terminalCount": 268,
+          "obstacleCount": 188
+        },
+        {
+          "name": "sample005",
+          "file": "dataset-srj18/sample005.json",
+          "sha256": "3027de7f902a95002172e25378e41c0c826f51e95155317dc97a55864df1b681",
+          "layerCount": 2,
+          "connectionCount": 142,
+          "terminalCount": 380,
+          "obstacleCount": 264
+        },
+        {
+          "name": "sample006",
+          "file": "dataset-srj18/sample006.json",
+          "sha256": "ccaa924e0b5430bd717ea42bf45712412dba9ecd672853bb7bd3c70d69ed3608",
+          "layerCount": 6,
+          "connectionCount": 290,
+          "terminalCount": 611,
+          "obstacleCount": 481
+        },
+        {
+          "name": "sample007",
+          "file": "dataset-srj18/sample007.json",
+          "sha256": "a995e7ec0bbf70d96837b56280b966d3b29e3f7c477126acd0820581106b66d5",
+          "layerCount": 4,
+          "connectionCount": 188,
+          "terminalCount": 512,
+          "obstacleCount": 390
+        },
+        {
+          "name": "sample008",
+          "file": "dataset-srj18/sample008.json",
+          "sha256": "86c0bebed1bfe8396c5e1eadaa486f4711a3c9efbed35fdfa65bf092555dd9fd",
+          "layerCount": 4,
+          "connectionCount": 187,
+          "terminalCount": 629,
+          "obstacleCount": 477
+        },
+        {
+          "name": "sample009",
+          "file": "dataset-srj18/sample009.json",
+          "sha256": "53167849b45863bb21382c13a0464851cdd6d2bd5a4988d9e41962b46c928556",
+          "layerCount": 4,
+          "connectionCount": 169,
+          "terminalCount": 497,
+          "obstacleCount": 453
+        },
+        {
+          "name": "sample010",
+          "file": "dataset-srj18/sample010.json",
+          "sha256": "54809fdc0cee2685cab2f539bbfc6a68f0714fab47c8982f50037ccc5d32ffdb",
+          "layerCount": 4,
+          "connectionCount": 154,
+          "terminalCount": 527,
+          "obstacleCount": 411
+        },
+        {
+          "name": "sample011",
+          "file": "dataset-srj18/sample011.json",
+          "sha256": "c30aee0833640f6f370ce83c0ad5fc9476d80c40442a7c69f5db6b28af168afd",
+          "layerCount": 4,
+          "connectionCount": 213,
+          "terminalCount": 578,
+          "obstacleCount": 434
+        },
+        {
+          "name": "sample012",
+          "file": "dataset-srj18/sample012.json",
+          "sha256": "5c180cea68f6979bc583624a975ba23ca4429ee17d104fbec624d7f02360a34e",
+          "layerCount": 4,
+          "connectionCount": 295,
+          "terminalCount": 900,
+          "obstacleCount": 814
+        },
+        {
+          "name": "sample013",
+          "file": "dataset-srj18/sample013.json",
+          "sha256": "37b01a5f7cf5ff8f3056ad2c72137085e7608f2444ddfc74d188813c6c0f2554",
+          "layerCount": 4,
+          "connectionCount": 176,
+          "terminalCount": 466,
+          "obstacleCount": 372
+        },
+        {
+          "name": "sample014",
+          "file": "dataset-srj18/sample014.json",
+          "sha256": "cd4fb3f2814dc459650c17ccc21bb1d72a852ab2301fa6c389c1f82305207919",
+          "layerCount": 4,
+          "connectionCount": 180,
+          "terminalCount": 474,
+          "obstacleCount": 369
+        },
+        {
+          "name": "sample015",
+          "file": "dataset-srj18/sample015.json",
+          "sha256": "cd24268f1713fc03c4c032a937d666fe6fb4d772187190d611ce4e3013a8d6fe",
+          "layerCount": 4,
+          "connectionCount": 226,
+          "terminalCount": 794,
+          "obstacleCount": 600
+        },
+        {
+          "name": "sample016",
+          "file": "dataset-srj18/sample016.json",
+          "sha256": "f323b21b2d833b61149d5041c04af8575c77b8cd3bb3340cba36c017872e6bf3",
+          "layerCount": 4,
+          "connectionCount": 129,
+          "terminalCount": 461,
+          "obstacleCount": 371
+        }
+      ]
+    }
+  ]
+}

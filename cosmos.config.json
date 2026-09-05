@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/react-cosmos/config.schema.json",
+  "watchDirs": ["fixtures"],
+  "ignore": ["**/node_modules/**", "**/dist/**", "**/.benchmark/**"],
+  "plugins": ["react-cosmos-plugin-vite"],
+  "lazy": true,
+  "exportPath": "cosmos-export",
+  "vite": { "configPath": "vite.config.ts", "indexPath": "fixtures/main.tsx" }
+}

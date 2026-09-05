@@ -51,6 +51,7 @@ export class PrepareBoardSolver extends BaseSolver {
   readonly srj: SimpleRouteJson
   private connectionIndex = 0
   private netAliases = new Map<string, string[]>()
+  private connectionsToPrepare: SimpleRouteConnection[] = []
 
   constructor(input: SimpleRouteJson, readonly parameters: {
     effort: number; viaDiameter: number; viaHoleDiameter: number
@@ -82,7 +83,36 @@ export class PrepareBoardSolver extends BaseSolver {
       this.connMap.addConnections([[trace.pcb_trace_id, trace.connection_name, ...(trace.connectsTo ?? [])]])
     }
     for (const [net, names] of Object.entries(this.connMap.toObject())) this.netAliases.set(net, names)
-    this.MAX_ITERATIONS = this.srj.connections.length + 2
+    const netGroups = new Map<string, SimpleRouteConnection[]>()
+    for (const connection of this.srj.connections) {
+      const net = this.connMap.getNetConnectedToId(connection.name)
+      const group = netGroups.get(net) ?? []
+      group.push(connection)
+      netGroups.set(net, group)
+    }
+    for (const [net, group] of netGroups) {
+      const routedConnections = group.filter((connection) => !connection.isOffBoard)
+      if (routedConnections.length === 0) continue
+      const points = routedConnections.flatMap((connection) => connection.pointsToConnect)
+      // Every connected piece of existing copper must participate in the tree,
+      // even when none of the original terminal records lands on that piece.
+      for (const trace of this.srj.traces ?? []) {
+        if (this.connMap.getNetConnectedToId(trace.connection_name) !== net) continue
+        for (const segment of trace.route) if (segment.route_type === "wire") {
+          points.push({x: segment.x, y: segment.y, layer: segment.layer})
+        }
+      }
+      const unique = new Map<string, ConnectionPoint>()
+      for (const point of points) {
+        const key = `${point.x},${point.y},${[...getPointLayers(point)].sort().join(",")}`
+        // Prefer a real terminal's identity to an otherwise identical copper vertex.
+        if (!unique.has(key)) unique.set(key, point)
+      }
+      this.connectionsToPrepare.push({...routedConnections[0]!,
+        mergedConnectionNames: routedConnections.map((connection) => connection.name),
+        pointsToConnect: [...unique.values()]})
+    }
+    this.MAX_ITERATIONS = this.connectionsToPrepare.length + 2
   }
 
   override getConstructorParams(): unknown[] { return [this.srj, this.parameters] }
@@ -90,10 +120,10 @@ export class PrepareBoardSolver extends BaseSolver {
   getNewSimpleRouteJson(): SimpleRouteJson { return this.srj }
 
   override _step(): void {
-    const connection = this.srj.connections[this.connectionIndex++]
+    const connection = this.connectionsToPrepare[this.connectionIndex++]
     if (!connection) { this.solved = true; return }
     this.addConnectionTasks(connection)
-    this.progress = this.connectionIndex / Math.max(1, this.srj.connections.length)
+    this.progress = this.connectionIndex / Math.max(1, this.connectionsToPrepare.length)
   }
 
   private addConnectionTasks(connection: SimpleRouteConnection): void {
@@ -113,10 +143,24 @@ export class PrepareBoardSolver extends BaseSolver {
       for (const index of terminals.slice(1)) join(terminals[0]!, index)
     }
     for (const obstacle of this.srj.obstacles) {
-      if (!obstacle.offBoardConnectsTo?.length) continue
-      const ids = new Set(obstacle.connectedTo)
-      const terminals = points.flatMap((point, index) =>
-        (point.pointId && ids.has(point.pointId)) || (point.pcb_port_id && ids.has(point.pcb_port_id)) ? [index] : [])
+      if (!obstacle.connectedTo.some((name) => connectedNames.includes(name))) continue
+      const angle = (obstacle.ccwRotationDegrees ?? 0) * Math.PI / 180
+      const cos = Math.cos(angle), sin = Math.sin(angle)
+      const terminals = points.flatMap((point, index) => {
+        if (!getPointLayers(point).some((layer) => obstacle.layers.includes(layer))) return []
+        const dx = point.x - obstacle.center.x, dy = point.y - obstacle.center.y
+        const x = Math.abs(dx * cos + dy * sin), y = Math.abs(-dx * sin + dy * cos)
+        return x <= obstacle.width / 2 + 1e-8 && y <= obstacle.height / 2 + 1e-8 ? [index] : []
+      })
+      for (const index of terminals.slice(1)) join(terminals[0]!, index)
+    }
+    // Obstacle offBoardConnectsTo values are propagated net aliases in SRJ.
+    // Only an explicit off-board connection proves an existing external path.
+    for (const external of this.srj.connections) {
+      if (!external.isOffBoard || !this.connMap.areIdsConnected(connection.name, external.name)) continue
+      const terminals = points.flatMap((point, index) => external.pointsToConnect.some((other) =>
+        Math.hypot(point.x - other.x, point.y - other.y) < 1e-8 &&
+        getPointLayers(point).some((layer) => getPointLayers(other).includes(layer))) ? [index] : [])
       for (const index of terminals.slice(1)) join(terminals[0]!, index)
     }
     const edges: {a: number; b: number; distance: number}[] = []

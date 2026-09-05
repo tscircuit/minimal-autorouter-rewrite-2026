@@ -5,7 +5,7 @@ An independent TypeScript implementation of the `Pipeline9` and
 
 Controlled local, cold-cache, and warm-cache comparisons pass against
 `@tscircuit/capacity-autorouter@0.0.884` on all 101 allowed inputs. The rewrite
-preserves every reference DRC pass and produces 99 clean routes versus 93.
+preserves every reference relaxed-DRC pass and produces 99 relaxed-DRC passes versus 93.
 See [measured results](benchmarks/README.md) for timings, raw failures, cache
 evidence, and the exact acceptance rules.
 
@@ -33,6 +33,15 @@ bun run start
 The Cosmos playground includes an individual fixture for every dataset-srj18
 sample. Each sample also has a separate test; the upstream test suite is not
 included.
+
+`bun run validate:pcb` converts routed SRJ to Circuit JSON and runs the full
+`@tscircuit/checks` suite, PCB warnings, and independent copper-connectivity
+validation on both allowed datasets. This stricter audit currently finds PCB
+issues and exits with failure; the relaxed benchmark passes above do not mean
+that every board passes full PCB checks. See [PCB validation](docs/pcb-validation.md)
+for coverage, reproduction commands, and the recorded findings. The manually
+triggered **Full PCB audit** workflow retains its report and converted artifacts
+even when validation fails.
 
 ## Library interface
 

@@ -1,0 +1,22 @@
+name: Full PCB audit
+on:
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.1
+      - run: bun install --frozen-lockfile
+      - run: bun run validate:pcb --output .benchmark/pcb-validation.json --artifacts-dir .benchmark/pcb-artifacts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pcb-validation
+          path: |
+            .benchmark/pcb-validation.json
+            .benchmark/pcb-artifacts
+          if-no-files-found: error

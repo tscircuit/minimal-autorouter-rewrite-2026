@@ -38,3 +38,10 @@ test("connectivity validation recognizes conductive pad contact away from the te
   source.obstacles = [{ type: "rect", center: { x: 0, y: 0 }, width: 2, height: 1, layers: ["top"], connectedTo: ["net"] }]
   expect(() => assertOutputConnectivity(source, { ...source, traces: [trace("pad-contact", [wire(0.9), wire(10)])] })).not.toThrow()
 })
+
+test("connectivity validation does not fill the missing corners of an oval pad", () => {
+  const source = board()
+  source.connections[0]!.pointsToConnect[0]!.y = 0.49
+  source.obstacles = [{ type: "oval", center: { x: 0.9, y: 0 }, width: 2, height: 1, layers: ["top"], connectedTo: ["net"] }]
+  expect(() => assertOutputConnectivity(source, { ...source, traces: [trace("oval-contact", [wire(0.9), wire(10)])] })).toThrow("lack continuous")
+})

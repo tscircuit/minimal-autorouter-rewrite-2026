@@ -15,6 +15,7 @@
   },
   "scripts": {
     "build": "tsup lib/index.ts --format esm --dts --sourcemap",
+    "prepare": "npm run build",
     "typecheck": "tsc --noEmit",
     "test": "bun test --timeout 300000",
     "start": "cosmos",

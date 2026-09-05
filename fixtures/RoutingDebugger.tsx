@@ -240,6 +240,7 @@ function RoutingDebuggerSession({ sampleName, srj }: { sampleName: string; srj: 
           {srj.obstacles.map((obstacle, index) => obstacle.layers.some(layer => visibleLayers.has(layer)) && <rect key={index}
             x={obstacle.center.x - obstacle.width / 2} y={obstacle.center.y - obstacle.height / 2}
             width={obstacle.width} height={obstacle.height} fill="#92a09a" opacity={0.44}
+            rx={obstacle.type === "oval" ? Math.min(obstacle.width, obstacle.height) / 2 : 0}
             transform={obstacle.ccwRotationDegrees ? `rotate(${obstacle.ccwRotationDegrees},${obstacle.center.x},${obstacle.center.y})` : undefined}>
             <title>{obstacle.obstacleId ?? `Obstacle ${index + 1}`} · {obstacle.connectedTo.join(", ")}</title>
           </rect>)}

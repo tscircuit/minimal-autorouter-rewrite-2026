@@ -45,6 +45,7 @@ export class PrepareBoardSolver extends BaseSolver {
   private netAliases = new Map<string, string[]>()
   private connectionsToPrepare: SimpleRouteConnection[] = []
   private originalTerminals = new WeakSet<ConnectionPoint>()
+  private constraintsByNet = new Map<string, {traceWidth: number; allowedLayers?: string[]}>()
 
   constructor(input: SimpleRouteJson, readonly parameters: {
     effort: number; viaDiameter: number; viaHoleDiameter: number
@@ -82,6 +83,9 @@ export class PrepareBoardSolver extends BaseSolver {
     for (const [net, group] of netGroups) {
       const routedConnections = group.filter((connection) => !connection.isOffBoard)
       if (routedConnections.length === 0) continue
+      const constraints = this.resolveNetConstraints(routedConnections, layers)
+      if (!constraints) return
+      this.constraintsByNet.set(net, constraints)
       const points = routedConnections.flatMap((connection) => connection.pointsToConnect)
       // Every connected piece of existing copper must participate in the tree,
       // even when none of the original terminal records lands on that piece.
@@ -102,6 +106,44 @@ export class PrepareBoardSolver extends BaseSolver {
         pointsToConnect: [...unique.values()]})
     }
     this.MAX_ITERATIONS = this.connectionsToPrepare.length + 2
+  }
+
+  private resolveNetConstraints(connections: SimpleRouteConnection[], layers: string[]): {traceWidth: number; allowedLayers?: string[]} | undefined {
+    const applicableBuses = new Set<NonNullable<SimpleRouteJson["buses"]>[number]>()
+    const widths: number[] = []
+    for (const connection of connections) {
+      const names = new Set([connection.name, connection.rootConnectionName, connection.netConnectionName,
+        connection.__netConnectionName, ...(connection.mergedConnectionNames ?? []), ...(connection.__rootConnectionNames ?? [])]
+        .filter((name): name is string => typeof name === "string"))
+      const buses = (this.srj.buses ?? []).filter(bus => bus.connectionNames.some(name => names.has(name)))
+      for (const bus of buses) applicableBuses.add(bus)
+      const busWidths = buses.flatMap(bus => bus.traceWidth === undefined ? [] : [bus.traceWidth])
+      const width = connection.nominalTraceWidth ?? (busWidths.length ? Math.max(...busWidths) : undefined)
+        ?? this.srj.nominalTraceWidth ?? this.srj.minTraceWidth
+      if (!Number.isFinite(width) || width <= 0) {
+        this.failed = true
+        this.error = `Connection ${connection.name} resolves to an invalid trace width: ${width}; expected a positive finite width`
+        return undefined
+      }
+      widths.push(width)
+    }
+    const restricted = [...applicableBuses].filter(bus => bus.allowedLayers !== undefined)
+    const allowedLayers = restricted.length ? layers.filter(layer => restricted.every(bus => bus.allowedLayers!.includes(layer))) : undefined
+    const groupName = connections.map(connection => connection.name).join(", ")
+    if (allowedLayers?.length === 0) {
+      this.failed = true
+      this.error = `Merged net (${groupName}) has incompatible bus layer restrictions: no common routing layer`
+      return undefined
+    }
+    if (allowedLayers) for (const connection of connections) for (const point of connection.pointsToConnect) {
+      if (getPointLayers(point).some(layer => allowedLayers.includes(layer))) continue
+      this.failed = true
+      this.error = `Merged net (${groupName}) cannot reach terminal ${point.pcb_port_id ?? point.pointId ?? `(${point.x}, ${point.y})`} on allowed layers ${allowedLayers.join(", ")}`
+      return undefined
+    }
+    // A merged physical tree obeys every member's constraints. Using its widest
+    // resolved conductor and common permitted layers is deliberately conservative.
+    return {traceWidth: Math.max(...widths), allowedLayers}
   }
 
   override getConstructorParams(): unknown[] { return [this.srj, this.parameters] }
@@ -169,7 +211,7 @@ export class PrepareBoardSolver extends BaseSolver {
       else edges.push({a, b, distance})
     }
     edges.sort((a, b) => a.distance - b.distance || a.a - b.a || a.b - b.b)
-    const bus = this.srj.buses?.find((candidate) => candidate.connectionNames.includes(connection.name))
+    const constraints = this.constraintsByNet.get(netName)!
     let pair = 0
     for (const edge of edges) {
       if (find(edge.a) === find(edge.b)) continue
@@ -178,8 +220,8 @@ export class PrepareBoardSolver extends BaseSolver {
         id: `${connection.name}__pair${pair++}`,
         connectionName: connection.name, netName, connectedNames,
         start: points[edge.a]!, end: points[edge.b]!,
-        traceWidth: connection.nominalTraceWidth ?? bus?.traceWidth ?? this.srj.nominalTraceWidth ?? this.srj.minTraceWidth,
-        allowedLayers: bus?.allowedLayers,
+        traceWidth: constraints.traceWidth,
+        allowedLayers: constraints.allowedLayers,
       })
     }
   }

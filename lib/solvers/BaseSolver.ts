@@ -34,6 +34,8 @@ export class BaseSolver {
           this.error = `${this.getSolverName()} ran out of iterations (MAX_ITERATIONS=${this.MAX_ITERATIONS})`
         }
       }
+      const progressSolver = this as BaseSolver & {computeProgress?: () => number}
+      if (progressSolver.computeProgress) this.progress = progressSolver.computeProgress()
       if (this.solved) this.progress = 1
     } catch (error) {
       this.failed = true

@@ -178,8 +178,17 @@ export function assertOutputConnectivity(source: SimpleRouteJson, output: Simple
     if (!netName) continue
     const net = nets.get(aliases.find(netName))
     if (!net) continue
-    net.copper.push({ kind: "box", center: obstacle.center, width: obstacle.width, height: obstacle.height,
-      angle: (obstacle.ccwRotationDegrees ?? 0) * Math.PI / 180, layers: obstacle.layers.filter(layer => layers.includes(layer)) })
+    const angle = (obstacle.ccwRotationDegrees ?? 0) * Math.PI / 180
+    const obstacleLayers = obstacle.layers.filter(layer => layers.includes(layer))
+    if (obstacle.type === "oval") {
+      const radius = Math.min(obstacle.width, obstacle.height) / 2
+      const dx = Math.max(0, obstacle.width / 2 - radius), dy = Math.max(0, obstacle.height / 2 - radius)
+      const offset = { x: dx * Math.cos(angle) - dy * Math.sin(angle), y: dx * Math.sin(angle) + dy * Math.cos(angle) }
+      net.copper.push({ kind: "capsule", radius, layers: obstacleLayers,
+        a: { x: obstacle.center.x - offset.x, y: obstacle.center.y - offset.y },
+        b: { x: obstacle.center.x + offset.x, y: obstacle.center.y + offset.y } })
+    } else net.copper.push({ kind: "box", center: obstacle.center, width: obstacle.width, height: obstacle.height,
+      angle, layers: obstacleLayers })
   }
   const traces = output.traces ?? []
   const traceIds = new Set<string>()
@@ -235,9 +244,16 @@ export function assertSample(sample: SimpleRouteJson, sampleName: string): void 
   requireCondition(solver.iterations > 0, `${sampleName}: solver did not execute incrementally`)
   requireCondition(JSON.stringify(input) === inputJson, `${sampleName}: solver mutated its input`)
   const output = solver.getOutputSimpleRouteJson()
+  const normalizedSource = structuredClone(sample)
+  const validLayers = layerNames(sample.layerCount)
+  for (const obstacle of normalizedSource.obstacles) {
+    obstacle.layers = obstacle.layers.filter(layer => validLayers.includes(layer))
+    if (obstacle.zLayers) obstacle.zLayers = obstacle.layers.map(layer => validLayers.indexOf(layer))
+    if (obstacle.__zLayers) obstacle.__zLayers = obstacle.layers.map(layer => validLayers.indexOf(layer))
+  }
   for (const key of Object.keys(sample).filter(key => key !== "traces")) {
     requireCondition(JSON.stringify((output as unknown as Record<string, unknown>)[key]) ===
-      JSON.stringify((sample as unknown as Record<string, unknown>)[key]), `${sampleName}: output changed source field ${key}`)
+      JSON.stringify((normalizedSource as unknown as Record<string, unknown>)[key]), `${sampleName}: output changed normalized source field ${key}`)
   }
   requireCondition((output.traces?.length ?? 0) > 0, `${sampleName}: produced no traces`)
   assertOutputConnectivity(sample, output)
@@ -246,3 +262,7 @@ export function assertSample(sample: SimpleRouteJson, sampleName: string): void 
   solver.step()
   requireCondition(solver.iterations === iterations && solver.solved, `${sampleName}: step after completion changed terminal state`)
 }
+
+// Shared only by independent test validators, never by the routing implementation.
+export { Groups, layerNames, checkTraceShape, appendTrace, touches }
+export type { Copper, Capsule, Box }

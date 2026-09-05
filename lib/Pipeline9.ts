@@ -1,13 +1,24 @@
 import {BaseSolver} from "./solvers/BaseSolver"
-import {PrepareBoardSolver} from "./preparation/PrepareBoardSolver"
-import {RoutingSolver} from "./routing/RoutingSolver"
+import {PrepareBoardSolver, getBoardLayers} from "./preparation/PrepareBoardSolver"
+import {HighDensityRoutingStage} from "./HighDensityRoutingStage"
 import {AssembleTracesSolver} from "./output/AssembleTracesSolver"
-import {ConnectivityIndex} from "./preparation/ConnectivityIndex"
+import {ConnectivityIndex, createConnectivityIndex} from "./preparation/ConnectivityIndex"
 import type {SimpleRouteJson, SimplifiedPcbTrace} from "./types"
 import type {RoutingProblem} from "./routing/types"
 import type {CacheProvider} from "./cache/types"
 import {getGlobalInMemoryCache} from "./cache/setupGlobalCaches"
 import {convertSrjToGraphicsObject, type TraceColorMode} from "./utils/convertSrjToGraphicsObject"
+import {toHighDensityRoutes} from "./output/toHighDensityRoutes"
+import type {HighDensityRoute} from "./types/high-density-types"
+import {TerminalViaSolver} from "./preparation/TerminalViaSolver"
+import {LengthMatchingSolver} from "./postprocessing/LengthMatchingSolver"
+import {legacyPhaseTargets} from "./legacyPhaseTargets"
+
+export interface PowerTraceExpansionOptions {
+  onlyConnectionNames?: readonly string[]
+  allowNewVias?: boolean
+  powerTraceToPadClearance?: number
+}
 
 export interface AutoroutingPipelineSolverOptions {
   effort?: number
@@ -18,9 +29,9 @@ export interface AutoroutingPipelineSolverOptions {
   maxNodeRatio?: number
   minNodeArea?: number
   visualizationTraceColorMode?: TraceColorMode
-  powerTraceExpansion?: Record<string, unknown>
+  powerTraceExpansion?: PowerTraceExpansionOptions
 }
-export type RoutingStage = BaseSolver & {routes: SimplifiedPcbTrace[]; waitForAllRemoteRequests?: () => Promise<void>}
+export type RoutingStage = HighDensityRoutingStage
 export interface PipelineStep {
   solverName: string
   solverClass: new (...args: any[]) => BaseSolver
@@ -33,6 +44,7 @@ export class AutoroutingPipelineSolver9_PreloadedTraceGraph extends BaseSolver {
   readonly opts: AutoroutingPipelineSolverOptions
   readonly originalSrj: SimpleRouteJson
   srj: SimpleRouteJson
+  srjWithEscapeViaLocations?: SimpleRouteJson
   srjWithPointPairs?: SimpleRouteJson
   readonly effort: number
   readonly viaDiameter: number
@@ -44,7 +56,7 @@ export class AutoroutingPipelineSolver9_PreloadedTraceGraph extends BaseSolver {
   readonly visualizationTraceColorMode: TraceColorMode
   readonly cacheProvider: CacheProvider | null
   colorMap: Record<string, string> = {}
-  connMap = new ConnectivityIndex()
+  connMap: ConnectivityIndex
   currentPipelineStepIndex = 0
   startTimeOfPhase: Record<string, number> = {}
   endTimeOfPhase: Record<string, number> = {}
@@ -52,7 +64,9 @@ export class AutoroutingPipelineSolver9_PreloadedTraceGraph extends BaseSolver {
   override activeSubSolver: BaseSolver | null = null
   preprocessSimpleRouteJsonSolver?: PrepareBoardSolver
   netToPointPairsSolver?: PrepareBoardSolver
+  escapeViaLocationSolver?: TerminalViaSolver
   highDensityRouteSolver?: RoutingStage
+  lengthMatchingPostProcessingSolver?: LengthMatchingSolver
   traceSimplificationSolver?: AssembleTracesSolver
   powerTraceExpansionSolver?: AssembleTracesSolver
 
@@ -67,17 +81,32 @@ export class AutoroutingPipelineSolver9_PreloadedTraceGraph extends BaseSolver {
         pipeline.connMap = preparation.connMap
         pipeline.netToPointPairsSolver = preparation
       }},
-    {solverName: "highDensityRouteSolver", solverClass: RoutingSolver,
+    {solverName: "escapeViaLocationSolver", solverClass: TerminalViaSolver,
+      getConstructorParams: (pipeline) => [pipeline.preprocessSimpleRouteJsonSolver!.getProblem(), pipeline.connMap],
+      onSolved: (pipeline) => {
+        pipeline.srjWithEscapeViaLocations = {...pipeline.srj,
+          traces: [...(pipeline.srj.traces ?? []), ...pipeline.escapeViaLocationSolver!.routes]}
+      }},
+    {solverName: "highDensityRouteSolver", solverClass: HighDensityRoutingStage,
       getConstructorParams: (pipeline) => [pipeline.getRoutingProblem()]},
+    {solverName: "lengthMatchingPostProcessingSolver", solverClass: LengthMatchingSolver,
+      getConstructorParams: (pipeline) => [pipeline.getRoutingProblem(), pipeline.highDensityRouteSolver!.getSimplifiedTraces()]},
     {solverName: "traceSimplificationSolver", solverClass: AssembleTracesSolver,
-      getConstructorParams: (pipeline) => [pipeline.srj, pipeline.highDensityRouteSolver!.routes],
+      getConstructorParams: (pipeline) => [pipeline.srj, [...pipeline.escapeViaLocationSolver!.routes, ...pipeline.lengthMatchingPostProcessingSolver!.routes]],
       onSolved: (pipeline) => { pipeline.powerTraceExpansionSolver = pipeline.traceSimplificationSolver }},
   ]
 
   constructor(input: SimpleRouteJson, options: AutoroutingPipelineSolverOptions = {}) {
     super()
     this.originalSrj = structuredClone(input)
+    const layers = getBoardLayers(input.layerCount)
+    for (const obstacle of this.originalSrj.obstacles) {
+      obstacle.layers = obstacle.layers.filter((layer) => layers.includes(layer))
+      if (obstacle.zLayers) obstacle.zLayers = obstacle.layers.map((layer) => layers.indexOf(layer))
+      if (obstacle.__zLayers) obstacle.__zLayers = obstacle.layers.map((layer) => layers.indexOf(layer))
+    }
     this.srj = this.originalSrj
+    this.connMap = createConnectivityIndex(this.originalSrj)
     this.opts = {...options}
     this.effort = options.effort ?? 1
     if (!Number.isFinite(this.effort) || this.effort <= 0) throw new Error("effort must be positive and finite")
@@ -101,7 +130,8 @@ export class AutoroutingPipelineSolver9_PreloadedTraceGraph extends BaseSolver {
   override getConstructorParams(): [SimpleRouteJson, AutoroutingPipelineSolverOptions] { return [this.srj, this.opts] }
   getRoutingProblem(): RoutingProblem {
     if (!this.preprocessSimpleRouteJsonSolver?.solved) throw new Error("Routing requires completed board preparation")
-    return this.preprocessSimpleRouteJsonSolver.getProblem()
+    const problem = this.preprocessSimpleRouteJsonSolver.getProblem()
+    return {...problem, fixedTraces: [...problem.fixedTraces, ...(this.escapeViaLocationSolver?.routes ?? [])]}
   }
   computeProgress(): number { return this.solved ? 1 : (this.currentPipelineStepIndex + (this.activeSubSolver?.progress ?? 0)) / this.pipelineDef.length }
   getCurrentPhase(): string { return this.pipelineDef[this.currentPipelineStepIndex]?.solverName ?? "none" }
@@ -134,9 +164,15 @@ export class AutoroutingPipelineSolver9_PreloadedTraceGraph extends BaseSolver {
     this.progress = this.computeProgress()
   }
 
+  resolvePhase(phase: string): string {
+    if (phase === "none" || this.pipelineDef.some((stage) => stage.solverName === phase)) return phase
+    const target = legacyPhaseTargets[phase]
+    if (target && this.pipelineDef.some((stage) => stage.solverName === target)) return target
+    throw new Error(`Unknown pipeline phase: ${phase}`)
+  }
   solveUntilPhase(phase: string): void {
-    if (!this.pipelineDef.some((stage) => stage.solverName === phase) && phase !== "none") throw new Error(`Unknown pipeline phase: ${phase}`)
-    while (!this.solved && !this.failed && this.getCurrentPhase() !== phase) this.step()
+    const target = this.resolvePhase(phase)
+    while (!this.solved && !this.failed && this.getCurrentPhase() !== target) this.step()
   }
 
   getOutputSimplifiedPcbTraces(): SimplifiedPcbTrace[] {
@@ -150,11 +186,18 @@ export class AutoroutingPipelineSolver9_PreloadedTraceGraph extends BaseSolver {
   getMutatedPreloadedTraces(): SimplifiedPcbTrace[] { return [] }
   getNewTracesBeforePowerExpansion(): SimplifiedPcbTrace[] {
     if (!this.highDensityRouteSolver) throw new Error("Routing has not started")
-    return this.highDensityRouteSolver.routes
+    const routed = this.lengthMatchingPostProcessingSolver?.solved
+      ? this.lengthMatchingPostProcessingSolver.routes : this.highDensityRouteSolver.getSimplifiedTraces()
+    return [...(this.escapeViaLocationSolver?.routes ?? []), ...routed]
+  }
+  _getOutputHdRoutes(): HighDensityRoute[] {
+    return toHighDensityRoutes(this.solved ? this.getOutputSimplifiedPcbTraces() : this.getNewTracesBeforePowerExpansion(),
+      this.srj.layerCount, this.viaDiameter)
   }
   override visualize(): any {
     return convertSrjToGraphicsObject({...this.srj, traces: [...this.getUpdatedPreloadedTraces(),
-      ...(this.solved ? this.getOutputSimplifiedPcbTraces() : this.highDensityRouteSolver?.routes ?? [])]},
+      ...(this.solved ? this.getOutputSimplifiedPcbTraces() : [
+        ...(this.escapeViaLocationSolver?.routes ?? []), ...(this.highDensityRouteSolver?.getSimplifiedTraces() ?? [])])]},
       {traceColorMode: this.visualizationTraceColorMode, colorMap: this.colorMap})
   }
   override preview(): any { return this.visualize() }

@@ -43,7 +43,7 @@ export class CopperMap {
     for (const trace of problem.fixedTraces) this.addTrace(trace)
   }
 
-  private key(x: number,y: number,z: number): number { return ((x+32768)*65536+y+32768)*8+z }
+  private key(x: number,y: number,z: number): number { return ((x+32768)*65536+y+32768)*this.layers.length+z }
   private insertBounds(shape: Shape,z: number,minX: number,maxX: number,minY: number,maxY: number): void {
     for(let x=Math.floor(minX/this.cellSize);x<=Math.floor(maxX/this.cellSize);x++)
       for(let y=Math.floor(minY/this.cellSize);y<=Math.floor(maxY/this.cellSize);y++) {
@@ -65,19 +65,26 @@ export class CopperMap {
     const names=[trace.connection_name,...(trace.connectsTo??[]),...aliases]
     let previous: Point | undefined
     let previousLayer: string | undefined
+    let previousWidth: number | undefined
     for(const item of trace.route) {
       if(item.route_type==="wire") {
-        if(previous && previousLayer===item.layer) {
-          const z=this.layers.indexOf(item.layer)
-          if(z>=0) this.insertSegment({a:previous,b:item,radius:item.width/2,names,seen:0},z)
+        const z=this.layers.indexOf(item.layer)
+        if(z>=0) {
+          if(previous&&previousLayer===item.layer)
+            this.insertSegment({a:previous,b:item,radius:Math.max(previousWidth??item.width,item.width)/2,names,seen:0},z)
+          else this.insertSegment({a:item,b:item,radius:item.width/2,names,seen:0},z)
         }
-        previous=item; previousLayer=item.layer
+        previous=item;previousLayer=item.layer;previousWidth=item.width
       } else if(item.route_type==="via") {
+        if(previous&&previousLayer===item.from_layer) {
+          const z=this.layers.indexOf(item.from_layer)
+          if(z>=0) this.insertSegment({a:previous,b:item,radius:(previousWidth??this.problem.srj.minTraceWidth)/2,names,seen:0},z)
+        }
         const shape: Shape={a:item,b:item,radius:(item.via_diameter??this.problem.viaDiameter)/2,names,seen:0,via:true}
         // A drilled via occupies all copper layers, including layers it does not route on.
         for(let z=0;z<this.layers.length;z++) this.insertSegment(shape,z)
-        previous=item; previousLayer=item.to_layer
-      } else { previous=undefined;previousLayer=undefined }
+        previous=item;previousLayer=item.to_layer;previousWidth=undefined
+      } else {previous=undefined;previousLayer=undefined;previousWidth=undefined}
     }
   }
 
@@ -96,7 +103,7 @@ export class CopperMap {
       Math.min(a.y,b.y)<srj.bounds.minY+edge-1e-8 || Math.max(a.y,b.y)>srj.bounds.maxY-edge+1e-8) return false
     if(this.outline && (!pointInPolygon(a,this.outline)||!pointInPolygon(b,this.outline))) return false
     const margin=this.problem.obstacleMargin
-    const queryRadius=radius+Math.max(margin,srj.minTraceToPadEdgeClearance??0,srj.minViaEdgeToPadEdgeClearance??0)
+    const queryRadius=radius+Math.max(margin,srj.minTraceToPadEdgeClearance??0,srj.minViaEdgeToPadEdgeClearance??0,srj.minBoardEdgeClearance??0)
     const seen=++this.serial
     const count=Math.max(1,Math.ceil(distance(a,b)/(this.cellSize/2)))
     for(let i=0;i<=count;i++) {
@@ -110,7 +117,7 @@ export class CopperMap {
             if(shape.seen===seen) continue
             shape.seen=seen
             const sameNet=this.isSameNet(shape,task)
-            if(sameNet && !(via && (shape.via || srj.allowViaInPad===false && shape.obstacle))) continue
+            if(sameNet && !(via && ((shape.via && distance(a,shape.a)>1e-7) || srj.allowViaInPad===false && shape.obstacle))) continue
             const clearance=shape.boundary ? edge : radius+shape.radius+(shape.obstacle
               ? (via ? srj.minViaEdgeToPadEdgeClearance : srj.minTraceToPadEdgeClearance)??margin : margin)
             let squared: number
@@ -127,6 +134,11 @@ export class CopperMap {
         }
     }
     return true
+  }
+
+  hasVia(p: Point,task: RoutingTask): boolean {
+    const bucket=this.buckets.get(this.key(Math.floor(p.x/this.cellSize),Math.floor(p.y/this.cellSize),0))
+    return !!bucket?.some(shape=>shape.via&&this.isSameNet(shape,task)&&distance(p,shape.a)<1e-7)
   }
 
   viaClear(p: Point,task: RoutingTask): boolean {

@@ -1,3 +1,5 @@
+import type {SimpleRouteJson} from "../types"
+
 /** Named electrical equivalence is distinct from already-routed copper. */
 export class ConnectivityIndex {
   private parent = new Map<string, string>()
@@ -39,4 +41,23 @@ export class ConnectivityIndex {
     }
     return groups
   }
+}
+
+/** Build the same electrical view for construction-time inspection and preparation. */
+export function createConnectivityIndex(srj: SimpleRouteJson): ConnectivityIndex {
+  const result = new ConnectivityIndex()
+  for (const obstacle of srj.obstacles) result.addConnections([[
+    ...(obstacle.obstacleId ? [obstacle.obstacleId] : []), ...obstacle.connectedTo,
+    ...(obstacle.offBoardConnectsTo ?? []),
+  ]])
+  for (const connection of srj.connections) result.addConnections([[
+    connection.name, connection.rootConnectionName, connection.netConnectionName,
+    connection.__netConnectionName, ...(connection.mergedConnectionNames ?? []),
+    ...(connection.__rootConnectionNames ?? []),
+    ...connection.pointsToConnect.flatMap(point => [point.pointId, point.pcb_port_id]),
+  ].filter((name): name is string => typeof name === "string" && name.length > 0)])
+  for (const trace of srj.traces ?? []) result.addConnections([[
+    trace.pcb_trace_id, trace.connection_name, ...(trace.connectsTo ?? []),
+  ]])
+  return result
 }

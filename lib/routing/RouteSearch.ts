@@ -64,7 +64,7 @@ export class RouteSearch extends BaseSolver {
   private target: ConnectionPoint
   private reverse=false
 
-  constructor(readonly map: CopperMap,readonly task: RoutingTask,readonly pitch: number) {
+  constructor(readonly map: CopperMap,readonly task: RoutingTask,readonly pitch: number,readonly penaltyMap?: CopperMap) {
     super()
     this.source=task.start;this.target=task.end
     const {bounds}=map.problem.srj
@@ -88,10 +88,12 @@ export class RouteSearch extends BaseSolver {
     if(!this.startLayers.length||!this.endLayers.length) {
       this.failed=true;this.error="No allowed layer reaches an endpoint";return
     }
-    if(this.trySimplePath()) {this.solved=true;return}
+    if(!penaltyMap&&this.trySimplePath()) {this.solved=true;return}
     const starts: {id: number,p: RoutePoint}[]=[],ends: {id: number,p: RoutePoint}[]=[]
-    this.attachEndpoint(task.start,this.startLayers,(id,p)=>starts.push({id,p}))
-    this.attachEndpoint(task.end,this.endLayers,(id,p)=>ends.push({id,p}))
+    const startAccess=this.map.viaClear(task.start,task)?this.allowed:this.startLayers
+    const endAccess=this.map.viaClear(task.end,task)?this.allowed:this.endLayers
+    this.attachEndpoint(task.start,startAccess,(id,p)=>starts.push({id,p}))
+    this.attachEndpoint(task.end,endAccess,(id,p)=>ends.push({id,p}))
     // Start from the more constrained escape. An isolated terminal then fails
     // locally instead of exhausting the open area around its other endpoint.
     this.reverse=ends.length<starts.length
@@ -101,7 +103,8 @@ export class RouteSearch extends BaseSolver {
     }
     for(const {id} of this.reverse?starts:ends) this.goals.add(id)
     for(const {id,p} of this.reverse?ends:starts) {
-      const cost=distance(p,this.source)
+      const cost=distance(p,this.source)+(this.startLayers.includes(p.z)?0:1.8)
+        +(this.penaltyMap&&!this.penaltyMap.clear(this.source,p,p.z,this.radius,this.task)?4:0)
       this.costs[id]=cost
       this.frontier.push(id,cost+this.heuristic(p))
     }
@@ -110,7 +113,7 @@ export class RouteSearch extends BaseSolver {
     }
   }
 
-  getConstructorParams(): [CopperMap,RoutingTask,number] {return [this.map,this.task,this.pitch]}
+  getConstructorParams(): unknown[] {return [this.map,this.task,this.pitch,this.penaltyMap]}
 
   private trySimplePath(): boolean {
     for(const z of this.startLayers.filter(z=>this.endLayers.includes(z))) {
@@ -168,15 +171,17 @@ export class RouteSearch extends BaseSolver {
         if(!this.blocked[next]) this.blocked[next]=this.map.clear(q,q,p.z,this.radius,this.task)?1:2
         if(this.blocked[next]===2) continue
         const cost=this.costs[id]!+this.pitch*(dx&&dy?Math.SQRT2:1)
+          *(this.penaltyMap&&!this.penaltyMap.clear(p,q,p.z,this.radius,this.task)?12:1)
         if(cost>=this.costs[next]!-1e-6) continue
         if(this.map.clear(p,q,p.z,this.radius,this.task)) this.open(next,q,id,cost)
       }
       if(this.allowed.length>1) {
-        if(!this.vias[xy]) this.vias[xy]=this.map.viaClear(p,this.task)?1:2
-        if(this.vias[xy]===1) for(const z of this.allowed) {
+        if(!this.vias[xy]) this.vias[xy]=this.map.viaClear(p,this.task)?(this.map.hasVia(p,this.task)?3:1):2
+        if(this.vias[xy]!==2) for(const z of this.allowed) {
           if(z===p.z) continue
           const next=xy+z*this.plane
-          if(!this.closed[next]) this.open(next,{...p,z},id,this.costs[id]!+1.8+Math.abs(z-p.z)*0.05)
+          if(!this.closed[next]) this.open(next,{...p,z},id,this.costs[id]!+(this.vias[xy]===3?0.02:1.8)+Math.abs(z-p.z)*0.05
+            +(this.penaltyMap&&!this.penaltyMap.viaClear(p,this.task)?8:0))
         }
       }
     }
@@ -188,8 +193,11 @@ export class RouteSearch extends BaseSolver {
     let cursor=id
     while(cursor>=0) {reversed.push(this.point(cursor));cursor=this.parents[cursor]!}
     const points=reversed.reverse()
-    points.unshift({...this.source,z:points[0]!.z})
-    points.push({...this.target,z:points[points.length-1]!.z})
+    const startZ=points[0]!.z,endZ=points[points.length-1]!.z
+    points.unshift({...this.source,z:startZ})
+    if(!this.startLayers.includes(startZ)) points.unshift({...this.source,z:this.startLayers[0]!})
+    points.push({...this.target,z:endZ})
+    if(!this.endLayers.includes(endZ)) points.push({...this.target,z:this.endLayers[0]!})
     if(this.reverse) points.reverse()
     const corners: RoutePoint[]=[]
     for(let i=0;i<points.length;i++) {
@@ -203,7 +211,8 @@ export class RouteSearch extends BaseSolver {
       while(end<corners.length&&corners[end]!.z===corners[i]!.z) end++
       let next=i+1
       for(let candidate=end-1;candidate>i+1;candidate--) {
-        if(this.map.clear(corners[i]!,corners[candidate]!,corners[i]!.z,this.radius,this.task)) {next=candidate;break}
+        if(this.map.clear(corners[i]!,corners[candidate]!,corners[i]!.z,this.radius,this.task)
+          &&(!this.penaltyMap||this.penaltyMap.clear(corners[i]!,corners[candidate]!,corners[i]!.z,this.radius,this.task))) {next=candidate;break}
       }
       i=next
     }

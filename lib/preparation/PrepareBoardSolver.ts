@@ -1,7 +1,7 @@
 import {BaseSolver} from "../solvers/BaseSolver"
 import type {ConnectionPoint, Point, SimpleRouteConnection, SimpleRouteJson, SimplifiedPcbTrace} from "../types"
 import type {RoutingProblem, RoutingTask} from "../routing/types"
-import {ConnectivityIndex} from "./ConnectivityIndex"
+import {ConnectivityIndex, createConnectivityIndex} from "./ConnectivityIndex"
 
 export function getBoardLayers(layerCount: number): string[] {
   if (!Number.isInteger(layerCount) || layerCount < 1) throw new Error("layerCount must be a positive integer")
@@ -10,14 +10,6 @@ export function getBoardLayers(layerCount: number): string[] {
 
 export function getPointLayers(point: ConnectionPoint): string[] {
   return "layers" in point ? point.layers : [point.layer]
-}
-
-function aliases(connection: SimpleRouteConnection): string[] {
-  return [connection.name, connection.rootConnectionName, connection.netConnectionName,
-    connection.__netConnectionName, ...(connection.mergedConnectionNames ?? []),
-    ...(connection.__rootConnectionNames ?? []),
-    ...connection.pointsToConnect.flatMap((point) => [point.pointId, point.pcb_port_id])]
-    .filter((id): id is string => typeof id === "string" && id.length > 0)
 }
 
 function distanceToSegment(point: Point, start: Point, end: Point): number {
@@ -46,12 +38,13 @@ function traceTouchesPoint(trace: SimplifiedPcbTrace, point: ConnectionPoint): b
 }
 
 export class PrepareBoardSolver extends BaseSolver {
-  readonly connMap = new ConnectivityIndex()
+  readonly connMap: ConnectivityIndex
   readonly tasks: RoutingTask[] = []
   readonly srj: SimpleRouteJson
   private connectionIndex = 0
   private netAliases = new Map<string, string[]>()
   private connectionsToPrepare: SimpleRouteConnection[] = []
+  private originalTerminals = new WeakSet<ConnectionPoint>()
 
   constructor(input: SimpleRouteJson, readonly parameters: {
     effort: number; viaDiameter: number; viaHoleDiameter: number
@@ -59,6 +52,7 @@ export class PrepareBoardSolver extends BaseSolver {
     super()
     const layers = getBoardLayers(input.layerCount)
     this.srj = structuredClone(input)
+    this.connMap = createConnectivityIndex(this.srj)
     const {bounds, minTraceWidth} = this.srj
     if (![bounds.minX, bounds.maxX, bounds.minY, bounds.maxY, minTraceWidth].every(Number.isFinite) ||
       bounds.maxX <= bounds.minX || bounds.maxY <= bounds.minY || minTraceWidth <= 0) {
@@ -67,20 +61,15 @@ export class PrepareBoardSolver extends BaseSolver {
     for (const obstacle of this.srj.obstacles) {
       obstacle.layers = obstacle.layers.filter((layer) => layers.includes(layer))
       obstacle.__zLayers = obstacle.layers.map((layer) => layers.indexOf(layer))
-      this.connMap.addConnections([[...(obstacle.obstacleId ? [obstacle.obstacleId] : []),
-        ...obstacle.connectedTo, ...(obstacle.offBoardConnectsTo ?? [])]])
     }
     for (const connection of this.srj.connections) {
-      this.connMap.addConnections([aliases(connection)])
       for (const point of connection.pointsToConnect) {
+        this.originalTerminals.add(point)
         if (!Number.isFinite(point.x) || !Number.isFinite(point.y) ||
           getPointLayers(point).length === 0 || getPointLayers(point).some((layer) => !layers.includes(layer))) {
           throw new Error(`Invalid terminal for connection ${connection.name}`)
         }
       }
-    }
-    for (const trace of this.srj.traces ?? []) {
-      this.connMap.addConnections([[trace.pcb_trace_id, trace.connection_name, ...(trace.connectsTo ?? [])]])
     }
     for (const [net, names] of Object.entries(this.connMap.toObject())) this.netAliases.set(net, names)
     const netGroups = new Map<string, SimpleRouteConnection[]>()
@@ -150,9 +139,18 @@ export class PrepareBoardSolver extends BaseSolver {
         if (!getPointLayers(point).some((layer) => obstacle.layers.includes(layer))) return []
         const dx = point.x - obstacle.center.x, dy = point.y - obstacle.center.y
         const x = Math.abs(dx * cos + dy * sin), y = Math.abs(-dx * sin + dy * cos)
-        return x <= obstacle.width / 2 + 1e-8 && y <= obstacle.height / 2 + 1e-8 ? [index] : []
+        const inside = obstacle.type === "oval"
+          ? (x / (obstacle.width / 2)) ** 2 + (y / (obstacle.height / 2)) ** 2 <= 1 + 1e-8
+          : x <= obstacle.width / 2 + 1e-8 && y <= obstacle.height / 2 + 1e-8
+        return inside ? [index] : []
       })
-      for (const index of terminals.slice(1)) join(terminals[0]!, index)
+      for (const index of terminals.slice(1)) {
+        const first = points[terminals[0]!]!, other = points[index]!
+        const samePort = first.pcb_port_id !== undefined && first.pcb_port_id === other.pcb_port_id
+        // Keep an explicit wire attachment for distinct requested ports even
+        // when their pads overlap; fixed copper may attach through a pad.
+        if (!this.originalTerminals.has(first) || !this.originalTerminals.has(other) || samePort) join(terminals[0]!, index)
+      }
     }
     // Obstacle offBoardConnectsTo values are propagated net aliases in SRJ.
     // Only an explicit off-board connection proves an existing external path.
@@ -189,6 +187,6 @@ export class PrepareBoardSolver extends BaseSolver {
   getProblem(): RoutingProblem {
     if (!this.solved) throw new Error("Board preparation has not completed")
     return {srj: this.srj, tasks: this.tasks, fixedTraces: this.srj.traces ?? [],
-      ...this.parameters, obstacleMargin: this.srj.defaultObstacleMargin ?? 0.15}
+      ...this.parameters, obstacleMargin: this.srj.defaultObstacleMargin ?? Math.min(0.15, Math.max(0.1, this.srj.minTraceWidth))}
   }
 }

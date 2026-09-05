@@ -3,6 +3,7 @@ import type {SimplifiedPcbTrace} from "../types"
 import {CopperMap} from "./CopperMap"
 import {distance} from "./geometry"
 import {RouteSearch} from "./RouteSearch"
+import {findTerminalContradiction} from "./findTerminalContradiction"
 import type {RoutingProblem, RoutingTask} from "./types"
 
 /** Owns route order and retries; individual searches own geometric decisions. */
@@ -21,6 +22,12 @@ export class RoutingSolver extends BaseSolver {
   private pitches: number[]
   private maxPasses: number
   private priorities=new Map<string,number>()
+  private repairSearch?: RouteSearch
+  private repairs=0
+  private repairCounts=new Map<string,number>()
+  private strategy: "ordered" | "ripup" = "ordered"
+  private completedPasses=0
+  private totalRepairs=0
 
   constructor(readonly problem: RoutingProblem) {
     super()
@@ -31,6 +38,14 @@ export class RoutingSolver extends BaseSolver {
     this.pitches=[pitch,pitch*0.6,pitch*0.35]
     this.maxPasses=Math.min(8,Math.max(5,Math.ceil(problem.effort)))
     this.bestFailures=[...this.order]
+    const contradiction=findTerminalContradiction(problem)
+    if(contradiction) {
+      this.failed=true
+      this.stats={terminalContradiction:contradiction}
+      this.unroutedTaskIds=this.order.map(task=>task.id)
+      const {terminal,blockingObstacles}=contradiction
+      this.error=`Terminal ${terminal.pcb_port_id??terminal.pointId??contradiction.taskId} at (${terminal.x}, ${terminal.y}) lies inside unrelated copper ${blockingObstacles.map(item=>item.obstacleId).join(", ")} on every eligible layer`
+    }
   }
 
   getConstructorParams(): [RoutingProblem] {return [this.problem]}
@@ -38,6 +53,8 @@ export class RoutingSolver extends BaseSolver {
   _step(): void {
     if(this.index>=this.order.length) {this.finishPass();return}
     const task=this.order[this.index]!
+    if(this.routes.some(trace=>trace.pcb_trace_id===`minimal_${task.id}`)) {this.advance();return}
+    if(this.repairSearch) {this.stepRepair(task);return}
     if(!this.search) {
       this.search=new RouteSearch(this.map,task,this.pitches[this.attempt]!)
       this.activeSubSolver=this.search
@@ -50,11 +67,52 @@ export class RoutingSolver extends BaseSolver {
       this.advance()
     } else if(this.search.failed) {
       this.attempt++
-      if(this.attempt>=this.pitches.length) {this.failures.push(task);this.advance()}
+      if(this.attempt>=this.pitches.length) {
+        if(this.strategy==="ripup"&&this.repairs<8&&(this.repairCounts.get(task.id)??0)<2&&this.routes.length) {
+          this.repairs++;this.totalRepairs++
+          this.repairCounts.set(task.id,(this.repairCounts.get(task.id)??0)+1)
+          this.repairSearch=new RouteSearch(new CopperMap(this.problem),task,this.pitches[1]!,this.map)
+          this.activeSubSolver=this.repairSearch
+        } else {this.failures.push(task);this.advance()}
+      }
       else {this.search=undefined;this.activeSubSolver=null}
     }
-    this.progress=(this.pass+this.index/Math.max(1,this.order.length))/this.maxPasses
-    this.stats={routed:this.routes.length,total:this.order.length,pass:this.pass+1,failed:this.failures.length}
+    this.progress=(this.completedPasses+this.index/Math.max(1,this.order.length))/(this.maxPasses*2)
+    this.stats={routed:this.routes.length,total:this.problem.tasks.length,pass:this.pass+1,failed:this.failures.length,ripups:this.repairs,totalRipups:this.totalRepairs,strategy:this.strategy,attempts:this.completedPasses+1}
+  }
+
+  private stepRepair(task: RoutingTask): void {
+    const search=this.repairSearch!
+    if(!search.solved&&!search.failed) search.step()
+    if(!search.solved&&!search.failed) return
+    if(search.solved) {
+      const displaced: RoutingTask[]=[]
+      for(const trace of this.routes) {
+        const map=new CopperMap({...this.problem,fixedTraces:[trace]})
+        let collides=false
+        for(let i=0;i<search.points.length;i++) {
+          const p=search.points[i]!,q=search.points[i+1]
+          if(q&&p.z===q.z&&!map.clear(p,q,p.z,task.traceWidth/2,task)) {collides=true;break}
+          if(q&&p.z!==q.z&&!map.viaClear(p,task)) {collides=true;break}
+        }
+        if(collides) {
+          const owner=this.problem.tasks.find(candidate=>trace.pcb_trace_id===`minimal_${candidate.id}`)
+          if(owner) displaced.push(owner)
+          if(displaced.length>4) break
+        }
+      }
+      if(displaced.length<=4) {
+        const ids=new Set(displaced.map(task=>`minimal_${task.id}`))
+        this.routes=this.routes.filter(trace=>!ids.has(trace.pcb_trace_id))
+        this.map=new CopperMap(this.problem)
+        for(const trace of this.routes) this.map.addTrace(trace)
+        const trace=this.toTrace(task,search)
+        this.routes.push(trace);this.map.addTrace(trace,[task.netName,...task.connectedNames])
+        this.order.splice(this.index+1,0,...displaced)
+        this.repairSearch=undefined;this.advance();return
+      }
+    }
+    this.failures.push(task);this.repairSearch=undefined;this.advance()
   }
 
   private advance(): void {this.index++;this.attempt=0;this.search=undefined;this.activeSubSolver=null}
@@ -63,18 +121,28 @@ export class RoutingSolver extends BaseSolver {
     if(this.failures.length<=this.bestFailures.length) {
       this.bestRoutes=[...this.routes];this.bestFailures=[...this.failures]
     }
-    if(!this.failures.length) {this.solved=true;return}
+    if(!this.failures.length) {this.stats={...this.stats,routed:this.routes.length,total:this.problem.tasks.length,failed:0};this.solved=true;return}
+    this.completedPasses++
     if(++this.pass>=this.maxPasses) {
-      this.routes=this.bestRoutes
-      this.unroutedTaskIds=this.bestFailures.map(task=>task.id)
-      this.failed=true
-      this.error=`Could not route ${this.unroutedTaskIds.length} of ${this.order.length} connections`
-      return
+      if(this.strategy==="ordered") {
+        // Keep the reliable ordering-only trajectory intact. Repair explores a
+        // separate strategy only after that bounded search is exhausted.
+        this.strategy="ripup";this.pass=0;this.priorities.clear()
+      } else {
+        this.routes=this.bestRoutes
+        this.unroutedTaskIds=this.bestFailures.map(task=>task.id)
+        this.failed=true
+        this.stats={...this.stats,routed:this.routes.length,total:this.problem.tasks.length,failed:this.unroutedTaskIds.length}
+        this.error=`Could not route ${this.unroutedTaskIds.length} of ${this.problem.tasks.length} connections`
+        return
+      }
+    } else {
+      for(const task of this.failures) this.priorities.set(task.id,(this.priorities.get(task.id)??0)+1)
     }
-    for(const task of this.failures) this.priorities.set(task.id,(this.priorities.get(task.id)??0)+1)
+    this.order=[...this.problem.tasks]
     this.order.sort((a,b)=>(this.priorities.get(b.id)??0)-(this.priorities.get(a.id)??0) ||
       distance(a.start,a.end)-distance(b.start,b.end))
-    this.map=new CopperMap(this.problem);this.routes=[];this.failures=[];this.index=0
+    this.map=new CopperMap(this.problem);this.routes=[];this.failures=[];this.index=0;this.repairs=0;this.repairCounts.clear()
   }
 
   private toTrace(task: RoutingTask,search: RouteSearch): SimplifiedPcbTrace {

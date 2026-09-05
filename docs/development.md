@@ -45,3 +45,25 @@ solve, with routes, layers, progress and export availability verified visually.
 Early development timing runs overlap other routing work and are diagnostic.
 Final timing comparisons must run serially on an otherwise idle benchmark host.
 Network integration and difficult srj18 cases remain in progress.
+
+## 3. Preserve successful strategies before repairing congestion
+
+Immediate rip-up improved sample006 but changed the route-order trajectory that
+had completed sample002. The routing solver now finishes a bounded ordinary
+ordering attempt first. Only an unsuccessful attempt starts a fresh strategy
+that may remove and reroute a few movable blocking traces. Fixed copper and pads
+remain hard constraints in both strategies. Statistics identify the active
+strategy, total attempts, and actual rip-ups; a failed partial board cannot be
+accepted as solved.
+
+Sequential development checks completed all244 required pairs in sample002 and
+all255 in sample006, both with zero errors from the exact baseline DRC evaluator.
+This separation trades extra work on boards needing repair for preservation of
+the successful simpler strategy. Final controlled measurements remain required.
+
+Preparation also now preserves explicit wire attachment for distinct terminal
+ports whose same-net pads overlap, and uses the interior of an oval when proving
+contact with fixed copper. An oval's empty bounding-box corner cannot establish
+electrical continuity. A terminal strictly enclosed by unrelated physical copper
+on every eligible layer produces a structured contradiction witness before
+search; sample016 exercises that behavior independently.

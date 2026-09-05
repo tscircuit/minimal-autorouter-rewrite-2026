@@ -6,3 +6,4 @@ cosmos-export/
 work/
 *.log
 .DS_Store
+.vercel/

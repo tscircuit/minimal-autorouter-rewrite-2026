@@ -8,11 +8,11 @@ export type AutoroutingPipelineSolver9NetworkedOptions = Omit<AutoroutingPipelin
   effort?: 1; hdCache2ServerUrl?: string; hdCache2CacheVersion?: string
 }
 
-export class AutoroutingPipelineSolver9_Networked extends AutoroutingPipelineSolver9_PreloadedTraceGraph {
+export class AutoroutingPipelineSolver9_Networked<T extends SimpleRouteJson = SimpleRouteJson> extends AutoroutingPipelineSolver9_PreloadedTraceGraph<T> {
   declare highDensityRouteSolver?: Pipeline9NetworkedHighDensitySolver
   readonly hdCache2ServerUrl: string
   readonly hdCache2CacheVersion?: string
-  constructor(srj: SimpleRouteJson, options: AutoroutingPipelineSolver9NetworkedOptions = {}) {
+  constructor(srj: T, options: AutoroutingPipelineSolver9NetworkedOptions = {}) {
     super(srj, options)
     if (this.effort !== 1) throw new Error(`AutoroutingPipelineSolver9_Networked is only available at effort=1, received ${this.effort}`)
     this.hdCache2ServerUrl = options.hdCache2ServerUrl ?? DEFAULT_HD_CACHE2_SERVER_URL

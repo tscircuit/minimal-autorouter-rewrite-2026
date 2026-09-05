@@ -14,6 +14,18 @@ export type HighDensityIntraNodeRoute = {
   route: Array<Point & { z: number; traceThickness?: number; pcb_port_id?: string
     insideJumperPad?: boolean; toNextSegmentType?: "through_obstacle"; toNextSegmentCircuitJsonMetadata?: CircuitJsonMetadata }>
   vias: Point[]
+  jumpers?: HighDensityJumper[]
   regionId?: string
 }
 export type HighDensityRoute = HighDensityIntraNodeRoute
+
+export type HighDensityJumper = {
+  route_type: "jumper"; start: Point; end: Point
+  footprint: "0603" | "1206" | "1206x4_pair"
+}
+export type Jumper = HighDensityJumper
+export type HighDensityIntraNodeRouteWithJumpers = {
+  connectionName: string; rootConnectionName?: string; regionId?: string
+  traceThickness: number; route: Array<Point & {z: number}>
+  jumpers: HighDensityJumper[]
+}

@@ -32,20 +32,22 @@ export interface AutoroutingPipelineSolverOptions {
   powerTraceExpansion?: PowerTraceExpansionOptions
 }
 export type RoutingStage = HighDensityRoutingStage
-export interface PipelineStep {
+export type Pipeline9OutputSimpleRouteJson<T extends SimpleRouteJson> =
+  Omit<T, "traces"> & {traces: SimplifiedPcbTrace[]}
+export interface PipelineStep<T extends SimpleRouteJson = SimpleRouteJson> {
   solverName: string
   solverClass: new (...args: any[]) => BaseSolver
-  getConstructorParams: (pipeline: AutoroutingPipelineSolver9_PreloadedTraceGraph) => any[]
-  onSolved?: (pipeline: AutoroutingPipelineSolver9_PreloadedTraceGraph) => void
+  getConstructorParams(pipeline: AutoroutingPipelineSolver9_PreloadedTraceGraph<T>): any[]
+  onSolved?(pipeline: AutoroutingPipelineSolver9_PreloadedTraceGraph<T>): void
 }
 
 /** The compatibility shell delegates each real responsibility to one solver. */
-export class AutoroutingPipelineSolver9_PreloadedTraceGraph extends BaseSolver {
+export class AutoroutingPipelineSolver9_PreloadedTraceGraph<T extends SimpleRouteJson = SimpleRouteJson> extends BaseSolver {
   readonly opts: AutoroutingPipelineSolverOptions
-  readonly originalSrj: SimpleRouteJson
-  srj: SimpleRouteJson
-  srjWithEscapeViaLocations?: SimpleRouteJson
-  srjWithPointPairs?: SimpleRouteJson
+  readonly originalSrj: T
+  srj: T
+  srjWithEscapeViaLocations?: Pipeline9OutputSimpleRouteJson<T>
+  srjWithPointPairs?: T
   readonly effort: number
   readonly viaDiameter: number
   readonly viaHoleDiameter: number
@@ -70,14 +72,14 @@ export class AutoroutingPipelineSolver9_PreloadedTraceGraph extends BaseSolver {
   traceSimplificationSolver?: AssembleTracesSolver
   powerTraceExpansionSolver?: AssembleTracesSolver
 
-  pipelineDef: PipelineStep[] = [
+  pipelineDef: PipelineStep<T>[] = [
     {solverName: "preprocessSimpleRouteJsonSolver", solverClass: PrepareBoardSolver,
       getConstructorParams: (pipeline) => [pipeline.originalSrj, {effort: pipeline.effort,
         viaDiameter: pipeline.viaDiameter, viaHoleDiameter: pipeline.viaHoleDiameter}],
       onSolved: (pipeline) => {
         const preparation = pipeline.preprocessSimpleRouteJsonSolver!
-        pipeline.srj = preparation.srj
-        pipeline.srjWithPointPairs = preparation.srj
+        pipeline.srj = preparation.srj as T
+        pipeline.srjWithPointPairs = preparation.srj as T
         pipeline.connMap = preparation.connMap
         pipeline.netToPointPairsSolver = preparation
       }},
@@ -96,7 +98,7 @@ export class AutoroutingPipelineSolver9_PreloadedTraceGraph extends BaseSolver {
       onSolved: (pipeline) => { pipeline.powerTraceExpansionSolver = pipeline.traceSimplificationSolver }},
   ]
 
-  constructor(input: SimpleRouteJson, options: AutoroutingPipelineSolverOptions = {}) {
+  constructor(input: T, options: AutoroutingPipelineSolverOptions = {}) {
     super()
     this.originalSrj = structuredClone(input)
     const layers = getBoardLayers(input.layerCount)
@@ -127,7 +129,7 @@ export class AutoroutingPipelineSolver9_PreloadedTraceGraph extends BaseSolver {
   }
 
   override getSolverName(): string { return "AutoroutingPipelineSolver9_PreloadedTraceGraph" }
-  override getConstructorParams(): [SimpleRouteJson, AutoroutingPipelineSolverOptions] { return [this.srj, this.opts] }
+  override getConstructorParams(): [T, AutoroutingPipelineSolverOptions] { return [this.srj, this.opts] }
   getRoutingProblem(): RoutingProblem {
     if (!this.preprocessSimpleRouteJsonSolver?.solved) throw new Error("Routing requires completed board preparation")
     const problem = this.preprocessSimpleRouteJsonSolver.getProblem()
@@ -179,7 +181,7 @@ export class AutoroutingPipelineSolver9_PreloadedTraceGraph extends BaseSolver {
     if (!this.solved || !this.traceSimplificationSolver) throw new Error("Cannot get output before solving is complete")
     return this.traceSimplificationSolver.routes
   }
-  getOutputSimpleRouteJson(): SimpleRouteJson {
+  getOutputSimpleRouteJson(): Pipeline9OutputSimpleRouteJson<T> {
     return {...this.originalSrj, traces: [...this.getUpdatedPreloadedTraces(), ...this.getOutputSimplifiedPcbTraces()]}
   }
   getUpdatedPreloadedTraces(): SimplifiedPcbTrace[] { return this.originalSrj.traces ?? [] }

@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "startedAt": "2026-09-05T20:48:58.087Z",
+  "updatedAt": "2026-09-05T20:48:58.537Z",
+  "complete": true,
+  "implementation": {
+    "modulePath": "/Users/seve/Documents/Codex/2026-09-05/g/outputs/minimal-autorouter-rewrite-2026/lib/index.ts",
+    "constructorName": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+    "solverOptions": {},
+    "sha256": "7da677f592ada305735991b9c03c83d1ec93646a8ab7f22e9f4a690e3e39af62",
+    "sourceChangedDuringRun": false
+  },
+  "oracle": {
+    "path": "/Users/seve/Documents/Codex/2026-09-05/g/work/baseline/node_modules/@tscircuit/capacity-autorouter/dist/benchmark-oracle.js",
+    "sha256": "53c0b0bd2d7e7499cd32d03d6708ff3662b7c49668d06f2f77ce069694a1ef75"
+  },
+  "environment": {
+    "bun": "1.3.2",
+    "platform": "darwin",
+    "release": "25.6.0",
+    "cpu": "Apple M3 Pro",
+    "concurrency": 1
+  },
+  "timeout": 180000,
+  "datasets": [
+    {
+      "name": "dataset-srj18",
+      "repository": "https://github.com/tscircuit/dataset-srj18",
+      "commit": "c0aad90256a95256fcac814f9f7da81a82a2fdea",
+      "sampleCount": 16
+    }
+  ],
+  "summary": [
+    {
+      "dataset": "dataset-srj18",
+      "completed": 1,
+      "expected": 1,
+      "solved": 1,
+      "relaxedDrcPassed": 1,
+      "timedOut": 0,
+      "p50TimeMs": 141.53925,
+      "p95TimeMs": 141.53925,
+      "avgVia": 82,
+      "avgTraceLengthMm": 745.8820817914678
+    }
+  ],
+  "results": [
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample003",
+      "sha256": "c5abc751ef4ee68f0369df3d747174c527e47771fb673c61b72bbca0b93bc843",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 141.53925,
+      "iterations": 375,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 21.843500000000006,
+        "highDensityRouteSolver": 113.05316599999998,
+        "traceSimplificationSolver": 1.7900830000000383
+      },
+      "networkStats": {
+        "routed": 145,
+        "total": 145,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 145,
+      "viaCount": 82,
+      "traceLengthMm": 745.8820817914678,
+      "drcTimeMs": 72.58437500000002,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    }
+  ]
+}

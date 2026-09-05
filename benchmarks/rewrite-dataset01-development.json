@@ -1,0 +1,2512 @@
+{
+  "version": 1,
+  "startedAt": "2026-09-05T20:38:18.740Z",
+  "updatedAt": "2026-09-05T20:39:03.501Z",
+  "complete": true,
+  "implementation": {
+    "modulePath": "/Users/seve/Documents/Codex/2026-09-05/g/outputs/minimal-autorouter-rewrite-2026/lib/index.ts",
+    "constructorName": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+    "solverOptions": {}
+  },
+  "oracle": {
+    "path": "/Users/seve/Documents/Codex/2026-09-05/g/work/baseline/node_modules/@tscircuit/capacity-autorouter/dist/benchmark-oracle.js",
+    "sha256": "53c0b0bd2d7e7499cd32d03d6708ff3662b7c49668d06f2f77ce069694a1ef75"
+  },
+  "environment": {
+    "bun": "1.3.2",
+    "platform": "darwin",
+    "release": "25.6.0",
+    "cpu": "Apple M3 Pro",
+    "concurrency": 1
+  },
+  "timeout": "300000 + 60000 * effort",
+  "datasets": [
+    {
+      "name": "dataset01",
+      "repository": "https://github.com/tscircuit/autorouting-dataset-01",
+      "commit": "b97f5052a2359ab2da3f186765c6a5e839535efb",
+      "sampleCount": 85
+    }
+  ],
+  "summary": [
+    {
+      "dataset": "dataset01",
+      "completed": 85,
+      "expected": 85,
+      "solved": 85,
+      "relaxedDrcPassed": 85,
+      "timedOut": 0,
+      "p50TimeMs": 77.01937500000003,
+      "p95TimeMs": 529.6073670000001,
+      "avgVia": 32.811764705882354,
+      "avgTraceLengthMm": 463.4743880860588
+    }
+  ],
+  "results": [
+    {
+      "dataset": "dataset01",
+      "sample": "circuit001",
+      "sha256": "f471f6ea8d1e6eaf6a46f6e3a1a762d51e6c53d0742b43dd190530a7d720eda7",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 12.016124999999988,
+      "iterations": 23,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.6582089999999994,
+        "highDensityRouteSolver": 9.283208000000002,
+        "traceSimplificationSolver": 0.13450000000000273
+      },
+      "networkStats": {
+        "routed": 6,
+        "total": 6,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 6,
+      "viaCount": 0,
+      "traceLengthMm": 46.501997465049534,
+      "drcTimeMs": 11.445249999999987,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit002",
+      "sha256": "494c073e772bdef423343210595f75cf969afa9983b361800ef9298fa550c91d",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 55.09704199999999,
+      "iterations": 112,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 2.513249999999971,
+        "highDensityRouteSolver": 48.464207999999985,
+        "traceSimplificationSolver": 0.5026659999999765
+      },
+      "networkStats": {
+        "routed": 40,
+        "total": 40,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 40,
+      "viaCount": 24,
+      "traceLengthMm": 226.51957825265012,
+      "drcTimeMs": 34.451666999999986,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit003",
+      "sha256": "9a7e1fc231f6d96c3458ccd6a80cf4e4632ac9a58c597414b4b94f0f7ba621b6",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 59.71879200000001,
+      "iterations": 70,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.2729999999999677,
+        "highDensityRouteSolver": 55.81208299999997,
+        "traceSimplificationSolver": 0.47912500000001046
+      },
+      "networkStats": {
+        "routed": 20,
+        "total": 20,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 20,
+      "viaCount": 11,
+      "traceLengthMm": 240.3554912493669,
+      "drcTimeMs": 29.235749999999996,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit004",
+      "sha256": "5936f1e89ac71f59a0e7c51016a939d877c70f539fce706c9cc222ffa8a27e64",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 92.28333299999997,
+      "iterations": 119,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 3.5946670000000154,
+        "highDensityRouteSolver": 85.08500000000004,
+        "traceSimplificationSolver": 0.5343750000000114
+      },
+      "networkStats": {
+        "routed": 38,
+        "total": 38,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 38,
+      "viaCount": 27,
+      "traceLengthMm": 337.9650646793048,
+      "drcTimeMs": 26.733833000000004,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit005",
+      "sha256": "e83586f66f9d636cdc9824127b80d9e31dd37a2b508d0c20fef93388c4c9daa4",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 13.093166000000025,
+      "iterations": 26,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.5465000000000089,
+        "highDensityRouteSolver": 10.18866700000001,
+        "traceSimplificationSolver": 1.2738749999999754
+      },
+      "networkStats": {
+        "routed": 7,
+        "total": 7,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 7,
+      "viaCount": 2,
+      "traceLengthMm": 64.51458546879769,
+      "drcTimeMs": 8.426874999999995,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit006",
+      "sha256": "b5c0f36acc06f565d3ea5975e6cd47d41cc0a57895e2993556ddc2fedfe15f8b",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 19.434875000000005,
+      "iterations": 32,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.5159590000000094,
+        "highDensityRouteSolver": 17.289416999999986,
+        "traceSimplificationSolver": 0.1586250000000291
+      },
+      "networkStats": {
+        "routed": 9,
+        "total": 9,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 9,
+      "viaCount": 4,
+      "traceLengthMm": 100.84958879033208,
+      "drcTimeMs": 10.585499999999968,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit007",
+      "sha256": "ea50c25f6635344d84603b13167cb27696022e3b41d89070436ea8b16370ef2c",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 22.064333000000033,
+      "iterations": 25,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.44549999999998136,
+        "highDensityRouteSolver": 20.180166999999983,
+        "traceSimplificationSolver": 0.12787499999996044
+      },
+      "networkStats": {
+        "routed": 6,
+        "total": 6,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 6,
+      "viaCount": 4,
+      "traceLengthMm": 58.192863756188736,
+      "drcTimeMs": 11.653999999999996,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit010",
+      "sha256": "fd13f4fff86519b7b6f6ec2147b4a7091b907df59076655d2f113f5119a338c7",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 50.059416999999996,
+      "iterations": 71,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.241457999999966,
+        "highDensityRouteSolver": 45.777458999999965,
+        "traceSimplificationSolver": 0.28591699999998355
+      },
+      "networkStats": {
+        "routed": 25,
+        "total": 25,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 25,
+      "viaCount": 14,
+      "traceLengthMm": 283.7283327768373,
+      "drcTimeMs": 24.951082999999983,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit011",
+      "sha256": "08fe38cd04875cd5245d8a9be2640c71ff699ba8caa84ea57e938d6b09dcec2b",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 32.320167000000026,
+      "iterations": 45,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.5135000000000218,
+        "highDensityRouteSolver": 29.983082999999965,
+        "traceSimplificationSolver": 0.261333000000036
+      },
+      "networkStats": {
+        "routed": 14,
+        "total": 14,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 14,
+      "viaCount": 10,
+      "traceLengthMm": 129.5669047577064,
+      "drcTimeMs": 19.55775,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit012",
+      "sha256": "c2ddb93ad2e09546afa018758a2cfbce47e8d88d5f904c5bcf1fcc722ab800cb",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 33.21975000000003,
+      "iterations": 37,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.8064170000000104,
+        "highDensityRouteSolver": 29.810541999999998,
+        "traceSimplificationSolver": 0.18362500000000637
+      },
+      "networkStats": {
+        "routed": 10,
+        "total": 10,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 10,
+      "viaCount": 6,
+      "traceLengthMm": 82.68401273933537,
+      "drcTimeMs": 15.369208000000015,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit013",
+      "sha256": "08b145e8d55ae7c4a5a19e954e964a6ee3559dd33beca7cbc0e817d7072b3951",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 21.986707999999965,
+      "iterations": 30,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.42354100000000017,
+        "highDensityRouteSolver": 20.053541999999993,
+        "traceSimplificationSolver": 0.12495799999999235
+      },
+      "networkStats": {
+        "routed": 8,
+        "total": 8,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 8,
+      "viaCount": 4,
+      "traceLengthMm": 69.63071667064155,
+      "drcTimeMs": 8.589207999999985,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit014",
+      "sha256": "24f6b804ab58f1de69760bf762002fea9421d6b65338a48f37c9ea720ea38c6e",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 49.36779200000001,
+      "iterations": 44,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.0755420000000413,
+        "highDensityRouteSolver": 45.92975000000001,
+        "traceSimplificationSolver": 0.43425000000002
+      },
+      "networkStats": {
+        "routed": 8,
+        "total": 8,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 8,
+      "viaCount": 4,
+      "traceLengthMm": 156.6098089396146,
+      "drcTimeMs": 13.54162500000001,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit015",
+      "sha256": "a585d63b60ddb59c5a0e6afbad6f45b873625eeb2afec98388d2b4c12e7789b0",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 59.465625000000045,
+      "iterations": 74,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.8885000000000218,
+        "highDensityRouteSolver": 55.60412500000001,
+        "traceSimplificationSolver": 0.5004160000000297
+      },
+      "networkStats": {
+        "routed": 19,
+        "total": 19,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 19,
+      "viaCount": 12,
+      "traceLengthMm": 246.73145454839795,
+      "drcTimeMs": 21.085499999999968,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit018",
+      "sha256": "ce8a5c41c04d2b98bb1e14abd12a7bd75b472cccb3fd018d439855c05a6c74c6",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 60.13941600000001,
+      "iterations": 116,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 2.220957999999996,
+        "highDensityRouteSolver": 54.61474999999996,
+        "traceSimplificationSolver": 0.3736250000000041
+      },
+      "networkStats": {
+        "routed": 31,
+        "total": 31,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 31,
+      "viaCount": 17,
+      "traceLengthMm": 176.92746794025442,
+      "drcTimeMs": 36.158416999999986,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit019",
+      "sha256": "81648b3c78c771e36e596991e0adca8ff7cb05d35405e67c78f6c688bf3b7314",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 10.333083000000045,
+      "iterations": 21,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.49933400000003303,
+        "highDensityRouteSolver": 8.722874999999988,
+        "traceSimplificationSolver": 0.10362500000002228
+      },
+      "networkStats": {
+        "routed": 5,
+        "total": 5,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 5,
+      "viaCount": 2,
+      "traceLengthMm": 16.47369788597129,
+      "drcTimeMs": 8.854041999999993,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit020",
+      "sha256": "7b60e7fd36d3691ac603230f56089ff2dd545bc14f6609cf4d60d50833c1b40e",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 9.108165999999983,
+      "iterations": 17,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.6295830000000251,
+        "highDensityRouteSolver": 6.684792000000016,
+        "traceSimplificationSolver": 0.14904100000001108
+      },
+      "networkStats": {
+        "routed": 3,
+        "total": 3,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 3,
+      "viaCount": 1,
+      "traceLengthMm": 19.23819330051274,
+      "drcTimeMs": 6.237374999999986,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit021",
+      "sha256": "589934e75f71b8fc4ec28e81c1acc489bd148cf870a305211efe90f09f7f6251",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 26.72479100000001,
+      "iterations": 46,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.7833750000000066,
+        "highDensityRouteSolver": 24.005291999999997,
+        "traceSimplificationSolver": 0.18299999999999272
+      },
+      "networkStats": {
+        "routed": 11,
+        "total": 11,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 11,
+      "viaCount": 4,
+      "traceLengthMm": 171.2622979995123,
+      "drcTimeMs": 16.931291000000044,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit100",
+      "sha256": "10fb37f5d25cbd1f5a25006877304234050957defdb0068846e2a335bbdce1dd",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 112.95625000000001,
+      "iterations": 147,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 2.0422920000000317,
+        "highDensityRouteSolver": 108.27549999999997,
+        "traceSimplificationSolver": 0.4285409999999956
+      },
+      "networkStats": {
+        "routed": 36,
+        "total": 36,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 36,
+      "viaCount": 42,
+      "traceLengthMm": 483.98354121829607,
+      "drcTimeMs": 39.04891700000002,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit101",
+      "sha256": "f78b8b06f40d854f6ebb172af27b876c812943590e72460d2624f96e666148e1",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 138.215667,
+      "iterations": 196,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.7855829999999742,
+        "highDensityRouteSolver": 133.51766599999996,
+        "traceSimplificationSolver": 0.462333000000001
+      },
+      "networkStats": {
+        "routed": 36,
+        "total": 36,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 36,
+      "viaCount": 52,
+      "traceLengthMm": 613.6843721409787,
+      "drcTimeMs": 38.06487500000003,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit102",
+      "sha256": "be2f7dd05c3701c70375c19e22cfc88678bf2fa50f80dff045297d7577363e4e",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 115.30712499999998,
+      "iterations": 208,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.7431250000000205,
+        "highDensityRouteSolver": 109.54804100000001,
+        "traceSimplificationSolver": 0.6089590000000271
+      },
+      "networkStats": {
+        "routed": 36,
+        "total": 36,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 36,
+      "viaCount": 37,
+      "traceLengthMm": 671.4904053816448,
+      "drcTimeMs": 44.06820799999997,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit103",
+      "sha256": "fedeb54557b3adac1220a4a505023d94483cf247b0675abfd67926da78a3a90d",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 318.112167,
+      "iterations": 411,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 3.503750000000025,
+        "highDensityRouteSolver": 309.047334,
+        "traceSimplificationSolver": 1.0465829999999414
+      },
+      "networkStats": {
+        "routed": 49,
+        "total": 49,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 49,
+      "viaCount": 62,
+      "traceLengthMm": 881.801456510731,
+      "drcTimeMs": 51.65158399999996,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit104",
+      "sha256": "d4de57758671922a05ffe1773d16b68fbcb853131f29496cf231c0f3ae977520",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 104.742875,
+      "iterations": 150,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.270957999999979,
+        "highDensityRouteSolver": 101.06375,
+        "traceSimplificationSolver": 0.4580829999999878
+      },
+      "networkStats": {
+        "routed": 29,
+        "total": 29,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 29,
+      "viaCount": 38,
+      "traceLengthMm": 433.4848696434935,
+      "drcTimeMs": 34.774625000000015,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit105",
+      "sha256": "5556d909301b3c0dd54af060a549a9c8a8ad865bc8b539cd8617f5512360003d",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 205.74350000000004,
+      "iterations": 300,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 3.0863339999999653,
+        "highDensityRouteSolver": 197.67279200000002,
+        "traceSimplificationSolver": 0.8496250000000032
+      },
+      "networkStats": {
+        "routed": 47,
+        "total": 47,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 47,
+      "viaCount": 63,
+      "traceLengthMm": 907.6651619112268,
+      "drcTimeMs": 62.16108300000002,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit106",
+      "sha256": "85833ed9d00578a9f07ebcd010493fda782c0705b02c14d20341b5ed11af00ea",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 116.11787499999997,
+      "iterations": 146,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.2617919999999572,
+        "highDensityRouteSolver": 112.09379200000001,
+        "traceSimplificationSolver": 0.48512499999998226
+      },
+      "networkStats": {
+        "routed": 33,
+        "total": 33,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 33,
+      "viaCount": 26,
+      "traceLengthMm": 405.7603175926437,
+      "drcTimeMs": 31.16175000000004,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit107",
+      "sha256": "921c05dd389288c6ff37a4ded88034008123e90c280beca06c67bccea45ca928",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 28.850250000000017,
+      "iterations": 59,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.9028329999999869,
+        "highDensityRouteSolver": 25.827624999999955,
+        "traceSimplificationSolver": 0.2433330000000069
+      },
+      "networkStats": {
+        "routed": 19,
+        "total": 19,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 19,
+      "viaCount": 13,
+      "traceLengthMm": 157.79873926873339,
+      "drcTimeMs": 22.762541999999996,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit108",
+      "sha256": "ba25f7b19ec12b2e17389b7856bd506a5e51835f74966be72176cb84531824d1",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 87.83087499999999,
+      "iterations": 126,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.5365409999999997,
+        "highDensityRouteSolver": 83.78674999999998,
+        "traceSimplificationSolver": 0.40704099999999244
+      },
+      "networkStats": {
+        "routed": 33,
+        "total": 33,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 33,
+      "viaCount": 36,
+      "traceLengthMm": 384.2568399137531,
+      "drcTimeMs": 51.37216599999999,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit109",
+      "sha256": "1ae22defac9345590eadca3e6489291ce9e685b9730271f16e70f099cce45af2",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 513.497125,
+      "iterations": 517,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 4.700666999999953,
+        "highDensityRouteSolver": 503.3874579999999,
+        "traceSimplificationSolver": 0.7347079999999551
+      },
+      "networkStats": {
+        "routed": 62,
+        "total": 62,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 62,
+      "viaCount": 91,
+      "traceLengthMm": 1205.1779939176647,
+      "drcTimeMs": 105.418,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit110",
+      "sha256": "2ee6da3f3c4a719a7918706288dcb9e3631f250ad6542720ddccabcef4ad59ab",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 96.08866699999999,
+      "iterations": 47,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.9201249999999845,
+        "highDensityRouteSolver": 90.90970800000002,
+        "traceSimplificationSolver": 0.35133300000006784
+      },
+      "networkStats": {
+        "routed": 15,
+        "total": 15,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 15,
+      "viaCount": 5,
+      "traceLengthMm": 102.91708337149613,
+      "drcTimeMs": 31.81458299999997,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit111",
+      "sha256": "eb864c3eecce9708f47c5a79855c990c7b0b1da5e33662859ba18cdeff0bd6b0",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 180.36841600000002,
+      "iterations": 182,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 5.638292000000035,
+        "highDensityRouteSolver": 169.189708,
+        "traceSimplificationSolver": 1.2147919999999885
+      },
+      "networkStats": {
+        "routed": 39,
+        "total": 39,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 39,
+      "viaCount": 35,
+      "traceLengthMm": 578.0523963797483,
+      "drcTimeMs": 71.52974999999992,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit112",
+      "sha256": "aeb3b0b6ab0fabd2ae573a2dc4ab6f19c9bf6ac552ea52e9865c342ace513fd3",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 61.885625000000005,
+      "iterations": 60,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 3.000541999999996,
+        "highDensityRouteSolver": 52.31637499999994,
+        "traceSimplificationSolver": 0.25470800000005056
+      },
+      "networkStats": {
+        "routed": 20,
+        "total": 20,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 20,
+      "viaCount": 11,
+      "traceLengthMm": 163.09515982751438,
+      "drcTimeMs": 33.24087499999996,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit113",
+      "sha256": "8777f4dbf6361861990749f96722c66ea1d4c9b3fb6d54ef6da9502108e981f1",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 126.76887499999998,
+      "iterations": 107,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 5.717083000000002,
+        "highDensityRouteSolver": 112.57591699999995,
+        "traceSimplificationSolver": 1.3938329999999723
+      },
+      "networkStats": {
+        "routed": 28,
+        "total": 28,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 28,
+      "viaCount": 24,
+      "traceLengthMm": 347.40552492730745,
+      "drcTimeMs": 110.90212499999996,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit114",
+      "sha256": "402fc8281d39106decbf77580273904cdc0ca5140cb65377735e513687206b1c",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 563.920667,
+      "iterations": 695,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 7.283749999999998,
+        "highDensityRouteSolver": 548.392542,
+        "traceSimplificationSolver": 2.3806670000000167
+      },
+      "networkStats": {
+        "routed": 65,
+        "total": 65,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 65,
+      "viaCount": 116,
+      "traceLengthMm": 1530.427131729998,
+      "drcTimeMs": 103.78862500000002,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit115",
+      "sha256": "75baebd1e47db0e8cda146bb456b0202151dad170b80608a98519792cfc3735f",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 8.913582999999988,
+      "iterations": 24,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.4132499999999766,
+        "highDensityRouteSolver": 7.179374999999993,
+        "traceSimplificationSolver": 0.1292500000000132
+      },
+      "networkStats": {
+        "routed": 7,
+        "total": 7,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 7,
+      "viaCount": 0,
+      "traceLengthMm": 28.535731085802407,
+      "drcTimeMs": 14.290374999999983,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit116",
+      "sha256": "01d4cae77a67c52756dadd2d3ab03704825a9c9a69e7f81fb2b1576bd5a23d82",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 28.882749999999987,
+      "iterations": 48,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.2072499999999877,
+        "highDensityRouteSolver": 24.356667000000016,
+        "traceSimplificationSolver": 0.2950829999999769
+      },
+      "networkStats": {
+        "routed": 16,
+        "total": 16,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 16,
+      "viaCount": 10,
+      "traceLengthMm": 124.43856956535969,
+      "drcTimeMs": 17.222542000000033,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit118",
+      "sha256": "843c64299d2cd264594ab07b1cf340e513e7af6d511526b0138762e7fa2d0f58",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 117.07341600000001,
+      "iterations": 173,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.873708000000022,
+        "highDensityRouteSolver": 112.31120800000002,
+        "traceSimplificationSolver": 0.4557500000000232
+      },
+      "networkStats": {
+        "routed": 34,
+        "total": 34,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 34,
+      "viaCount": 30,
+      "traceLengthMm": 501.51258128770996,
+      "drcTimeMs": 31.397582999999997,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit119",
+      "sha256": "79504b720eb772aaf5d6c101aa92e5a8ddd3c0d5db9d2ee67f57d9ea7d4621ca",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 4.8927079999999705,
+      "iterations": 17,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.3104170000000295,
+        "highDensityRouteSolver": 3.07329100000004,
+        "traceSimplificationSolver": 0.09520799999995688
+      },
+      "networkStats": {
+        "routed": 4,
+        "total": 4,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 4,
+      "viaCount": 2,
+      "traceLengthMm": 8.754792659062337,
+      "drcTimeMs": 7.161416000000031,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit120",
+      "sha256": "87dde683d42acd789e7ee83c11c35bf1af0b9c31c1d8b07bdf13bd001bcef441",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 529.684292,
+      "iterations": 678,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 7.437208999999996,
+        "highDensityRouteSolver": 514.4862499999999,
+        "traceSimplificationSolver": 1.2173749999999472
+      },
+      "networkStats": {
+        "routed": 70,
+        "total": 70,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 70,
+      "viaCount": 112,
+      "traceLengthMm": 1853.949300566673,
+      "drcTimeMs": 102.78283399999998,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit121",
+      "sha256": "933ff7e80636ae676aaba714e835f3c89ab0035c34c30b6ddbe13bfb81cbad00",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 58.07662499999998,
+      "iterations": 75,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.0910839999999666,
+        "highDensityRouteSolver": 54.92095899999998,
+        "traceSimplificationSolver": 0.3122500000000059
+      },
+      "networkStats": {
+        "routed": 22,
+        "total": 22,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 22,
+      "viaCount": 17,
+      "traceLengthMm": 219.34250682632157,
+      "drcTimeMs": 31.114625000000046,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit123",
+      "sha256": "05a287f33c0aa8acbf8469f1e7a618c96a8299209bab3136cd65b1caf921a514",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 186.810292,
+      "iterations": 236,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.800625000000025,
+        "highDensityRouteSolver": 181.204542,
+        "traceSimplificationSolver": 0.515041999999994
+      },
+      "networkStats": {
+        "routed": 41,
+        "total": 41,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 41,
+      "viaCount": 36,
+      "traceLengthMm": 601.7476498063575,
+      "drcTimeMs": 45.072625000000016,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit124",
+      "sha256": "8ca9c157c4ee84c2b24730e011368f1b15b7d18069278a4b3ad10532d494b516",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 56.075833999999986,
+      "iterations": 72,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.1662090000000376,
+        "highDensityRouteSolver": 53.138874999999985,
+        "traceSimplificationSolver": 0.25279199999999946
+      },
+      "networkStats": {
+        "routed": 20,
+        "total": 20,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 20,
+      "viaCount": 13,
+      "traceLengthMm": 239.59835878438403,
+      "drcTimeMs": 41.375125000000025,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit125",
+      "sha256": "ccfeaae308002b1ade03cc9d01f92904af0c08c76b0d420ecddccff94d51914a",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 107.81237500000003,
+      "iterations": 163,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.3038339999999948,
+        "highDensityRouteSolver": 103.25495799999999,
+        "traceSimplificationSolver": 0.9209999999999923
+      },
+      "networkStats": {
+        "routed": 36,
+        "total": 36,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 36,
+      "viaCount": 27,
+      "traceLengthMm": 484.6615110242022,
+      "drcTimeMs": 41.40341599999999,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit126",
+      "sha256": "abb409eda6764df41e22f2131087840f687445ea459ca195a993ef3d62f7a1a4",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 24.467458000000022,
+      "iterations": 38,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.46054199999997536,
+        "highDensityRouteSolver": 22.83583299999998,
+        "traceSimplificationSolver": 0.14441599999997834
+      },
+      "networkStats": {
+        "routed": 9,
+        "total": 9,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 9,
+      "viaCount": 5,
+      "traceLengthMm": 81.8644687235412,
+      "drcTimeMs": 11.400833999999975,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit127",
+      "sha256": "c1f013e54b061b0f4bb704886eccfda4f4df4e02f591f65f3c03b27b2744b68c",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 13.103665999999976,
+      "iterations": 24,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.6997499999999945,
+        "highDensityRouteSolver": 10.850415999999996,
+        "traceSimplificationSolver": 0.1318329999999719
+      },
+      "networkStats": {
+        "routed": 7,
+        "total": 7,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 7,
+      "viaCount": 4,
+      "traceLengthMm": 41.99929414398668,
+      "drcTimeMs": 15.803875000000005,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit128",
+      "sha256": "589628717058a8f791434f06d95d7e9ff990b03b7f51cfd934b2e1117ce006aa",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 116.12175000000002,
+      "iterations": 130,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 2.2930000000000064,
+        "highDensityRouteSolver": 110.196458,
+        "traceSimplificationSolver": 0.4817920000000413
+      },
+      "networkStats": {
+        "routed": 34,
+        "total": 34,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 34,
+      "viaCount": 27,
+      "traceLengthMm": 452.7018647139678,
+      "drcTimeMs": 33.717375000000004,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit129",
+      "sha256": "2eb30a7297833a2a19ad88753bb7e2e08d162976f78786a7c960ad65aff1ff6d",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 9.568874999999991,
+      "iterations": 29,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.4200419999999667,
+        "highDensityRouteSolver": 7.962166999999965,
+        "traceSimplificationSolver": 0.1586669999999799
+      },
+      "networkStats": {
+        "routed": 9,
+        "total": 9,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 9,
+      "viaCount": 3,
+      "traceLengthMm": 48.17561966681053,
+      "drcTimeMs": 16.863167000000033,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit131",
+      "sha256": "130ce8c6191b9aedbae67fc7396239c1560dd735c117e264a954a3efe93b5409",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 25.16941700000001,
+      "iterations": 36,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.5202079999999967,
+        "highDensityRouteSolver": 23.141999999999967,
+        "traceSimplificationSolver": 0.18099999999998317
+      },
+      "networkStats": {
+        "routed": 11,
+        "total": 11,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 11,
+      "viaCount": 6,
+      "traceLengthMm": 90.89170182282385,
+      "drcTimeMs": 14.56049999999999,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit132",
+      "sha256": "7bf890d61d4adac982f0d0c2b700f675ee80a7db89c0fd223c12f850acff9f34",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 26.343583000000024,
+      "iterations": 39,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.9556670000000054,
+        "highDensityRouteSolver": 22.892583000000002,
+        "traceSimplificationSolver": 0.17200000000002547
+      },
+      "networkStats": {
+        "routed": 12,
+        "total": 12,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 12,
+      "viaCount": 5,
+      "traceLengthMm": 83.69602560145611,
+      "drcTimeMs": 14.03770800000001,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit133",
+      "sha256": "23b085fab42bcec045a96944bd238da659674c969a42a99b0e94be96be60ab87",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 30.144665999999972,
+      "iterations": 41,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.879291999999964,
+        "highDensityRouteSolver": 27.24962499999998,
+        "traceSimplificationSolver": 0.17404199999998582
+      },
+      "networkStats": {
+        "routed": 11,
+        "total": 11,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 11,
+      "viaCount": 8,
+      "traceLengthMm": 94.77470731238773,
+      "drcTimeMs": 16.040750000000003,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit134",
+      "sha256": "543822be4cde06a5a5a8f1cb2d08057d6ebe96ae1d01e24c7263b45613fcb200",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 529.299667,
+      "iterations": 662,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 2.593666999999982,
+        "highDensityRouteSolver": 522.921833,
+        "traceSimplificationSolver": 0.7950000000000728
+      },
+      "networkStats": {
+        "routed": 61,
+        "total": 61,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 61,
+      "viaCount": 116,
+      "traceLengthMm": 1536.0432710190075,
+      "drcTimeMs": 79.195291,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit135",
+      "sha256": "892f83a53f614d5ed7e37a67d33a69d8e0435092f17d84d59aab373f83569701",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 59.49491599999999,
+      "iterations": 69,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.104332999999997,
+        "highDensityRouteSolver": 55.56162499999999,
+        "traceSimplificationSolver": 0.3528749999999832
+      },
+      "networkStats": {
+        "routed": 20,
+        "total": 20,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 20,
+      "viaCount": 14,
+      "traceLengthMm": 191.38647073103016,
+      "drcTimeMs": 24.77283299999999,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit136",
+      "sha256": "4a32282793d5aed90455ee741932981cbe52a28fc0a98d8d7a1d4fc12f5c554c",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 26.742999999999995,
+      "iterations": 40,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.9773329999999874,
+        "highDensityRouteSolver": 23.555583000000013,
+        "traceSimplificationSolver": 0.201041000000032
+      },
+      "networkStats": {
+        "routed": 13,
+        "total": 13,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 13,
+      "viaCount": 6,
+      "traceLengthMm": 78.85062115081291,
+      "drcTimeMs": 18.173959000000025,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit137",
+      "sha256": "37fd9ecbf7d2b12a6d795c249769760b86374214fbf3b91abc35152687d39102",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 185.25912499999998,
+      "iterations": 190,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 3.0507499999999936,
+        "highDensityRouteSolver": 178.35416700000002,
+        "traceSimplificationSolver": 0.5241249999999695
+      },
+      "networkStats": {
+        "routed": 43,
+        "total": 43,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 43,
+      "viaCount": 36,
+      "traceLengthMm": 644.4854650943912,
+      "drcTimeMs": 45.47533299999998,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit138",
+      "sha256": "91ad4a0cc0ad1915c861c517965c57b7a57ab478c736fb6c48c3ffeccc8c7ae4",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 174.01225,
+      "iterations": 240,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 2.638666999999998,
+        "highDensityRouteSolver": 167.471542,
+        "traceSimplificationSolver": 0.5729579999999714
+      },
+      "networkStats": {
+        "routed": 49,
+        "total": 49,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 49,
+      "viaCount": 48,
+      "traceLengthMm": 943.9466949137083,
+      "drcTimeMs": 45.96558299999998,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit139",
+      "sha256": "d34e31050f6b6e73d3a4b0b5c8ccd6ef3909bdcb2bb4eea08b8ebdcbac49c105",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 351.24966700000004,
+      "iterations": 439,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 4.367707999999993,
+        "highDensityRouteSolver": 343.764208,
+        "traceSimplificationSolver": 0.6354580000000851
+      },
+      "networkStats": {
+        "routed": 51,
+        "total": 51,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 51,
+      "viaCount": 82,
+      "traceLengthMm": 1148.3809228815455,
+      "drcTimeMs": 60.21012499999995,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit140",
+      "sha256": "4a96d38191bc6c85cb4c4ec6732eb6607fecd2916d2611cd14e7bf5bd1744127",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 229.690792,
+      "iterations": 306,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 3.616624999999999,
+        "highDensityRouteSolver": 221.623292,
+        "traceSimplificationSolver": 1.0419999999999732
+      },
+      "networkStats": {
+        "routed": 48,
+        "total": 48,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 48,
+      "viaCount": 70,
+      "traceLengthMm": 906.676192398739,
+      "drcTimeMs": 50.344749999999976,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit141",
+      "sha256": "ee6df3d9ad213dbb9a92b566990aeb91943985778d8f45ae252ebb5ff66e415c",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 149.42950000000002,
+      "iterations": 214,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 2.762750000000011,
+        "highDensityRouteSolver": 143.61924999999997,
+        "traceSimplificationSolver": 0.6487500000000068
+      },
+      "networkStats": {
+        "routed": 46,
+        "total": 46,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 46,
+      "viaCount": 56,
+      "traceLengthMm": 617.7644130575378,
+      "drcTimeMs": 44.71549999999996,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit142",
+      "sha256": "1308500695f39fdd7a37866e8032f0d4f2e388f670431fe7a017eaa78d3968b9",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 188.63154099999997,
+      "iterations": 239,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 2.761458000000033,
+        "highDensityRouteSolver": 181.747542,
+        "traceSimplificationSolver": 0.9649590000000217
+      },
+      "networkStats": {
+        "routed": 41,
+        "total": 41,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 41,
+      "viaCount": 39,
+      "traceLengthMm": 827.4752866919796,
+      "drcTimeMs": 42.62454200000002,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit143",
+      "sha256": "31e31fd41af1ec43f4851d833e3140706af0a230a2e94ed76661be41f98774fb",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 299.01045799999997,
+      "iterations": 322,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 5.175290999999959,
+        "highDensityRouteSolver": 286.257959,
+        "traceSimplificationSolver": 1.5029159999999138
+      },
+      "networkStats": {
+        "routed": 58,
+        "total": 58,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 58,
+      "viaCount": 83,
+      "traceLengthMm": 1055.1708236268744,
+      "drcTimeMs": 70.16895800000009,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit144",
+      "sha256": "dbd928b56d45480fc664278b2ae7bed2ebfc7775eb049522ffedcf2cfe1df672",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 155.09949999999998,
+      "iterations": 130,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 2.055250000000001,
+        "highDensityRouteSolver": 149.14662499999997,
+        "traceSimplificationSolver": 0.8043749999999932
+      },
+      "networkStats": {
+        "routed": 33,
+        "total": 33,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 33,
+      "viaCount": 32,
+      "traceLengthMm": 451.1015548751606,
+      "drcTimeMs": 33.04858300000001,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit145",
+      "sha256": "fadb40fd7de213a82c713d9fa3fa85554289caf303e5f02799732703e17e9605",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 1194.589125,
+      "iterations": 307,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 6.544790999999975,
+        "highDensityRouteSolver": 1167.7687919999998,
+        "traceSimplificationSolver": 1.1148330000000897
+      },
+      "networkStats": {
+        "routed": 41,
+        "total": 41,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 41,
+      "viaCount": 61,
+      "traceLengthMm": 790.8039637161055,
+      "drcTimeMs": 153.0151249999999,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit146",
+      "sha256": "6f373086b9f2de56c102b72b80e167c3f0b24d9a9354931626764cd50c8d6d19",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 696.346416,
+      "iterations": 450,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 10.535124999999994,
+        "highDensityRouteSolver": 675.8485830000001,
+        "traceSimplificationSolver": 0.7587499999999636
+      },
+      "networkStats": {
+        "routed": 51,
+        "total": 51,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 51,
+      "viaCount": 87,
+      "traceLengthMm": 998.9655590964791,
+      "drcTimeMs": 94.83933300000012,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit147",
+      "sha256": "41862aa1061e63c8ddcb21c2205e00cc2d590be76e21809aee097fb54bb09ef7",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 21.74566600000003,
+      "iterations": 19,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.49524999999999864,
+        "highDensityRouteSolver": 18.683042,
+        "traceSimplificationSolver": 0.15408300000001418
+      },
+      "networkStats": {
+        "routed": 4,
+        "total": 4,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 4,
+      "viaCount": 4,
+      "traceLengthMm": 34.365021528733834,
+      "drcTimeMs": 19.57574999999997,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit148",
+      "sha256": "99d68fc7c9ff6e2b3244c501be7a0086b0aab6372a6909763ae7984d0c9c70e9",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 79.060541,
+      "iterations": 66,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 2.641040999999973,
+        "highDensityRouteSolver": 70.60779200000002,
+        "traceSimplificationSolver": 0.8136670000000095
+      },
+      "networkStats": {
+        "routed": 20,
+        "total": 20,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 20,
+      "viaCount": 19,
+      "traceLengthMm": 197.41909186096828,
+      "drcTimeMs": 45.67099999999999,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit149",
+      "sha256": "3a3c563ca6512262695f584049b2932ff94ea124a04ab6ac24cb2e4c6cd9f222",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 73.24924999999996,
+      "iterations": 110,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 2.0806670000000054,
+        "highDensityRouteSolver": 68.64891699999998,
+        "traceSimplificationSolver": 0.38854199999997263
+      },
+      "networkStats": {
+        "routed": 34,
+        "total": 34,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 34,
+      "viaCount": 29,
+      "traceLengthMm": 363.56834455320154,
+      "drcTimeMs": 52.132375000000025,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit150",
+      "sha256": "d5df8669f80d18933a9627d3a775a958f61e2d1225cc688a31430d2c54826102",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 26.78345900000005,
+      "iterations": 31,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.7537919999999758,
+        "highDensityRouteSolver": 24.112459,
+        "traceSimplificationSolver": 0.31333399999999756
+      },
+      "networkStats": {
+        "routed": 9,
+        "total": 9,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 9,
+      "viaCount": 2,
+      "traceLengthMm": 82.29021332206057,
+      "drcTimeMs": 19.302084000000036,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit151",
+      "sha256": "b72ee3d0e0cc8d20192617bf2451807cda3c4338b49be0f397f28433ae9fa122",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 866.512875,
+      "iterations": 720,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 6.327292,
+        "highDensityRouteSolver": 853.884834,
+        "traceSimplificationSolver": 0.9771670000000086
+      },
+      "networkStats": {
+        "routed": 69,
+        "total": 69,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 69,
+      "viaCount": 132,
+      "traceLengthMm": 1734.4177065920571,
+      "drcTimeMs": 146.34133399999996,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit152",
+      "sha256": "f330ab77f4fe2ab5ca16893dbb7f18c1810bbf6194021838a905e60f1e94da30",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 466.75250000000005,
+      "iterations": 541,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 5.936832999999979,
+        "highDensityRouteSolver": 450.03508300000004,
+        "traceSimplificationSolver": 1.4254169999999249
+      },
+      "networkStats": {
+        "routed": 60,
+        "total": 60,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 60,
+      "viaCount": 102,
+      "traceLengthMm": 1289.1896968196545,
+      "drcTimeMs": 90.45516699999996,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit155",
+      "sha256": "8e3e2abd5349c7f10b7f84f29a4ec552cd3f44c34ab74c8b1eb0c3bb46c9a626",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 127.39687500000002,
+      "iterations": 155,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.7427090000000476,
+        "highDensityRouteSolver": 122.59270900000001,
+        "traceSimplificationSolver": 0.8198340000000144
+      },
+      "networkStats": {
+        "routed": 40,
+        "total": 40,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 40,
+      "viaCount": 50,
+      "traceLengthMm": 518.2573394458003,
+      "drcTimeMs": 51.23812499999997,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit156",
+      "sha256": "c41f883409c4dffb8664a8919ab359eb21709ae41c7cf29961da72dad028c158",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 453.02599999999995,
+      "iterations": 562,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 3.9642499999999927,
+        "highDensityRouteSolver": 445.75100000000003,
+        "traceSimplificationSolver": 0.6984999999999673
+      },
+      "networkStats": {
+        "routed": 58,
+        "total": 58,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 58,
+      "viaCount": 99,
+      "traceLengthMm": 1308.054675043891,
+      "drcTimeMs": 86.09875,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit157",
+      "sha256": "64fe859fe0f3426b16f97fc20a141809214edd24c7987f9654f9867bdc855582",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 52.474249999999984,
+      "iterations": 65,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.5396670000000086,
+        "highDensityRouteSolver": 48.66158300000001,
+        "traceSimplificationSolver": 0.2692910000000097
+      },
+      "networkStats": {
+        "routed": 21,
+        "total": 21,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 21,
+      "viaCount": 14,
+      "traceLengthMm": 159.25623992445605,
+      "drcTimeMs": 19.013832999999977,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit158",
+      "sha256": "37c3bf0ec878ded7a5ab32a8092466187d472e9c57eb55ade07fb363ab8e2922",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 122.44320799999997,
+      "iterations": 153,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 2.782875000000047,
+        "highDensityRouteSolver": 115.42099999999999,
+        "traceSimplificationSolver": 0.4835830000000101
+      },
+      "networkStats": {
+        "routed": 39,
+        "total": 39,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 39,
+      "viaCount": 36,
+      "traceLengthMm": 430.66418875977473,
+      "drcTimeMs": 34.14791700000001,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit162",
+      "sha256": "d159db3c515cb21c4945beeaef0fef589365c40b9803c8aab50b5b7f416b900a",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 55.886333000000036,
+      "iterations": 77,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.1993329999999673,
+        "highDensityRouteSolver": 51.912915999999996,
+        "traceSimplificationSolver": 0.38091700000001083
+      },
+      "networkStats": {
+        "routed": 22,
+        "total": 22,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 22,
+      "viaCount": 15,
+      "traceLengthMm": 198.37323446085563,
+      "drcTimeMs": 25.579958000000033,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit164",
+      "sha256": "a4e9c8154019f8862ad231abff8cb166a4f5c81cfe76a9387ae25f5726505473",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 328.24474999999995,
+      "iterations": 428,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 3.00079199999999,
+        "highDensityRouteSolver": 321.8315840000001,
+        "traceSimplificationSolver": 0.6635410000000093
+      },
+      "networkStats": {
+        "routed": 55,
+        "total": 55,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 55,
+      "viaCount": 76,
+      "traceLengthMm": 1105.50483710126,
+      "drcTimeMs": 56.13774999999998,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit165",
+      "sha256": "c7de6a3db47e5efcce509cbae0d13f3c4e229858d64c93db2460dcaf7a82184b",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 7.90908300000001,
+      "iterations": 24,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.4097499999999741,
+        "highDensityRouteSolver": 6.166583000000003,
+        "traceSimplificationSolver": 0.12316600000002609
+      },
+      "networkStats": {
+        "routed": 7,
+        "total": 7,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 7,
+      "viaCount": 3,
+      "traceLengthMm": 25.984674800435027,
+      "drcTimeMs": 17.09891700000003,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit168",
+      "sha256": "5768a9c6a065217aa19aecc36a8959fae5b091182e5f05143776e8cec1989f41",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 17.749541000000022,
+      "iterations": 29,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.7850419999999758,
+        "highDensityRouteSolver": 14.816500000000019,
+        "traceSimplificationSolver": 0.1256670000000213
+      },
+      "networkStats": {
+        "routed": 8,
+        "total": 8,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 8,
+      "viaCount": 4,
+      "traceLengthMm": 44.460797699442494,
+      "drcTimeMs": 24.77904099999995,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit172",
+      "sha256": "35a56393b195f2445466d10fc756710b8aa91f611602bd41117fab705bb6e195",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 16.809792000000016,
+      "iterations": 35,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.4544999999999959,
+        "highDensityRouteSolver": 14.889875000000018,
+        "traceSimplificationSolver": 0.18316700000002584
+      },
+      "networkStats": {
+        "routed": 11,
+        "total": 11,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 11,
+      "viaCount": 8,
+      "traceLengthMm": 61.82330770268669,
+      "drcTimeMs": 15.44658400000003,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit173",
+      "sha256": "a366c29aefdbdd803e18504ddf8b0d8a83e34e944002bcd47e0af38e5577d752",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 394.93479199999996,
+      "iterations": 649,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 3.2328749999999786,
+        "highDensityRouteSolver": 388.168666,
+        "traceSimplificationSolver": 0.8019590000000107
+      },
+      "networkStats": {
+        "routed": 67,
+        "total": 67,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 67,
+      "viaCount": 100,
+      "traceLengthMm": 1595.145971452567,
+      "drcTimeMs": 76.11979199999996,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit174",
+      "sha256": "c9aaf48b95beea856502eb4d11e840b7b3593928d681b668947293115a7fe40c",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 24.26316700000001,
+      "iterations": 32,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.0954999999999586,
+        "highDensityRouteSolver": 20.179750000000013,
+        "traceSimplificationSolver": 0.7004999999999768
+      },
+      "networkStats": {
+        "routed": 10,
+        "total": 10,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 10,
+      "viaCount": 6,
+      "traceLengthMm": 42.82090557190716,
+      "drcTimeMs": 18.533042000000023,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit175",
+      "sha256": "71bed57f1792c0a7ac988024d07cb0a25c8286cfbf0df4de86d1552fab0ca5fa",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 87.01641700000005,
+      "iterations": 98,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.5550830000000246,
+        "highDensityRouteSolver": 82.70083300000005,
+        "traceSimplificationSolver": 0.48212499999999636
+      },
+      "networkStats": {
+        "routed": 23,
+        "total": 23,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 23,
+      "viaCount": 18,
+      "traceLengthMm": 298.4269504310844,
+      "drcTimeMs": 35.14474999999999,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit176",
+      "sha256": "f17d72c279d4800bcb892db04f9440ac9b0e2eb9e6bfa15f10241625b25e4611",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 77.01937500000003,
+      "iterations": 129,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.646792000000005,
+        "highDensityRouteSolver": 71.96970900000002,
+        "traceSimplificationSolver": 0.39975000000004
+      },
+      "networkStats": {
+        "routed": 36,
+        "total": 36,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 36,
+      "viaCount": 30,
+      "traceLengthMm": 444.06409928485306,
+      "drcTimeMs": 34.14708299999995,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit177",
+      "sha256": "dff5904d61f6b071081e59f7ff78f6af7883fbbfe6fe3d321c511a2127d47966",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 25.469333000000006,
+      "iterations": 42,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.791417000000024,
+        "highDensityRouteSolver": 22.898750000000007,
+        "traceSimplificationSolver": 0.199292000000014
+      },
+      "networkStats": {
+        "routed": 12,
+        "total": 12,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 12,
+      "viaCount": 8,
+      "traceLengthMm": 107.12461042051928,
+      "drcTimeMs": 15.648582999999974,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit178",
+      "sha256": "561fc8ed604f8e171955cfd9e778e7f98d2731bb54a40185b05fdbdf81ffc2ad",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 352.027041,
+      "iterations": 269,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 5.175125000000037,
+        "highDensityRouteSolver": 339.68820800000003,
+        "traceSimplificationSolver": 1.210458000000017
+      },
+      "networkStats": {
+        "routed": 55,
+        "total": 55,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 55,
+      "viaCount": 76,
+      "traceLengthMm": 798.2051308316331,
+      "drcTimeMs": 76.53075000000001,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit179",
+      "sha256": "2befe75b99c5a20c92eab98fa1766e95a65afc0cab2766592d5ea5c06d969f09",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 127.794667,
+      "iterations": 113,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 1.8362500000000068,
+        "highDensityRouteSolver": 122.23341699999997,
+        "traceSimplificationSolver": 0.444500000000005
+      },
+      "networkStats": {
+        "routed": 30,
+        "total": 30,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 30,
+      "viaCount": 26,
+      "traceLengthMm": 416.43614511883214,
+      "drcTimeMs": 44.28420900000003,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit180",
+      "sha256": "e5217950cfa70c1bd1a85e1c66d0c448ef2d4c0f66fcf5d7e5894dd00885c7eb",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 27.493540999999993,
+      "iterations": 50,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 0.7417080000000169,
+        "highDensityRouteSolver": 24.427250000000015,
+        "traceSimplificationSolver": 0.24699999999995725
+      },
+      "networkStats": {
+        "routed": 15,
+        "total": 15,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 15,
+      "viaCount": 8,
+      "traceLengthMm": 127.50278435270982,
+      "drcTimeMs": 16.879625000000033,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit181",
+      "sha256": "27b27bc3cf6b5dd6751e5f4db57c7fdfd66a3f7364364e8a43771feb583b16b7",
+      "solver": "AutoroutingPipelineSolver9_PreloadedTraceGraph",
+      "didSolve": true,
+      "didTimeout": false,
+      "relaxedDrcPassed": true,
+      "elapsedTimeMs": 381.26616599999994,
+      "iterations": 561,
+      "phaseTimeMs": {
+        "preprocessSimpleRouteJsonSolver": 3.4732500000000073,
+        "highDensityRouteSolver": 372.819125,
+        "traceSimplificationSolver": 1.516791000000012
+      },
+      "networkStats": {
+        "routed": 61,
+        "total": 61,
+        "pass": 1,
+        "failed": 0
+      },
+      "traceCount": 61,
+      "viaCount": 92,
+      "traceLengthMm": 1569.5180464356622,
+      "drcTimeMs": 93.40937499999995,
+      "drcErrorCount": 0,
+      "drcErrorTypes": {},
+      "drcErrorExamples": []
+    }
+  ]
+}

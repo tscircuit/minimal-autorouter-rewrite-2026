@@ -1,0 +1,1027 @@
+{
+  "method": "Prepare allowed samples, preserve all JSON constraints, hash, serialize, and validate exact board contract; no routing or network solve requests.",
+  "summary": [
+    {
+      "dataset": "dataset01",
+      "total": 85,
+      "eligible": 85
+    },
+    {
+      "dataset": "dataset-srj18",
+      "total": 16,
+      "eligible": 16
+    }
+  ],
+  "results": [
+    {
+      "dataset": "dataset01",
+      "sample": "circuit001",
+      "sha256": "f471f6ea8d1e6eaf6a46f6e3a1a762d51e6c53d0742b43dd190530a7d720eda7",
+      "eligible": true,
+      "problemHash": "ec968adca8ffa3e637c469bfe5e4f85160da877d698fe47fc944b9cd7c949122",
+      "requestInputBytes": 14080,
+      "taskCount": 6,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit002",
+      "sha256": "494c073e772bdef423343210595f75cf969afa9983b361800ef9298fa550c91d",
+      "eligible": true,
+      "problemHash": "71b81f0c5c7f10ec5d654ec3886566bcf42c5b41612e93639cdf3309b7095517",
+      "requestInputBytes": 67942,
+      "taskCount": 40,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit003",
+      "sha256": "9a7e1fc231f6d96c3458ccd6a80cf4e4632ac9a58c597414b4b94f0f7ba621b6",
+      "eligible": true,
+      "problemHash": "0e526968a0d05364e6f7893e397fb263afe8eaa832958537ec6f31bd2d793daf",
+      "requestInputBytes": 39350,
+      "taskCount": 20,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit004",
+      "sha256": "5936f1e89ac71f59a0e7c51016a939d877c70f539fce706c9cc222ffa8a27e64",
+      "eligible": true,
+      "problemHash": "5de27d198eb585088da736812999061e6a469624ef5f2ff6e508c3eca87b59db",
+      "requestInputBytes": 101800,
+      "taskCount": 38,
+      "fixedTraceCount": 2
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit005",
+      "sha256": "e83586f66f9d636cdc9824127b80d9e31dd37a2b508d0c20fef93388c4c9daa4",
+      "eligible": true,
+      "problemHash": "5bc020b0bf4223c4315097f8799c288a4616c934106f3e9a6c9b9f01a851fb58",
+      "requestInputBytes": 9913,
+      "taskCount": 7,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit006",
+      "sha256": "b5c0f36acc06f565d3ea5975e6cd47d41cc0a57895e2993556ddc2fedfe15f8b",
+      "eligible": true,
+      "problemHash": "e50377170ed10ffa726cf8a698eae4f2aac5eabea8455f5d46c8f88aa748f5cf",
+      "requestInputBytes": 12574,
+      "taskCount": 9,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit007",
+      "sha256": "ea50c25f6635344d84603b13167cb27696022e3b41d89070436ea8b16370ef2c",
+      "eligible": true,
+      "problemHash": "1f87f8fb59396049d2360befb2dbd047e0f997c7205982af560f3383c2bdbfde",
+      "requestInputBytes": 13045,
+      "taskCount": 7,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit010",
+      "sha256": "fd13f4fff86519b7b6f6ec2147b4a7091b907df59076655d2f113f5119a338c7",
+      "eligible": true,
+      "problemHash": "1fde88324f6b9a0b9e5839930885e41fb0768a005cc28832751a673e767f2212",
+      "requestInputBytes": 42135,
+      "taskCount": 25,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit011",
+      "sha256": "08fe38cd04875cd5245d8a9be2640c71ff699ba8caa84ea57e938d6b09dcec2b",
+      "eligible": true,
+      "problemHash": "a621ac79354de4535b1e76e67060fad953f7a8e745017b0b18a8f5adb0531048",
+      "requestInputBytes": 26723,
+      "taskCount": 14,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit012",
+      "sha256": "c2ddb93ad2e09546afa018758a2cfbce47e8d88d5f904c5bcf1fcc722ab800cb",
+      "eligible": true,
+      "problemHash": "148f5568bd7c68434949d90e9e4340c02484c8fd21349aba0c8c53a2af787010",
+      "requestInputBytes": 14809,
+      "taskCount": 10,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit013",
+      "sha256": "08b145e8d55ae7c4a5a19e954e964a6ee3559dd33beca7cbc0e817d7072b3951",
+      "eligible": true,
+      "problemHash": "86cdc76a869fc379bdbc61711de715ff3d11dcf12686dcb520515dbcf1b9e18a",
+      "requestInputBytes": 10508,
+      "taskCount": 8,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit014",
+      "sha256": "24f6b804ab58f1de69760bf762002fea9421d6b65338a48f37c9ea720ea38c6e",
+      "eligible": true,
+      "problemHash": "c85af0aba182717e6a0ef6eff9193b1d54270f101d171e24bbfcb3d214dfe24a",
+      "requestInputBytes": 13083,
+      "taskCount": 8,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit015",
+      "sha256": "a585d63b60ddb59c5a0e6afbad6f45b873625eeb2afec98388d2b4c12e7789b0",
+      "eligible": true,
+      "problemHash": "8bb29df443f9226cd50adde195e36da104237ae860ae027f44285766b1e8a750",
+      "requestInputBytes": 29146,
+      "taskCount": 19,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit018",
+      "sha256": "ce8a5c41c04d2b98bb1e14abd12a7bd75b472cccb3fd018d439855c05a6c74c6",
+      "eligible": true,
+      "problemHash": "c3972ae3731c0dc9ad9d5e19ccb588ee4ddc63fe2b43eea47b184984213846c1",
+      "requestInputBytes": 95391,
+      "taskCount": 31,
+      "fixedTraceCount": 6
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit019",
+      "sha256": "81648b3c78c771e36e596991e0adca8ff7cb05d35405e67c78f6c688bf3b7314",
+      "eligible": true,
+      "problemHash": "bb500bb54041d9cfd5b3ca350eec9c31e82f8e094613e115eb03431c5d22ea95",
+      "requestInputBytes": 7920,
+      "taskCount": 5,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit020",
+      "sha256": "7b60e7fd36d3691ac603230f56089ff2dd545bc14f6609cf4d60d50833c1b40e",
+      "eligible": true,
+      "problemHash": "9803869f74467bd927f195fb06e04241ece3db36dd270627e04e65382f63863d",
+      "requestInputBytes": 6070,
+      "taskCount": 3,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit021",
+      "sha256": "589934e75f71b8fc4ec28e81c1acc489bd148cf870a305211efe90f09f7f6251",
+      "eligible": true,
+      "problemHash": "395b1dcbdd404eaa5268539418f1922055799f48565ba3e02bf6ec4945ebea28",
+      "requestInputBytes": 16079,
+      "taskCount": 11,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit100",
+      "sha256": "10fb37f5d25cbd1f5a25006877304234050957defdb0068846e2a335bbdce1dd",
+      "eligible": true,
+      "problemHash": "42e447b704a5fa850e4bf4d8732de7b4b8e494790fc197104b2f2c668d8d4516",
+      "requestInputBytes": 55892,
+      "taskCount": 36,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit101",
+      "sha256": "f78b8b06f40d854f6ebb172af27b876c812943590e72460d2624f96e666148e1",
+      "eligible": true,
+      "problemHash": "bbfbd59bdafee9a11c05cb84de444cc51d4c804c7fdb4d4f485766c5bc66c124",
+      "requestInputBytes": 54325,
+      "taskCount": 36,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit102",
+      "sha256": "be2f7dd05c3701c70375c19e22cfc88678bf2fa50f80dff045297d7577363e4e",
+      "eligible": true,
+      "problemHash": "45ad0e19ee99746ab67aa08dbbd5d37033bec4ae3e2d626ad439636c0bda8282",
+      "requestInputBytes": 59065,
+      "taskCount": 36,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit103",
+      "sha256": "fedeb54557b3adac1220a4a505023d94483cf247b0675abfd67926da78a3a90d",
+      "eligible": true,
+      "problemHash": "08910413df4c38465a87bc1e7c367a242535daef19d52118d2e4ade96840e226",
+      "requestInputBytes": 81896,
+      "taskCount": 49,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit104",
+      "sha256": "d4de57758671922a05ffe1773d16b68fbcb853131f29496cf231c0f3ae977520",
+      "eligible": true,
+      "problemHash": "044e95a18a6bce0deeb64dbbc4ae0d59942b93560058b53400e6cbf85fae8cfc",
+      "requestInputBytes": 42874,
+      "taskCount": 29,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit105",
+      "sha256": "5556d909301b3c0dd54af060a549a9c8a8ad865bc8b539cd8617f5512360003d",
+      "eligible": true,
+      "problemHash": "5474ae2b44f0efa81e4f5573d9d1d29186c88e889a6f21154a31ee0d41f0bc36",
+      "requestInputBytes": 65857,
+      "taskCount": 47,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit106",
+      "sha256": "85833ed9d00578a9f07ebcd010493fda782c0705b02c14d20341b5ed11af00ea",
+      "eligible": true,
+      "problemHash": "7f5406c28ac9af12e5a2178f6385507313bf209b3089b1512ce7c41a1ae47a27",
+      "requestInputBytes": 51901,
+      "taskCount": 33,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit107",
+      "sha256": "921c05dd389288c6ff37a4ded88034008123e90c280beca06c67bccea45ca928",
+      "eligible": true,
+      "problemHash": "b1b4d0c00b35a0fb30a0ea72b6626955194b2f43e3c72c10b4dcf45714e8fbcf",
+      "requestInputBytes": 29609,
+      "taskCount": 19,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit108",
+      "sha256": "ba25f7b19ec12b2e17389b7856bd506a5e51835f74966be72176cb84531824d1",
+      "eligible": true,
+      "problemHash": "1b3c6e5412aa536488dd2712eae3b0ea1223cda6364ee9bb5ffa0984a3205bd9",
+      "requestInputBytes": 49722,
+      "taskCount": 33,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit109",
+      "sha256": "1ae22defac9345590eadca3e6489291ce9e685b9730271f16e70f099cce45af2",
+      "eligible": true,
+      "problemHash": "e60188b1859d4cff1cfdcd25f5b7247cdc2fd09a195addddddc4acd5be7b70bb",
+      "requestInputBytes": 91882,
+      "taskCount": 62,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit110",
+      "sha256": "2ee6da3f3c4a719a7918706288dcb9e3631f250ad6542720ddccabcef4ad59ab",
+      "eligible": true,
+      "problemHash": "1d467cd38e4f420f0f2d752887aaded410e7308ef7f8204c170aa2503c100d06",
+      "requestInputBytes": 21043,
+      "taskCount": 15,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit111",
+      "sha256": "eb864c3eecce9708f47c5a79855c990c7b0b1da5e33662859ba18cdeff0bd6b0",
+      "eligible": true,
+      "problemHash": "5e1b852c59f28e7f5e637373e23354d65942b0ba56faac1f9c36f843c4ff64a6",
+      "requestInputBytes": 73777,
+      "taskCount": 39,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit112",
+      "sha256": "aeb3b0b6ab0fabd2ae573a2dc4ab6f19c9bf6ac552ea52e9865c342ace513fd3",
+      "eligible": true,
+      "problemHash": "e4b3069bdb2ef7c5896f6b7750de4911acabf636771edd244b16887420dd91bc",
+      "requestInputBytes": 28753,
+      "taskCount": 20,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit113",
+      "sha256": "8777f4dbf6361861990749f96722c66ea1d4c9b3fb6d54ef6da9502108e981f1",
+      "eligible": true,
+      "problemHash": "59df6ae3e1dec3b664e2dd8272496fad5967429f3c8f0e5326a820882f14a82b",
+      "requestInputBytes": 41868,
+      "taskCount": 28,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit114",
+      "sha256": "402fc8281d39106decbf77580273904cdc0ca5140cb65377735e513687206b1c",
+      "eligible": true,
+      "problemHash": "9813e5d614cb76700e442a1cf2de78e4f775c443715f75b9552daad6a8a7f6fe",
+      "requestInputBytes": 99340,
+      "taskCount": 65,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit115",
+      "sha256": "75baebd1e47db0e8cda146bb456b0202151dad170b80608a98519792cfc3735f",
+      "eligible": true,
+      "problemHash": "5ed2aac8fb097b24eb8931707b6c9a15d92e4217544083fd73cfbacd354a4ed8",
+      "requestInputBytes": 12063,
+      "taskCount": 7,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit116",
+      "sha256": "01d4cae77a67c52756dadd2d3ab03704825a9c9a69e7f81fb2b1576bd5a23d82",
+      "eligible": true,
+      "problemHash": "e29d62354cebb90887964caf15667928e83f12922c2ee4ffdf1113bd0001404d",
+      "requestInputBytes": 27966,
+      "taskCount": 16,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit118",
+      "sha256": "843c64299d2cd264594ab07b1cf340e513e7af6d511526b0138762e7fa2d0f58",
+      "eligible": true,
+      "problemHash": "1815fef6944b7f77ba0cbf3634d658257bc569f9164cb91b150c8ea53f037a5d",
+      "requestInputBytes": 48825,
+      "taskCount": 34,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit119",
+      "sha256": "79504b720eb772aaf5d6c101aa92e5a8ddd3c0d5db9d2ee67f57d9ea7d4621ca",
+      "eligible": true,
+      "problemHash": "effec1cc1ff9889c915ee2f262ec0d35fe925cab81ddc0ca1af5cf66015647a5",
+      "requestInputBytes": 6818,
+      "taskCount": 4,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit120",
+      "sha256": "87dde683d42acd789e7ee83c11c35bf1af0b9c31c1d8b07bdf13bd001bcef441",
+      "eligible": true,
+      "problemHash": "27db527a162dcfb110e29241980cac10bd4e88f8e4f5a4206ac8a50eca1385e5",
+      "requestInputBytes": 111391,
+      "taskCount": 70,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit121",
+      "sha256": "933ff7e80636ae676aaba714e835f3c89ab0035c34c30b6ddbe13bfb81cbad00",
+      "eligible": true,
+      "problemHash": "95410a5f7e9b6d28797a2c5cf99fc1d7d81aa47c65a391694836890c8d5ea56d",
+      "requestInputBytes": 34414,
+      "taskCount": 22,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit123",
+      "sha256": "05a287f33c0aa8acbf8469f1e7a618c96a8299209bab3136cd65b1caf921a514",
+      "eligible": true,
+      "problemHash": "f8fc1b1cfd89e1dcaed76c249c86bd16d5326dd2ed1431a649ff88869593a892",
+      "requestInputBytes": 59124,
+      "taskCount": 41,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit124",
+      "sha256": "8ca9c157c4ee84c2b24730e011368f1b15b7d18069278a4b3ad10532d494b516",
+      "eligible": true,
+      "problemHash": "3d3a95d3dd6b0fda86a4c6ecaf5223f36d9d8d181b7ad0046a5e65440869ac58",
+      "requestInputBytes": 29969,
+      "taskCount": 20,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit125",
+      "sha256": "ccfeaae308002b1ade03cc9d01f92904af0c08c76b0d420ecddccff94d51914a",
+      "eligible": true,
+      "problemHash": "e49253bc29c9e89f9418b63032711a7c82af8dd837af7224fc9ecb5be3e388fd",
+      "requestInputBytes": 49823,
+      "taskCount": 36,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit126",
+      "sha256": "abb409eda6764df41e22f2131087840f687445ea459ca195a993ef3d62f7a1a4",
+      "eligible": true,
+      "problemHash": "02b3cac1dbffb94c36f4010aeeff297090018cb5ab9e56ed5a482a8a4d406ed0",
+      "requestInputBytes": 13068,
+      "taskCount": 9,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit127",
+      "sha256": "c1f013e54b061b0f4bb704886eccfda4f4df4e02f591f65f3c03b27b2744b68c",
+      "eligible": true,
+      "problemHash": "b800a7941c1e1098a78ec7641f0d50f7028cb4d389478d0b6c92399b643146b9",
+      "requestInputBytes": 13597,
+      "taskCount": 7,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit128",
+      "sha256": "589628717058a8f791434f06d95d7e9ff990b03b7f51cfd934b2e1117ce006aa",
+      "eligible": true,
+      "problemHash": "eea4d753d07839525313dc7e8d7935e12b193ff8c8e35f949e9bb0cce1b601a8",
+      "requestInputBytes": 48784,
+      "taskCount": 34,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit129",
+      "sha256": "2eb30a7297833a2a19ad88753bb7e2e08d162976f78786a7c960ad65aff1ff6d",
+      "eligible": true,
+      "problemHash": "a9ce23cd088aa66bb4e301eff5e3cd7ce8a11046dbfbff37b7d047f837b93041",
+      "requestInputBytes": 13136,
+      "taskCount": 9,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit131",
+      "sha256": "130ce8c6191b9aedbae67fc7396239c1560dd735c117e264a954a3efe93b5409",
+      "eligible": true,
+      "problemHash": "5798f389c26b3851bf284b73ea800f7f385d726de5cb3a43bece00bc74393cec",
+      "requestInputBytes": 17591,
+      "taskCount": 11,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit132",
+      "sha256": "7bf890d61d4adac982f0d0c2b700f675ee80a7db89c0fd223c12f850acff9f34",
+      "eligible": true,
+      "problemHash": "d5a778eda4f0ef585e83aad79d41f225a26282cb14bb9e9c0c7b295344188040",
+      "requestInputBytes": 20816,
+      "taskCount": 12,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit133",
+      "sha256": "23b085fab42bcec045a96944bd238da659674c969a42a99b0e94be96be60ab87",
+      "eligible": true,
+      "problemHash": "bf0221e5f42e41b9c26a5e31720724aa160eee0583e3b89b1b804cc481a0fd0f",
+      "requestInputBytes": 16258,
+      "taskCount": 11,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit134",
+      "sha256": "543822be4cde06a5a5a8f1cb2d08057d6ebe96ae1d01e24c7263b45613fcb200",
+      "eligible": true,
+      "problemHash": "15177658f637da5a9d269bc5df26ea4a87b5288e2707a2c18bae04d0aad9231e",
+      "requestInputBytes": 85925,
+      "taskCount": 61,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit135",
+      "sha256": "892f83a53f614d5ed7e37a67d33a69d8e0435092f17d84d59aab373f83569701",
+      "eligible": true,
+      "problemHash": "432181b3f47c33606e1bec2504694680bd7a3fcc83094080b2e8169a0980d325",
+      "requestInputBytes": 31198,
+      "taskCount": 20,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit136",
+      "sha256": "4a32282793d5aed90455ee741932981cbe52a28fc0a98d8d7a1d4fc12f5c554c",
+      "eligible": true,
+      "problemHash": "c56737cb4d20c1bec3a97c433388a454314f228490e95be285585d664e958fa1",
+      "requestInputBytes": 18709,
+      "taskCount": 13,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit137",
+      "sha256": "37fd9ecbf7d2b12a6d795c249769760b86374214fbf3b91abc35152687d39102",
+      "eligible": true,
+      "problemHash": "b91b90aa19ac5195778b6a476be14e457dd15c13064fabe31726f94cc597f4b5",
+      "requestInputBytes": 68633,
+      "taskCount": 43,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit138",
+      "sha256": "91ad4a0cc0ad1915c861c517965c57b7a57ab478c736fb6c48c3ffeccc8c7ae4",
+      "eligible": true,
+      "problemHash": "f2367b21019bac297f2400be7b0bededdcf9725d81957daa811f204292aaddf7",
+      "requestInputBytes": 78032,
+      "taskCount": 49,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit139",
+      "sha256": "d34e31050f6b6e73d3a4b0b5c8ccd6ef3909bdcb2bb4eea08b8ebdcbac49c105",
+      "eligible": true,
+      "problemHash": "07239e9da38b88abff87886ac5fbcb4a7de25acf929c88b428537c7019ced49d",
+      "requestInputBytes": 78544,
+      "taskCount": 51,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit140",
+      "sha256": "4a96d38191bc6c85cb4c4ec6732eb6607fecd2916d2611cd14e7bf5bd1744127",
+      "eligible": true,
+      "problemHash": "303677d6f6c5fbec0c38cbe1e52c6d01545ecba8fa6fdecc1161bbf5d60ac261",
+      "requestInputBytes": 70608,
+      "taskCount": 48,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit141",
+      "sha256": "ee6df3d9ad213dbb9a92b566990aeb91943985778d8f45ae252ebb5ff66e415c",
+      "eligible": true,
+      "problemHash": "7202d313af0e19ccd7ca99b21f784bda9ffee8e5ca131fa86703b6af968dbfb0",
+      "requestInputBytes": 70432,
+      "taskCount": 46,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit142",
+      "sha256": "1308500695f39fdd7a37866e8032f0d4f2e388f670431fe7a017eaa78d3968b9",
+      "eligible": true,
+      "problemHash": "5929031d0c7d75e4fd4a994358aaf9e98ec8d812ca3181b2c31a66cb2537c324",
+      "requestInputBytes": 60501,
+      "taskCount": 41,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit143",
+      "sha256": "31e31fd41af1ec43f4851d833e3140706af0a230a2e94ed76661be41f98774fb",
+      "eligible": true,
+      "problemHash": "b17448ff98e3d330638126479f3ccfcb755ba21ff32eedbadc767cc7c0050cc2",
+      "requestInputBytes": 81080,
+      "taskCount": 58,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit144",
+      "sha256": "dbd928b56d45480fc664278b2ae7bed2ebfc7775eb049522ffedcf2cfe1df672",
+      "eligible": true,
+      "problemHash": "ccd6a818fe2993c0dbe80b2ddc78e8a263d834d1ea51ed5f01a70e13f2993558",
+      "requestInputBytes": 48678,
+      "taskCount": 33,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit145",
+      "sha256": "fadb40fd7de213a82c713d9fa3fa85554289caf303e5f02799732703e17e9605",
+      "eligible": true,
+      "problemHash": "35f63254f18617e77da6945ed7237c532a7d366698de673b1008abfbc42968f7",
+      "requestInputBytes": 65122,
+      "taskCount": 41,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit146",
+      "sha256": "6f373086b9f2de56c102b72b80e167c3f0b24d9a9354931626764cd50c8d6d19",
+      "eligible": true,
+      "problemHash": "fb9807d9dad07153d8e1c7243b39883d6620fb9f076cd10ce5774e1acaada630",
+      "requestInputBytes": 75609,
+      "taskCount": 51,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit147",
+      "sha256": "41862aa1061e63c8ddcb21c2205e00cc2d590be76e21809aee097fb54bb09ef7",
+      "eligible": true,
+      "problemHash": "a229bca4dcdcb1671002bfd22f2d7581f9ae6076d5f0289e9362b49d829cc7c6",
+      "requestInputBytes": 9443,
+      "taskCount": 4,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit148",
+      "sha256": "99d68fc7c9ff6e2b3244c501be7a0086b0aab6372a6909763ae7984d0c9c70e9",
+      "eligible": true,
+      "problemHash": "5415888e8e682402f0e74785956ecfb40932a8790c828386dc972ddf856a6c2b",
+      "requestInputBytes": 29536,
+      "taskCount": 20,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit149",
+      "sha256": "3a3c563ca6512262695f584049b2932ff94ea124a04ab6ac24cb2e4c6cd9f222",
+      "eligible": true,
+      "problemHash": "8e87ce64f84f192fa8e844fd6f7bc442226960dcc9f45bed53a5f0178575b02e",
+      "requestInputBytes": 52117,
+      "taskCount": 34,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit150",
+      "sha256": "d5df8669f80d18933a9627d3a775a958f61e2d1225cc688a31430d2c54826102",
+      "eligible": true,
+      "problemHash": "01b5752a96737e6021eab0cf8c46b9720ac6a0fc03bf91ab30084f9b26e78e0a",
+      "requestInputBytes": 13464,
+      "taskCount": 9,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit151",
+      "sha256": "b72ee3d0e0cc8d20192617bf2451807cda3c4338b49be0f397f28433ae9fa122",
+      "eligible": true,
+      "problemHash": "62b3cc7bd4455904f035fd7181674e618a10a381c889c875d9a296ce3dc3fe2a",
+      "requestInputBytes": 97881,
+      "taskCount": 69,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit152",
+      "sha256": "f330ab77f4fe2ab5ca16893dbb7f18c1810bbf6194021838a905e60f1e94da30",
+      "eligible": true,
+      "problemHash": "afdce71ac714cefc3052bfc51598d3b6032df54b87ffbb767901340e5b4c38d4",
+      "requestInputBytes": 91307,
+      "taskCount": 60,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit155",
+      "sha256": "8e3e2abd5349c7f10b7f84f29a4ec552cd3f44c34ab74c8b1eb0c3bb46c9a626",
+      "eligible": true,
+      "problemHash": "34837d8504b3db61fcd8b6c922b3e22c16373e72e1c83f3554401e3f2c8d7deb",
+      "requestInputBytes": 58552,
+      "taskCount": 40,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit156",
+      "sha256": "c41f883409c4dffb8664a8919ab359eb21709ae41c7cf29961da72dad028c158",
+      "eligible": true,
+      "problemHash": "eb24f630420d0c9303159b3a94d54450ebc0f63c2a8f70e6959052c6a7006998",
+      "requestInputBytes": 83546,
+      "taskCount": 58,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit157",
+      "sha256": "64fe859fe0f3426b16f97fc20a141809214edd24c7987f9654f9867bdc855582",
+      "eligible": true,
+      "problemHash": "104d0cae2579bc058b5b35e9abdbf74dff56f2747e6f7de7c3b227bffe1b06f2",
+      "requestInputBytes": 32272,
+      "taskCount": 21,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit158",
+      "sha256": "37c3bf0ec878ded7a5ab32a8092466187d472e9c57eb55ade07fb363ab8e2922",
+      "eligible": true,
+      "problemHash": "ca1cc33b4faddf35c420a275374d78e13920a162340da01c1490c7530c60e653",
+      "requestInputBytes": 59692,
+      "taskCount": 39,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit162",
+      "sha256": "d159db3c515cb21c4945beeaef0fef589365c40b9803c8aab50b5b7f416b900a",
+      "eligible": true,
+      "problemHash": "20cb48aaa8d52abbba40ce930ba820f1454b725562332f6bbfff7b33e5f5a682",
+      "requestInputBytes": 39033,
+      "taskCount": 22,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit164",
+      "sha256": "a4e9c8154019f8862ad231abff8cb166a4f5c81cfe76a9387ae25f5726505473",
+      "eligible": true,
+      "problemHash": "8b859f06faf13524f1553199bb34e2bd96a1b1a912b9625f38e85474fa5efc64",
+      "requestInputBytes": 79939,
+      "taskCount": 55,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit165",
+      "sha256": "c7de6a3db47e5efcce509cbae0d13f3c4e229858d64c93db2460dcaf7a82184b",
+      "eligible": true,
+      "problemHash": "e40181ece162726b8d78fe230ba5cc16b11c63a3d924246a638695ef5e7f5e67",
+      "requestInputBytes": 10930,
+      "taskCount": 7,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit168",
+      "sha256": "5768a9c6a065217aa19aecc36a8959fae5b091182e5f05143776e8cec1989f41",
+      "eligible": true,
+      "problemHash": "0d9585a9ac4588a8cbc204c28e414d1bde08cff5657a60515f94462cc3f7ef55",
+      "requestInputBytes": 11793,
+      "taskCount": 8,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit172",
+      "sha256": "35a56393b195f2445466d10fc756710b8aa91f611602bd41117fab705bb6e195",
+      "eligible": true,
+      "problemHash": "57e5cbf19eff59746c09f0e30884e17639094e072bb944d08f621550a0af969c",
+      "requestInputBytes": 15468,
+      "taskCount": 11,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit173",
+      "sha256": "a366c29aefdbdd803e18504ddf8b0d8a83e34e944002bcd47e0af38e5577d752",
+      "eligible": true,
+      "problemHash": "168d80c94de0a7a5f2766a7f81ea714abe42c0a26af0e89d6cb2d2342d346be2",
+      "requestInputBytes": 97520,
+      "taskCount": 67,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit174",
+      "sha256": "c9aaf48b95beea856502eb4d11e840b7b3593928d681b668947293115a7fe40c",
+      "eligible": true,
+      "problemHash": "047fefbe99b0520e293bf4b4087dbf93e91fc61b4350f44356edc17839f094a8",
+      "requestInputBytes": 16416,
+      "taskCount": 10,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit175",
+      "sha256": "71bed57f1792c0a7ac988024d07cb0a25c8286cfbf0df4de86d1552fab0ca5fa",
+      "eligible": true,
+      "problemHash": "b50642f47caec3a27d307d7de5c511960fb8cfad012e9b83571d98c7a6cac3a8",
+      "requestInputBytes": 32730,
+      "taskCount": 23,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit176",
+      "sha256": "f17d72c279d4800bcb892db04f9440ac9b0e2eb9e6bfa15f10241625b25e4611",
+      "eligible": true,
+      "problemHash": "c4cd7f0cf19891599bedef3c402113f11fd30b14c7a66f0b5d0ea72f3ac01717",
+      "requestInputBytes": 55244,
+      "taskCount": 36,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit177",
+      "sha256": "dff5904d61f6b071081e59f7ff78f6af7883fbbfe6fe3d321c511a2127d47966",
+      "eligible": true,
+      "problemHash": "fd6fa057cef6d1fb336c17c6be4f88c0ac9c562c0bf71ceedd2a2b27e95b7483",
+      "requestInputBytes": 17813,
+      "taskCount": 12,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit178",
+      "sha256": "561fc8ed604f8e171955cfd9e778e7f98d2731bb54a40185b05fdbdf81ffc2ad",
+      "eligible": true,
+      "problemHash": "9bff4c7e69ef8e6aacd348db8e7512b44f497826c71663eb882f89f6946c5f0f",
+      "requestInputBytes": 83226,
+      "taskCount": 55,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit179",
+      "sha256": "2befe75b99c5a20c92eab98fa1766e95a65afc0cab2766592d5ea5c06d969f09",
+      "eligible": true,
+      "problemHash": "c43147db7897c59beb7cb1fa863c3ba6dab16c708504a30a7bede73ed67a95e9",
+      "requestInputBytes": 45486,
+      "taskCount": 30,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit180",
+      "sha256": "e5217950cfa70c1bd1a85e1c66d0c448ef2d4c0f66fcf5d7e5894dd00885c7eb",
+      "eligible": true,
+      "problemHash": "16014d10e5b62fbce86ba8a6f493f452bd06bd6876787c138ac74c249d1bc2dd",
+      "requestInputBytes": 23662,
+      "taskCount": 15,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit181",
+      "sha256": "27b27bc3cf6b5dd6751e5f4db57c7fdfd66a3f7364364e8a43771feb583b16b7",
+      "eligible": true,
+      "problemHash": "d02c7b6948960236394d384652fa6309a112abc001ddba35c6831ad164294cd2",
+      "requestInputBytes": 95094,
+      "taskCount": 61,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample001",
+      "sha256": "21a09454dd05b86464cd2d882ea96de7461260bd473e67c87a0e46011e508ea9",
+      "eligible": true,
+      "problemHash": "48f66a040705f26f221825e89224bc2e356f95d2ca1945746f2a12cb356b40b1",
+      "requestInputBytes": 698424,
+      "taskCount": 205,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample002",
+      "sha256": "2e2f6e8619e884afde2102e987cffcda8e7197ef2c63f8358aa5dd7cb14c8101",
+      "eligible": true,
+      "problemHash": "46e31f1b5b405e2300b722454276f9498409af1c3b9f079562e5b4592b71bf07",
+      "requestInputBytes": 891440,
+      "taskCount": 244,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample003",
+      "sha256": "c5abc751ef4ee68f0369df3d747174c527e47771fb673c61b72bbca0b93bc843",
+      "eligible": true,
+      "problemHash": "2099302a6fde6ee964eb2bfa29fae746441516bf7639c27a4e0942cc372ffc21",
+      "requestInputBytes": 547273,
+      "taskCount": 145,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample004",
+      "sha256": "be67af8cc71fb962e9c1cf6a6de00b416eb057750b52f4cdd0f95c46f930b083",
+      "eligible": true,
+      "problemHash": "ff09bef68fb708a043a361e5b13e1caa5417076b57e92116f8ec86c8ac8eb07f",
+      "requestInputBytes": 358566,
+      "taskCount": 114,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample005",
+      "sha256": "3027de7f902a95002172e25378e41c0c826f51e95155317dc97a55864df1b681",
+      "eligible": true,
+      "problemHash": "99b4f47a2e33e46508be9ba8077428b83958fb684540f0799c930c7dc6a6abec",
+      "requestInputBytes": 591570,
+      "taskCount": 172,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample006",
+      "sha256": "ccaa924e0b5430bd717ea42bf45712412dba9ecd672853bb7bd3c70d69ed3608",
+      "eligible": true,
+      "problemHash": "a446c704ae29b0a0321e2f67aa7206751c37385e0ec1c4b663848c0a2f653e4f",
+      "requestInputBytes": 2271437,
+      "taskCount": 255,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample007",
+      "sha256": "a995e7ec0bbf70d96837b56280b966d3b29e3f7c477126acd0820581106b66d5",
+      "eligible": true,
+      "problemHash": "db03b512170177aa727db2c3ac63aead4a37875a9200a638e77b5d925a8d06e4",
+      "requestInputBytes": 1353706,
+      "taskCount": 263,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample008",
+      "sha256": "86c0bebed1bfe8396c5e1eadaa486f4711a3c9efbed35fdfa65bf092555dd9fd",
+      "eligible": true,
+      "problemHash": "1fedc2e204f18bf13b3995a2903250985f55869c2d6ec8a8b38e892f91b199c4",
+      "requestInputBytes": 2272122,
+      "taskCount": 361,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample009",
+      "sha256": "53167849b45863bb21382c13a0464851cdd6d2bd5a4988d9e41962b46c928556",
+      "eligible": true,
+      "problemHash": "3c5b761b8a21db096217c530c46c70155b0832220e7b48433d2bc89d7f4954c5",
+      "requestInputBytes": 1425236,
+      "taskCount": 256,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample010",
+      "sha256": "54809fdc0cee2685cab2f539bbfc6a68f0714fab47c8982f50037ccc5d32ffdb",
+      "eligible": true,
+      "problemHash": "c4d04ec47af475cff196a5281878b61e58f502c3097a260bd863eb9572eb7327",
+      "requestInputBytes": 2097252,
+      "taskCount": 310,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample011",
+      "sha256": "c30aee0833640f6f370ce83c0ad5fc9476d80c40442a7c69f5db6b28af168afd",
+      "eligible": true,
+      "problemHash": "1002f0ea4e60aa6689f324e43e79b93d3034032b8dc4b04df0e9dcc6c52c1610",
+      "requestInputBytes": 2422169,
+      "taskCount": 291,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample012",
+      "sha256": "5c180cea68f6979bc583624a975ba23ca4429ee17d104fbec624d7f02360a34e",
+      "eligible": true,
+      "problemHash": "fd667e4e3fdd43ff2fc49439afe962d8f1212d3e9c509cae6788d9f321539e10",
+      "requestInputBytes": 7757968,
+      "taskCount": 504,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample013",
+      "sha256": "37b01a5f7cf5ff8f3056ad2c72137085e7608f2444ddfc74d188813c6c0f2554",
+      "eligible": true,
+      "problemHash": "b22bf0b8c190c04eb0e3e56426c463f921e09fba4377045ec757668ebc0bff60",
+      "requestInputBytes": 1757418,
+      "taskCount": 238,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample014",
+      "sha256": "cd4fb3f2814dc459650c17ccc21bb1d72a852ab2301fa6c389c1f82305207919",
+      "eligible": true,
+      "problemHash": "8d50235dc169ef139056b0ff6cd458569f886b2a0fc216d4ef150d4dc4c363f0",
+      "requestInputBytes": 1467938,
+      "taskCount": 238,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample015",
+      "sha256": "cd24268f1713fc03c4c032a937d666fe6fb4d772187190d611ce4e3013a8d6fe",
+      "eligible": true,
+      "problemHash": "1ebc9adf685481c4c15b1b5c62a94c682d1c1fc3e99167857a35fbe98fc1131d",
+      "requestInputBytes": 4069999,
+      "taskCount": 461,
+      "fixedTraceCount": 0
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample016",
+      "sha256": "f323b21b2d833b61149d5041c04af8575c77b8cd3bb3340cba36c017872e6bf3",
+      "eligible": true,
+      "problemHash": "17f6153d37a2be6b512274092501dd68a9829d70b424ce843e9466790a111d77",
+      "requestInputBytes": 1910912,
+      "taskCount": 269,
+      "fixedTraceCount": 0
+    }
+  ]
+}

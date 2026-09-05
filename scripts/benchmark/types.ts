@@ -86,4 +86,7 @@ export interface BenchmarkResult {
   phase?: string
   phaseTimeMs?: Record<string, number>
   networkStats?: Record<string, number>
+  networkAudit?: { metricsAvailable: boolean; issues: string[] }
+  /** Explicit fixed-input contradiction, retained even when routing fails. */
+  inputContradiction?: unknown
 }

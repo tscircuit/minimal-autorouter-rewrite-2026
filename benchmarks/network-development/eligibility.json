@@ -1,0 +1,1573 @@
+{
+  "method": "Preparation and pure projection only; no geometric routing or solve requests. Published schema evaluated read-only from service commit 044b8318f446bc06a745222fb578062e85559d67.",
+  "summary": [
+    {
+      "dataset": "dataset01",
+      "total": 85,
+      "eligible": 81,
+      "reasons": {
+        "fixed copper requires local board routing": 2,
+        "board clearance policy is not representable by the node protocol": 2
+      },
+      "admittedByPublishedInputSchema": 11,
+      "publishedSchemaRejections": {
+        "input.obstacles[20].type must be \"rect\".": 1,
+        "input.obstacles[43].type must be \"rect\".": 4,
+        "input.obstacles[12].type must be \"rect\".": 1,
+        "input.obstacles[9].type must be \"rect\".": 5,
+        "input.obstacles[35].type must be \"rect\".": 2,
+        "input.obstacles[0].type must be \"rect\".": 1,
+        "input.obstacles[17].type must be \"rect\".": 3,
+        "input.obstacles[8].type must be \"rect\".": 1,
+        "input.obstacles[1].type must be \"rect\".": 1,
+        "input.obstacles[63].type must be \"rect\".": 2,
+        "input.obstacles[57].type must be \"rect\".": 3,
+        "input.obstacles[69].type must be \"rect\".": 2,
+        "input.obstacles[93].type must be \"rect\".": 1,
+        "input.obstacles[55].type must be \"rect\".": 2,
+        "input.obstacles[51].type must be \"rect\".": 2,
+        "input.obstacles[59].type must be \"rect\".": 3,
+        "input.obstacles[15].type must be \"rect\".": 2,
+        "input.obstacles[95].type must be \"rect\".": 3,
+        "input.obstacles[91].type must be \"rect\".": 1,
+        "input.obstacles[39].type must be \"rect\".": 1,
+        "input.obstacles[53].type must be \"rect\".": 1,
+        "input.obstacles[29].type must be \"rect\".": 1,
+        "input.obstacles[33].type must be \"rect\".": 3,
+        "input.obstacles[41].type must be \"rect\".": 1,
+        "input.obstacles[13].type must be \"rect\".": 2,
+        "input.obstacles[21].type must be \"rect\".": 1,
+        "input.obstacles[77].type must be \"rect\".": 2,
+        "input.obstacles[67].type must be \"rect\".": 1,
+        "input.obstacles[79].type must be \"rect\".": 1,
+        "input.obstacles[49].type must be \"rect\".": 2,
+        "input.obstacles[47].type must be \"rect\".": 2,
+        "input.obstacles[65].type must be \"rect\".": 2,
+        "input.obstacles[25].type must be \"rect\".": 2,
+        "input.obstacles[81].type must be \"rect\".": 1,
+        "input.obstacles[71].type must be \"rect\".": 1,
+        "input.obstacles[75].type must be \"rect\".": 1,
+        "input.obstacles[37].type must be \"rect\".": 1,
+        "input.obstacles[45].type must be \"rect\".": 1,
+        "input.obstacles[99].type must be \"rect\".": 1,
+        "input.obstacles[31].type must be \"rect\".": 1,
+        "input.obstacles[87].type must be \"rect\".": 1
+      }
+    },
+    {
+      "dataset": "dataset-srj18",
+      "total": 16,
+      "eligible": 11,
+      "reasons": {
+        "nonrectangular board outline requires local routing": 5
+      },
+      "admittedByPublishedInputSchema": 0,
+      "publishedSchemaRejections": {
+        "input.obstacles[30].type must be \"rect\".": 1,
+        "input.obstacles[0].type must be \"rect\".": 2,
+        "input.nodeWithPortPoints.portPoints must contain between 2 and 512 entries.": 6,
+        "input.obstacles[39].type must be \"rect\".": 1,
+        "input.obstacles[215].type must be \"rect\".": 1
+      }
+    }
+  ],
+  "results": [
+    {
+      "dataset": "dataset01",
+      "sample": "circuit001",
+      "sha256": "f471f6ea8d1e6eaf6a46f6e3a1a762d51e6c53d0742b43dd190530a7d720eda7",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 6,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 23622,
+      "publishedServiceInputError": "input.obstacles[20].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit002",
+      "sha256": "494c073e772bdef423343210595f75cf969afa9983b361800ef9298fa550c91d",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 40,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 93841,
+      "publishedServiceInputError": "input.obstacles[43].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit003",
+      "sha256": "9a7e1fc231f6d96c3458ccd6a80cf4e4632ac9a58c597414b4b94f0f7ba621b6",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 20,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 59966,
+      "publishedServiceInputError": "input.obstacles[12].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit004",
+      "sha256": "5936f1e89ac71f59a0e7c51016a939d877c70f539fce706c9cc222ffa8a27e64",
+      "eligible": false,
+      "reason": "fixed copper requires local board routing",
+      "taskCount": 38,
+      "fixedTraceCount": 2,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.1
+      ]
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit005",
+      "sha256": "e83586f66f9d636cdc9824127b80d9e31dd37a2b508d0c20fef93388c4c9daa4",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 7,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 14036,
+      "publishedServiceInputError": "input.obstacles[9].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit006",
+      "sha256": "b5c0f36acc06f565d3ea5975e6cd47d41cc0a57895e2993556ddc2fedfe15f8b",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 9,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 18344,
+      "publishedServiceInputError": "input.obstacles[9].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit007",
+      "sha256": "ea50c25f6635344d84603b13167cb27696022e3b41d89070436ea8b16370ef2c",
+      "eligible": false,
+      "reason": "board clearance policy is not representable by the node protocol",
+      "taskCount": 7,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.1
+      ]
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit010",
+      "sha256": "fd13f4fff86519b7b6f6ec2147b4a7091b907df59076655d2f113f5119a338c7",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 25,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 57690,
+      "publishedServiceInputError": "input.obstacles[35].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit011",
+      "sha256": "08fe38cd04875cd5245d8a9be2640c71ff699ba8caa84ea57e938d6b09dcec2b",
+      "eligible": false,
+      "reason": "board clearance policy is not representable by the node protocol",
+      "taskCount": 14,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.1
+      ]
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit012",
+      "sha256": "c2ddb93ad2e09546afa018758a2cfbce47e8d88d5f904c5bcf1fcc722ab800cb",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 10,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 20844,
+      "publishedServiceInputError": "input.obstacles[9].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit013",
+      "sha256": "08b145e8d55ae7c4a5a19e954e964a6ee3559dd33beca7cbc0e817d7072b3951",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 8,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 15381,
+      "publishedServiceInputError": "input.obstacles[9].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit014",
+      "sha256": "24f6b804ab58f1de69760bf762002fea9421d6b65338a48f37c9ea720ea38c6e",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 8,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 20765,
+      "publishedServiceInputError": "input.obstacles[0].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit015",
+      "sha256": "a585d63b60ddb59c5a0e6afbad6f45b873625eeb2afec98388d2b4c12e7789b0",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 19,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 40824,
+      "publishedServiceInputError": "input.obstacles[17].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit018",
+      "sha256": "ce8a5c41c04d2b98bb1e14abd12a7bd75b472cccb3fd018d439855c05a6c74c6",
+      "eligible": false,
+      "reason": "fixed copper requires local board routing",
+      "taskCount": 31,
+      "fixedTraceCount": 6,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.1
+      ]
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit019",
+      "sha256": "81648b3c78c771e36e596991e0adca8ff7cb05d35405e67c78f6c688bf3b7314",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 5,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 11756,
+      "publishedServiceInputError": "input.obstacles[8].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit020",
+      "sha256": "7b60e7fd36d3691ac603230f56089ff2dd545bc14f6609cf4d60d50833c1b40e",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 3,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 9221,
+      "publishedServiceInputError": null
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit021",
+      "sha256": "589934e75f71b8fc4ec28e81c1acc489bd148cf870a305211efe90f09f7f6251",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 11,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 24497,
+      "publishedServiceInputError": "input.obstacles[1].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit100",
+      "sha256": "10fb37f5d25cbd1f5a25006877304234050957defdb0068846e2a335bbdce1dd",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 36,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 84601,
+      "publishedServiceInputError": "input.obstacles[63].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit101",
+      "sha256": "f78b8b06f40d854f6ebb172af27b876c812943590e72460d2624f96e666148e1",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 36,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 81361,
+      "publishedServiceInputError": "input.obstacles[57].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit102",
+      "sha256": "be2f7dd05c3701c70375c19e22cfc88678bf2fa50f80dff045297d7577363e4e",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 36,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 91067,
+      "publishedServiceInputError": "input.obstacles[69].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit103",
+      "sha256": "fedeb54557b3adac1220a4a505023d94483cf247b0675abfd67926da78a3a90d",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 49,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 125920,
+      "publishedServiceInputError": "input.obstacles[93].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit104",
+      "sha256": "d4de57758671922a05ffe1773d16b68fbcb853131f29496cf231c0f3ae977520",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 29,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 63013,
+      "publishedServiceInputError": "input.obstacles[43].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit105",
+      "sha256": "5556d909301b3c0dd54af060a549a9c8a8ad865bc8b539cd8617f5512360003d",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 47,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 96280,
+      "publishedServiceInputError": "input.obstacles[55].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit106",
+      "sha256": "85833ed9d00578a9f07ebcd010493fda782c0705b02c14d20341b5ed11af00ea",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 33,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 77274,
+      "publishedServiceInputError": "input.obstacles[43].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit107",
+      "sha256": "921c05dd389288c6ff37a4ded88034008123e90c280beca06c67bccea45ca928",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 19,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 44963,
+      "publishedServiceInputError": null
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit108",
+      "sha256": "ba25f7b19ec12b2e17389b7856bd506a5e51835f74966be72176cb84531824d1",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 33,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 74290,
+      "publishedServiceInputError": "input.obstacles[51].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit109",
+      "sha256": "1ae22defac9345590eadca3e6489291ce9e685b9730271f16e70f099cce45af2",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 62,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 134871,
+      "publishedServiceInputError": "input.obstacles[59].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit110",
+      "sha256": "2ee6da3f3c4a719a7918706288dcb9e3631f250ad6542720ddccabcef4ad59ab",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 15,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 30267,
+      "publishedServiceInputError": "input.obstacles[15].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit111",
+      "sha256": "eb864c3eecce9708f47c5a79855c990c7b0b1da5e33662859ba18cdeff0bd6b0",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 39,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 115912,
+      "publishedServiceInputError": "input.obstacles[95].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit112",
+      "sha256": "aeb3b0b6ab0fabd2ae573a2dc4ab6f19c9bf6ac552ea52e9865c342ace513fd3",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 20,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 41917,
+      "publishedServiceInputError": "input.obstacles[17].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit113",
+      "sha256": "8777f4dbf6361861990749f96722c66ea1d4c9b3fb6d54ef6da9502108e981f1",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 28,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 62016,
+      "publishedServiceInputError": "input.obstacles[35].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit114",
+      "sha256": "402fc8281d39106decbf77580273904cdc0ca5140cb65377735e513687206b1c",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 65,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 149395,
+      "publishedServiceInputError": "input.obstacles[91].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit115",
+      "sha256": "75baebd1e47db0e8cda146bb456b0202151dad170b80608a98519792cfc3735f",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 7,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 18476,
+      "publishedServiceInputError": null
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit116",
+      "sha256": "01d4cae77a67c52756dadd2d3ab03704825a9c9a69e7f81fb2b1576bd5a23d82",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 16,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 43989,
+      "publishedServiceInputError": "input.obstacles[39].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit118",
+      "sha256": "843c64299d2cd264594ab07b1cf340e513e7af6d511526b0138762e7fa2d0f58",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 34,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 72527,
+      "publishedServiceInputError": "input.obstacles[53].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit119",
+      "sha256": "79504b720eb772aaf5d6c101aa92e5a8ddd3c0d5db9d2ee67f57d9ea7d4621ca",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 4,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 10224,
+      "publishedServiceInputError": null
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit120",
+      "sha256": "87dde683d42acd789e7ee83c11c35bf1af0b9c31c1d8b07bdf13bd001bcef441",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 70,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 167400,
+      "publishedServiceInputError": "input.obstacles[95].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit121",
+      "sha256": "933ff7e80636ae676aaba714e835f3c89ab0035c34c30b6ddbe13bfb81cbad00",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 22,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 51391,
+      "publishedServiceInputError": "input.obstacles[29].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit123",
+      "sha256": "05a287f33c0aa8acbf8469f1e7a618c96a8299209bab3136cd65b1caf921a514",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 41,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 88139,
+      "publishedServiceInputError": "input.obstacles[59].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit124",
+      "sha256": "8ca9c157c4ee84c2b24730e011368f1b15b7d18069278a4b3ad10532d494b516",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 20,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 44757,
+      "publishedServiceInputError": "input.obstacles[33].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit125",
+      "sha256": "ccfeaae308002b1ade03cc9d01f92904af0c08c76b0d420ecddccff94d51914a",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 36,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 72837,
+      "publishedServiceInputError": "input.obstacles[41].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit126",
+      "sha256": "abb409eda6764df41e22f2131087840f687445ea459ca195a993ef3d62f7a1a4",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 9,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 19570,
+      "publishedServiceInputError": "input.obstacles[9].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit127",
+      "sha256": "c1f013e54b061b0f4bb704886eccfda4f4df4e02f591f65f3c03b27b2744b68c",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 7,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 21485,
+      "publishedServiceInputError": null
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit128",
+      "sha256": "589628717058a8f791434f06d95d7e9ff990b03b7f51cfd934b2e1117ce006aa",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 34,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 71430,
+      "publishedServiceInputError": "input.obstacles[43].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit129",
+      "sha256": "2eb30a7297833a2a19ad88753bb7e2e08d162976f78786a7c960ad65aff1ff6d",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 9,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 19245,
+      "publishedServiceInputError": "input.obstacles[13].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit131",
+      "sha256": "130ce8c6191b9aedbae67fc7396239c1560dd735c117e264a954a3efe93b5409",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 11,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 26592,
+      "publishedServiceInputError": null
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit132",
+      "sha256": "7bf890d61d4adac982f0d0c2b700f675ee80a7db89c0fd223c12f850acff9f34",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 12,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 32814,
+      "publishedServiceInputError": "input.obstacles[33].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit133",
+      "sha256": "23b085fab42bcec045a96944bd238da659674c969a42a99b0e94be96be60ab87",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 11,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 24593,
+      "publishedServiceInputError": "input.obstacles[13].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit134",
+      "sha256": "543822be4cde06a5a5a8f1cb2d08057d6ebe96ae1d01e24c7263b45613fcb200",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 61,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 125046,
+      "publishedServiceInputError": "input.obstacles[57].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit135",
+      "sha256": "892f83a53f614d5ed7e37a67d33a69d8e0435092f17d84d59aab373f83569701",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 20,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 47216,
+      "publishedServiceInputError": "input.obstacles[33].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit136",
+      "sha256": "4a32282793d5aed90455ee741932981cbe52a28fc0a98d8d7a1d4fc12f5c554c",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 13,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 27769,
+      "publishedServiceInputError": "input.obstacles[21].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit137",
+      "sha256": "37fd9ecbf7d2b12a6d795c249769760b86374214fbf3b91abc35152687d39102",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 43,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 105129,
+      "publishedServiceInputError": "input.obstacles[77].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit138",
+      "sha256": "91ad4a0cc0ad1915c861c517965c57b7a57ab478c736fb6c48c3ffeccc8c7ae4",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 49,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 117649,
+      "publishedServiceInputError": "input.obstacles[57].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit139",
+      "sha256": "d34e31050f6b6e73d3a4b0b5c8ccd6ef3909bdcb2bb4eea08b8ebdcbac49c105",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 51,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 118358,
+      "publishedServiceInputError": "input.obstacles[67].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit140",
+      "sha256": "4a96d38191bc6c85cb4c4ec6732eb6607fecd2916d2611cd14e7bf5bd1744127",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 48,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 104979,
+      "publishedServiceInputError": "input.obstacles[59].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit141",
+      "sha256": "ee6df3d9ad213dbb9a92b566990aeb91943985778d8f45ae252ebb5ff66e415c",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 46,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 105655,
+      "publishedServiceInputError": "input.obstacles[79].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit142",
+      "sha256": "1308500695f39fdd7a37866e8032f0d4f2e388f670431fe7a017eaa78d3968b9",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 41,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 90940,
+      "publishedServiceInputError": "input.obstacles[49].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit143",
+      "sha256": "31e31fd41af1ec43f4851d833e3140706af0a230a2e94ed76661be41f98774fb",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 58,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 118717,
+      "publishedServiceInputError": "input.obstacles[77].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit144",
+      "sha256": "dbd928b56d45480fc664278b2ae7bed2ebfc7775eb049522ffedcf2cfe1df672",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 33,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 71644,
+      "publishedServiceInputError": "input.obstacles[47].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit145",
+      "sha256": "fadb40fd7de213a82c713d9fa3fa85554289caf303e5f02799732703e17e9605",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 41,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 99166,
+      "publishedServiceInputError": "input.obstacles[65].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit146",
+      "sha256": "6f373086b9f2de56c102b72b80e167c3f0b24d9a9354931626764cd50c8d6d19",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 51,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 113988,
+      "publishedServiceInputError": "input.obstacles[69].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit147",
+      "sha256": "41862aa1061e63c8ddcb21c2205e00cc2d590be76e21809aee097fb54bb09ef7",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 4,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 15955,
+      "publishedServiceInputError": null
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit148",
+      "sha256": "99d68fc7c9ff6e2b3244c501be7a0086b0aab6372a6909763ae7984d0c9c70e9",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 20,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 44399,
+      "publishedServiceInputError": "input.obstacles[25].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit149",
+      "sha256": "3a3c563ca6512262695f584049b2932ff94ea124a04ab6ac24cb2e4c6cd9f222",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 34,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 78481,
+      "publishedServiceInputError": "input.obstacles[51].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit150",
+      "sha256": "d5df8669f80d18933a9627d3a775a958f61e2d1225cc688a31430d2c54826102",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 9,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 20122,
+      "publishedServiceInputError": "input.obstacles[15].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit151",
+      "sha256": "b72ee3d0e0cc8d20192617bf2451807cda3c4338b49be0f397f28433ae9fa122",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 69,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 143470,
+      "publishedServiceInputError": "input.obstacles[65].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit152",
+      "sha256": "f330ab77f4fe2ab5ca16893dbb7f18c1810bbf6194021838a905e60f1e94da30",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 60,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 137157,
+      "publishedServiceInputError": "input.obstacles[81].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit155",
+      "sha256": "8e3e2abd5349c7f10b7f84f29a4ec552cd3f44c34ab74c8b1eb0c3bb46c9a626",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 40,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 87763,
+      "publishedServiceInputError": "input.obstacles[71].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit156",
+      "sha256": "c41f883409c4dffb8664a8919ab359eb21709ae41c7cf29961da72dad028c158",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 58,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 123323,
+      "publishedServiceInputError": "input.obstacles[63].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit157",
+      "sha256": "64fe859fe0f3426b16f97fc20a141809214edd24c7987f9654f9867bdc855582",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 21,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 48176,
+      "publishedServiceInputError": "input.obstacles[25].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit158",
+      "sha256": "37c3bf0ec878ded7a5ab32a8092466187d472e9c57eb55ade07fb363ab8e2922",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 39,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 89601,
+      "publishedServiceInputError": "input.obstacles[75].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit162",
+      "sha256": "d159db3c515cb21c4945beeaef0fef589365c40b9803c8aab50b5b7f416b900a",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 22,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 61057,
+      "publishedServiceInputError": "input.obstacles[47].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit164",
+      "sha256": "a4e9c8154019f8862ad231abff8cb166a4f5c81cfe76a9387ae25f5726505473",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 55,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 117345,
+      "publishedServiceInputError": "input.obstacles[55].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit165",
+      "sha256": "c7de6a3db47e5efcce509cbae0d13f3c4e229858d64c93db2460dcaf7a82184b",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 7,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 16489,
+      "publishedServiceInputError": null
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit168",
+      "sha256": "5768a9c6a065217aa19aecc36a8959fae5b091182e5f05143776e8cec1989f41",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 8,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 17978,
+      "publishedServiceInputError": null
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit172",
+      "sha256": "35a56393b195f2445466d10fc756710b8aa91f611602bd41117fab705bb6e195",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 11,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 22899,
+      "publishedServiceInputError": null
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit173",
+      "sha256": "a366c29aefdbdd803e18504ddf8b0d8a83e34e944002bcd47e0af38e5577d752",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 67,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 144573,
+      "publishedServiceInputError": "input.obstacles[95].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit174",
+      "sha256": "c9aaf48b95beea856502eb4d11e840b7b3593928d681b668947293115a7fe40c",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 10,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 25247,
+      "publishedServiceInputError": null
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit175",
+      "sha256": "71bed57f1792c0a7ac988024d07cb0a25c8286cfbf0df4de86d1552fab0ca5fa",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 23,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 48759,
+      "publishedServiceInputError": "input.obstacles[37].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit176",
+      "sha256": "f17d72c279d4800bcb892db04f9440ac9b0e2eb9e6bfa15f10241625b25e4611",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 36,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 83117,
+      "publishedServiceInputError": "input.obstacles[45].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit177",
+      "sha256": "dff5904d61f6b071081e59f7ff78f6af7883fbbfe6fe3d321c511a2127d47966",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 12,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 26029,
+      "publishedServiceInputError": "input.obstacles[17].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit178",
+      "sha256": "561fc8ed604f8e171955cfd9e778e7f98d2731bb54a40185b05fdbdf81ffc2ad",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 55,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 124021,
+      "publishedServiceInputError": "input.obstacles[99].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit179",
+      "sha256": "2befe75b99c5a20c92eab98fa1766e95a65afc0cab2766592d5ea5c06d969f09",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 30,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 69222,
+      "publishedServiceInputError": "input.obstacles[49].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit180",
+      "sha256": "e5217950cfa70c1bd1a85e1c66d0c448ef2d4c0f66fcf5d7e5894dd00885c7eb",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 15,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 36045,
+      "publishedServiceInputError": "input.obstacles[31].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset01",
+      "sample": "circuit181",
+      "sha256": "27b27bc3cf6b5dd6751e5f4db57c7fdfd66a3f7364364e8a43771feb583b16b7",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 61,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 0,
+      "traceWidths": [
+        0.15
+      ],
+      "requestInputBytes": 143562,
+      "publishedServiceInputError": "input.obstacles[87].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample001",
+      "sha256": "21a09454dd05b86464cd2d882ea96de7461260bd473e67c87a0e46011e508ea9",
+      "eligible": false,
+      "reason": "nonrectangular board outline requires local routing",
+      "taskCount": 205,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 58,
+      "traceWidths": [
+        0.1
+      ]
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample002",
+      "sha256": "2e2f6e8619e884afde2102e987cffcda8e7197ef2c63f8358aa5dd7cb14c8101",
+      "eligible": false,
+      "reason": "nonrectangular board outline requires local routing",
+      "taskCount": 244,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 58,
+      "traceWidths": [
+        0.1
+      ]
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample003",
+      "sha256": "c5abc751ef4ee68f0369df3d747174c527e47771fb673c61b72bbca0b93bc843",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 145,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 5,
+      "traceWidths": [
+        0.1
+      ],
+      "requestInputBytes": 629646,
+      "publishedServiceInputError": "input.obstacles[30].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample004",
+      "sha256": "be67af8cc71fb962e9c1cf6a6de00b416eb057750b52f4cdd0f95c46f930b083",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 114,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 5,
+      "traceWidths": [
+        0.1
+      ],
+      "requestInputBytes": 424271,
+      "publishedServiceInputError": "input.obstacles[0].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample005",
+      "sha256": "3027de7f902a95002172e25378e41c0c826f51e95155317dc97a55864df1b681",
+      "eligible": false,
+      "reason": "nonrectangular board outline requires local routing",
+      "taskCount": 172,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 58,
+      "traceWidths": [
+        0.1
+      ]
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample006",
+      "sha256": "ccaa924e0b5430bd717ea42bf45712412dba9ecd672853bb7bd3c70d69ed3608",
+      "eligible": false,
+      "reason": "nonrectangular board outline requires local routing",
+      "taskCount": 255,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 203,
+      "traceWidths": [
+        0.1
+      ]
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample007",
+      "sha256": "a995e7ec0bbf70d96837b56280b966d3b29e3f7c477126acd0820581106b66d5",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 263,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 5,
+      "traceWidths": [
+        0.1
+      ],
+      "requestInputBytes": 1491979,
+      "publishedServiceInputError": "input.nodeWithPortPoints.portPoints must contain between 2 and 512 entries."
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample008",
+      "sha256": "86c0bebed1bfe8396c5e1eadaa486f4711a3c9efbed35fdfa65bf092555dd9fd",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 361,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 5,
+      "traceWidths": [
+        0.1
+      ],
+      "requestInputBytes": 2476055,
+      "publishedServiceInputError": "input.nodeWithPortPoints.portPoints must contain between 2 and 512 entries."
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample009",
+      "sha256": "53167849b45863bb21382c13a0464851cdd6d2bd5a4988d9e41962b46c928556",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 256,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 5,
+      "traceWidths": [
+        0.1
+      ],
+      "requestInputBytes": 1653014,
+      "publishedServiceInputError": "input.obstacles[39].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample010",
+      "sha256": "54809fdc0cee2685cab2f539bbfc6a68f0714fab47c8982f50037ccc5d32ffdb",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 310,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 5,
+      "traceWidths": [
+        0.1
+      ],
+      "requestInputBytes": 2276587,
+      "publishedServiceInputError": "input.nodeWithPortPoints.portPoints must contain between 2 and 512 entries."
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample011",
+      "sha256": "c30aee0833640f6f370ce83c0ad5fc9476d80c40442a7c69f5db6b28af168afd",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 291,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 5,
+      "traceWidths": [
+        0.1
+      ],
+      "requestInputBytes": 2574418,
+      "publishedServiceInputError": "input.nodeWithPortPoints.portPoints must contain between 2 and 512 entries."
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample012",
+      "sha256": "5c180cea68f6979bc583624a975ba23ca4429ee17d104fbec624d7f02360a34e",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 504,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 5,
+      "traceWidths": [
+        0.1
+      ],
+      "requestInputBytes": 8128922,
+      "publishedServiceInputError": "input.nodeWithPortPoints.portPoints must contain between 2 and 512 entries."
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample013",
+      "sha256": "37b01a5f7cf5ff8f3056ad2c72137085e7608f2444ddfc74d188813c6c0f2554",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 238,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 5,
+      "traceWidths": [
+        0.1
+      ],
+      "requestInputBytes": 1887708,
+      "publishedServiceInputError": "input.obstacles[0].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample014",
+      "sha256": "cd4fb3f2814dc459650c17ccc21bb1d72a852ab2301fa6c389c1f82305207919",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 238,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 5,
+      "traceWidths": [
+        0.1
+      ],
+      "requestInputBytes": 1595559,
+      "publishedServiceInputError": "input.obstacles[215].type must be \"rect\"."
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample015",
+      "sha256": "cd24268f1713fc03c4c032a937d666fe6fb4d772187190d611ce4e3013a8d6fe",
+      "eligible": true,
+      "reason": null,
+      "taskCount": 461,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 5,
+      "traceWidths": [
+        0.1
+      ],
+      "requestInputBytes": 4327053,
+      "publishedServiceInputError": "input.nodeWithPortPoints.portPoints must contain between 2 and 512 entries."
+    },
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample016",
+      "sha256": "f323b21b2d833b61149d5041c04af8575c77b8cd3bb3340cba36c017872e6bf3",
+      "eligible": false,
+      "reason": "nonrectangular board outline requires local routing",
+      "taskCount": 269,
+      "fixedTraceCount": 0,
+      "outlineVertexCount": 11,
+      "traceWidths": [
+        0.1
+      ]
+    }
+  ]
+}

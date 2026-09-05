@@ -4,6 +4,7 @@ import { cpus, platform, release } from "node:os"
 import { dirname, resolve } from "node:path"
 import { readDatasetManifest, repositoryRoot } from "./data"
 import type { BenchmarkResult, BenchmarkTask } from "./types"
+import { summarizeResults } from "./summarize"
 
 const args = Bun.argv.slice(2)
 const values: Record<string, string> = {}
@@ -58,31 +59,10 @@ if (selection) {
   for (const sample of selection) if (!found.has(sample)) throw new Error(`Unknown selected sample ${sample}`)
 }
 
-function percentile(values: number[], fraction: number): number | null {
-  if (values.length === 0) return null
-  const sorted = [...values].sort((a, b) => a - b)
-  const index = (sorted.length - 1) * fraction
-  const low = Math.floor(index)
-  const high = Math.ceil(index)
-  return sorted[low]! + (sorted[high]! - sorted[low]!) * (index - low)
-}
-
-function summarize(results: BenchmarkResult[]): Record<string, unknown>[] {
-  return datasets.map((dataset) => {
-    const selected = results.filter((result) => result.dataset === dataset)
-    const solved = selected.filter((result) => result.didSolve)
-    const timedOut = selected.filter((result) => result.didTimeout)
-    const times = selected.filter((result) => result.didSolve || result.didTimeout).map((result) => result.elapsedTimeMs)
-    const vias = solved.flatMap((result) => typeof result.viaCount === "number" ? [result.viaCount] : [])
-    const lengths = solved.flatMap((result) => typeof result.traceLengthMm === "number" ? [result.traceLengthMm] : [])
-    return {
-      dataset, completed: selected.length, expected: tasks.filter((task) => task.dataset === dataset).length,
-      solved: solved.length, relaxedDrcPassed: solved.filter((result) => result.relaxedDrcPassed).length,
-      timedOut: timedOut.length, p50TimeMs: percentile(times, 0.5), p95TimeMs: percentile(times, 0.95),
-      avgVia: vias.length ? vias.reduce((a, b) => a + b, 0) / vias.length : null,
-      avgTraceLengthMm: lengths.length ? lengths.reduce((a, b) => a + b, 0) / lengths.length : null,
-    }
-  })
+function summarize(results: BenchmarkResult[]) {
+  return summarizeResults(results, datasets).map(summary => ({
+    ...summary, expected: tasks.filter(task => task.dataset === summary.dataset).length,
+  }))
 }
 
 async function execute(task: BenchmarkTask): Promise<BenchmarkResult> {

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+cosmos-export/
+.cosmos/
+work/
+*.log
+.DS_Store

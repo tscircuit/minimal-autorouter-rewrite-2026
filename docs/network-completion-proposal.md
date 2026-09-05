@@ -1,8 +1,14 @@
-# Network completion assessment
+# Historical network design assessment — September 5, 2026
 
-This is a proposal, not an implemented protocol extension. The inventory in `benchmarks/network-development/eligibility.json` prepares only dataset01 and dataset-srj18 and calls the pure projection helper. It performs no geometric routing or remote solve requests.
+This records the assessment before the exact-board extension was implemented.
+Option 1 below was subsequently implemented in commit `06a3593`; see
+[current network behavior](network.md) and
+[the inventory of all 101 inputs](../benchmarks/network-development/board-eligibility.json).
+The earlier inventory in `benchmarks/network-development/eligibility.json`
+prepares only dataset01 and dataset-srj18 and calls the legacy projection helper.
+It performs no geometric routing or remote solve requests.
 
-## Current coverage
+## Legacy projection coverage at the time of assessment
 
 | Dataset | Samples | Representable by current board-node adapter | Not represented |
 | --- | --- | --- | --- |

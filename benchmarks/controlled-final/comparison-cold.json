@@ -1,0 +1,380 @@
+{
+  "passed": true,
+  "maximumTimeRatio": 1.1,
+  "failures": [],
+  "raw": {
+    "baseline": [
+      {
+        "dataset": "dataset-srj18",
+        "completed": 16,
+        "solved": 14,
+        "relaxedDrcPassed": 8,
+        "timedOut": 0,
+        "p50TimeMs": 33334.595041,
+        "p95TimeMs": 189024.61749374995,
+        "avgVia": 217.28571428571428,
+        "avgTraceLengthMm": 2171.314565431367
+      },
+      {
+        "dataset": "dataset01",
+        "completed": 85,
+        "solved": 85,
+        "relaxedDrcPassed": 85,
+        "timedOut": 0,
+        "p50TimeMs": 941.4337089999999,
+        "p95TimeMs": 3717.2940922,
+        "avgVia": 37.51764705882353,
+        "avgTraceLengthMm": 487.23299401674655
+      }
+    ],
+    "candidate": [
+      {
+        "dataset": "dataset-srj18",
+        "completed": 16,
+        "solved": 14,
+        "relaxedDrcPassed": 14,
+        "timedOut": 0,
+        "p50TimeMs": 2658.4954374999998,
+        "p95TimeMs": 43461.32243069998,
+        "avgVia": 176.07142857142858,
+        "avgTraceLengthMm": 1826.0103335834312
+      },
+      {
+        "dataset": "dataset01",
+        "completed": 85,
+        "solved": 85,
+        "relaxedDrcPassed": 85,
+        "timedOut": 0,
+        "p50TimeMs": 43.223457999999994,
+        "p95TimeMs": 243.10871699999993,
+        "avgVia": 33.54117647058823,
+        "avgTraceLengthMm": 462.92416750022664
+      }
+    ]
+  },
+  "eligible": {
+    "baseline": [
+      {
+        "dataset": "dataset-srj18",
+        "completed": 15,
+        "solved": 13,
+        "relaxedDrcPassed": 8,
+        "timedOut": 0,
+        "p50TimeMs": 41700.424541,
+        "p95TimeMs": 194547.22922499984,
+        "avgVia": 225.46153846153845,
+        "avgTraceLengthMm": 2264.7264188206614
+      },
+      {
+        "dataset": "dataset01",
+        "completed": 85,
+        "solved": 85,
+        "relaxedDrcPassed": 85,
+        "timedOut": 0,
+        "p50TimeMs": 941.4337089999999,
+        "p95TimeMs": 3717.2940922,
+        "avgVia": 37.51764705882353,
+        "avgTraceLengthMm": 487.23299401674655
+      }
+    ],
+    "candidate": [
+      {
+        "dataset": "dataset-srj18",
+        "completed": 15,
+        "solved": 14,
+        "relaxedDrcPassed": 14,
+        "timedOut": 0,
+        "p50TimeMs": 2658.4954374999998,
+        "p95TimeMs": 43461.32243069998,
+        "avgVia": 176.07142857142858,
+        "avgTraceLengthMm": 1826.0103335834312
+      },
+      {
+        "dataset": "dataset01",
+        "completed": 85,
+        "solved": 85,
+        "relaxedDrcPassed": 85,
+        "timedOut": 0,
+        "p50TimeMs": 43.223457999999994,
+        "p95TimeMs": 243.10871699999993,
+        "avgVia": 33.54117647058823,
+        "avgTraceLengthMm": 462.92416750022664
+      }
+    ]
+  },
+  "acceptedInvalidInputFailures": [
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample016",
+      "sha256": "f323b21b2d833b61149d5041c04af8575c77b8cd3bb3340cba36c017872e6bf3",
+      "document": "docs/known-input-limitations.md",
+      "baselineDidSolve": true,
+      "candidateDidSolve": false,
+      "baselineDrcErrorCount": 6,
+      "candidateError": "Terminal pcb_port_183 at (-1.843115, -5.06532) lies inside unrelated copper pcb_smtpad_62 on every eligible layer",
+      "candidateWitness": {
+        "kind": "terminal-inside-unrelated-copper",
+        "taskId": "source_trace_15__pair4",
+        "terminal": {
+          "layer": "top",
+          "pcb_port_id": "pcb_port_183",
+          "pointId": "pcb_port_183",
+          "x": -1.843115,
+          "y": -5.06532
+        },
+        "terminalNet": "pcb_smtpad_24",
+        "eligibleLayers": [
+          "top"
+        ],
+        "blockingObstacles": [
+          {
+            "layer": "top",
+            "obstacle": {
+              "__zLayers": [
+                0
+              ],
+              "center": {
+                "x": -1.793115,
+                "y": -7.34032
+              },
+              "circuitJsonMetadata": {
+                "pcb_port_id": "pcb_component_33_port_1",
+                "pcb_smtpad_id": "pcb_smtpad_62"
+              },
+              "componentId": "pcb_component_33",
+              "connectedTo": [
+                "pcb_smtpad_62",
+                "connectivity_net1309",
+                "pcb_trace_148",
+                "pcb_trace_147",
+                "pcb_trace_146",
+                "source_trace_12",
+                "pcb_smtpad_20",
+                "pcb_component_12_port_2",
+                "pcb_port_21",
+                "pcb_smtpad_29",
+                "pcb_component_17_port_2",
+                "pcb_port_30",
+                "pcb_smtpad_62",
+                "pcb_component_33_port_1",
+                "pcb_port_62",
+                "pcb_smtpad_65",
+                "pcb_component_34_port_2",
+                "pcb_port_65",
+                "pcb_smtpad_112",
+                "pcb_component_47_port_2",
+                "pcb_port_112",
+                "pcb_smtpad_137",
+                "pcb_component_57_port_2",
+                "pcb_port_137",
+                "pcb_smtpad_138",
+                "pcb_component_58_port_1",
+                "pcb_port_138",
+                "pcb_smtpad_145",
+                "pcb_smtpad_144",
+                "pcb_component_58_port_7",
+                "pcb_port_144",
+                "pcb_port_145",
+                "pcb_smtpad_146",
+                "pcb_component_58_port_8",
+                "pcb_port_146",
+                "pcb_smtpad_193",
+                "pcb_component_70_port_2",
+                "pcb_port_195",
+                "pcb_smtpad_196",
+                "pcb_component_72_port_1",
+                "pcb_port_198",
+                "source_net_12"
+              ],
+              "height": 5.3,
+              "layers": [
+                "top"
+              ],
+              "type": "rect",
+              "width": 2.5
+            },
+            "localPoint": {
+              "x": -0.050000000000000044,
+              "y": 2.2750000000000004
+            },
+            "obstacleId": "pcb_smtpad_62"
+          }
+        ]
+      }
+    }
+  ],
+  "networkAudit": {
+    "pass": "cold",
+    "baselineIssues": [
+      {
+        "sample": "dataset-srj18/sample002",
+        "metricsAvailable": true,
+        "issues": [
+          "269 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset-srj18/sample003",
+        "metricsAvailable": true,
+        "issues": [
+          "1 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset-srj18/sample004",
+        "metricsAvailable": true,
+        "issues": [
+          "1 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset-srj18/sample005",
+        "metricsAvailable": true,
+        "issues": [
+          "1 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset-srj18/sample006",
+        "metricsAvailable": true,
+        "issues": [
+          "1176 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset-srj18/sample007",
+        "metricsAvailable": true,
+        "issues": [
+          "2 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset-srj18/sample008",
+        "metricsAvailable": true,
+        "issues": [
+          "1 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset-srj18/sample011",
+        "metricsAvailable": true,
+        "issues": [
+          "1 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset-srj18/sample012",
+        "metricsAvailable": true,
+        "issues": [
+          "2 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset-srj18/sample013",
+        "metricsAvailable": true,
+        "issues": [
+          "246 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset-srj18/sample014",
+        "metricsAvailable": false,
+        "issues": [
+          "No complete remote metrics were exposed"
+        ]
+      },
+      {
+        "sample": "dataset-srj18/sample015",
+        "metricsAvailable": false,
+        "issues": [
+          "No complete remote metrics were exposed"
+        ]
+      },
+      {
+        "sample": "dataset-srj18/sample016",
+        "metricsAvailable": true,
+        "issues": [
+          "1 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset01/circuit010",
+        "metricsAvailable": true,
+        "issues": [
+          "1 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset01/circuit111",
+        "metricsAvailable": true,
+        "issues": [
+          "1 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset01/circuit119",
+        "metricsAvailable": true,
+        "issues": [
+          "1 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset01/circuit127",
+        "metricsAvailable": true,
+        "issues": [
+          "1 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset01/circuit140",
+        "metricsAvailable": true,
+        "issues": [
+          "1 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset01/circuit143",
+        "metricsAvailable": true,
+        "issues": [
+          "2 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset01/circuit146",
+        "metricsAvailable": true,
+        "issues": [
+          "1 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset01/circuit152",
+        "metricsAvailable": true,
+        "issues": [
+          "1 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset01/circuit155",
+        "metricsAvailable": true,
+        "issues": [
+          "1 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset01/circuit162",
+        "metricsAvailable": true,
+        "issues": [
+          "1 requests fell back to local routing"
+        ]
+      },
+      {
+        "sample": "dataset01/circuit173",
+        "metricsAvailable": true,
+        "issues": [
+          "2 requests fell back to local routing"
+        ]
+      }
+    ],
+    "candidateIssues": []
+  }
+}

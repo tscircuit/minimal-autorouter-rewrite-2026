@@ -6,12 +6,13 @@ The reference interface and measurement definitions were inspected at [tscircuit
 
 ## Measurements
 
-- **Completed:** the public `solved` flag after stepping or awaiting `solveAsync()`. Failed solves remain failures.
+- **Recorded samples (`completed` in report summaries):** attempts that produced a result record, including failures and timeouts.
+- **Solved:** the public `solved` flag after stepping or awaiting `solveAsync()`. Failed solves remain failures.
 - **Relaxed DRC passed:** no errors from the reference evaluator. It checks trace overlap, board boundaries, trace continuity, via/trace clearance, pad/trace clearance, and same-net/different-net via spacing. Relaxed trace and via clearance are 0.1 mm. Input copper and explicit replacement metadata are handled by the reference evaluator.
 - **Vias:** the number of `route_type: "via"` points in newly returned simplified PCB traces. Preloaded input vias are excluded from this metric, matching upstream.
 - **Time:** wall-clock solve duration, starting after construction and ending before DRC. Imports, construction, DRC, and artifact writes are excluded. Networked solve time includes the awaited `solveAsync()` call. The parent process enforces a hard timeout of `300000 + 60000 × effort` milliseconds, with invalid or absent effort treated as 1. The timer covers the entire child task, including setup and DRC, as an upper bound against hangs.
 - **Percentiles:** linearly interpolated p50 and p95 over successful solves and timed-out attempts. Solver failures that do not time out are excluded, matching upstream. Timeout duration is included for timeouts.
-- **Average vias:** all completed samples with a via count, whether DRC passes or fails, matching upstream.
+- **Average vias:** all solved samples with a via count, whether DRC passes or fails, matching upstream.
 - **Trace length:** an additional diagnostic absent from the upstream benchmark. It sums Euclidean distances between consecutive same-layer wire points. Vertical via length is excluded. It is not used as a substitute for completion or DRC.
 
 The only input transformation is the reference loader's legacy obstacle metadata migration. Older producers repeated the obstacle ID in `connectedTo`, immediately followed by its PCB port ID. The loader records this as SMT-pad or plated-hole Circuit JSON provenance according to the obstacle's layer count. It does not modify vendored files.
@@ -25,6 +26,25 @@ This oracle gives both implementations exactly the same evaluator. It is develop
 ## Reproducing a comparison
 
 From the repository root:
+
+The complete acceptance run uses Bun 1.4.1 on macOS or Linux:
+
+```sh
+bun scripts/benchmark/prepare-baseline.ts
+bun scripts/benchmark/run-controlled.ts --output-dir benchmarks/my-controlled-run
+```
+
+It serially measures the rewrite and reference locally, with empty remote caches,
+and with warm caches. It creates fresh loopback services, uses every allowed
+sample, and records library, harness, service, oracle, and manifest hashes.
+`controlled-run.json` retains the six run outcomes, three comparisons, initial
+empty-cache evidence, and service counter deltas. A warm run must execute zero
+remote helpers and account for every requested result in the service cache-hit
+count. Each report checkpoints independently; a failed comparison remains
+visible while later runs continue. `--baseline-module` and `--oracle` can select
+an existing isolated baseline installation without downloading dependencies.
+
+For individual diagnostic runs:
 
 ```sh
 bun scripts/benchmark/prepare-baseline.ts

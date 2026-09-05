@@ -12,6 +12,35 @@ builds an ESM package with bundled TypeScript declarations and no runtime
 dependency on the original autorouter. The additional `lib/*` source paths are
 for TypeScript-aware tooling; the package root works in Node and browsers.
 
+For a tarball integration, run `bun run build` and `npm pack` in this repository,
+then point the consumer's existing dependency key at the resulting tarball:
+
+```json
+{
+  "dependencies": {
+    "@tscircuit/capacity-autorouter": "file:../path/to/tscircuit-minimal-autorouter-rewrite-2026-0.1.0.tgz"
+  }
+}
+```
+
+Run the consumer's package install command. Imports under the existing package
+name can then remain unchanged. A fresh npm installation was checked with Node
+execution and TypeScript declarations under that exact dependency key.
+
+Both pipeline classes infer the caller's SRJ type, preserving source metadata
+and narrower obstacle types such as the original package's rect-only declaration.
+Final output replaces any narrow preloaded trace-array type with the full new
+trace type. Oval inputs remain supported. Package-root `Jumper` describes a
+high-density route jumper; the SRJ placement type remains available at
+`lib/types/srj-types`. HD routes retain the optional `jumpers` field and the
+`HighDensityIntraNodeRouteWithJumpers` type. These declarations do not add jumper
+search to the routing engine.
+
+The final declaration compatibility change emits byte-identical JavaScript to
+the benchmarked build. Its hashes and checks against the pinned original's
+actual declarations are recorded in
+[`type-compatibility-verification.json`](../benchmarks/controlled-final/type-compatibility-verification.json).
+
 ## Lifecycle and output
 
 `step()`, `solve()`, `solved`, `failed`, `error`, `progress`, `iterations`,

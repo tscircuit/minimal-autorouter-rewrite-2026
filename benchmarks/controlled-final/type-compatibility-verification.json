@@ -1,0 +1,57 @@
+{
+  "verifiedAt": "2026-09-05T22:32:41.120Z",
+  "benchmarkImplementationCommit": "6d4e33227f47064805518615c69b4dca3ae0d0c8",
+  "typeOnlyImplementationCommit": "2bc2b66a2760c215458549222c1924364e2a720a",
+  "benchmarkLibrarySourceSha256": "eef284fbfcdb892a30f6d494b4ed6e4ef2756b0271506cd4be6ea0045e2c9bd4",
+  "typeOnlyLibrarySourceSha256": "df12d21eb0115c47acd4049bb41dcadb0b637840aa78ce9f200187d97901ec05",
+  "compiledJavaScript": {
+    "byteIdentical": true,
+    "benchmarkSha256": "24f772b811a0b74dc6333bd595c53cc206cf38fe7fd2636978183ca61e32d7fe",
+    "finalSha256": "24f772b811a0b74dc6333bd595c53cc206cf38fe7fd2636978183ca61e32d7fe"
+  },
+  "declarationsSha256": "026d44ca888e69b45298e02be7e892a69f2e9031cd9be0e4f002ac8b2cbf1eb6",
+  "referencePackage": {
+    "name": "@tscircuit/capacity-autorouter",
+    "version": "0.0.884",
+    "declarationsSha256": "0464458b03df9ad481d55eb5412705022fcd46cc55bc6396ce6526ce7d83fd22"
+  },
+  "checks": [
+    {
+      "name": "Repository strict TypeScript, including public-return-types.typecheck.ts",
+      "passed": true,
+      "command": "bun run typecheck"
+    },
+    {
+      "name": "ESM and declaration build",
+      "passed": true,
+      "command": "bun run build"
+    },
+    {
+      "name": "Byte-for-byte comparison with saved frozen JavaScript",
+      "passed": true
+    },
+    {
+      "name": "Compile against the pinned original package's actual SRJ, trace, HD route, and jumper declarations",
+      "passed": true,
+      "command": "tsc --noEmit --strict --target ES2022 --module ESNext --moduleResolution Bundler --skipLibCheck external-types.ts",
+      "consumerSha256": "0642843a99ab58cc557648f21c84940cee42f1d7d52907bf0c957abc7f8b2b49"
+    },
+    {
+      "name": "Focused compatibility tests",
+      "passed": true,
+      "tests": 16,
+      "assertions": 86,
+      "command": "bun test tests/compatibility --timeout 300000"
+    },
+    {
+      "name": "Fresh npm tarball installation under the original dependency key",
+      "passed": true,
+      "dependencyKey": "@tscircuit/capacity-autorouter",
+      "packagedName": "@tscircuit/minimal-autorouter-rewrite-2026",
+      "nodeExecutionPassed": true,
+      "installedJavaScriptMatches": true,
+      "installedDeclarationsMatch": true
+    }
+  ],
+  "scope": "Only declarations, generic parameters, and erased assertions changed after the controlled run. Runtime algorithm code is byte-identical. Full pipeline diagnostics and supported geometry differences are documented in docs/compatibility.md."
+}

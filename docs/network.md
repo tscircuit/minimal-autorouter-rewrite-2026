@@ -28,6 +28,28 @@ The parser supports fragmented/out-of-order NDJSON and independent item settleme
 
 Stage statistics retain existing request, cache, miss, solver, transport, and fallback counters. Additions include `remoteCapabilityRequests`, `remoteBoardContractSupported`, `remoteCapabilityReason`, `remoteContract`, `remoteProblemHash`, and `remoteBoardResults`. Valid board failures expose the verified `terminalContradiction` when present. A zero-request local fallback cannot establish network performance.
 
+## Controlled results
+
+The [final controlled comparison](../benchmarks/README.md) covers all 101 allowed
+inputs in local, cold-cache, and warm-cache modes. All three comparisons pass.
+Each rewrite mode produces 85/85 dataset01 DRC passes and 14/16 dataset-srj18 DRC
+passes, retaining every reference DRC pass. There are no process timeouts.
+
+The rewrite's cold service starts with zero entries, executes 101 board helpers,
+and stores 101 results. The hot pass executes zero helpers and serves all 101
+results from cache. Failed samples014 and016 participate in both passes. Client
+audits show 101 requests and zero fallbacks in each pass; seven oversized inputs
+use the single endpoint even when warm. Independent service deltas confirm the
+cache source of those responses.
+
+These are complete-pipeline loopback measurements with matching services. The
+reference sends its native high-density nodes and may reject its own helper's
+output before finishing locally; those events remain in the reports. The two
+implementations use different work units, so the comparison is not a per-node
+microbenchmark or a claim about the deployed public service. Full inputs,
+options, runtime, source fingerprints, and service evidence are retained under
+[`benchmarks/controlled-final`](../benchmarks/controlled-final/README.md).
+
 ## Earlier sample003 development observations
 
 `benchmarks/network-development/sample003-{cold,hot,local}.json` were recorded before the board extension using one native node and the same pinned relaxed DRC oracle. They remain historical development evidence:

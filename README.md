@@ -3,14 +3,18 @@
 An independent TypeScript implementation of the `Pipeline9` and
 `Pipeline9_Networked` interfaces from `@tscircuit/capacity-autorouter`.
 
-This repository is under active construction. Benchmark parity is the acceptance
-criterion, not a claim about the initial implementation. Results and remaining
-differences will be recorded as the implementation develops.
+Controlled local, cold-cache, and warm-cache comparisons pass against
+`@tscircuit/capacity-autorouter@0.0.884` on all 101 allowed inputs. The rewrite
+preserves every reference DRC pass and produces 99 clean routes versus 93.
+See [measured results](benchmarks/README.md) for timings, raw failures, cache
+evidence, and the exact acceptance rules.
 
 The design keeps the solver pattern: each stage exposes `step()`, progress,
 terminal state, and inspectable results. Named electrical connectivity, physical
 copper connectivity, geometric search, and asynchronous transport have separate
-responsibilities.
+responsibilities. The [architecture guide](docs/architecture.md) maps these
+boundaries to the source; the [development record](docs/development.md) explains
+the changes made as benchmark evidence exposed problems.
 
 Only dataset01 and dataset-srj18 are allowed as benchmark data. The original
 autorouter is an isolated benchmark oracle and is never a runtime dependency of
@@ -73,9 +77,27 @@ differences from the original implementation.
 
 ## Benchmarking
 
-See [the benchmark method](docs/benchmark-method.md) for isolated baseline setup,
-the allowed dataset revisions, DRC evaluation, process timeouts, and comparison
-commands. Development results under `benchmarks/` are measurements during active
-implementation; performance acceptance requires a stable implementation and
-controlled runs. The first complete dataset01 development run reached 85/85
-completed boards and 85/85 relaxed-DRC passes.
+The final runs use Bun 1.4.1, one worker at a time, the same pinned relaxed-DRC
+evaluator, and unchanged routing source. These are local Pipeline9 measurements:
+
+| Dataset | Reference DRC passes | Rewrite DRC passes | Reference median | Rewrite median | Mean vias, reference → rewrite |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| dataset01 | 85 / 85 | 85 / 85 | 824 ms | 39 ms | 37.52 → 33.54 |
+| dataset-srj18 | 8 / 16 | 14 / 16 | 39.10 s | 1.20 s | 217.29 → 176.07 |
+
+Both implementations fail sample014. The rewrite completes sample015, which the
+reference fails, and rejects sample016 with an independently verified fixed-pad
+short; the reference marks sample016 solved with six DRC errors. All 16 samples
+remain in the raw reports. The exact-hash contradiction exception is explained
+in [known input limitations](docs/known-input-limitations.md).
+
+Network measurements use matching loopback services. The rewrite sends each
+complete board remotely: cold performs 101 helper runs, and hot retrieves all
+101 results from cache with zero helper runs. Both passes have zero local
+fallbacks. This measures the full public pipeline and does not claim performance
+on the deployed public cache service.
+
+See [all local and network results](benchmarks/README.md), the
+[controlled evidence](benchmarks/controlled-final/README.md), and the
+[reproduction method](docs/benchmark-method.md). Earlier development reports
+remain explicitly historical.

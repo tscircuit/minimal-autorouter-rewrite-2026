@@ -1,0 +1,1293 @@
+{
+  "version": 1,
+  "startedAt": "2026-09-05T21:33:52.429Z",
+  "updatedAt": "2026-09-05T22:27:17.103Z",
+  "complete": true,
+  "passed": true,
+  "runtime": {
+    "version": "1.4.1",
+    "executable": "/Users/seve/.bun/bin/bun",
+    "concurrency": 1
+  },
+  "cacheNamespace": "minimal-rewrite-controlled-09d4b964-f54c-4036-960a-f8f1cf55fd24",
+  "expectedSamples": {
+    "dataset01": 85,
+    "dataset-srj18": 16
+  },
+  "baselineModule": "/Users/seve/Documents/Codex/2026-09-05/g/work/baseline/node_modules/@tscircuit/capacity-autorouter/dist/index.js",
+  "oracle": "/Users/seve/Documents/Codex/2026-09-05/g/work/baseline/node_modules/@tscircuit/capacity-autorouter/dist/benchmark-oracle.js",
+  "sourceFingerprints": {
+    "lib": "eef284fbfcdb892a30f6d494b4ed6e4ef2756b0271506cd4be6ea0045e2c9bd4",
+    "harness": "2cece35299851b205a94353e276de15b104ef67dac7415375a05a3fa55653576",
+    "rewriteService": "f2faf1f08fb4cfcc1dedba055fa1fda79c702c7165eed850cde3694ab97621a5",
+    "baselineService": "9f41f4bc51efbf2df5916aae8f0d06eace32f1eca50226682661d849ae6863b1",
+    "baselineBundle": "25f50b7f73fd4b387f96a03e0e2672e9ca3a80c3ec567a9e0428e91dc9ce8e14",
+    "oracle": "53c0b0bd2d7e7499cd32d03d6708ff3662b7c49668d06f2f77ce069694a1ef75",
+    "datasetManifest": "cfd259d15568a3b76cd3e02f12822f8fcdec1530243f7fbb260be829098354bd"
+  },
+  "failures": [],
+  "serviceEvidence": [
+    {
+      "flavor": "rewrite",
+      "event": "started-empty",
+      "at": "2026-09-05T21:54:16.774Z",
+      "pid": 5721,
+      "url": "http://127.0.0.1:51684/",
+      "namespace": "minimal-rewrite-controlled-09d4b964-f54c-4036-960a-f8f1cf55fd24",
+      "sourceFingerprints": {
+        "lib": "eef284fbfcdb892a30f6d494b4ed6e4ef2756b0271506cd4be6ea0045e2c9bd4",
+        "harness": "2cece35299851b205a94353e276de15b104ef67dac7415375a05a3fa55653576",
+        "rewriteService": "f2faf1f08fb4cfcc1dedba055fa1fda79c702c7165eed850cde3694ab97621a5",
+        "baselineService": "9f41f4bc51efbf2df5916aae8f0d06eace32f1eca50226682661d849ae6863b1",
+        "baselineBundle": "25f50b7f73fd4b387f96a03e0e2672e9ca3a80c3ec567a9e0428e91dc9ce8e14",
+        "oracle": "53c0b0bd2d7e7499cd32d03d6708ff3662b7c49668d06f2f77ce069694a1ef75",
+        "datasetManifest": "cfd259d15568a3b76cd3e02f12822f8fcdec1530243f7fbb260be829098354bd"
+      },
+      "status": {
+        "autorouterVersion": "0.1.0",
+        "cacheEntries": 0,
+        "stats": {
+          "batchRequests": 0,
+          "singleRequests": 0,
+          "solverRuns": 0,
+          "cacheHits": 0,
+          "capabilityRequests": 0,
+          "boardSolverRuns": 0,
+          "nodeSolverRuns": 0
+        }
+      }
+    },
+    {
+      "flavor": "rewrite",
+      "mode": "cold",
+      "namespace": "minimal-rewrite-controlled-09d4b964-f54c-4036-960a-f8f1cf55fd24",
+      "before": {
+        "autorouterVersion": "0.1.0",
+        "cacheEntries": 0,
+        "stats": {
+          "batchRequests": 0,
+          "singleRequests": 0,
+          "solverRuns": 0,
+          "cacheHits": 0,
+          "capabilityRequests": 0,
+          "boardSolverRuns": 0,
+          "nodeSolverRuns": 0
+        }
+      },
+      "after": {
+        "autorouterVersion": "0.1.0",
+        "cacheEntries": 101,
+        "stats": {
+          "batchRequests": 94,
+          "singleRequests": 101,
+          "solverRuns": 101,
+          "cacheHits": 0,
+          "capabilityRequests": 101,
+          "boardSolverRuns": 101,
+          "nodeSolverRuns": 0
+        }
+      },
+      "delta": {
+        "batchRequests": 94,
+        "singleRequests": 101,
+        "solverRuns": 101,
+        "cacheHits": 0,
+        "capabilityRequests": 101,
+        "boardSolverRuns": 101,
+        "nodeSolverRuns": 0
+      },
+      "reportedRemoteRequests": 101,
+      "at": "2026-09-05T21:57:46.409Z"
+    },
+    {
+      "flavor": "baseline",
+      "event": "started-empty",
+      "at": "2026-09-05T21:57:46.588Z",
+      "pid": 8065,
+      "url": "http://127.0.0.1:52656/",
+      "namespace": "minimal-rewrite-controlled-09d4b964-f54c-4036-960a-f8f1cf55fd24",
+      "sourceFingerprints": {
+        "lib": "eef284fbfcdb892a30f6d494b4ed6e4ef2756b0271506cd4be6ea0045e2c9bd4",
+        "harness": "2cece35299851b205a94353e276de15b104ef67dac7415375a05a3fa55653576",
+        "rewriteService": "f2faf1f08fb4cfcc1dedba055fa1fda79c702c7165eed850cde3694ab97621a5",
+        "baselineService": "9f41f4bc51efbf2df5916aae8f0d06eace32f1eca50226682661d849ae6863b1",
+        "baselineBundle": "25f50b7f73fd4b387f96a03e0e2672e9ca3a80c3ec567a9e0428e91dc9ce8e14",
+        "oracle": "53c0b0bd2d7e7499cd32d03d6708ff3662b7c49668d06f2f77ce069694a1ef75",
+        "datasetManifest": "cfd259d15568a3b76cd3e02f12822f8fcdec1530243f7fbb260be829098354bd"
+      },
+      "status": {
+        "autorouterVersion": "0.0.883",
+        "moduleSha256": "25f50b7f73fd4b387f96a03e0e2672e9ca3a80c3ec567a9e0428e91dc9ce8e14",
+        "cacheEntries": 0,
+        "stats": {
+          "batchRequests": 0,
+          "singleRequests": 0,
+          "solverRuns": 0,
+          "cacheHits": 0
+        }
+      }
+    },
+    {
+      "flavor": "baseline",
+      "mode": "cold",
+      "namespace": "minimal-rewrite-controlled-09d4b964-f54c-4036-960a-f8f1cf55fd24",
+      "before": {
+        "autorouterVersion": "0.0.883",
+        "moduleSha256": "25f50b7f73fd4b387f96a03e0e2672e9ca3a80c3ec567a9e0428e91dc9ce8e14",
+        "cacheEntries": 0,
+        "stats": {
+          "batchRequests": 0,
+          "singleRequests": 0,
+          "solverRuns": 0,
+          "cacheHits": 0
+        }
+      },
+      "after": {
+        "autorouterVersion": "0.0.883",
+        "moduleSha256": "25f50b7f73fd4b387f96a03e0e2672e9ca3a80c3ec567a9e0428e91dc9ce8e14",
+        "cacheEntries": 22789,
+        "stats": {
+          "batchRequests": 286,
+          "singleRequests": 22789,
+          "solverRuns": 22789,
+          "cacheHits": 0
+        }
+      },
+      "delta": {
+        "batchRequests": 286,
+        "singleRequests": 22789,
+        "solverRuns": 22789,
+        "cacheHits": 0
+      },
+      "reportedRemoteRequests": 22789,
+      "at": "2026-09-05T22:16:09.434Z"
+    },
+    {
+      "flavor": "rewrite",
+      "mode": "hot",
+      "namespace": "minimal-rewrite-controlled-09d4b964-f54c-4036-960a-f8f1cf55fd24",
+      "before": {
+        "autorouterVersion": "0.1.0",
+        "cacheEntries": 101,
+        "stats": {
+          "batchRequests": 94,
+          "singleRequests": 101,
+          "solverRuns": 101,
+          "cacheHits": 0,
+          "capabilityRequests": 101,
+          "boardSolverRuns": 101,
+          "nodeSolverRuns": 0
+        }
+      },
+      "after": {
+        "autorouterVersion": "0.1.0",
+        "cacheEntries": 101,
+        "stats": {
+          "batchRequests": 188,
+          "singleRequests": 108,
+          "solverRuns": 101,
+          "cacheHits": 101,
+          "capabilityRequests": 202,
+          "boardSolverRuns": 101,
+          "nodeSolverRuns": 0
+        }
+      },
+      "delta": {
+        "batchRequests": 94,
+        "singleRequests": 7,
+        "solverRuns": 0,
+        "cacheHits": 101,
+        "capabilityRequests": 101,
+        "boardSolverRuns": 0,
+        "nodeSolverRuns": 0
+      },
+      "reportedRemoteRequests": 101,
+      "at": "2026-09-05T22:17:03.168Z"
+    },
+    {
+      "flavor": "baseline",
+      "mode": "hot",
+      "namespace": "minimal-rewrite-controlled-09d4b964-f54c-4036-960a-f8f1cf55fd24",
+      "before": {
+        "autorouterVersion": "0.0.883",
+        "moduleSha256": "25f50b7f73fd4b387f96a03e0e2672e9ca3a80c3ec567a9e0428e91dc9ce8e14",
+        "cacheEntries": 22789,
+        "stats": {
+          "batchRequests": 286,
+          "singleRequests": 22789,
+          "solverRuns": 22789,
+          "cacheHits": 0
+        }
+      },
+      "after": {
+        "autorouterVersion": "0.0.883",
+        "moduleSha256": "25f50b7f73fd4b387f96a03e0e2672e9ca3a80c3ec567a9e0428e91dc9ce8e14",
+        "cacheEntries": 22789,
+        "stats": {
+          "batchRequests": 572,
+          "singleRequests": 22789,
+          "solverRuns": 22789,
+          "cacheHits": 22789
+        }
+      },
+      "delta": {
+        "batchRequests": 286,
+        "singleRequests": 0,
+        "solverRuns": 0,
+        "cacheHits": 22789
+      },
+      "reportedRemoteRequests": 22789,
+      "at": "2026-09-05T22:27:17.041Z"
+    }
+  ],
+  "runs": [
+    {
+      "name": "local-rewrite",
+      "flavor": "rewrite",
+      "mode": "local",
+      "output": "/Users/seve/Documents/Codex/2026-09-05/g/outputs/minimal-autorouter-rewrite-2026/benchmarks/controlled-final/local-rewrite.json",
+      "startedAt": "2026-09-05T21:33:52.448Z",
+      "exitCode": 0,
+      "complete": true,
+      "resultCount": 101,
+      "finishedAt": "2026-09-05T21:36:18.628Z"
+    },
+    {
+      "name": "local-baseline",
+      "flavor": "baseline",
+      "mode": "local",
+      "output": "/Users/seve/Documents/Codex/2026-09-05/g/outputs/minimal-autorouter-rewrite-2026/benchmarks/controlled-final/local-baseline.json",
+      "startedAt": "2026-09-05T21:36:18.634Z",
+      "exitCode": 0,
+      "complete": true,
+      "resultCount": 101,
+      "finishedAt": "2026-09-05T21:54:16.717Z"
+    },
+    {
+      "name": "cold-rewrite",
+      "flavor": "rewrite",
+      "mode": "cold",
+      "output": "/Users/seve/Documents/Codex/2026-09-05/g/outputs/minimal-autorouter-rewrite-2026/benchmarks/controlled-final/cold-rewrite.json",
+      "startedAt": "2026-09-05T21:54:16.746Z",
+      "exitCode": 0,
+      "complete": true,
+      "resultCount": 101,
+      "finishedAt": "2026-09-05T21:57:46.409Z"
+    },
+    {
+      "name": "cold-baseline",
+      "flavor": "baseline",
+      "mode": "cold",
+      "output": "/Users/seve/Documents/Codex/2026-09-05/g/outputs/minimal-autorouter-rewrite-2026/benchmarks/controlled-final/cold-baseline.json",
+      "startedAt": "2026-09-05T21:57:46.414Z",
+      "exitCode": 0,
+      "complete": true,
+      "resultCount": 101,
+      "finishedAt": "2026-09-05T22:16:09.434Z"
+    },
+    {
+      "name": "hot-rewrite",
+      "flavor": "rewrite",
+      "mode": "hot",
+      "output": "/Users/seve/Documents/Codex/2026-09-05/g/outputs/minimal-autorouter-rewrite-2026/benchmarks/controlled-final/hot-rewrite.json",
+      "startedAt": "2026-09-05T22:16:09.464Z",
+      "exitCode": 0,
+      "complete": true,
+      "resultCount": 101,
+      "finishedAt": "2026-09-05T22:17:03.168Z"
+    },
+    {
+      "name": "hot-baseline",
+      "flavor": "baseline",
+      "mode": "hot",
+      "output": "/Users/seve/Documents/Codex/2026-09-05/g/outputs/minimal-autorouter-rewrite-2026/benchmarks/controlled-final/hot-baseline.json",
+      "startedAt": "2026-09-05T22:17:03.172Z",
+      "exitCode": 0,
+      "complete": true,
+      "resultCount": 101,
+      "finishedAt": "2026-09-05T22:27:17.041Z"
+    }
+  ],
+  "comparisons": {
+    "local": {
+      "passed": true,
+      "maximumTimeRatio": 1.1,
+      "failures": [],
+      "raw": {
+        "baseline": [
+          {
+            "dataset": "dataset-srj18",
+            "completed": 16,
+            "solved": 14,
+            "relaxedDrcPassed": 8,
+            "timedOut": 0,
+            "p50TimeMs": 39100.15575,
+            "p95TimeMs": 160996.81415229995,
+            "avgVia": 217.28571428571428,
+            "avgTraceLengthMm": 2171.314565431367
+          },
+          {
+            "dataset": "dataset01",
+            "completed": 85,
+            "solved": 85,
+            "relaxedDrcPassed": 85,
+            "timedOut": 0,
+            "p50TimeMs": 824.397666,
+            "p95TimeMs": 3308.9613002,
+            "avgVia": 37.51764705882353,
+            "avgTraceLengthMm": 487.23299401674655
+          }
+        ],
+        "candidate": [
+          {
+            "dataset": "dataset-srj18",
+            "completed": 16,
+            "solved": 14,
+            "relaxedDrcPassed": 14,
+            "timedOut": 0,
+            "p50TimeMs": 1204.914458,
+            "p95TimeMs": 33590.199905799986,
+            "avgVia": 176.07142857142858,
+            "avgTraceLengthMm": 1826.0103335834312
+          },
+          {
+            "dataset": "dataset01",
+            "completed": 85,
+            "solved": 85,
+            "relaxedDrcPassed": 85,
+            "timedOut": 0,
+            "p50TimeMs": 39.03729200000001,
+            "p95TimeMs": 239.1477587999999,
+            "avgVia": 33.54117647058823,
+            "avgTraceLengthMm": 462.92416750022664
+          }
+        ]
+      },
+      "eligible": {
+        "baseline": [
+          {
+            "dataset": "dataset-srj18",
+            "completed": 15,
+            "solved": 13,
+            "relaxedDrcPassed": 8,
+            "timedOut": 0,
+            "p50TimeMs": 41168.3065,
+            "p95TimeMs": 167759.8002751998,
+            "avgVia": 225.46153846153845,
+            "avgTraceLengthMm": 2264.7264188206614
+          },
+          {
+            "dataset": "dataset01",
+            "completed": 85,
+            "solved": 85,
+            "relaxedDrcPassed": 85,
+            "timedOut": 0,
+            "p50TimeMs": 824.397666,
+            "p95TimeMs": 3308.9613002,
+            "avgVia": 37.51764705882353,
+            "avgTraceLengthMm": 487.23299401674655
+          }
+        ],
+        "candidate": [
+          {
+            "dataset": "dataset-srj18",
+            "completed": 15,
+            "solved": 14,
+            "relaxedDrcPassed": 14,
+            "timedOut": 0,
+            "p50TimeMs": 1204.914458,
+            "p95TimeMs": 33590.199905799986,
+            "avgVia": 176.07142857142858,
+            "avgTraceLengthMm": 1826.0103335834312
+          },
+          {
+            "dataset": "dataset01",
+            "completed": 85,
+            "solved": 85,
+            "relaxedDrcPassed": 85,
+            "timedOut": 0,
+            "p50TimeMs": 39.03729200000001,
+            "p95TimeMs": 239.1477587999999,
+            "avgVia": 33.54117647058823,
+            "avgTraceLengthMm": 462.92416750022664
+          }
+        ]
+      },
+      "acceptedInvalidInputFailures": [
+        {
+          "dataset": "dataset-srj18",
+          "sample": "sample016",
+          "sha256": "f323b21b2d833b61149d5041c04af8575c77b8cd3bb3340cba36c017872e6bf3",
+          "document": "docs/known-input-limitations.md",
+          "baselineDidSolve": true,
+          "candidateDidSolve": false,
+          "baselineDrcErrorCount": 6,
+          "candidateError": "Terminal pcb_port_183 at (-1.843115, -5.06532) lies inside unrelated copper pcb_smtpad_62 on every eligible layer",
+          "candidateWitness": {
+            "kind": "terminal-inside-unrelated-copper",
+            "taskId": "source_trace_15__pair4",
+            "terminal": {
+              "x": -1.843115,
+              "y": -5.06532,
+              "layer": "top",
+              "pointId": "pcb_port_183",
+              "pcb_port_id": "pcb_port_183"
+            },
+            "terminalNet": "pcb_smtpad_24",
+            "eligibleLayers": [
+              "top"
+            ],
+            "blockingObstacles": [
+              {
+                "layer": "top",
+                "obstacle": {
+                  "componentId": "pcb_component_33",
+                  "type": "rect",
+                  "layers": [
+                    "top"
+                  ],
+                  "center": {
+                    "x": -1.793115,
+                    "y": -7.34032
+                  },
+                  "width": 2.5,
+                  "height": 5.3,
+                  "connectedTo": [
+                    "pcb_smtpad_62",
+                    "connectivity_net1309",
+                    "pcb_trace_148",
+                    "pcb_trace_147",
+                    "pcb_trace_146",
+                    "source_trace_12",
+                    "pcb_smtpad_20",
+                    "pcb_component_12_port_2",
+                    "pcb_port_21",
+                    "pcb_smtpad_29",
+                    "pcb_component_17_port_2",
+                    "pcb_port_30",
+                    "pcb_smtpad_62",
+                    "pcb_component_33_port_1",
+                    "pcb_port_62",
+                    "pcb_smtpad_65",
+                    "pcb_component_34_port_2",
+                    "pcb_port_65",
+                    "pcb_smtpad_112",
+                    "pcb_component_47_port_2",
+                    "pcb_port_112",
+                    "pcb_smtpad_137",
+                    "pcb_component_57_port_2",
+                    "pcb_port_137",
+                    "pcb_smtpad_138",
+                    "pcb_component_58_port_1",
+                    "pcb_port_138",
+                    "pcb_smtpad_145",
+                    "pcb_smtpad_144",
+                    "pcb_component_58_port_7",
+                    "pcb_port_144",
+                    "pcb_port_145",
+                    "pcb_smtpad_146",
+                    "pcb_component_58_port_8",
+                    "pcb_port_146",
+                    "pcb_smtpad_193",
+                    "pcb_component_70_port_2",
+                    "pcb_port_195",
+                    "pcb_smtpad_196",
+                    "pcb_component_72_port_1",
+                    "pcb_port_198",
+                    "source_net_12"
+                  ],
+                  "circuitJsonMetadata": {
+                    "pcb_smtpad_id": "pcb_smtpad_62",
+                    "pcb_port_id": "pcb_component_33_port_1"
+                  },
+                  "__zLayers": [
+                    0
+                  ]
+                },
+                "localPoint": {
+                  "x": -0.050000000000000044,
+                  "y": 2.2750000000000004
+                },
+                "obstacleId": "pcb_smtpad_62"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "cold": {
+      "passed": true,
+      "maximumTimeRatio": 1.1,
+      "failures": [],
+      "raw": {
+        "baseline": [
+          {
+            "dataset": "dataset-srj18",
+            "completed": 16,
+            "solved": 14,
+            "relaxedDrcPassed": 8,
+            "timedOut": 0,
+            "p50TimeMs": 33334.595041,
+            "p95TimeMs": 189024.61749374995,
+            "avgVia": 217.28571428571428,
+            "avgTraceLengthMm": 2171.314565431367
+          },
+          {
+            "dataset": "dataset01",
+            "completed": 85,
+            "solved": 85,
+            "relaxedDrcPassed": 85,
+            "timedOut": 0,
+            "p50TimeMs": 941.4337089999999,
+            "p95TimeMs": 3717.2940922,
+            "avgVia": 37.51764705882353,
+            "avgTraceLengthMm": 487.23299401674655
+          }
+        ],
+        "candidate": [
+          {
+            "dataset": "dataset-srj18",
+            "completed": 16,
+            "solved": 14,
+            "relaxedDrcPassed": 14,
+            "timedOut": 0,
+            "p50TimeMs": 2658.4954374999998,
+            "p95TimeMs": 43461.32243069998,
+            "avgVia": 176.07142857142858,
+            "avgTraceLengthMm": 1826.0103335834312
+          },
+          {
+            "dataset": "dataset01",
+            "completed": 85,
+            "solved": 85,
+            "relaxedDrcPassed": 85,
+            "timedOut": 0,
+            "p50TimeMs": 43.223457999999994,
+            "p95TimeMs": 243.10871699999993,
+            "avgVia": 33.54117647058823,
+            "avgTraceLengthMm": 462.92416750022664
+          }
+        ]
+      },
+      "eligible": {
+        "baseline": [
+          {
+            "dataset": "dataset-srj18",
+            "completed": 15,
+            "solved": 13,
+            "relaxedDrcPassed": 8,
+            "timedOut": 0,
+            "p50TimeMs": 41700.424541,
+            "p95TimeMs": 194547.22922499984,
+            "avgVia": 225.46153846153845,
+            "avgTraceLengthMm": 2264.7264188206614
+          },
+          {
+            "dataset": "dataset01",
+            "completed": 85,
+            "solved": 85,
+            "relaxedDrcPassed": 85,
+            "timedOut": 0,
+            "p50TimeMs": 941.4337089999999,
+            "p95TimeMs": 3717.2940922,
+            "avgVia": 37.51764705882353,
+            "avgTraceLengthMm": 487.23299401674655
+          }
+        ],
+        "candidate": [
+          {
+            "dataset": "dataset-srj18",
+            "completed": 15,
+            "solved": 14,
+            "relaxedDrcPassed": 14,
+            "timedOut": 0,
+            "p50TimeMs": 2658.4954374999998,
+            "p95TimeMs": 43461.32243069998,
+            "avgVia": 176.07142857142858,
+            "avgTraceLengthMm": 1826.0103335834312
+          },
+          {
+            "dataset": "dataset01",
+            "completed": 85,
+            "solved": 85,
+            "relaxedDrcPassed": 85,
+            "timedOut": 0,
+            "p50TimeMs": 43.223457999999994,
+            "p95TimeMs": 243.10871699999993,
+            "avgVia": 33.54117647058823,
+            "avgTraceLengthMm": 462.92416750022664
+          }
+        ]
+      },
+      "acceptedInvalidInputFailures": [
+        {
+          "dataset": "dataset-srj18",
+          "sample": "sample016",
+          "sha256": "f323b21b2d833b61149d5041c04af8575c77b8cd3bb3340cba36c017872e6bf3",
+          "document": "docs/known-input-limitations.md",
+          "baselineDidSolve": true,
+          "candidateDidSolve": false,
+          "baselineDrcErrorCount": 6,
+          "candidateError": "Terminal pcb_port_183 at (-1.843115, -5.06532) lies inside unrelated copper pcb_smtpad_62 on every eligible layer",
+          "candidateWitness": {
+            "kind": "terminal-inside-unrelated-copper",
+            "taskId": "source_trace_15__pair4",
+            "terminal": {
+              "layer": "top",
+              "pcb_port_id": "pcb_port_183",
+              "pointId": "pcb_port_183",
+              "x": -1.843115,
+              "y": -5.06532
+            },
+            "terminalNet": "pcb_smtpad_24",
+            "eligibleLayers": [
+              "top"
+            ],
+            "blockingObstacles": [
+              {
+                "layer": "top",
+                "obstacle": {
+                  "__zLayers": [
+                    0
+                  ],
+                  "center": {
+                    "x": -1.793115,
+                    "y": -7.34032
+                  },
+                  "circuitJsonMetadata": {
+                    "pcb_port_id": "pcb_component_33_port_1",
+                    "pcb_smtpad_id": "pcb_smtpad_62"
+                  },
+                  "componentId": "pcb_component_33",
+                  "connectedTo": [
+                    "pcb_smtpad_62",
+                    "connectivity_net1309",
+                    "pcb_trace_148",
+                    "pcb_trace_147",
+                    "pcb_trace_146",
+                    "source_trace_12",
+                    "pcb_smtpad_20",
+                    "pcb_component_12_port_2",
+                    "pcb_port_21",
+                    "pcb_smtpad_29",
+                    "pcb_component_17_port_2",
+                    "pcb_port_30",
+                    "pcb_smtpad_62",
+                    "pcb_component_33_port_1",
+                    "pcb_port_62",
+                    "pcb_smtpad_65",
+                    "pcb_component_34_port_2",
+                    "pcb_port_65",
+                    "pcb_smtpad_112",
+                    "pcb_component_47_port_2",
+                    "pcb_port_112",
+                    "pcb_smtpad_137",
+                    "pcb_component_57_port_2",
+                    "pcb_port_137",
+                    "pcb_smtpad_138",
+                    "pcb_component_58_port_1",
+                    "pcb_port_138",
+                    "pcb_smtpad_145",
+                    "pcb_smtpad_144",
+                    "pcb_component_58_port_7",
+                    "pcb_port_144",
+                    "pcb_port_145",
+                    "pcb_smtpad_146",
+                    "pcb_component_58_port_8",
+                    "pcb_port_146",
+                    "pcb_smtpad_193",
+                    "pcb_component_70_port_2",
+                    "pcb_port_195",
+                    "pcb_smtpad_196",
+                    "pcb_component_72_port_1",
+                    "pcb_port_198",
+                    "source_net_12"
+                  ],
+                  "height": 5.3,
+                  "layers": [
+                    "top"
+                  ],
+                  "type": "rect",
+                  "width": 2.5
+                },
+                "localPoint": {
+                  "x": -0.050000000000000044,
+                  "y": 2.2750000000000004
+                },
+                "obstacleId": "pcb_smtpad_62"
+              }
+            ]
+          }
+        }
+      ],
+      "networkAudit": {
+        "pass": "cold",
+        "baselineIssues": [
+          {
+            "sample": "dataset-srj18/sample002",
+            "metricsAvailable": true,
+            "issues": [
+              "269 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample003",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample004",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample005",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample006",
+            "metricsAvailable": true,
+            "issues": [
+              "1176 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample007",
+            "metricsAvailable": true,
+            "issues": [
+              "2 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample008",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample011",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample012",
+            "metricsAvailable": true,
+            "issues": [
+              "2 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample013",
+            "metricsAvailable": true,
+            "issues": [
+              "246 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample014",
+            "metricsAvailable": false,
+            "issues": [
+              "No complete remote metrics were exposed"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample015",
+            "metricsAvailable": false,
+            "issues": [
+              "No complete remote metrics were exposed"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample016",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit010",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit111",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit119",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit127",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit140",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit143",
+            "metricsAvailable": true,
+            "issues": [
+              "2 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit146",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit152",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit155",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit162",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit173",
+            "metricsAvailable": true,
+            "issues": [
+              "2 requests fell back to local routing"
+            ]
+          }
+        ],
+        "candidateIssues": []
+      }
+    },
+    "hot": {
+      "passed": true,
+      "maximumTimeRatio": 1.1,
+      "failures": [],
+      "raw": {
+        "baseline": [
+          {
+            "dataset": "dataset-srj18",
+            "completed": 16,
+            "solved": 14,
+            "relaxedDrcPassed": 8,
+            "timedOut": 0,
+            "p50TimeMs": 18839.244187999997,
+            "p95TimeMs": 92132.14474944999,
+            "avgVia": 217.28571428571428,
+            "avgTraceLengthMm": 2171.314565431367
+          },
+          {
+            "dataset": "dataset01",
+            "completed": 85,
+            "solved": 85,
+            "relaxedDrcPassed": 85,
+            "timedOut": 0,
+            "p50TimeMs": 451.49112500000007,
+            "p95TimeMs": 1978.231609,
+            "avgVia": 37.51764705882353,
+            "avgTraceLengthMm": 487.23299401674655
+          }
+        ],
+        "candidate": [
+          {
+            "dataset": "dataset-srj18",
+            "completed": 16,
+            "solved": 14,
+            "relaxedDrcPassed": 14,
+            "timedOut": 0,
+            "p50TimeMs": 1076.1646875000001,
+            "p95TimeMs": 7825.307514349999,
+            "avgVia": 176.07142857142858,
+            "avgTraceLengthMm": 1826.0103335834312
+          },
+          {
+            "dataset": "dataset01",
+            "completed": 85,
+            "solved": 85,
+            "relaxedDrcPassed": 85,
+            "timedOut": 0,
+            "p50TimeMs": 19.11979100000002,
+            "p95TimeMs": 33.62673320000002,
+            "avgVia": 33.54117647058823,
+            "avgTraceLengthMm": 462.92416750022664
+          }
+        ]
+      },
+      "eligible": {
+        "baseline": [
+          {
+            "dataset": "dataset-srj18",
+            "completed": 15,
+            "solved": 13,
+            "relaxedDrcPassed": 8,
+            "timedOut": 0,
+            "p50TimeMs": 21706.580708999998,
+            "p95TimeMs": 94005.85670779995,
+            "avgVia": 225.46153846153845,
+            "avgTraceLengthMm": 2264.7264188206614
+          },
+          {
+            "dataset": "dataset01",
+            "completed": 85,
+            "solved": 85,
+            "relaxedDrcPassed": 85,
+            "timedOut": 0,
+            "p50TimeMs": 451.49112500000007,
+            "p95TimeMs": 1978.231609,
+            "avgVia": 37.51764705882353,
+            "avgTraceLengthMm": 487.23299401674655
+          }
+        ],
+        "candidate": [
+          {
+            "dataset": "dataset-srj18",
+            "completed": 15,
+            "solved": 14,
+            "relaxedDrcPassed": 14,
+            "timedOut": 0,
+            "p50TimeMs": 1076.1646875000001,
+            "p95TimeMs": 7825.307514349999,
+            "avgVia": 176.07142857142858,
+            "avgTraceLengthMm": 1826.0103335834312
+          },
+          {
+            "dataset": "dataset01",
+            "completed": 85,
+            "solved": 85,
+            "relaxedDrcPassed": 85,
+            "timedOut": 0,
+            "p50TimeMs": 19.11979100000002,
+            "p95TimeMs": 33.62673320000002,
+            "avgVia": 33.54117647058823,
+            "avgTraceLengthMm": 462.92416750022664
+          }
+        ]
+      },
+      "acceptedInvalidInputFailures": [
+        {
+          "dataset": "dataset-srj18",
+          "sample": "sample016",
+          "sha256": "f323b21b2d833b61149d5041c04af8575c77b8cd3bb3340cba36c017872e6bf3",
+          "document": "docs/known-input-limitations.md",
+          "baselineDidSolve": true,
+          "candidateDidSolve": false,
+          "baselineDrcErrorCount": 6,
+          "candidateError": "Terminal pcb_port_183 at (-1.843115, -5.06532) lies inside unrelated copper pcb_smtpad_62 on every eligible layer",
+          "candidateWitness": {
+            "kind": "terminal-inside-unrelated-copper",
+            "taskId": "source_trace_15__pair4",
+            "terminal": {
+              "layer": "top",
+              "pcb_port_id": "pcb_port_183",
+              "pointId": "pcb_port_183",
+              "x": -1.843115,
+              "y": -5.06532
+            },
+            "terminalNet": "pcb_smtpad_24",
+            "eligibleLayers": [
+              "top"
+            ],
+            "blockingObstacles": [
+              {
+                "layer": "top",
+                "obstacle": {
+                  "__zLayers": [
+                    0
+                  ],
+                  "center": {
+                    "x": -1.793115,
+                    "y": -7.34032
+                  },
+                  "circuitJsonMetadata": {
+                    "pcb_port_id": "pcb_component_33_port_1",
+                    "pcb_smtpad_id": "pcb_smtpad_62"
+                  },
+                  "componentId": "pcb_component_33",
+                  "connectedTo": [
+                    "pcb_smtpad_62",
+                    "connectivity_net1309",
+                    "pcb_trace_148",
+                    "pcb_trace_147",
+                    "pcb_trace_146",
+                    "source_trace_12",
+                    "pcb_smtpad_20",
+                    "pcb_component_12_port_2",
+                    "pcb_port_21",
+                    "pcb_smtpad_29",
+                    "pcb_component_17_port_2",
+                    "pcb_port_30",
+                    "pcb_smtpad_62",
+                    "pcb_component_33_port_1",
+                    "pcb_port_62",
+                    "pcb_smtpad_65",
+                    "pcb_component_34_port_2",
+                    "pcb_port_65",
+                    "pcb_smtpad_112",
+                    "pcb_component_47_port_2",
+                    "pcb_port_112",
+                    "pcb_smtpad_137",
+                    "pcb_component_57_port_2",
+                    "pcb_port_137",
+                    "pcb_smtpad_138",
+                    "pcb_component_58_port_1",
+                    "pcb_port_138",
+                    "pcb_smtpad_145",
+                    "pcb_smtpad_144",
+                    "pcb_component_58_port_7",
+                    "pcb_port_144",
+                    "pcb_port_145",
+                    "pcb_smtpad_146",
+                    "pcb_component_58_port_8",
+                    "pcb_port_146",
+                    "pcb_smtpad_193",
+                    "pcb_component_70_port_2",
+                    "pcb_port_195",
+                    "pcb_smtpad_196",
+                    "pcb_component_72_port_1",
+                    "pcb_port_198",
+                    "source_net_12"
+                  ],
+                  "height": 5.3,
+                  "layers": [
+                    "top"
+                  ],
+                  "type": "rect",
+                  "width": 2.5
+                },
+                "localPoint": {
+                  "x": -0.050000000000000044,
+                  "y": 2.2750000000000004
+                },
+                "obstacleId": "pcb_smtpad_62"
+              }
+            ]
+          }
+        }
+      ],
+      "networkAudit": {
+        "pass": "hot",
+        "baselineIssues": [
+          {
+            "sample": "dataset-srj18/sample003",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample004",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample005",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample006",
+            "metricsAvailable": true,
+            "issues": [
+              "3 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample007",
+            "metricsAvailable": true,
+            "issues": [
+              "2 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample008",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample011",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample012",
+            "metricsAvailable": true,
+            "issues": [
+              "2 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample013",
+            "metricsAvailable": true,
+            "issues": [
+              "4 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample014",
+            "metricsAvailable": false,
+            "issues": [
+              "No complete remote metrics were exposed"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample015",
+            "metricsAvailable": false,
+            "issues": [
+              "No complete remote metrics were exposed"
+            ]
+          },
+          {
+            "sample": "dataset-srj18/sample016",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit010",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit111",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit119",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit127",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit140",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit143",
+            "metricsAvailable": true,
+            "issues": [
+              "2 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit146",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit152",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit155",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit162",
+            "metricsAvailable": true,
+            "issues": [
+              "1 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          },
+          {
+            "sample": "dataset01/circuit173",
+            "metricsAvailable": true,
+            "issues": [
+              "2 requests fell back to local routing",
+              "Hot pass did not accept every requested result from cache"
+            ]
+          }
+        ],
+        "candidateIssues": []
+      }
+    }
+  }
+}

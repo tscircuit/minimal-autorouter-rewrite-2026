@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "audit": {
+    "path": "source-rotation-audit.json",
+    "sha256": "b105757f0f13aaf841ad8487d1bd66c0ae3b31aa01563a8d30d1fc98881ab913"
+  },
+  "corrections": [
+    {
+      "dataset": "dataset-srj18",
+      "sample": "sample016",
+      "originalSrjSha256": "f323b21b2d833b61149d5041c04af8575c77b8cd3bb3340cba36c017872e6bf3",
+      "correctedSrjSha256": "445a3e5a6f3109d6fb8620e515e8e76c36a09061c6fcd931cd5b50e6aa198513",
+      "path": "dataset-srj18/sample016.corrected.srj.json",
+      "sourceRepository": "https://github.com/tscircuit/dataset-srj18",
+      "sourceCommit": "c0aad90256a95256fcac814f9f7da81a82a2fdea",
+      "sourceKicad": {
+        "path": "kicad_pcb/sample016-usb-c-power-adapter.kicad_pcb",
+        "sha256": "f2ca55189e62f4f2638b7bde1058085ea6ab8bce9f7d846ca6946c1174d9c0e3"
+      },
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample016-usb-c-power-adapter.json",
+        "sha256": "836877f24bfcd0033e3e90af00712e3e870a83189f99829b7df183772df7f951"
+      },
+      "changedObstacleIndices": [
+        85,
+        86,
+        219,
+        220
+      ]
+    }
+  ]
+}

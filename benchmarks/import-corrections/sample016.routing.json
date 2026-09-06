@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "sample": "dataset-srj18/sample016",
+  "derivedInput": true,
+  "passed": true,
+  "originalSrjSha256": "f323b21b2d833b61149d5041c04af8575c77b8cd3bb3340cba36c017872e6bf3",
+  "correctedSrjSha256": "445a3e5a6f3109d6fb8620e515e8e76c36a09061c6fcd931cd5b50e6aa198513",
+  "bunVersion": "1.4.1",
+  "options": {
+    "effort": 1,
+    "cacheProvider": null
+  },
+  "solveTimeMs": 334.357083,
+  "traceCount": 269,
+  "routingStats": {
+    "routed": 269,
+    "total": 269,
+    "pass": 1,
+    "failed": 0,
+    "ripups": 0,
+    "totalRipups": 0,
+    "strategy": "ordered",
+    "attempts": 1
+  },
+  "validationReportSha256": "88da17669b72b4abc469893a477ccb01efd6afc73b34d0a8f9796a7b260ae3ee",
+  "timings": "Diagnostic only; this derivative is excluded from the pinned benchmark population."
+}

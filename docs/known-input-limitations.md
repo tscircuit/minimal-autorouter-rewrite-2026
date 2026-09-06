@@ -2,6 +2,10 @@
 
 ## A fixed-pad short in dataset-srj18 sample016
 
+The [corrected import](../imports/README.md) now routes all 269 tasks and passes
+the full PCB checks. The analysis below applies to the unchanged original SRJ,
+which remains in the benchmark and its original-input regression.
+
 Sample016 cannot produce physically clean copper without correcting its supplied pad geometry or netlist. Its fixture remains available, and its test intentionally requires an explicit infeasibility report with a concrete conflict witness. It does not accept an arbitrary routing failure or pretend that invalid copper is solved.
 
 The vendored source is pinned by SHA-256 `f323b21b2d833b61149d5041c04af8575c77b8cd3bb3340cba36c017872e6bf3`.
@@ -46,6 +50,13 @@ Source SHA-256 values are
 (KiCad) and
 `836877f24bfcd0033e3e90af00712e3e870a83189f99829b7df183772df7f951`
 (intermediate Circuit JSON).
+
+The same rotation was lost on both pads of C43 and C44: `pcb_smtpad_62`,
+`pcb_smtpad_63`, `pcb_smtpad_196`, and `pcb_smtpad_197`. All four have zero
+trapezoid taper. The explicit corrected derivative restores their world-aligned
+5.3 × 2.5 mm envelopes at their existing centers, with all net and port identities
+preserved. The import correction is checksum-guarded and independently tested;
+Pipeline9 does not silently modify the original geometry.
 
 
 ## Completed routing on dataset-srj18 sample014

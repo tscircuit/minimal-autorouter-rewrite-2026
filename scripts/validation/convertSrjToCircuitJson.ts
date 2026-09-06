@@ -33,6 +33,7 @@ export interface SrjConversionCoverage {
   verifiedSourceGeometry?: {
     originalSrjSha256: string
     sourceCircuitJson: VerifiedSourceGeometry["sourceCircuitJson"]
+    importCorrection?: VerifiedSourceGeometry["importCorrection"]
     nonPlatedHoleCount: number
   }
   limitations: string[]
@@ -200,6 +201,7 @@ function build(srj: SimpleRouteJson, options: SrjConversionOptions = {}): {
     coverage.verifiedSourceGeometry = {
       originalSrjSha256:options.sourceGeometry.originalSrjSha256,
       sourceCircuitJson:options.sourceGeometry.sourceCircuitJson,
+      ...(options.sourceGeometry.importCorrection ? {importCorrection:options.sourceGeometry.importCorrection} : {}),
       nonPlatedHoleCount:sourceHoles.size,
     }
     coverage.limitations.push(`${sourceHoles.size} non-plated drill holes are restored from hash-verified source geometry; their SRJ routing envelopes are not reclassified as physical keepouts.`)

@@ -9,6 +9,10 @@ fixed, sample014 completes, and sample012's original drill geometry is restored.
 The remaining findings require input-design decisions; see
 [PCB audit results](benchmarks/pcb-validation/README.md).
 
+An explicit [corrected sample016 import](imports/README.md) now completes all
+269 routing tasks with zero PCB issues. Its Cosmos fixture includes corrected
+and original views. The historical benchmark population remains pinned.
+
 Fresh local, cold-cache, and warm-cache comparisons preserve every reference
 relaxed-DRC pass: **100 passes versus 93** for
 `@tscircuit/capacity-autorouter@0.0.884`. All strict timing and via-count gates pass.

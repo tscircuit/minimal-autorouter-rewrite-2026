@@ -2,6 +2,7 @@ import {createHash} from "node:crypto"
 import {pcb_hole} from "circuit-json"
 import type {Obstacle, SimpleRouteJson} from "../../lib/types"
 import manifest from "./source-geometry-manifest.json"
+import importManifest from "../../imports/manifest.json"
 
 export interface VerifiedNonPlatedHole {
   readonly type: "pcb_hole"
@@ -31,6 +32,13 @@ export interface VerifiedSourceGeometry {
     readonly sha256: string
   }
   readonly holes: readonly VerifiedSourceHoleReplacement[]
+  readonly importCorrection?: {
+    readonly originalSrjSha256: string
+    readonly correctedSrjSha256: string
+    readonly audit: {readonly path: string; readonly sha256: string}
+    readonly changedObstacleIndices: readonly number[]
+    readonly sourceKicad: {readonly path: string; readonly sha256: string}
+  }
 }
 
 type ManifestSample = typeof manifest.samples[number]
@@ -99,8 +107,10 @@ export function assertSourceGeometryMatches(srj: SimpleRouteJson, geometry: Veri
  * Optional validation-only enrichment. The manifest was extracted from the
  * pinned allowed source Circuit JSON by matching each NPTH circle to exactly
  * one unowned SRJ rectangle after the producer's six-decimal rounding.
- * No router input or dataset bytes are modified. Unknown sources stay
- * conservative; a declared/recognized source mismatch is an error.
+ * No router input or dataset bytes are modified. Explicit, exact-hash import
+ * derivatives can retain their unchanged drill evidence; the correction and
+ * original source hashes remain in coverage. Unknown sources stay conservative;
+ * a declared/recognized source mismatch is an error.
  */
 export function getVerifiedSourceGeometry(input: {
   originalSrjBytes: string | Uint8Array
@@ -112,7 +122,9 @@ export function getVerifiedSourceGeometry(input: {
     requireMatch(originalSrjSha256 === input.expectedOriginalSrjSha256, "original SRJ byte hash does not match the declared hash")
   const original = JSON.parse(typeof input.originalSrjBytes === "string" ? input.originalSrjBytes :
     new TextDecoder().decode(input.originalSrjBytes)) as SimpleRouteJson & {id?: string; sourceCircuitJson?: string}
-  const sample = manifest.samples.find(candidate => candidate.originalSrjSha256 === originalSrjSha256)
+  const correction = importManifest.corrections.find(candidate => candidate.correctedSrjSha256 === originalSrjSha256)
+  const sample = manifest.samples.find(candidate => candidate.originalSrjSha256 ===
+    (correction?.originalSrjSha256 ?? originalSrjSha256))
   if (!sample) {
     requireMatch(!manifest.samples.some(candidate => original.id === candidate.sample || original.sourceCircuitJson === candidate.sourceCircuitJson.path),
       "recognized allowed source does not have its pinned original SRJ hash")
@@ -120,6 +132,15 @@ export function getVerifiedSourceGeometry(input: {
   }
   requireMatch(original.layerCount === sample.layerCount && original.obstacles.length === sample.obstacleCount,
     "pinned source does not match its recorded board dimensions")
+  if (correction) {
+    requireMatch(correction.dataset === "dataset-srj18" && correction.sample === sample.sample &&
+      correction.sourceCommit === manifest.sourceCommit &&
+      correction.sourceCircuitJson.path === sample.sourceCircuitJson.path &&
+      correction.sourceCircuitJson.sha256 === sample.sourceCircuitJson.sha256,
+      "import correction does not match the pinned source geometry provenance")
+    requireMatch(correction.changedObstacleIndices.every(index => !sample.holes.some(hole => hole.obstacleIndex === index)),
+      "an import correction changed a source drill envelope")
+  }
   const seen = new Set<number>(), seenIds = new Set<string>()
   for (const mapping of sample.holes) {
     requireMatch(!seen.has(mapping.obstacleIndex) && !seenIds.has(mapping.hole.pcb_hole_id), "duplicate source hole mapping")
@@ -133,6 +154,13 @@ export function getVerifiedSourceGeometry(input: {
     verifyEnvelope(original.obstacles[mapping.obstacleIndex], sample, mapping)
   }
   const geometry: VerifiedSourceGeometry = freeze({version: 1, dataset: "dataset-srj18", sample: sample.sample, originalSrjSha256,
+    ...(correction ? {importCorrection: {
+      originalSrjSha256:correction.originalSrjSha256,
+      correctedSrjSha256:correction.correctedSrjSha256,
+      audit:{path:`imports/${importManifest.audit.path}`,sha256:importManifest.audit.sha256},
+      changedObstacleIndices:[...correction.changedObstacleIndices],
+      sourceKicad:{...correction.sourceKicad},
+    }} : {}),
     sourceCircuitJson: {repository: manifest.sourceRepository, commit: manifest.sourceCommit,
       path: sample.sourceCircuitJson.path, sha256: sample.sourceCircuitJson.sha256},
     holes: sample.holes.map(mapping => ({obstacleIndex: mapping.obstacleIndex,

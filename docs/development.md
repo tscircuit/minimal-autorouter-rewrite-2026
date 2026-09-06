@@ -146,3 +146,26 @@ in [the current benchmark evidence](../benchmarks/candidate-pcb-fixes/README.md)
 The independent full PCB audit passes 89 of 101 original inputs; remaining
 completed-output findings all identify fixed pads, and sample016 remains an
 explicit source-import conflict.
+
+## 7. Correct the imported geometry explicitly
+
+The original KiCad sources establish that sample016's conflict came from four
+trapezoid pads whose absolute rotation was omitted by the importer. With zero
+taper, these are exact rectangles: their 270° rotation swaps the 2.5 × 5.3 mm
+dimensions. C43 and C44 keep their centers, ports, nets, and all other fields.
+The corrected source routes all 269 tasks and passes the full PCB checks in
+local, cold-network, and warm-network tests.
+
+The correction command verifies the source and audit hashes and emits a separate
+derivative. Original benchmark inputs and their certificate remain pinned. The
+source-geometry validator recognizes the exact corrected hash, retains unchanged
+drill evidence, and records the derivation. Cosmos exposes both inputs in the
+sample016 fixture. The autorouter runtime is byte-for-byte unchanged.
+
+An independent scan of all 16 srj18 sources matches 5,748 standard copper SMT
+pads and finds only these four rotation defects; seven custom copper contours
+remain outside the rotation audit. The general importer correction is proposed
+in [draft PR #184](https://github.com/tscircuit/kicad-to-circuit-json/pull/184),
+with synthetic regressions and published-version reproduction. Upstream's full
+workflow is skipped because it downloads unrelated datasets. See
+[import corrections](../imports/README.md) for all artifacts and reproduction.

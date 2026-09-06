@@ -4,6 +4,13 @@
 
 The current audit passes 89 of 101 samples: 100 route successfully, 11 completed routes have fixed-input PCB findings, and sample016 fails on its contradictory imported pad geometry. The first 80/101 audit is retained as `report-before-fixes.json`. See [the findings summary](../benchmarks/pcb-validation/README.md) and [the PCB validation report](../benchmarks/pcb-validation/report.json). Read each result's `didSolve`, `validatedOutput`, `error`, `physicalConnectivityError`, `sourcePreservationError`, `pcbIssues`, and `coverage` together. If routing fails, the validator can still inspect the supplied source geometry; that inspection is not a successfully routed output.
 
+That audit uses the original pinned inputs. The separately recorded
+[corrected sample016 import](../imports/README.md) now routes and passes with
+zero PCB issues. Source enrichment recognizes only its exact approved file hash,
+retains unchanged drill evidence, and records both original and corrected hashes
+in `coverage.verifiedSourceGeometry.importCorrection`. Further unrecorded edits
+still fail verification; the original benchmark input is never corrected implicitly.
+
 Run the full check from the repository root:
 
 ```sh

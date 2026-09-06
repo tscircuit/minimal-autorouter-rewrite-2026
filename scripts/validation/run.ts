@@ -48,11 +48,11 @@ const sourceFiles = [
   "datasets/manifest.json",
   "scripts/benchmark/data.ts",
 ]
-for (const directory of ["lib", "scripts/validation"]) {
+for (const directory of ["lib", "scripts/validation", "scripts/imports", "imports"]) {
   for await (const path of new Bun.Glob("**/*").scan(
     resolve(repositoryRoot, directory),
   ))
-    if (/\.(ts|json)$/.test(path)) sourceFiles.push(`${directory}/${path}`)
+    if (/\.(ts|json|patch)$/.test(path)) sourceFiles.push(`${directory}/${path}`)
 }
 const packageMetadata = JSON.parse(
   await readFile(resolve(repositoryRoot, "package.json"), "utf8"),

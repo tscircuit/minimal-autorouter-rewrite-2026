@@ -1,0 +1,44 @@
+{
+  "sourceRepository": "https://github.com/tscircuit/kicad-to-circuit-json",
+  "baseCommit": "cbdcf0aa112555f7c203977c5675ae945c286fe0",
+  "commit": "7c4b21e5d6cfb71e5211c16909d2f86d591d508d",
+  "branch": "fix/preserve-trapezoid-pad-rotation",
+  "draftPullRequest": "https://github.com/tscircuit/kicad-to-circuit-json/pull/184",
+  "localRuntime": "Bun1.4.1",
+  "validationDependencies": {
+    "kicadts": "0.0.57",
+    "@flatten-js/core": "1.6.14",
+    "@tscircuit/circuit-json-util": "0.0.111",
+    "circuit-json": "0.0.485",
+    "transformation-matrix": "3.1.0",
+    "typescript": "5.9.3",
+    "@types/bun": "1.4.1",
+    "tsup": "8.5.1"
+  },
+  "tests": {
+    "pass": 25,
+    "fail": 0,
+    "assertions": 173,
+    "files": [
+      "tests/smd-pad-rotation-normalization.test.ts",
+      "tests/trapezoid-pad-rotation.test.ts"
+    ],
+    "newCases": 24
+  },
+  "typecheck": "passed",
+  "build": "ESM and declaration build passed",
+  "format": "both changed files pass Biome2.4.6 format",
+  "review": "independent routing_engine review; no additional material issue",
+  "datasetsUsedByTests": [],
+  "githubActionRunsForHead": 0,
+  "ciSkipReason": "Full upstream workflow downloads KiCad demos and runs other dataset reproductions, outside user-authorized dataset01/dataset-srj18 boundary. Existing workflows use push/pull_request events supported by [skip ci]. No workflow was changed.",
+  "ciSkipDocumentation": "https://docs.github.com/en/actions/how-tos/manage-workflow-runs/skip-workflow-runs",
+  "taperGeometryReference": "https://gitlab.com/kicad/code/kicad/-/blob/b29a56530c51385a21313a120b950cbca5616037/pcbnew/tools/pcb_grid_helper.cpp",
+  "artifactSha256": {
+    "preserve-trapezoid-pad-rotation.patch": "ae2463446a1710415fb0346cd85d05670f8c3d3f7048afb8708aca25de173044",
+    "regression-proof.json": "3c3a085529de468ae59bb9b2af084f0e0459b8dcd9c8ce51948e19902c53ea70",
+    "focused-tests.log": "06f1d16a5faf14527cb75d3a979f2cb961b578aa68e1270b54f9b69aa7991763",
+    "typecheck.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build.log": "ae736139b8890cf3f87110d36a577ec54cd4b81fa8f300e3d1f38c56e97cf9e7"
+  }
+}

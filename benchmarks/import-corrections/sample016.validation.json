@@ -1,0 +1,3512 @@
+{
+  "version": 1,
+  "startedAt": "2026-09-06T01:35:39.161Z",
+  "updatedAt": "2026-09-06T01:35:39.694Z",
+  "complete": true,
+  "checksVersion": "0.0.184",
+  "circuitJsonVersion": "0.0.485",
+  "provenance": {
+    "bunVersion": "1.4.1",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "sourceSha256": {
+      "bun.lock": "35a2db6c2717bcc27e16e297f892badbfeb4e13cbc893cbbc54ee2bc3372494f",
+      "datasets/manifest.json": "cfd259d15568a3b76cd3e02f12822f8fcdec1530243f7fbb260be829098354bd",
+      "imports/dataset-srj18/sample016.corrected.srj.json": "445a3e5a6f3109d6fb8620e515e8e76c36a09061c6fcd931cd5b50e6aa198513",
+      "imports/manifest.json": "d4709905aa47719fbd9c22d44fde0930f96f30d3cfdc6c2e49e74be0e778bedb",
+      "imports/source-rotation-audit.json": "b105757f0f13aaf841ad8487d1bd66c0ae3b31aa01563a8d30d1fc98881ab913",
+      "imports/upstream/preserve-trapezoid-pad-rotation.patch": "ae2463446a1710415fb0346cd85d05670f8c3d3f7048afb8708aca25de173044",
+      "imports/upstream/regression-proof.json": "3c3a085529de468ae59bb9b2af084f0e0459b8dcd9c8ce51948e19902c53ea70",
+      "imports/upstream/verification.json": "349902bcbb7be1c480916e44365f419fade820036938beb82e09d6b787a3cdba",
+      "lib/HighDensityRoutingStage.ts": "029e55469a1b1a2ed168b0d9dea8ac7479ec70b7233ad0bb63e02eb9949ed353",
+      "lib/Pipeline9.ts": "4a31c0a9b77af30a0ca18f2eced97bb9137e29c8e0f9f524dcdc827922325154",
+      "lib/Pipeline9_Networked.ts": "0e1bb23f4b7872573464ed98d91678da2a2d30210c48557c0938d963e38ec1ef",
+      "lib/autorouter-pipelines/AutoroutingPipeline9_Networked/AutoroutingPipelineSolver9_Networked.ts": "e44fdeb2a441726ec497c1e3e19c2ec89519cfc443f36256a439d9d5c2cf37e3",
+      "lib/autorouter-pipelines/AutoroutingPipeline9_Networked/HdCache2Client.ts": "0f11ee1e07e9f0a6046a6c7ec9315903687bea85bdced3fa1f8dcc310d8253c9",
+      "lib/autorouter-pipelines/AutoroutingPipeline9_Networked/Pipeline9NetworkedHighDensitySolver.ts": "c2894d2bd0e7f99fc0f489d3c7ef027b52bdd1b78f0a86f5ddb7fb37945f0073",
+      "lib/autorouter-pipelines/AutoroutingPipeline9_Networked/autorouterVersion.ts": "b0936c38f252a16c40ff9fc6be097e5c78e01da64b3cc2dbb4e74a4ec5e23aa1",
+      "lib/autorouter-pipelines/AutoroutingPipeline9_Networked/pipeline9NetworkedTypes.ts": "a72a0a15463cc919dc5aa4f76f733a9fae21fac20eb1f324fdc62b3ec463d7e6",
+      "lib/autorouter-pipelines/AutoroutingPipeline9_Networked/solvePipeline9NetworkedHighDensityNode.ts": "5fbf309e262cdf99adfd69887c313734679813a8b80859e8564fe7274e0b646c",
+      "lib/autorouter-pipelines/AutoroutingPipeline9_PreloadedTraceGraph/AutoroutingPipelineSolver9_PreloadedTraceGraph.ts": "080df471a6b02e9d28ed3abaef747152a7c5dadb75208425e340b52eb4c3d4c3",
+      "lib/autorouter-pipelines/index.ts": "7fb9e51a04cd14272f765512710c323ed9b1214858fb1836469dc9d464da6eb0",
+      "lib/cache/InMemoryCache.ts": "155111d41e43d80df05ca3c8c8b745cf55ddd6fe54df4ed89561da6201b32678",
+      "lib/cache/setupGlobalCaches.ts": "6c2fa8796ca640f829fb0655a31ecfcd7c104235d6ded93aa4bb0d60d3dd596e",
+      "lib/cache/types.ts": "a8d048371a75d9c2610d88be912fa133b70e21fd517beae3f69b38c46bc23b68",
+      "lib/index.ts": "2ea9fa4b51e6e939e55e014f36da355d0ed4e6a22b611f5f6638972ca624223e",
+      "lib/legacyPhaseTargets.ts": "2dff9bc8aafb7120eea85de8515b4dea8937c1e890b3922a09601c2c0ea03028",
+      "lib/network/HdCache2Client.ts": "d36cb42dd5e2712cba33d486436fd65aa53e7817ed5fd13f5aea47c72bbe47d3",
+      "lib/network/NetworkRoutingSolver.ts": "9637f19ead4dab20b63a7c4a2deab57ba3436e6b639c44c078a1fb31f5ef7c2c",
+      "lib/network/Pipeline9NetworkedHighDensitySolver.ts": "109f4f330d51e33a6b2952f2562a9620d0d06d1ae7dd5fde4bf1acdcc2e08a96",
+      "lib/network/boardContract.ts": "81994a9d1c2888b027425a88a42ec3fdf31b3941f663d5f2fe75c524fb7e48dd",
+      "lib/network/capabilities.ts": "db4b36fd514f67dc7a7f761d7759844a2590d08f1c552f12722b76a80b3b3b25",
+      "lib/network/nodeConversion.ts": "a491d446873ece3cbe2ca3436286c8b1a507385e83590bcec0dfbb81be822e5e",
+      "lib/network/solvePipeline9NetworkedHighDensityNode.ts": "f0c8991eb11ccab3ca958633f82a6634096a1a4086b5db7c3d05ba89ec0115c8",
+      "lib/network/types.ts": "d6bfa862011415e5c3f23a4a7b1def24ccae41735c49f8bad3819f5f3440932f",
+      "lib/network/validateBoardRoutes.ts": "631efc4ea60a90d5ba042e443f3d0c1702f94c016be1ce95d8c007239e16b8ee",
+      "lib/network/validateRemoteRoutes.ts": "7280c5c1cc807cc4e5e637c139b020798376fc4d71d368420d56de641d46894a",
+      "lib/output/AssembleTracesSolver.ts": "8af13fa8b5926c7392809583af58acfa64a1f56264aea4beb77a4753cd683297",
+      "lib/output/toHighDensityRoutes.ts": "956caa74a5a06c9f1c4d95dc5a7ea44491bc3258a98bd55fa019d85a87158ebe",
+      "lib/postprocessing/CoupledPairSolver.ts": "4690813aa1d496c5a4af255fea605fd6801e9d68da139f9a1fa5abedbcec5d75",
+      "lib/postprocessing/LengthMatchingSolver.ts": "0b92abb392c0efc8d4ed6690103acfe7c445285907f033fb5eba750043c60ac0",
+      "lib/postprocessing/coupledGeometry.ts": "9d92a5f4907373c56f09304531257c762ff3651ee20c7a1c205893435dd494e9",
+      "lib/postprocessing/lengthGeometry.ts": "2b43f2139600b2cd427c7535084d0deeb1c71126731d7dd6451625c24cb39619",
+      "lib/preparation/ConnectivityIndex.ts": "7902d0283e0e0235cf4934640b2d8ea75867e59af9d3fc913af098f91aa89ab2",
+      "lib/preparation/PrepareBoardSolver.ts": "503e8112ea845c98e162291e346261a792c3ed67c4692d49252cf94e366319ab",
+      "lib/preparation/TerminalViaSolver.ts": "14f23b7858ad5274185487eccd8de44608a43a524d3f0367a3cb26920bb22618",
+      "lib/routing/CompletionRepairSolver.ts": "d27f1e5615e79a518054d3fa30dbf847ef576af4c1ac6c9d47d5d8410c77d97f",
+      "lib/routing/CopperMap.ts": "12d8b7c450148507b9215975569961b37ff55a92862d8b82e56ba71d47e0f2fc",
+      "lib/routing/RouteSearch.ts": "ccb0ba53b113234bb35371db38844b93617ef039a2ee8fbd6ba85503b8394208",
+      "lib/routing/RoutingSolver.ts": "721ae6a8a36c4f6706e6d5ced4c5fb33ff93c123dd6495bcb22bbaf7d8de2a57",
+      "lib/routing/findTerminalContradiction.ts": "6927ebd953737e8ed381224c0ab7687ae026b7cdb7d52150b1078aa0ce913c4a",
+      "lib/routing/geometry.ts": "9218409a3e5195fb5dc2c2b9ef1b5d8e7be5afabf2c31d134a5feed914ddeff5",
+      "lib/routing/types.ts": "7181c5c2d746a31b71a69f346ce18aeb4f03826fbff63353975ad34762d3d30d",
+      "lib/solvers/BaseSolver.ts": "9e19a4afe0f9e53b5b6d8ae1651a6cef5ac3a2102b2da397f84c8e2ea35a265e",
+      "lib/solvers/getPendingEffectsFromSolverTree.ts": "963899cd3cc1dc0ac18d588263a86277ea612a6ef7bba72167961d0b9992a658",
+      "lib/types/high-density-types.ts": "438b2ae9e46e50b2d06973b51781dfe07d274f9d606b9dabc4d51be75dd8d481",
+      "lib/types/index.ts": "e1e901ba5ccc453c62cc68edeb1b8e97ba6cbbb957e5ddc0eee27dc3335bef33",
+      "lib/types/srj-types.ts": "e3a4b20d990c0ec603d9b3089ae36de34e2af98a8fb34f3df02f0e3fda306524",
+      "lib/utils/convertSrjToGraphicsObject.ts": "8c86032d1d4d476ac23caedd2e3473775f2564554c645df91ce95c43f425a877",
+      "package.json": "e09063d71a766506efaeb48079579dd94eeb615ce2d772a85b45e5dd26160110",
+      "patches/@tscircuit%2Fcircuit-json-util@0.0.111.patch": "07e5ddbce88b3e3fa7722ee667727dc302e9675ddaa98fbe43ec3db291018421",
+      "scripts/benchmark/data.ts": "48ee40414eb9957b5797e3a07e64d8e3e7e68dcaaad93b9975810e6558a4e9c3",
+      "scripts/imports/applyVerifiedImportCorrections.ts": "173d363c2e4b38cd9b08cba3d2c6e593614e184da7440bb5ece7817f39ef5248",
+      "scripts/imports/regenerate.ts": "83ef850c6f643a50a0820b71ef4a7e027322359800c0b43ed86821e269318ef9",
+      "scripts/imports/run.ts": "78fbe4ff7baf4b1edbe57ba237df6fea18909931734e89a40118f0ccc2d5699f",
+      "scripts/imports/validate.ts": "7169a3cbdcfda7585b6394dad750b84e08c4099c04c1d7c21349e4e244b9036c",
+      "scripts/validation/assertPhysicalConnectivity.ts": "84bbf8a63d77a50f1a49e754456dd82aa21aba567de8d66c048c175b946c9ef4",
+      "scripts/validation/assertSourcePreservation.ts": "7c494f888902c12a3845f333e925e5b4e1f1111c8187a008a59b0a15d9a8ed45",
+      "scripts/validation/convertSrjToCircuitJson.ts": "2e75186bcf34fd2e8a4f83baec801eb67b34eb6e99969634712af5e5f07060cd",
+      "scripts/validation/run.ts": "52f6b64746ff41f0694457b7beeba0c068db239ed7a13fe270a7a9b0103f6831",
+      "scripts/validation/source-geometry-manifest.json": "356afc4c82364ab6d3fe673b8d5be7c6b3864ec19c31cd89b3a8d9cc2a6bfc5a",
+      "scripts/validation/sourceGeometry.ts": "acd0787816d6e8edb12855ebaf09cb44b7f104ecc3de227f1bf3e5b236f06aab",
+      "scripts/validation/validateSrjWithChecks.ts": "9668ee9d0656372e07a6d204f68f7b22a8d21e8bd77e5126d93eedecb4eb6499"
+    }
+  },
+  "passed": true,
+  "summary": {
+    "samples": 1,
+    "solved": 1,
+    "pcbClean": 1,
+    "pcbIssues": 0
+  },
+  "results": [
+    {
+      "dataset": "input",
+      "sample": "routed",
+      "sha256": "a3222a71779e6a007096c5f10067494e266c59c340fa66e8eea7a69c73a53535",
+      "didSolve": true,
+      "validatedSrjSha256": "5e05d7f24ccbe9e85cc0eea1c56a278b83d2260c35445c1f9d6f774a90d890a9",
+      "originalSourceSha256": "445a3e5a6f3109d6fb8620e515e8e76c36a09061c6fcd931cd5b50e6aa198513",
+      "validatedOutput": true,
+      "circuitJsonElementCount": 1672,
+      "coverage": {
+        "sourceObstacleCount": 371,
+        "representedObstacleCount": 371,
+        "sourceTraceCount": 269,
+        "representedTraceCount": 269,
+        "routeViaCount": 84,
+        "standaloneViaCount": 77,
+        "sourceTerminalCount": 461,
+        "representedTerminalCount": 461,
+        "obstacleElementIds": {
+          "obstacle:0": [
+            "pcb_smtpad_srj_0"
+          ],
+          "obstacle:1": [
+            "pcb_smtpad_srj_1"
+          ],
+          "obstacle:2": [
+            "pcb_smtpad_srj_2"
+          ],
+          "obstacle:3": [
+            "pcb_smtpad_srj_3"
+          ],
+          "obstacle:4": [
+            "pcb_smtpad_srj_4"
+          ],
+          "obstacle:5": [
+            "pcb_smtpad_srj_5"
+          ],
+          "obstacle:6": [
+            "pcb_smtpad_srj_6"
+          ],
+          "obstacle:7": [
+            "pcb_smtpad_srj_7"
+          ],
+          "obstacle:8": [
+            "pcb_smtpad_srj_8"
+          ],
+          "obstacle:9": [
+            "pcb_smtpad_srj_9"
+          ],
+          "obstacle:10": [
+            "pcb_smtpad_srj_10"
+          ],
+          "obstacle:11": [
+            "pcb_smtpad_srj_11"
+          ],
+          "obstacle:12": [
+            "pcb_smtpad_srj_12"
+          ],
+          "obstacle:13": [
+            "pcb_smtpad_srj_13"
+          ],
+          "obstacle:14": [
+            "pcb_smtpad_srj_14"
+          ],
+          "obstacle:15": [
+            "pcb_smtpad_srj_15"
+          ],
+          "obstacle:16": [
+            "pcb_smtpad_srj_16"
+          ],
+          "obstacle:17": [
+            "pcb_smtpad_srj_17"
+          ],
+          "obstacle:18": [
+            "pcb_smtpad_srj_18"
+          ],
+          "obstacle:19": [
+            "pcb_smtpad_srj_19"
+          ],
+          "obstacle:20": [
+            "pcb_smtpad_srj_20"
+          ],
+          "obstacle:21": [
+            "pcb_smtpad_srj_21"
+          ],
+          "obstacle:22": [
+            "pcb_smtpad_srj_22"
+          ],
+          "obstacle:23": [
+            "pcb_smtpad_srj_23"
+          ],
+          "obstacle:24": [
+            "pcb_smtpad_srj_24"
+          ],
+          "obstacle:25": [
+            "pcb_smtpad_srj_25"
+          ],
+          "obstacle:26": [
+            "pcb_smtpad_srj_26"
+          ],
+          "obstacle:27": [
+            "pcb_smtpad_srj_27"
+          ],
+          "obstacle:28": [
+            "pcb_smtpad_srj_28"
+          ],
+          "obstacle:29": [
+            "pcb_smtpad_srj_29"
+          ],
+          "obstacle:30": [
+            "pcb_smtpad_srj_30"
+          ],
+          "obstacle:31": [
+            "pcb_smtpad_srj_31"
+          ],
+          "obstacle:32": [
+            "pcb_smtpad_srj_32"
+          ],
+          "obstacle:33": [
+            "pcb_smtpad_srj_33"
+          ],
+          "obstacle:34": [
+            "pcb_smtpad_srj_34"
+          ],
+          "obstacle:35": [
+            "pcb_smtpad_srj_35"
+          ],
+          "obstacle:36": [
+            "pcb_smtpad_srj_36"
+          ],
+          "obstacle:37": [
+            "pcb_smtpad_srj_37"
+          ],
+          "obstacle:38": [
+            "pcb_smtpad_srj_38"
+          ],
+          "obstacle:39": [
+            "pcb_smtpad_srj_39"
+          ],
+          "obstacle:40": [
+            "pcb_smtpad_srj_40"
+          ],
+          "obstacle:41": [
+            "pcb_smtpad_srj_41"
+          ],
+          "obstacle:42": [
+            "pcb_smtpad_srj_42"
+          ],
+          "obstacle:43": [
+            "pcb_smtpad_srj_43"
+          ],
+          "obstacle:44": [
+            "pcb_smtpad_srj_44"
+          ],
+          "obstacle:45": [
+            "pcb_smtpad_srj_45"
+          ],
+          "obstacle:46": [
+            "pcb_smtpad_srj_46"
+          ],
+          "obstacle:47": [
+            "pcb_smtpad_srj_47"
+          ],
+          "obstacle:48": [
+            "pcb_smtpad_srj_48"
+          ],
+          "obstacle:49": [
+            "pcb_smtpad_srj_49"
+          ],
+          "obstacle:50": [
+            "pcb_smtpad_srj_50"
+          ],
+          "obstacle:51": [
+            "pcb_smtpad_srj_51"
+          ],
+          "obstacle:52": [
+            "pcb_smtpad_srj_52"
+          ],
+          "obstacle:53": [
+            "pcb_smtpad_srj_53"
+          ],
+          "obstacle:54": [
+            "pcb_smtpad_srj_54"
+          ],
+          "obstacle:55": [
+            "pcb_smtpad_srj_55"
+          ],
+          "obstacle:56": [
+            "pcb_smtpad_srj_56"
+          ],
+          "obstacle:57": [
+            "pcb_smtpad_srj_57"
+          ],
+          "obstacle:58": [
+            "pcb_smtpad_srj_58"
+          ],
+          "obstacle:59": [
+            "pcb_smtpad_srj_59"
+          ],
+          "obstacle:60": [
+            "pcb_smtpad_srj_60"
+          ],
+          "obstacle:61": [
+            "pcb_smtpad_srj_61"
+          ],
+          "obstacle:62": [
+            "pcb_smtpad_srj_62"
+          ],
+          "obstacle:63": [
+            "pcb_smtpad_srj_63"
+          ],
+          "obstacle:64": [
+            "pcb_smtpad_srj_64"
+          ],
+          "obstacle:65": [
+            "pcb_smtpad_srj_65"
+          ],
+          "obstacle:66": [
+            "pcb_smtpad_srj_66"
+          ],
+          "obstacle:67": [
+            "pcb_smtpad_srj_67"
+          ],
+          "obstacle:68": [
+            "pcb_smtpad_srj_68"
+          ],
+          "obstacle:69": [
+            "pcb_smtpad_srj_69"
+          ],
+          "obstacle:70": [
+            "pcb_smtpad_srj_70"
+          ],
+          "obstacle:71": [
+            "pcb_smtpad_srj_71"
+          ],
+          "obstacle:72": [
+            "pcb_smtpad_srj_72"
+          ],
+          "obstacle:73": [
+            "pcb_smtpad_srj_73"
+          ],
+          "obstacle:74": [
+            "pcb_smtpad_srj_74"
+          ],
+          "obstacle:75": [
+            "pcb_smtpad_srj_75"
+          ],
+          "obstacle:76": [
+            "pcb_smtpad_srj_76"
+          ],
+          "obstacle:77": [
+            "pcb_smtpad_srj_77"
+          ],
+          "obstacle:78": [
+            "pcb_smtpad_srj_78"
+          ],
+          "obstacle:79": [
+            "pcb_smtpad_srj_79"
+          ],
+          "obstacle:80": [
+            "pcb_smtpad_srj_80"
+          ],
+          "obstacle:81": [
+            "pcb_smtpad_srj_81"
+          ],
+          "obstacle:82": [
+            "pcb_smtpad_srj_82"
+          ],
+          "obstacle:83": [
+            "pcb_smtpad_srj_83"
+          ],
+          "obstacle:84": [
+            "pcb_smtpad_srj_84"
+          ],
+          "obstacle:85": [
+            "pcb_smtpad_srj_85"
+          ],
+          "obstacle:86": [
+            "pcb_smtpad_srj_86"
+          ],
+          "obstacle:87": [
+            "pcb_smtpad_srj_87"
+          ],
+          "obstacle:88": [
+            "pcb_smtpad_srj_88"
+          ],
+          "obstacle:89": [
+            "pcb_smtpad_srj_89"
+          ],
+          "obstacle:90": [
+            "pcb_smtpad_srj_90"
+          ],
+          "obstacle:91": [
+            "pcb_smtpad_srj_91"
+          ],
+          "obstacle:92": [
+            "pcb_smtpad_srj_92"
+          ],
+          "obstacle:93": [
+            "pcb_smtpad_srj_93"
+          ],
+          "obstacle:94": [
+            "pcb_smtpad_srj_94"
+          ],
+          "obstacle:95": [
+            "pcb_smtpad_srj_95"
+          ],
+          "obstacle:96": [
+            "pcb_smtpad_srj_96"
+          ],
+          "obstacle:97": [
+            "pcb_smtpad_srj_97"
+          ],
+          "obstacle:98": [
+            "pcb_smtpad_srj_98"
+          ],
+          "obstacle:99": [
+            "pcb_smtpad_srj_99"
+          ],
+          "obstacle:100": [
+            "pcb_smtpad_srj_100"
+          ],
+          "obstacle:101": [
+            "pcb_smtpad_srj_101"
+          ],
+          "obstacle:102": [
+            "pcb_smtpad_srj_102"
+          ],
+          "obstacle:103": [
+            "pcb_smtpad_srj_103"
+          ],
+          "obstacle:104": [
+            "pcb_smtpad_srj_104"
+          ],
+          "obstacle:105": [
+            "pcb_smtpad_srj_105"
+          ],
+          "obstacle:106": [
+            "pcb_smtpad_srj_106"
+          ],
+          "obstacle:107": [
+            "pcb_smtpad_srj_107"
+          ],
+          "obstacle:108": [
+            "pcb_smtpad_srj_108"
+          ],
+          "obstacle:109": [
+            "pcb_smtpad_srj_109"
+          ],
+          "obstacle:110": [
+            "pcb_smtpad_srj_110"
+          ],
+          "obstacle:111": [
+            "pcb_smtpad_srj_111"
+          ],
+          "obstacle:112": [
+            "pcb_smtpad_srj_112"
+          ],
+          "obstacle:113": [
+            "pcb_smtpad_srj_113"
+          ],
+          "obstacle:114": [
+            "pcb_smtpad_srj_114"
+          ],
+          "obstacle:115": [
+            "pcb_smtpad_srj_115"
+          ],
+          "obstacle:116": [
+            "pcb_smtpad_srj_116"
+          ],
+          "obstacle:117": [
+            "pcb_smtpad_srj_117"
+          ],
+          "obstacle:118": [
+            "pcb_smtpad_srj_118"
+          ],
+          "obstacle:119": [
+            "pcb_smtpad_srj_119"
+          ],
+          "obstacle:120": [
+            "pcb_smtpad_srj_120"
+          ],
+          "obstacle:121": [
+            "pcb_smtpad_srj_121"
+          ],
+          "obstacle:122": [
+            "pcb_smtpad_srj_122"
+          ],
+          "obstacle:123": [
+            "pcb_smtpad_srj_123"
+          ],
+          "obstacle:124": [
+            "pcb_smtpad_srj_124"
+          ],
+          "obstacle:125": [
+            "pcb_smtpad_srj_125"
+          ],
+          "obstacle:126": [
+            "pcb_smtpad_srj_126"
+          ],
+          "obstacle:127": [
+            "pcb_smtpad_srj_127"
+          ],
+          "obstacle:128": [
+            "pcb_smtpad_srj_128"
+          ],
+          "obstacle:129": [
+            "pcb_smtpad_srj_129"
+          ],
+          "obstacle:130": [
+            "pcb_smtpad_srj_130"
+          ],
+          "obstacle:131": [
+            "pcb_smtpad_srj_131"
+          ],
+          "obstacle:132": [
+            "pcb_smtpad_srj_132"
+          ],
+          "obstacle:133": [
+            "pcb_smtpad_srj_133"
+          ],
+          "obstacle:134": [
+            "pcb_smtpad_srj_134"
+          ],
+          "obstacle:135": [
+            "pcb_smtpad_srj_135"
+          ],
+          "obstacle:136": [
+            "pcb_smtpad_srj_136"
+          ],
+          "obstacle:137": [
+            "pcb_smtpad_srj_137"
+          ],
+          "obstacle:138": [
+            "pcb_smtpad_srj_138"
+          ],
+          "obstacle:139": [
+            "pcb_smtpad_srj_139"
+          ],
+          "obstacle:140": [
+            "pcb_smtpad_srj_140"
+          ],
+          "obstacle:141": [
+            "pcb_smtpad_srj_141"
+          ],
+          "obstacle:142": [
+            "pcb_smtpad_srj_142"
+          ],
+          "obstacle:143": [
+            "pcb_smtpad_srj_143"
+          ],
+          "obstacle:144": [
+            "pcb_smtpad_srj_144"
+          ],
+          "obstacle:145": [
+            "pcb_smtpad_srj_145"
+          ],
+          "obstacle:146": [
+            "pcb_smtpad_srj_146"
+          ],
+          "obstacle:147": [
+            "pcb_smtpad_srj_147"
+          ],
+          "obstacle:148": [
+            "pcb_smtpad_srj_148"
+          ],
+          "obstacle:149": [
+            "pcb_smtpad_srj_149"
+          ],
+          "obstacle:150": [
+            "pcb_smtpad_srj_150"
+          ],
+          "obstacle:151": [
+            "pcb_smtpad_srj_151"
+          ],
+          "obstacle:152": [
+            "pcb_smtpad_srj_152"
+          ],
+          "obstacle:153": [
+            "pcb_smtpad_srj_153"
+          ],
+          "obstacle:154": [
+            "pcb_smtpad_srj_154"
+          ],
+          "obstacle:155": [
+            "pcb_smtpad_srj_155"
+          ],
+          "obstacle:156": [
+            "pcb_smtpad_srj_156"
+          ],
+          "obstacle:157": [
+            "pcb_smtpad_srj_157"
+          ],
+          "obstacle:158": [
+            "pcb_smtpad_srj_158"
+          ],
+          "obstacle:159": [
+            "pcb_smtpad_srj_159"
+          ],
+          "obstacle:160": [
+            "pcb_smtpad_srj_160"
+          ],
+          "obstacle:161": [
+            "pcb_smtpad_srj_161"
+          ],
+          "obstacle:162": [
+            "pcb_smtpad_srj_162"
+          ],
+          "obstacle:163": [
+            "pcb_smtpad_srj_163"
+          ],
+          "obstacle:164": [
+            "pcb_smtpad_srj_164"
+          ],
+          "obstacle:165": [
+            "pcb_smtpad_srj_165"
+          ],
+          "obstacle:166": [
+            "pcb_smtpad_srj_166"
+          ],
+          "obstacle:167": [
+            "pcb_smtpad_srj_167"
+          ],
+          "obstacle:168": [
+            "pcb_smtpad_srj_168"
+          ],
+          "obstacle:169": [
+            "pcb_smtpad_srj_169"
+          ],
+          "obstacle:170": [
+            "pcb_smtpad_srj_170"
+          ],
+          "obstacle:171": [
+            "pcb_smtpad_srj_171"
+          ],
+          "obstacle:172": [
+            "pcb_smtpad_srj_172"
+          ],
+          "obstacle:173": [
+            "pcb_smtpad_srj_173"
+          ],
+          "obstacle:174": [
+            "pcb_smtpad_srj_174"
+          ],
+          "obstacle:175": [
+            "pcb_smtpad_srj_175"
+          ],
+          "obstacle:176": [
+            "pcb_smtpad_srj_176"
+          ],
+          "obstacle:177": [
+            "pcb_smtpad_srj_177"
+          ],
+          "obstacle:178": [
+            "pcb_smtpad_srj_178"
+          ],
+          "obstacle:179": [
+            "pcb_smtpad_srj_179"
+          ],
+          "obstacle:180": [
+            "pcb_smtpad_srj_180"
+          ],
+          "obstacle:181": [
+            "pcb_smtpad_srj_181"
+          ],
+          "obstacle:182": [
+            "pcb_smtpad_srj_182"
+          ],
+          "obstacle:183": [
+            "pcb_smtpad_srj_183"
+          ],
+          "obstacle:184": [
+            "pcb_smtpad_srj_184"
+          ],
+          "obstacle:185": [
+            "pcb_smtpad_srj_185"
+          ],
+          "obstacle:186": [
+            "pcb_smtpad_srj_186"
+          ],
+          "obstacle:187": [
+            "pcb_smtpad_srj_187"
+          ],
+          "obstacle:188": [
+            "pcb_smtpad_srj_188"
+          ],
+          "obstacle:189": [
+            "pcb_smtpad_srj_189"
+          ],
+          "obstacle:190": [
+            "pcb_smtpad_srj_190"
+          ],
+          "obstacle:191": [
+            "pcb_smtpad_srj_191"
+          ],
+          "obstacle:192": [
+            "pcb_smtpad_srj_192"
+          ],
+          "obstacle:193": [
+            "pcb_smtpad_srj_193"
+          ],
+          "obstacle:194": [
+            "pcb_smtpad_srj_194"
+          ],
+          "obstacle:195": [
+            "pcb_smtpad_srj_195"
+          ],
+          "obstacle:196": [
+            "pcb_smtpad_srj_196"
+          ],
+          "obstacle:197": [
+            "pcb_smtpad_srj_197"
+          ],
+          "obstacle:198": [
+            "pcb_smtpad_srj_198"
+          ],
+          "obstacle:199": [
+            "pcb_smtpad_srj_199"
+          ],
+          "obstacle:200": [
+            "pcb_smtpad_srj_200"
+          ],
+          "obstacle:201": [
+            "pcb_smtpad_srj_201"
+          ],
+          "obstacle:202": [
+            "pcb_smtpad_srj_202"
+          ],
+          "obstacle:203": [
+            "pcb_smtpad_srj_203"
+          ],
+          "obstacle:204": [
+            "pcb_smtpad_srj_204"
+          ],
+          "obstacle:205": [
+            "pcb_smtpad_srj_205"
+          ],
+          "obstacle:206": [
+            "pcb_smtpad_srj_206"
+          ],
+          "obstacle:207": [
+            "pcb_smtpad_srj_207"
+          ],
+          "obstacle:208": [
+            "pcb_smtpad_srj_208"
+          ],
+          "obstacle:209": [
+            "pcb_smtpad_srj_209"
+          ],
+          "obstacle:210": [
+            "pcb_smtpad_srj_210"
+          ],
+          "obstacle:211": [
+            "pcb_smtpad_srj_211"
+          ],
+          "obstacle:212": [
+            "pcb_smtpad_srj_212"
+          ],
+          "obstacle:213": [
+            "pcb_smtpad_srj_213"
+          ],
+          "obstacle:214": [
+            "pcb_smtpad_srj_214"
+          ],
+          "obstacle:215": [
+            "pcb_smtpad_srj_215"
+          ],
+          "obstacle:216": [
+            "pcb_smtpad_srj_216"
+          ],
+          "obstacle:217": [
+            "pcb_smtpad_srj_217"
+          ],
+          "obstacle:218": [
+            "pcb_smtpad_srj_218"
+          ],
+          "obstacle:219": [
+            "pcb_smtpad_srj_219"
+          ],
+          "obstacle:220": [
+            "pcb_smtpad_srj_220"
+          ],
+          "obstacle:221": [
+            "pcb_smtpad_srj_221"
+          ],
+          "obstacle:222": [
+            "pcb_smtpad_srj_222"
+          ],
+          "obstacle:223": [
+            "pcb_smtpad_srj_223"
+          ],
+          "obstacle:224": [
+            "pcb_smtpad_srj_224"
+          ],
+          "obstacle:225": [
+            "pcb_smtpad_srj_225"
+          ],
+          "obstacle:226": [
+            "pcb_smtpad_srj_226"
+          ],
+          "obstacle:227": [
+            "pcb_smtpad_srj_227"
+          ],
+          "obstacle:228": [
+            "pcb_smtpad_srj_228"
+          ],
+          "obstacle:229": [
+            "pcb_smtpad_srj_229"
+          ],
+          "obstacle:230": [
+            "pcb_smtpad_srj_230"
+          ],
+          "obstacle:231": [
+            "pcb_smtpad_srj_231"
+          ],
+          "obstacle:232": [
+            "pcb_smtpad_srj_232"
+          ],
+          "obstacle:233": [
+            "pcb_smtpad_srj_233"
+          ],
+          "obstacle:234": [
+            "pcb_smtpad_srj_234"
+          ],
+          "obstacle:235": [
+            "pcb_smtpad_srj_235"
+          ],
+          "obstacle:236": [
+            "pcb_smtpad_srj_236"
+          ],
+          "obstacle:237": [
+            "pcb_smtpad_srj_237"
+          ],
+          "obstacle:238": [
+            "pcb_smtpad_srj_238"
+          ],
+          "obstacle:239": [
+            "pcb_smtpad_srj_239"
+          ],
+          "obstacle:240": [
+            "pcb_smtpad_srj_240"
+          ],
+          "obstacle:241": [
+            "pcb_smtpad_srj_241"
+          ],
+          "obstacle:242": [
+            "pcb_smtpad_srj_242"
+          ],
+          "obstacle:243": [
+            "pcb_smtpad_srj_243"
+          ],
+          "obstacle:244": [
+            "pcb_smtpad_srj_244"
+          ],
+          "obstacle:245": [
+            "pcb_smtpad_srj_245"
+          ],
+          "obstacle:246": [
+            "pcb_smtpad_srj_246"
+          ],
+          "obstacle:247": [
+            "pcb_smtpad_srj_247"
+          ],
+          "obstacle:248": [
+            "pcb_smtpad_srj_248"
+          ],
+          "obstacle:249": [
+            "pcb_smtpad_srj_249"
+          ],
+          "obstacle:250": [
+            "pcb_smtpad_srj_250"
+          ],
+          "obstacle:251": [
+            "pcb_smtpad_srj_251"
+          ],
+          "obstacle:252": [
+            "pcb_smtpad_srj_252"
+          ],
+          "obstacle:253": [
+            "pcb_smtpad_srj_253"
+          ],
+          "obstacle:254": [
+            "pcb_smtpad_srj_254"
+          ],
+          "obstacle:255": [
+            "pcb_smtpad_srj_255"
+          ],
+          "obstacle:256": [
+            "pcb_smtpad_srj_256"
+          ],
+          "obstacle:257": [
+            "pcb_smtpad_srj_257"
+          ],
+          "obstacle:258": [
+            "pcb_smtpad_srj_258"
+          ],
+          "obstacle:259": [
+            "pcb_smtpad_srj_259"
+          ],
+          "obstacle:260": [
+            "pcb_smtpad_srj_260"
+          ],
+          "obstacle:261": [
+            "pcb_smtpad_srj_261"
+          ],
+          "obstacle:262": [
+            "pcb_smtpad_srj_262"
+          ],
+          "obstacle:263": [
+            "pcb_smtpad_srj_263"
+          ],
+          "obstacle:264": [
+            "pcb_smtpad_srj_264"
+          ],
+          "obstacle:265": [
+            "pcb_smtpad_srj_265"
+          ],
+          "obstacle:266": [
+            "pcb_smtpad_srj_266"
+          ],
+          "obstacle:267": [
+            "pcb_smtpad_srj_267"
+          ],
+          "obstacle:268": [
+            "pcb_smtpad_srj_268"
+          ],
+          "obstacle:269": [
+            "pcb_smtpad_srj_269"
+          ],
+          "obstacle:270": [
+            "pcb_smtpad_srj_270"
+          ],
+          "obstacle:271": [
+            "pcb_smtpad_srj_271"
+          ],
+          "obstacle:272": [
+            "pcb_smtpad_srj_272"
+          ],
+          "obstacle:273": [
+            "pcb_smtpad_srj_273"
+          ],
+          "obstacle:274": [
+            "pcb_smtpad_srj_274"
+          ],
+          "obstacle:275": [
+            "pcb_smtpad_srj_275"
+          ],
+          "obstacle:276": [
+            "pcb_smtpad_srj_276"
+          ],
+          "obstacle:277": [
+            "pcb_smtpad_srj_277"
+          ],
+          "obstacle:278": [
+            "pcb_smtpad_srj_278"
+          ],
+          "obstacle:279": [
+            "pcb_smtpad_srj_279"
+          ],
+          "obstacle:280": [
+            "pcb_smtpad_srj_280"
+          ],
+          "obstacle:281": [
+            "pcb_smtpad_srj_281"
+          ],
+          "obstacle:282": [
+            "pcb_smtpad_srj_282"
+          ],
+          "obstacle:283": [
+            "pcb_smtpad_srj_283"
+          ],
+          "obstacle:284": [
+            "pcb_smtpad_srj_284"
+          ],
+          "obstacle:285": [
+            "pcb_smtpad_srj_285"
+          ],
+          "obstacle:286": [
+            "pcb_smtpad_srj_286"
+          ],
+          "obstacle:287": [
+            "pcb_smtpad_srj_287"
+          ],
+          "obstacle:288": [
+            "pcb_smtpad_srj_288"
+          ],
+          "obstacle:289": [
+            "pcb_smtpad_srj_289"
+          ],
+          "obstacle:290": [
+            "pcb_smtpad_srj_290"
+          ],
+          "obstacle:291": [
+            "pcb_smtpad_srj_291"
+          ],
+          "obstacle:292": [
+            "pcb_smtpad_srj_292"
+          ],
+          "obstacle:293": [
+            "pcb_smtpad_srj_293"
+          ],
+          "obstacle:294": [
+            "pcb_smtpad_srj_294"
+          ],
+          "obstacle:295": [
+            "pcb_smtpad_srj_295"
+          ],
+          "obstacle:296": [
+            "pcb_smtpad_srj_296"
+          ],
+          "obstacle:297": [
+            "pcb_smtpad_srj_297"
+          ],
+          "obstacle:298": [
+            "pcb_smtpad_srj_298"
+          ],
+          "obstacle:299": [
+            "pcb_smtpad_srj_299"
+          ],
+          "obstacle:300": [
+            "pcb_smtpad_srj_300"
+          ],
+          "obstacle:301": [
+            "pcb_smtpad_srj_301"
+          ],
+          "obstacle:302": [
+            "pcb_smtpad_srj_302"
+          ],
+          "obstacle:303": [
+            "pcb_smtpad_srj_303"
+          ],
+          "obstacle:304": [
+            "pcb_smtpad_srj_304"
+          ],
+          "obstacle:305": [
+            "pcb_smtpad_srj_305"
+          ],
+          "obstacle:306": [
+            "pcb_smtpad_srj_306"
+          ],
+          "obstacle:307": [
+            "pcb_smtpad_srj_307"
+          ],
+          "obstacle:308": [
+            "pcb_smtpad_srj_308"
+          ],
+          "obstacle:309": [
+            "pcb_smtpad_srj_309"
+          ],
+          "obstacle:310": [
+            "pcb_smtpad_srj_310"
+          ],
+          "obstacle:311": [
+            "pcb_smtpad_srj_311"
+          ],
+          "obstacle:312": [
+            "pcb_smtpad_srj_312"
+          ],
+          "obstacle:313": [
+            "pcb_smtpad_srj_313"
+          ],
+          "obstacle:314": [
+            "pcb_smtpad_srj_314"
+          ],
+          "obstacle:315": [
+            "pcb_smtpad_srj_315"
+          ],
+          "obstacle:316": [
+            "pcb_smtpad_srj_316"
+          ],
+          "obstacle:317": [
+            "pcb_smtpad_srj_317"
+          ],
+          "obstacle:318": [
+            "pcb_smtpad_srj_318"
+          ],
+          "obstacle:319": [
+            "pcb_smtpad_srj_319"
+          ],
+          "obstacle:320": [
+            "pcb_smtpad_srj_320"
+          ],
+          "obstacle:321": [
+            "pcb_smtpad_srj_321"
+          ],
+          "obstacle:322": [
+            "pcb_smtpad_srj_322"
+          ],
+          "obstacle:323": [
+            "pcb_smtpad_srj_323"
+          ],
+          "obstacle:324": [
+            "pcb_smtpad_srj_324"
+          ],
+          "obstacle:325": [
+            "pcb_smtpad_srj_325"
+          ],
+          "obstacle:326": [
+            "pcb_smtpad_srj_326"
+          ],
+          "obstacle:327": [
+            "pcb_smtpad_srj_327"
+          ],
+          "obstacle:328": [
+            "pcb_smtpad_srj_328"
+          ],
+          "obstacle:329": [
+            "pcb_smtpad_srj_329"
+          ],
+          "obstacle:330": [
+            "pcb_smtpad_srj_330"
+          ],
+          "obstacle:331": [
+            "pcb_smtpad_srj_331"
+          ],
+          "obstacle:332": [
+            "pcb_smtpad_srj_332"
+          ],
+          "obstacle:333": [
+            "pcb_smtpad_srj_333"
+          ],
+          "obstacle:334": [
+            "pcb_smtpad_srj_334"
+          ],
+          "obstacle:335": [
+            "pcb_smtpad_srj_335"
+          ],
+          "obstacle:336": [
+            "pcb_smtpad_srj_336"
+          ],
+          "obstacle:337": [
+            "pcb_smtpad_srj_337"
+          ],
+          "obstacle:338": [
+            "pcb_smtpad_srj_338"
+          ],
+          "obstacle:339": [
+            "pcb_smtpad_srj_339"
+          ],
+          "obstacle:340": [
+            "pcb_smtpad_srj_340"
+          ],
+          "obstacle:341": [
+            "pcb_smtpad_srj_341"
+          ],
+          "obstacle:342": [
+            "pcb_smtpad_srj_342"
+          ],
+          "obstacle:343": [
+            "pcb_smtpad_srj_343"
+          ],
+          "obstacle:344": [
+            "pcb_smtpad_srj_344"
+          ],
+          "obstacle:345": [
+            "pcb_smtpad_srj_345"
+          ],
+          "obstacle:346": [
+            "pcb_smtpad_srj_346"
+          ],
+          "obstacle:347": [
+            "pcb_smtpad_srj_347"
+          ],
+          "obstacle:348": [
+            "pcb_smtpad_srj_348"
+          ],
+          "obstacle:349": [
+            "pcb_smtpad_srj_349"
+          ],
+          "obstacle:350": [
+            "pcb_smtpad_srj_350"
+          ],
+          "obstacle:351": [
+            "pcb_smtpad_srj_351"
+          ],
+          "obstacle:352": [
+            "pcb_smtpad_srj_352"
+          ],
+          "obstacle:353": [
+            "pcb_smtpad_srj_353"
+          ],
+          "obstacle:354": [
+            "pcb_smtpad_srj_354"
+          ],
+          "obstacle:355": [
+            "pcb_smtpad_srj_355"
+          ],
+          "obstacle:356": [
+            "pcb_smtpad_srj_356"
+          ],
+          "obstacle:357": [
+            "pcb_smtpad_srj_357"
+          ],
+          "obstacle:358": [
+            "pcb_smtpad_srj_358"
+          ],
+          "obstacle:359": [
+            "pcb_smtpad_srj_359"
+          ],
+          "obstacle:360": [
+            "pcb_smtpad_srj_360",
+            "pcb_smtpad_srj_360__inner1",
+            "pcb_smtpad_srj_360__inner2",
+            "pcb_smtpad_srj_360__bottom"
+          ],
+          "obstacle:361": [
+            "pcb_smtpad_srj_361",
+            "pcb_smtpad_srj_361__inner1",
+            "pcb_smtpad_srj_361__inner2",
+            "pcb_smtpad_srj_361__bottom"
+          ],
+          "obstacle:362": [
+            "pcb_smtpad_srj_362",
+            "pcb_smtpad_srj_362__inner1",
+            "pcb_smtpad_srj_362__inner2",
+            "pcb_smtpad_srj_362__bottom"
+          ],
+          "obstacle:363": [
+            "pcb_smtpad_srj_363",
+            "pcb_smtpad_srj_363__inner1",
+            "pcb_smtpad_srj_363__inner2",
+            "pcb_smtpad_srj_363__bottom"
+          ],
+          "obstacle:364": [
+            "pcb_smtpad_srj_364",
+            "pcb_smtpad_srj_364__inner1",
+            "pcb_smtpad_srj_364__inner2",
+            "pcb_smtpad_srj_364__bottom"
+          ],
+          "obstacle:365": [
+            "pcb_smtpad_srj_365",
+            "pcb_smtpad_srj_365__inner1",
+            "pcb_smtpad_srj_365__inner2",
+            "pcb_smtpad_srj_365__bottom"
+          ],
+          "obstacle:366": [
+            "pcb_smtpad_srj_366",
+            "pcb_smtpad_srj_366__inner1",
+            "pcb_smtpad_srj_366__inner2",
+            "pcb_smtpad_srj_366__bottom"
+          ],
+          "obstacle:367": [
+            "pcb_hole_0"
+          ],
+          "obstacle:368": [
+            "pcb_hole_1"
+          ],
+          "obstacle:369": [
+            "pcb_hole_2"
+          ],
+          "obstacle:370": [
+            "pcb_hole_3"
+          ]
+        },
+        "obstacleComponentIds": {
+          "obstacle:0": "pcb_component_1",
+          "obstacle:1": "pcb_component_2",
+          "obstacle:2": "pcb_component_2",
+          "obstacle:3": "pcb_component_3",
+          "obstacle:4": "pcb_component_3",
+          "obstacle:5": "pcb_component_4",
+          "obstacle:6": "pcb_component_5",
+          "obstacle:7": "pcb_component_5",
+          "obstacle:8": "pcb_component_6",
+          "obstacle:9": "pcb_component_7",
+          "obstacle:10": "pcb_component_7",
+          "obstacle:11": "pcb_component_8",
+          "obstacle:12": "pcb_component_8",
+          "obstacle:13": "pcb_component_9",
+          "obstacle:14": "pcb_component_9",
+          "obstacle:15": "pcb_component_10",
+          "obstacle:16": "pcb_component_10",
+          "obstacle:17": "pcb_component_11",
+          "obstacle:18": "pcb_component_11",
+          "obstacle:19": "pcb_component_12",
+          "obstacle:20": "pcb_component_12",
+          "obstacle:21": "pcb_component_13",
+          "obstacle:22": "pcb_component_13",
+          "obstacle:23": "pcb_component_14",
+          "obstacle:24": "pcb_component_14",
+          "obstacle:25": "pcb_component_15",
+          "obstacle:26": "pcb_component_15",
+          "obstacle:27": "pcb_component_16",
+          "obstacle:28": "pcb_component_17",
+          "obstacle:29": "pcb_component_17",
+          "obstacle:30": "pcb_component_18",
+          "obstacle:31": "pcb_component_19",
+          "obstacle:32": "pcb_component_19",
+          "obstacle:33": "pcb_component_20",
+          "obstacle:34": "pcb_component_20",
+          "obstacle:35": "pcb_component_21",
+          "obstacle:36": "pcb_component_21",
+          "obstacle:37": "pcb_component_22",
+          "obstacle:38": "pcb_component_22",
+          "obstacle:39": "pcb_component_23",
+          "obstacle:40": "pcb_component_23",
+          "obstacle:41": "pcb_component_24",
+          "obstacle:42": "pcb_component_24",
+          "obstacle:43": "pcb_component_24",
+          "obstacle:44": "pcb_component_24",
+          "obstacle:45": "pcb_component_24",
+          "obstacle:46": "pcb_component_24",
+          "obstacle:47": "pcb_component_24",
+          "obstacle:48": "pcb_component_24",
+          "obstacle:49": "pcb_component_24",
+          "obstacle:50": "pcb_component_24",
+          "obstacle:51": "pcb_component_24",
+          "obstacle:52": "pcb_component_24",
+          "obstacle:53": "pcb_component_24",
+          "obstacle:54": "pcb_component_24",
+          "obstacle:55": "pcb_component_24",
+          "obstacle:56": "pcb_component_24",
+          "obstacle:57": "pcb_component_24",
+          "obstacle:58": "pcb_component_24",
+          "obstacle:59": "pcb_component_24",
+          "obstacle:60": "pcb_component_24",
+          "obstacle:61": "pcb_component_24",
+          "obstacle:62": "pcb_component_24",
+          "obstacle:63": "pcb_component_24",
+          "obstacle:64": "pcb_component_24",
+          "obstacle:65": "pcb_component_24",
+          "obstacle:66": "pcb_component_24",
+          "obstacle:67": "pcb_component_24",
+          "obstacle:68": "pcb_component_24",
+          "obstacle:69": "pcb_component_24",
+          "obstacle:70": "pcb_component_25",
+          "obstacle:71": "pcb_component_25",
+          "obstacle:72": "pcb_component_26",
+          "obstacle:73": "pcb_component_26",
+          "obstacle:74": "pcb_component_27",
+          "obstacle:75": "pcb_component_27",
+          "obstacle:76": "pcb_component_28",
+          "obstacle:77": "pcb_component_28",
+          "obstacle:78": "pcb_component_29",
+          "obstacle:79": "pcb_component_30",
+          "obstacle:80": "pcb_component_30",
+          "obstacle:81": "pcb_component_31",
+          "obstacle:82": "pcb_component_31",
+          "obstacle:83": "pcb_component_32",
+          "obstacle:84": "pcb_component_32",
+          "obstacle:85": "pcb_component_33",
+          "obstacle:86": "pcb_component_33",
+          "obstacle:87": "pcb_component_34",
+          "obstacle:88": "pcb_component_34",
+          "obstacle:89": "pcb_component_35",
+          "obstacle:90": "pcb_component_35",
+          "obstacle:91": "pcb_component_36",
+          "obstacle:92": "pcb_component_36",
+          "obstacle:93": "pcb_component_37",
+          "obstacle:94": "pcb_component_37",
+          "obstacle:95": "pcb_component_38",
+          "obstacle:96": "pcb_component_38",
+          "obstacle:97": "pcb_component_39",
+          "obstacle:98": "pcb_component_39",
+          "obstacle:99": "pcb_component_40",
+          "obstacle:100": "pcb_component_40",
+          "obstacle:101": "pcb_component_40",
+          "obstacle:102": "pcb_component_40",
+          "obstacle:103": "pcb_component_40",
+          "obstacle:104": "pcb_component_40",
+          "obstacle:105": "pcb_component_40",
+          "obstacle:106": "pcb_component_40",
+          "obstacle:107": "pcb_component_40",
+          "obstacle:108": "pcb_component_40",
+          "obstacle:109": "pcb_component_40",
+          "obstacle:110": "pcb_component_40",
+          "obstacle:111": "pcb_component_40",
+          "obstacle:112": "pcb_component_40",
+          "obstacle:113": "pcb_component_40",
+          "obstacle:114": "pcb_component_40",
+          "obstacle:115": "pcb_component_40",
+          "obstacle:116": "pcb_component_40",
+          "obstacle:117": "pcb_component_40",
+          "obstacle:118": "pcb_component_40",
+          "obstacle:119": "pcb_component_40",
+          "obstacle:120": "pcb_component_40",
+          "obstacle:121": "pcb_component_40",
+          "obstacle:122": "pcb_component_40",
+          "obstacle:123": "pcb_component_40",
+          "obstacle:124": "pcb_component_41",
+          "obstacle:125": "pcb_component_42",
+          "obstacle:126": "pcb_component_42",
+          "obstacle:127": "pcb_component_43",
+          "obstacle:128": "pcb_component_43",
+          "obstacle:129": "pcb_component_44",
+          "obstacle:130": "pcb_component_44",
+          "obstacle:131": "pcb_component_45",
+          "obstacle:132": "pcb_component_45",
+          "obstacle:133": "pcb_component_46",
+          "obstacle:134": "pcb_component_47",
+          "obstacle:135": "pcb_component_47",
+          "obstacle:136": "pcb_component_48",
+          "obstacle:137": "pcb_component_48",
+          "obstacle:138": "pcb_component_49",
+          "obstacle:139": "pcb_component_49",
+          "obstacle:140": "pcb_component_50",
+          "obstacle:141": "pcb_component_50",
+          "obstacle:142": "pcb_component_51",
+          "obstacle:143": "pcb_component_51",
+          "obstacle:144": "pcb_component_52",
+          "obstacle:145": "pcb_component_53",
+          "obstacle:146": "pcb_component_54",
+          "obstacle:147": "pcb_component_54",
+          "obstacle:148": "pcb_component_55",
+          "obstacle:149": "pcb_component_55",
+          "obstacle:150": "pcb_component_55",
+          "obstacle:151": "pcb_component_55",
+          "obstacle:152": "pcb_component_55",
+          "obstacle:153": "pcb_component_55",
+          "obstacle:154": "pcb_component_55",
+          "obstacle:155": "pcb_component_55",
+          "obstacle:156": "pcb_component_55",
+          "obstacle:157": "pcb_component_55",
+          "obstacle:158": "pcb_component_56",
+          "obstacle:159": "pcb_component_57",
+          "obstacle:160": "pcb_component_57",
+          "obstacle:161": "pcb_component_58",
+          "obstacle:162": "pcb_component_58",
+          "obstacle:163": "pcb_component_58",
+          "obstacle:164": "pcb_component_58",
+          "obstacle:165": "pcb_component_58",
+          "obstacle:166": "pcb_component_58",
+          "obstacle:167": "pcb_component_58",
+          "obstacle:168": "pcb_component_58",
+          "obstacle:169": "pcb_component_58",
+          "obstacle:170": "pcb_component_58",
+          "obstacle:171": "pcb_component_58",
+          "obstacle:172": "pcb_component_58",
+          "obstacle:173": "pcb_component_58",
+          "obstacle:174": "pcb_component_58",
+          "obstacle:175": "pcb_component_58",
+          "obstacle:176": "pcb_component_58",
+          "obstacle:177": "pcb_component_58",
+          "obstacle:178": "pcb_component_58",
+          "obstacle:179": "pcb_component_58",
+          "obstacle:180": "pcb_component_58",
+          "obstacle:181": "pcb_component_58",
+          "obstacle:182": "pcb_component_58",
+          "obstacle:183": "pcb_component_58",
+          "obstacle:184": "pcb_component_58",
+          "obstacle:185": "pcb_component_58",
+          "obstacle:186": "pcb_component_58",
+          "obstacle:187": "pcb_component_58",
+          "obstacle:188": "pcb_component_58",
+          "obstacle:189": "pcb_component_58",
+          "obstacle:190": "pcb_component_58",
+          "obstacle:191": "pcb_component_58",
+          "obstacle:192": "pcb_component_58",
+          "obstacle:193": "pcb_component_59",
+          "obstacle:194": "pcb_component_59",
+          "obstacle:195": "pcb_component_59",
+          "obstacle:196": "pcb_component_59",
+          "obstacle:197": "pcb_component_59",
+          "obstacle:198": "pcb_component_59",
+          "obstacle:199": "pcb_component_60",
+          "obstacle:200": "pcb_component_60",
+          "obstacle:201": "pcb_component_61",
+          "obstacle:202": "pcb_component_61",
+          "obstacle:203": "pcb_component_62",
+          "obstacle:204": "pcb_component_63",
+          "obstacle:205": "pcb_component_63",
+          "obstacle:206": "pcb_component_64",
+          "obstacle:207": "pcb_component_65",
+          "obstacle:208": "pcb_component_65",
+          "obstacle:209": "pcb_component_66",
+          "obstacle:210": "pcb_component_66",
+          "obstacle:211": "pcb_component_67",
+          "obstacle:212": "pcb_component_67",
+          "obstacle:213": "pcb_component_69",
+          "obstacle:214": "pcb_component_69",
+          "obstacle:215": "pcb_component_70",
+          "obstacle:216": "pcb_component_70",
+          "obstacle:217": "pcb_component_71",
+          "obstacle:218": "pcb_component_71",
+          "obstacle:219": "pcb_component_72",
+          "obstacle:220": "pcb_component_72",
+          "obstacle:221": "pcb_component_73",
+          "obstacle:222": "pcb_component_73",
+          "obstacle:223": "pcb_component_74",
+          "obstacle:224": "pcb_component_74",
+          "obstacle:225": "pcb_component_75",
+          "obstacle:226": "pcb_component_75",
+          "obstacle:227": "pcb_component_76",
+          "obstacle:228": "pcb_component_76",
+          "obstacle:229": "pcb_component_77",
+          "obstacle:230": "pcb_component_77",
+          "obstacle:231": "pcb_component_78",
+          "obstacle:232": "pcb_component_78",
+          "obstacle:233": "pcb_component_79",
+          "obstacle:234": "pcb_component_79",
+          "obstacle:235": "pcb_component_80",
+          "obstacle:236": "pcb_component_80",
+          "obstacle:237": "pcb_component_81",
+          "obstacle:238": "pcb_component_81",
+          "obstacle:239": "pcb_component_82",
+          "obstacle:240": "pcb_component_82",
+          "obstacle:241": "pcb_component_83",
+          "obstacle:242": "pcb_component_83",
+          "obstacle:243": "pcb_component_84",
+          "obstacle:244": "pcb_component_84",
+          "obstacle:245": "pcb_component_84",
+          "obstacle:246": "pcb_component_84",
+          "obstacle:247": "pcb_component_84",
+          "obstacle:248": "pcb_component_84",
+          "obstacle:249": "pcb_component_84",
+          "obstacle:250": "pcb_component_85",
+          "obstacle:251": "pcb_component_85",
+          "obstacle:252": "pcb_component_86",
+          "obstacle:253": "pcb_component_86",
+          "obstacle:254": "pcb_component_87",
+          "obstacle:255": "pcb_component_87",
+          "obstacle:256": "pcb_component_88",
+          "obstacle:257": "pcb_component_88",
+          "obstacle:258": "pcb_component_89",
+          "obstacle:259": "pcb_component_89",
+          "obstacle:260": "pcb_component_89",
+          "obstacle:261": "pcb_component_89",
+          "obstacle:262": "pcb_component_89",
+          "obstacle:263": "pcb_component_89",
+          "obstacle:264": "pcb_component_89",
+          "obstacle:265": "pcb_component_89",
+          "obstacle:266": "pcb_component_89",
+          "obstacle:267": "pcb_component_89",
+          "obstacle:268": "pcb_component_89",
+          "obstacle:269": "pcb_component_89",
+          "obstacle:270": "pcb_component_89",
+          "obstacle:271": "pcb_component_89",
+          "obstacle:272": "pcb_component_89",
+          "obstacle:273": "pcb_component_89",
+          "obstacle:274": "pcb_component_90",
+          "obstacle:275": "pcb_component_90",
+          "obstacle:276": "pcb_component_91",
+          "obstacle:277": "pcb_component_91",
+          "obstacle:278": "pcb_component_91",
+          "obstacle:279": "pcb_component_91",
+          "obstacle:280": "pcb_component_91",
+          "obstacle:281": "pcb_component_91",
+          "obstacle:282": "pcb_component_92",
+          "obstacle:283": "pcb_component_92",
+          "obstacle:284": "pcb_component_93",
+          "obstacle:285": "pcb_component_93",
+          "obstacle:286": "pcb_component_94",
+          "obstacle:287": "pcb_component_94",
+          "obstacle:288": "pcb_component_95",
+          "obstacle:289": "pcb_component_95",
+          "obstacle:290": "pcb_component_96",
+          "obstacle:291": "pcb_component_96",
+          "obstacle:292": "pcb_component_97",
+          "obstacle:293": "pcb_component_97",
+          "obstacle:294": "pcb_component_98",
+          "obstacle:295": "pcb_component_98",
+          "obstacle:296": "pcb_component_99",
+          "obstacle:297": "pcb_component_99",
+          "obstacle:298": "pcb_component_100",
+          "obstacle:299": "pcb_component_100",
+          "obstacle:300": "pcb_component_101",
+          "obstacle:301": "pcb_component_101",
+          "obstacle:302": "pcb_component_102",
+          "obstacle:303": "pcb_component_102",
+          "obstacle:304": "pcb_component_103",
+          "obstacle:305": "pcb_component_103",
+          "obstacle:306": "pcb_component_104",
+          "obstacle:307": "pcb_component_104",
+          "obstacle:308": "pcb_component_104",
+          "obstacle:309": "pcb_component_104",
+          "obstacle:310": "pcb_component_104",
+          "obstacle:311": "pcb_component_104",
+          "obstacle:312": "pcb_component_104",
+          "obstacle:313": "pcb_component_105",
+          "obstacle:314": "pcb_component_105",
+          "obstacle:315": "pcb_component_106",
+          "obstacle:316": "pcb_component_106",
+          "obstacle:317": "pcb_component_107",
+          "obstacle:318": "pcb_component_107",
+          "obstacle:319": "pcb_component_107",
+          "obstacle:320": "pcb_component_107",
+          "obstacle:321": "pcb_component_107",
+          "obstacle:322": "pcb_component_107",
+          "obstacle:323": "pcb_component_108",
+          "obstacle:324": "pcb_component_108",
+          "obstacle:325": "pcb_component_109",
+          "obstacle:326": "pcb_component_109",
+          "obstacle:327": "pcb_component_110",
+          "obstacle:328": "pcb_component_110",
+          "obstacle:329": "pcb_component_110",
+          "obstacle:330": "pcb_component_110",
+          "obstacle:331": "pcb_component_110",
+          "obstacle:332": "pcb_component_110",
+          "obstacle:333": "pcb_component_110",
+          "obstacle:334": "pcb_component_111",
+          "obstacle:335": "pcb_component_111",
+          "obstacle:336": "pcb_component_112",
+          "obstacle:337": "pcb_component_112",
+          "obstacle:338": "pcb_component_113",
+          "obstacle:339": "pcb_component_113",
+          "obstacle:340": "pcb_component_116",
+          "obstacle:341": "pcb_component_116",
+          "obstacle:342": "pcb_component_116",
+          "obstacle:343": "pcb_component_116",
+          "obstacle:344": "pcb_component_116",
+          "obstacle:345": "pcb_component_116",
+          "obstacle:346": "pcb_component_117",
+          "obstacle:347": "pcb_component_117",
+          "obstacle:348": "pcb_component_118",
+          "obstacle:349": "pcb_component_118",
+          "obstacle:350": "pcb_component_119",
+          "obstacle:351": "pcb_component_119",
+          "obstacle:352": "pcb_component_120",
+          "obstacle:353": "pcb_component_120",
+          "obstacle:354": "pcb_component_121",
+          "obstacle:355": "pcb_component_121",
+          "obstacle:356": "pcb_component_122",
+          "obstacle:357": "pcb_component_122",
+          "obstacle:358": "pcb_component_123",
+          "obstacle:359": "pcb_component_123",
+          "obstacle:360": "pcb_component_0",
+          "obstacle:361": "pcb_component_68",
+          "obstacle:362": "pcb_component_68",
+          "obstacle:363": "pcb_component_89",
+          "obstacle:364": "pcb_component_89",
+          "obstacle:365": "pcb_component_89",
+          "obstacle:366": "pcb_component_89",
+          "obstacle:367": "pcb_component_68",
+          "obstacle:368": "pcb_component_68",
+          "obstacle:369": "pcb_component_89",
+          "obstacle:370": "pcb_component_89"
+        },
+        "traceElementIds": {
+          "minimal_source_trace_0__pair0": [
+            "minimal_source_trace_0__pair0"
+          ],
+          "minimal_source_trace_7__pair0": [
+            "minimal_source_trace_7__pair0"
+          ],
+          "minimal_source_trace_0__pair1": [
+            "minimal_source_trace_0__pair1"
+          ],
+          "minimal_source_trace_0__pair2": [
+            "minimal_source_trace_0__pair2"
+          ],
+          "minimal_source_trace_7__pair1": [
+            "minimal_source_trace_7__pair1"
+          ],
+          "minimal_source_trace_29__pair0": [
+            "minimal_source_trace_29__pair0"
+          ],
+          "minimal_source_trace_34__pair0": [
+            "minimal_source_trace_34__pair0"
+          ],
+          "minimal_source_trace_36__pair0": [
+            "minimal_source_trace_36__pair0"
+          ],
+          "minimal_source_trace_7__pair2": [
+            "minimal_source_trace_7__pair2"
+          ],
+          "minimal_source_trace_0__pair3": [
+            "minimal_source_trace_0__pair3"
+          ],
+          "minimal_source_trace_0__pair4": [
+            "minimal_source_trace_0__pair4"
+          ],
+          "minimal_source_trace_12__pair0": [
+            "minimal_source_trace_12__pair0"
+          ],
+          "minimal_source_trace_0__pair5": [
+            "minimal_source_trace_0__pair5"
+          ],
+          "minimal_source_trace_21__pair0": [
+            "minimal_source_trace_21__pair0"
+          ],
+          "minimal_source_trace_0__pair6": [
+            "minimal_source_trace_0__pair6"
+          ],
+          "minimal_source_trace_0__pair7": [
+            "minimal_source_trace_0__pair7"
+          ],
+          "minimal_source_trace_34__pair1": [
+            "minimal_source_trace_34__pair1"
+          ],
+          "minimal_source_trace_36__pair1": [
+            "minimal_source_trace_36__pair1"
+          ],
+          "minimal_source_trace_0__pair10": [
+            "minimal_source_trace_0__pair10"
+          ],
+          "minimal_source_trace_0__pair8": [
+            "minimal_source_trace_0__pair8"
+          ],
+          "minimal_source_trace_0__pair9": [
+            "minimal_source_trace_0__pair9"
+          ],
+          "minimal_source_trace_21__pair1": [
+            "minimal_source_trace_21__pair1"
+          ],
+          "minimal_source_trace_34__pair2": [
+            "minimal_source_trace_34__pair2"
+          ],
+          "minimal_source_trace_36__pair2": [
+            "minimal_source_trace_36__pair2"
+          ],
+          "minimal_source_trace_21__pair2": [
+            "minimal_source_trace_21__pair2"
+          ],
+          "minimal_source_trace_0__pair11": [
+            "minimal_source_trace_0__pair11"
+          ],
+          "minimal_source_trace_21__pair3": [
+            "minimal_source_trace_21__pair3"
+          ],
+          "minimal_source_trace_0__pair12": [
+            "minimal_source_trace_0__pair12"
+          ],
+          "minimal_source_trace_18__pair0": [
+            "minimal_source_trace_18__pair0"
+          ],
+          "minimal_source_trace_19__pair0": [
+            "minimal_source_trace_19__pair0"
+          ],
+          "minimal_source_trace_47__pair0": [
+            "minimal_source_trace_47__pair0"
+          ],
+          "minimal_source_trace_0__pair13": [
+            "minimal_source_trace_0__pair13"
+          ],
+          "minimal_source_trace_23__pair0": [
+            "minimal_source_trace_23__pair0"
+          ],
+          "minimal_source_trace_55__pair0": [
+            "minimal_source_trace_55__pair0"
+          ],
+          "minimal_source_trace_66__pair0": [
+            "minimal_source_trace_66__pair0"
+          ],
+          "minimal_source_trace_15__pair0": [
+            "minimal_source_trace_15__pair0"
+          ],
+          "minimal_source_trace_68__pair0": [
+            "minimal_source_trace_68__pair0"
+          ],
+          "minimal_source_trace_9__pair0": [
+            "minimal_source_trace_9__pair0"
+          ],
+          "minimal_source_trace_0__pair14": [
+            "minimal_source_trace_0__pair14"
+          ],
+          "minimal_source_trace_0__pair15": [
+            "minimal_source_trace_0__pair15"
+          ],
+          "minimal_source_trace_0__pair16": [
+            "minimal_source_trace_0__pair16"
+          ],
+          "minimal_source_trace_0__pair17": [
+            "minimal_source_trace_0__pair17"
+          ],
+          "minimal_source_trace_1__pair0": [
+            "minimal_source_trace_1__pair0"
+          ],
+          "minimal_source_trace_8__pair0": [
+            "minimal_source_trace_8__pair0"
+          ],
+          "minimal_source_trace_0__pair18": [
+            "minimal_source_trace_0__pair18"
+          ],
+          "minimal_source_trace_0__pair19": [
+            "minimal_source_trace_0__pair19"
+          ],
+          "minimal_source_trace_0__pair20": [
+            "minimal_source_trace_0__pair20"
+          ],
+          "minimal_source_trace_13__pair0": [
+            "minimal_source_trace_13__pair0"
+          ],
+          "minimal_source_trace_17__pair0": [
+            "minimal_source_trace_17__pair0"
+          ],
+          "minimal_source_trace_26__pair0": [
+            "minimal_source_trace_26__pair0"
+          ],
+          "minimal_source_trace_31__pair0": [
+            "minimal_source_trace_31__pair0"
+          ],
+          "minimal_source_trace_6__pair0": [
+            "minimal_source_trace_6__pair0"
+          ],
+          "minimal_source_trace_0__pair21": [
+            "minimal_source_trace_0__pair21"
+          ],
+          "minimal_source_trace_8__pair1": [
+            "minimal_source_trace_8__pair1"
+          ],
+          "minimal_source_trace_0__pair22": [
+            "minimal_source_trace_0__pair22"
+          ],
+          "minimal_source_trace_28__pair0": [
+            "minimal_source_trace_28__pair0"
+          ],
+          "minimal_source_trace_47__pair1": [
+            "minimal_source_trace_47__pair1"
+          ],
+          "minimal_source_trace_18__pair1": [
+            "minimal_source_trace_18__pair1"
+          ],
+          "minimal_source_trace_19__pair1": [
+            "minimal_source_trace_19__pair1"
+          ],
+          "minimal_source_trace_47__pair2": [
+            "minimal_source_trace_47__pair2"
+          ],
+          "minimal_source_trace_25__pair0": [
+            "minimal_source_trace_25__pair0"
+          ],
+          "minimal_source_trace_32__pair0": [
+            "minimal_source_trace_32__pair0"
+          ],
+          "minimal_source_trace_0__pair23": [
+            "minimal_source_trace_0__pair23"
+          ],
+          "minimal_source_trace_6__pair1": [
+            "minimal_source_trace_6__pair1"
+          ],
+          "minimal_source_trace_40__pair0": [
+            "minimal_source_trace_40__pair0"
+          ],
+          "minimal_source_trace_0__pair24": [
+            "minimal_source_trace_0__pair24"
+          ],
+          "minimal_source_trace_0__pair25": [
+            "minimal_source_trace_0__pair25"
+          ],
+          "minimal_source_trace_68__pair1": [
+            "minimal_source_trace_68__pair1"
+          ],
+          "minimal_source_trace_41__pair0": [
+            "minimal_source_trace_41__pair0"
+          ],
+          "minimal_source_trace_6__pair2": [
+            "minimal_source_trace_6__pair2"
+          ],
+          "minimal_source_trace_0__pair26": [
+            "minimal_source_trace_0__pair26"
+          ],
+          "minimal_source_trace_0__pair27": [
+            "minimal_source_trace_0__pair27"
+          ],
+          "minimal_source_trace_43__pair0": [
+            "minimal_source_trace_43__pair0"
+          ],
+          "minimal_source_trace_45__pair0": [
+            "minimal_source_trace_45__pair0"
+          ],
+          "minimal_source_trace_0__pair28": [
+            "minimal_source_trace_0__pair28"
+          ],
+          "minimal_source_trace_57__pair0": [
+            "minimal_source_trace_57__pair0"
+          ],
+          "minimal_source_trace_0__pair29": [
+            "minimal_source_trace_0__pair29"
+          ],
+          "minimal_source_trace_27__pair0": [
+            "minimal_source_trace_27__pair0"
+          ],
+          "minimal_source_trace_6__pair3": [
+            "minimal_source_trace_6__pair3"
+          ],
+          "minimal_source_trace_0__pair30": [
+            "minimal_source_trace_0__pair30"
+          ],
+          "minimal_source_trace_69__pair0": [
+            "minimal_source_trace_69__pair0"
+          ],
+          "minimal_source_trace_15__pair1": [
+            "minimal_source_trace_15__pair1"
+          ],
+          "minimal_source_trace_37__pair0": [
+            "minimal_source_trace_37__pair0"
+          ],
+          "minimal_source_trace_14__pair0": [
+            "minimal_source_trace_14__pair0"
+          ],
+          "minimal_source_trace_0__pair31": [
+            "minimal_source_trace_0__pair31"
+          ],
+          "minimal_source_trace_0__pair32": [
+            "minimal_source_trace_0__pair32"
+          ],
+          "minimal_source_trace_5__pair0": [
+            "minimal_source_trace_5__pair0"
+          ],
+          "minimal_source_trace_33__pair0": [
+            "minimal_source_trace_33__pair0"
+          ],
+          "minimal_source_trace_10__pair0": [
+            "minimal_source_trace_10__pair0"
+          ],
+          "minimal_source_trace_58__pair0": [
+            "minimal_source_trace_58__pair0"
+          ],
+          "minimal_source_trace_0__pair33": [
+            "minimal_source_trace_0__pair33"
+          ],
+          "minimal_source_trace_0__pair34": [
+            "minimal_source_trace_0__pair34"
+          ],
+          "minimal_source_trace_23__pair1": [
+            "minimal_source_trace_23__pair1"
+          ],
+          "minimal_source_trace_58__pair1": [
+            "minimal_source_trace_58__pair1"
+          ],
+          "minimal_source_trace_6__pair4": [
+            "minimal_source_trace_6__pair4"
+          ],
+          "minimal_source_trace_20__pair0": [
+            "minimal_source_trace_20__pair0"
+          ],
+          "minimal_source_trace_21__pair4": [
+            "minimal_source_trace_21__pair4"
+          ],
+          "minimal_source_trace_24__pair0": [
+            "minimal_source_trace_24__pair0"
+          ],
+          "minimal_source_trace_3__pair0": [
+            "minimal_source_trace_3__pair0"
+          ],
+          "minimal_source_trace_6__pair5": [
+            "minimal_source_trace_6__pair5"
+          ],
+          "minimal_source_trace_2__pair0": [
+            "minimal_source_trace_2__pair0"
+          ],
+          "minimal_source_trace_0__pair35": [
+            "minimal_source_trace_0__pair35"
+          ],
+          "minimal_source_trace_29__pair1": [
+            "minimal_source_trace_29__pair1"
+          ],
+          "minimal_source_trace_50__pair0": [
+            "minimal_source_trace_50__pair0"
+          ],
+          "minimal_source_trace_12__pair1": [
+            "minimal_source_trace_12__pair1"
+          ],
+          "minimal_source_trace_12__pair2": [
+            "minimal_source_trace_12__pair2"
+          ],
+          "minimal_source_trace_49__pair0": [
+            "minimal_source_trace_49__pair0"
+          ],
+          "minimal_source_trace_21__pair5": [
+            "minimal_source_trace_21__pair5"
+          ],
+          "minimal_source_trace_6__pair6": [
+            "minimal_source_trace_6__pair6"
+          ],
+          "minimal_source_trace_4__pair0": [
+            "minimal_source_trace_4__pair0"
+          ],
+          "minimal_source_trace_59__pair0": [
+            "minimal_source_trace_59__pair0"
+          ],
+          "minimal_source_trace_21__pair6": [
+            "minimal_source_trace_21__pair6"
+          ],
+          "minimal_source_trace_56__pair0": [
+            "minimal_source_trace_56__pair0"
+          ],
+          "minimal_source_trace_16__pair0": [
+            "minimal_source_trace_16__pair0"
+          ],
+          "minimal_source_trace_12__pair3": [
+            "minimal_source_trace_12__pair3"
+          ],
+          "minimal_source_trace_0__pair36": [
+            "minimal_source_trace_0__pair36"
+          ],
+          "minimal_source_trace_0__pair37": [
+            "minimal_source_trace_0__pair37"
+          ],
+          "minimal_source_trace_21__pair7": [
+            "minimal_source_trace_21__pair7"
+          ],
+          "minimal_source_trace_20__pair1": [
+            "minimal_source_trace_20__pair1"
+          ],
+          "minimal_source_trace_67__pair0": [
+            "minimal_source_trace_67__pair0"
+          ],
+          "minimal_source_trace_0__pair38": [
+            "minimal_source_trace_0__pair38"
+          ],
+          "minimal_source_trace_0__pair39": [
+            "minimal_source_trace_0__pair39"
+          ],
+          "minimal_source_trace_6__pair7": [
+            "minimal_source_trace_6__pair7"
+          ],
+          "minimal_source_trace_0__pair40": [
+            "minimal_source_trace_0__pair40"
+          ],
+          "minimal_source_trace_0__pair41": [
+            "minimal_source_trace_0__pair41"
+          ],
+          "minimal_source_trace_15__pair2": [
+            "minimal_source_trace_15__pair2"
+          ],
+          "minimal_source_trace_26__pair1": [
+            "minimal_source_trace_26__pair1"
+          ],
+          "minimal_source_trace_4__pair1": [
+            "minimal_source_trace_4__pair1"
+          ],
+          "minimal_source_trace_0__pair42": [
+            "minimal_source_trace_0__pair42"
+          ],
+          "minimal_source_trace_6__pair8": [
+            "minimal_source_trace_6__pair8"
+          ],
+          "minimal_source_trace_0__pair43": [
+            "minimal_source_trace_0__pair43"
+          ],
+          "minimal_source_trace_0__pair44": [
+            "minimal_source_trace_0__pair44"
+          ],
+          "minimal_source_trace_0__pair45": [
+            "minimal_source_trace_0__pair45"
+          ],
+          "minimal_source_trace_12__pair4": [
+            "minimal_source_trace_12__pair4"
+          ],
+          "minimal_source_trace_6__pair9": [
+            "minimal_source_trace_6__pair9"
+          ],
+          "minimal_source_trace_0__pair46": [
+            "minimal_source_trace_0__pair46"
+          ],
+          "minimal_source_trace_0__pair47": [
+            "minimal_source_trace_0__pair47"
+          ],
+          "minimal_source_trace_6__pair10": [
+            "minimal_source_trace_6__pair10"
+          ],
+          "minimal_source_trace_6__pair11": [
+            "minimal_source_trace_6__pair11"
+          ],
+          "minimal_source_trace_0__pair48": [
+            "minimal_source_trace_0__pair48"
+          ],
+          "minimal_source_trace_0__pair49": [
+            "minimal_source_trace_0__pair49"
+          ],
+          "minimal_source_trace_12__pair5": [
+            "minimal_source_trace_12__pair5"
+          ],
+          "minimal_source_trace_6__pair12": [
+            "minimal_source_trace_6__pair12"
+          ],
+          "minimal_source_trace_0__pair50": [
+            "minimal_source_trace_0__pair50"
+          ],
+          "minimal_source_trace_6__pair13": [
+            "minimal_source_trace_6__pair13"
+          ],
+          "minimal_source_trace_0__pair51": [
+            "minimal_source_trace_0__pair51"
+          ],
+          "minimal_source_trace_0__pair52": [
+            "minimal_source_trace_0__pair52"
+          ],
+          "minimal_source_trace_21__pair8": [
+            "minimal_source_trace_21__pair8"
+          ],
+          "minimal_source_trace_0__pair53": [
+            "minimal_source_trace_0__pair53"
+          ],
+          "minimal_source_trace_23__pair2": [
+            "minimal_source_trace_23__pair2"
+          ],
+          "minimal_source_trace_67__pair1": [
+            "minimal_source_trace_67__pair1"
+          ],
+          "minimal_source_trace_0__pair54": [
+            "minimal_source_trace_0__pair54"
+          ],
+          "minimal_source_trace_66__pair1": [
+            "minimal_source_trace_66__pair1"
+          ],
+          "minimal_source_trace_0__pair55": [
+            "minimal_source_trace_0__pair55"
+          ],
+          "minimal_source_trace_18__pair2": [
+            "minimal_source_trace_18__pair2"
+          ],
+          "minimal_source_trace_0__pair56": [
+            "minimal_source_trace_0__pair56"
+          ],
+          "minimal_source_trace_0__pair57": [
+            "minimal_source_trace_0__pair57"
+          ],
+          "minimal_source_trace_21__pair9": [
+            "minimal_source_trace_21__pair9"
+          ],
+          "minimal_source_trace_0__pair58": [
+            "minimal_source_trace_0__pair58"
+          ],
+          "minimal_source_trace_47__pair3": [
+            "minimal_source_trace_47__pair3"
+          ],
+          "minimal_source_trace_21__pair10": [
+            "minimal_source_trace_21__pair10"
+          ],
+          "minimal_source_trace_0__pair59": [
+            "minimal_source_trace_0__pair59"
+          ],
+          "minimal_source_trace_26__pair2": [
+            "minimal_source_trace_26__pair2"
+          ],
+          "minimal_source_trace_0__pair60": [
+            "minimal_source_trace_0__pair60"
+          ],
+          "minimal_source_trace_15__pair3": [
+            "minimal_source_trace_15__pair3"
+          ],
+          "minimal_source_trace_4__pair2": [
+            "minimal_source_trace_4__pair2"
+          ],
+          "minimal_source_trace_0__pair61": [
+            "minimal_source_trace_0__pair61"
+          ],
+          "minimal_source_trace_31__pair1": [
+            "minimal_source_trace_31__pair1"
+          ],
+          "minimal_source_trace_9__pair1": [
+            "minimal_source_trace_9__pair1"
+          ],
+          "minimal_source_trace_0__pair62": [
+            "minimal_source_trace_0__pair62"
+          ],
+          "minimal_source_trace_0__pair63": [
+            "minimal_source_trace_0__pair63"
+          ],
+          "minimal_source_trace_0__pair64": [
+            "minimal_source_trace_0__pair64"
+          ],
+          "minimal_source_trace_0__pair65": [
+            "minimal_source_trace_0__pair65"
+          ],
+          "minimal_source_trace_11__pair0": [
+            "minimal_source_trace_11__pair0"
+          ],
+          "minimal_source_trace_6__pair14": [
+            "minimal_source_trace_6__pair14"
+          ],
+          "minimal_source_trace_0__pair66": [
+            "minimal_source_trace_0__pair66"
+          ],
+          "minimal_source_trace_0__pair67": [
+            "minimal_source_trace_0__pair67"
+          ],
+          "minimal_source_trace_6__pair15": [
+            "minimal_source_trace_6__pair15"
+          ],
+          "minimal_source_trace_0__pair68": [
+            "minimal_source_trace_0__pair68"
+          ],
+          "minimal_source_trace_0__pair69": [
+            "minimal_source_trace_0__pair69"
+          ],
+          "minimal_source_trace_6__pair16": [
+            "minimal_source_trace_6__pair16"
+          ],
+          "minimal_source_trace_53__pair0": [
+            "minimal_source_trace_53__pair0"
+          ],
+          "minimal_source_trace_6__pair17": [
+            "minimal_source_trace_6__pair17"
+          ],
+          "minimal_source_trace_6__pair18": [
+            "minimal_source_trace_6__pair18"
+          ],
+          "minimal_source_trace_12__pair6": [
+            "minimal_source_trace_12__pair6"
+          ],
+          "minimal_source_trace_6__pair19": [
+            "minimal_source_trace_6__pair19"
+          ],
+          "minimal_source_trace_0__pair70": [
+            "minimal_source_trace_0__pair70"
+          ],
+          "minimal_source_trace_0__pair71": [
+            "minimal_source_trace_0__pair71"
+          ],
+          "minimal_source_trace_6__pair20": [
+            "minimal_source_trace_6__pair20"
+          ],
+          "minimal_source_trace_54__pair0": [
+            "minimal_source_trace_54__pair0"
+          ],
+          "minimal_source_trace_0__pair72": [
+            "minimal_source_trace_0__pair72"
+          ],
+          "minimal_source_trace_4__pair3": [
+            "minimal_source_trace_4__pair3"
+          ],
+          "minimal_source_trace_0__pair73": [
+            "minimal_source_trace_0__pair73"
+          ],
+          "minimal_source_trace_59__pair1": [
+            "minimal_source_trace_59__pair1"
+          ],
+          "minimal_source_trace_36__pair3": [
+            "minimal_source_trace_36__pair3"
+          ],
+          "minimal_source_trace_34__pair3": [
+            "minimal_source_trace_34__pair3"
+          ],
+          "minimal_source_trace_56__pair1": [
+            "minimal_source_trace_56__pair1"
+          ],
+          "minimal_source_trace_12__pair7": [
+            "minimal_source_trace_12__pair7"
+          ],
+          "minimal_source_trace_0__pair74": [
+            "minimal_source_trace_0__pair74"
+          ],
+          "minimal_source_trace_0__pair75": [
+            "minimal_source_trace_0__pair75"
+          ],
+          "minimal_source_trace_0__pair76": [
+            "minimal_source_trace_0__pair76"
+          ],
+          "minimal_source_trace_0__pair77": [
+            "minimal_source_trace_0__pair77"
+          ],
+          "minimal_source_trace_4__pair4": [
+            "minimal_source_trace_4__pair4"
+          ],
+          "minimal_source_trace_44__pair0": [
+            "minimal_source_trace_44__pair0"
+          ],
+          "minimal_source_trace_0__pair78": [
+            "minimal_source_trace_0__pair78"
+          ],
+          "minimal_source_trace_0__pair79": [
+            "minimal_source_trace_0__pair79"
+          ],
+          "minimal_source_trace_0__pair80": [
+            "minimal_source_trace_0__pair80"
+          ],
+          "minimal_source_trace_17__pair1": [
+            "minimal_source_trace_17__pair1"
+          ],
+          "minimal_source_trace_19__pair2": [
+            "minimal_source_trace_19__pair2"
+          ],
+          "minimal_source_trace_0__pair81": [
+            "minimal_source_trace_0__pair81"
+          ],
+          "minimal_source_trace_0__pair82": [
+            "minimal_source_trace_0__pair82"
+          ],
+          "minimal_source_trace_18__pair3": [
+            "minimal_source_trace_18__pair3"
+          ],
+          "minimal_source_trace_19__pair3": [
+            "minimal_source_trace_19__pair3"
+          ],
+          "minimal_source_trace_12__pair8": [
+            "minimal_source_trace_12__pair8"
+          ],
+          "minimal_source_trace_6__pair21": [
+            "minimal_source_trace_6__pair21"
+          ],
+          "minimal_source_trace_15__pair4": [
+            "minimal_source_trace_15__pair4"
+          ],
+          "minimal_source_trace_2__pair1": [
+            "minimal_source_trace_2__pair1"
+          ],
+          "minimal_source_trace_0__pair83": [
+            "minimal_source_trace_0__pair83"
+          ],
+          "minimal_source_trace_0__pair84": [
+            "minimal_source_trace_0__pair84"
+          ],
+          "minimal_source_trace_18__pair4": [
+            "minimal_source_trace_18__pair4"
+          ],
+          "minimal_source_trace_6__pair22": [
+            "minimal_source_trace_6__pair22"
+          ],
+          "minimal_source_trace_0__pair85": [
+            "minimal_source_trace_0__pair85"
+          ],
+          "minimal_source_trace_22__pair0": [
+            "minimal_source_trace_22__pair0"
+          ],
+          "minimal_source_trace_0__pair86": [
+            "minimal_source_trace_0__pair86"
+          ],
+          "minimal_source_trace_6__pair23": [
+            "minimal_source_trace_6__pair23"
+          ],
+          "minimal_source_trace_0__pair87": [
+            "minimal_source_trace_0__pair87"
+          ],
+          "minimal_source_trace_0__pair88": [
+            "minimal_source_trace_0__pair88"
+          ],
+          "minimal_source_trace_17__pair2": [
+            "minimal_source_trace_17__pair2"
+          ],
+          "minimal_source_trace_6__pair24": [
+            "minimal_source_trace_6__pair24"
+          ],
+          "minimal_source_trace_21__pair11": [
+            "minimal_source_trace_21__pair11"
+          ],
+          "minimal_source_trace_6__pair25": [
+            "minimal_source_trace_6__pair25"
+          ],
+          "minimal_source_trace_0__pair89": [
+            "minimal_source_trace_0__pair89"
+          ],
+          "minimal_source_trace_0__pair90": [
+            "minimal_source_trace_0__pair90"
+          ],
+          "minimal_source_trace_21__pair12": [
+            "minimal_source_trace_21__pair12"
+          ],
+          "minimal_source_trace_26__pair3": [
+            "minimal_source_trace_26__pair3"
+          ],
+          "minimal_source_trace_0__pair91": [
+            "minimal_source_trace_0__pair91"
+          ],
+          "minimal_source_trace_7__pair3": [
+            "minimal_source_trace_7__pair3"
+          ],
+          "minimal_source_trace_34__pair4": [
+            "minimal_source_trace_34__pair4"
+          ],
+          "minimal_source_trace_37__pair1": [
+            "minimal_source_trace_37__pair1"
+          ],
+          "minimal_source_trace_0__pair92": [
+            "minimal_source_trace_0__pair92"
+          ],
+          "minimal_source_trace_0__pair93": [
+            "minimal_source_trace_0__pair93"
+          ],
+          "minimal_source_trace_54__pair1": [
+            "minimal_source_trace_54__pair1"
+          ],
+          "minimal_source_trace_6__pair26": [
+            "minimal_source_trace_6__pair26"
+          ],
+          "minimal_source_trace_19__pair4": [
+            "minimal_source_trace_19__pair4"
+          ],
+          "minimal_source_trace_6__pair27": [
+            "minimal_source_trace_6__pair27"
+          ],
+          "minimal_source_trace_36__pair4": [
+            "minimal_source_trace_36__pair4"
+          ],
+          "minimal_source_trace_21__pair13": [
+            "minimal_source_trace_21__pair13"
+          ],
+          "minimal_source_trace_0__pair94": [
+            "minimal_source_trace_0__pair94"
+          ],
+          "minimal_source_trace_54__pair2": [
+            "minimal_source_trace_54__pair2"
+          ],
+          "minimal_source_trace_0__pair95": [
+            "minimal_source_trace_0__pair95"
+          ],
+          "minimal_source_trace_26__pair4": [
+            "minimal_source_trace_26__pair4"
+          ],
+          "minimal_source_trace_15__pair5": [
+            "minimal_source_trace_15__pair5"
+          ],
+          "minimal_source_trace_26__pair5": [
+            "minimal_source_trace_26__pair5"
+          ],
+          "minimal_source_trace_38__pair0": [
+            "minimal_source_trace_38__pair0"
+          ],
+          "minimal_source_trace_15__pair6": [
+            "minimal_source_trace_15__pair6"
+          ],
+          "minimal_source_trace_12__pair9": [
+            "minimal_source_trace_12__pair9"
+          ],
+          "minimal_source_trace_20__pair2": [
+            "minimal_source_trace_20__pair2"
+          ],
+          "minimal_source_trace_21__pair14": [
+            "minimal_source_trace_21__pair14"
+          ],
+          "minimal_source_trace_7__pair4": [
+            "minimal_source_trace_7__pair4"
+          ],
+          "minimal_source_trace_12__pair10": [
+            "minimal_source_trace_12__pair10"
+          ],
+          "minimal_source_trace_42__pair0": [
+            "minimal_source_trace_42__pair0"
+          ],
+          "minimal_source_trace_6__pair28": [
+            "minimal_source_trace_6__pair28"
+          ],
+          "minimal_source_trace_26__pair6": [
+            "minimal_source_trace_26__pair6"
+          ],
+          "minimal_source_trace_0__pair96": [
+            "minimal_source_trace_0__pair96"
+          ],
+          "minimal_source_trace_26__pair7": [
+            "minimal_source_trace_26__pair7"
+          ],
+          "minimal_source_trace_30__pair0": [
+            "minimal_source_trace_30__pair0"
+          ],
+          "minimal_source_trace_26__pair8": [
+            "minimal_source_trace_26__pair8"
+          ],
+          "minimal_source_trace_39__pair0": [
+            "minimal_source_trace_39__pair0"
+          ],
+          "minimal_source_trace_15__pair7": [
+            "minimal_source_trace_15__pair7"
+          ]
+        },
+        "terminalElementIds": {
+          "pcb_port_0": [
+            "pcb_port_0"
+          ],
+          "pcb_port_2": [
+            "pcb_port_2"
+          ],
+          "pcb_port_1": [
+            "pcb_port_1"
+          ],
+          "pcb_port_86": [
+            "pcb_port_86"
+          ],
+          "pcb_port_3": [
+            "pcb_port_3"
+          ],
+          "pcb_port_52": [
+            "pcb_port_52"
+          ],
+          "pcb_port_5": [
+            "pcb_port_5"
+          ],
+          "pcb_port_96": [
+            "pcb_port_96"
+          ],
+          "pcb_port_6": [
+            "pcb_port_6"
+          ],
+          "pcb_port_46": [
+            "pcb_port_46"
+          ],
+          "pcb_port_7": [
+            "pcb_port_7"
+          ],
+          "pcb_port_107": [
+            "pcb_port_107"
+          ],
+          "pcb_port_8": [
+            "pcb_port_8"
+          ],
+          "pcb_port_9": [
+            "pcb_port_9"
+          ],
+          "pcb_port_10": [
+            "pcb_port_10"
+          ],
+          "pcb_port_40": [
+            "pcb_port_40"
+          ],
+          "pcb_port_11": [
+            "pcb_port_11"
+          ],
+          "pcb_port_15": [
+            "pcb_port_15"
+          ],
+          "pcb_port_12": [
+            "pcb_port_12"
+          ],
+          "pcb_port_14": [
+            "pcb_port_14"
+          ],
+          "pcb_port_16": [
+            "pcb_port_16"
+          ],
+          "pcb_port_160": [
+            "pcb_port_160"
+          ],
+          "pcb_port_18": [
+            "pcb_port_18"
+          ],
+          "pcb_port_168": [
+            "pcb_port_168"
+          ],
+          "pcb_port_21": [
+            "pcb_port_21"
+          ],
+          "pcb_port_30": [
+            "pcb_port_30"
+          ],
+          "pcb_port_22": [
+            "pcb_port_22"
+          ],
+          "pcb_port_182": [
+            "pcb_port_182"
+          ],
+          "pcb_port_24": [
+            "pcb_port_24"
+          ],
+          "pcb_port_67": [
+            "pcb_port_67"
+          ],
+          "pcb_port_25": [
+            "pcb_port_25"
+          ],
+          "pcb_port_73": [
+            "pcb_port_73"
+          ],
+          "pcb_port_26": [
+            "pcb_port_26"
+          ],
+          "pcb_port_139": [
+            "pcb_port_139"
+          ],
+          "pcb_port_27": [
+            "pcb_port_27"
+          ],
+          "pcb_port_51": [
+            "pcb_port_51"
+          ],
+          "pcb_port_28": [
+            "pcb_port_28"
+          ],
+          "pcb_port_82": [
+            "pcb_port_82"
+          ],
+          "pcb_port_31": [
+            "pcb_port_31"
+          ],
+          "pcb_port_60": [
+            "pcb_port_60"
+          ],
+          "pcb_port_32": [
+            "pcb_port_32"
+          ],
+          "pcb_port_37": [
+            "pcb_port_37"
+          ],
+          "pcb_port_33": [
+            "pcb_port_33"
+          ],
+          "pcb_port_39": [
+            "pcb_port_39"
+          ],
+          "pcb_port_34": [
+            "pcb_port_34"
+          ],
+          "pcb_port_91": [
+            "pcb_port_91"
+          ],
+          "pcb_port_35": [
+            "pcb_port_35"
+          ],
+          "pcb_port_45": [
+            "pcb_port_45"
+          ],
+          "pcb_port_48": [
+            "pcb_port_48"
+          ],
+          "pcb_port_98": [
+            "pcb_port_98"
+          ],
+          "pcb_port_49": [
+            "pcb_port_49"
+          ],
+          "pcb_port_114": [
+            "pcb_port_114"
+          ],
+          "pcb_port_50": [
+            "pcb_port_50"
+          ],
+          "pcb_port_61": [
+            "pcb_port_61"
+          ],
+          "pcb_port_54": [
+            "pcb_port_54"
+          ],
+          "pcb_port_157": [
+            "pcb_port_157"
+          ],
+          "pcb_port_58": [
+            "pcb_port_58"
+          ],
+          "pcb_port_178": [
+            "pcb_port_178"
+          ],
+          "pcb_port_59": [
+            "pcb_port_59"
+          ],
+          "pcb_port_142": [
+            "pcb_port_142"
+          ],
+          "pcb_port_66": [
+            "pcb_port_66"
+          ],
+          "pcb_port_95": [
+            "pcb_port_95"
+          ],
+          "pcb_port_71": [
+            "pcb_port_71"
+          ],
+          "pcb_port_117": [
+            "pcb_port_117"
+          ],
+          "pcb_port_72": [
+            "pcb_port_72"
+          ],
+          "pcb_port_109": [
+            "pcb_port_109"
+          ],
+          "pcb_port_75": [
+            "pcb_port_75"
+          ],
+          "pcb_port_200": [
+            "pcb_port_200"
+          ],
+          "pcb_port_76": [
+            "pcb_port_76"
+          ],
+          "pcb_port_77": [
+            "pcb_port_77"
+          ],
+          "pcb_port_79": [
+            "pcb_port_79"
+          ],
+          "pcb_port_80": [
+            "pcb_port_80"
+          ],
+          "pcb_port_81": [
+            "pcb_port_81"
+          ],
+          "pcb_port_122": [
+            "pcb_port_122"
+          ],
+          "pcb_port_84": [
+            "pcb_port_84"
+          ],
+          "pcb_port_105": [
+            "pcb_port_105"
+          ],
+          "pcb_port_89": [
+            "pcb_port_89"
+          ],
+          "pcb_port_115": [
+            "pcb_port_115"
+          ],
+          "pcb_port_90": [
+            "pcb_port_90"
+          ],
+          "pcb_port_101": [
+            "pcb_port_101"
+          ],
+          "pcb_port_92": [
+            "pcb_port_92"
+          ],
+          "pcb_port_180": [
+            "pcb_port_180"
+          ],
+          "pcb_port_93": [
+            "pcb_port_93"
+          ],
+          "pcb_port_123": [
+            "pcb_port_123"
+          ],
+          "pcb_port_94": [
+            "pcb_port_94"
+          ],
+          "pcb_port_121": [
+            "pcb_port_121"
+          ],
+          "pcb_port_103": [
+            "pcb_port_103"
+          ],
+          "pcb_port_165": [
+            "pcb_port_165"
+          ],
+          "pcb_port_116": [
+            "pcb_port_116"
+          ],
+          "pcb_port_208": [
+            "pcb_port_208"
+          ],
+          "pcb_port_129": [
+            "pcb_port_129"
+          ],
+          "pcb_port_130": [
+            "pcb_port_130"
+          ],
+          "pcb_port_136": [
+            "pcb_port_136"
+          ],
+          "pcb_port_140": [
+            "pcb_port_140"
+          ],
+          "pcb_port_141": [
+            "pcb_port_141"
+          ],
+          "pcb_port_179": [
+            "pcb_port_179"
+          ],
+          "pcb_port_162": [
+            "pcb_port_162"
+          ],
+          "pcb_port_181": [
+            "pcb_port_181"
+          ],
+          "pcb_port_190": [
+            "pcb_port_190"
+          ],
+          "pcb_port_236": [
+            "pcb_port_236"
+          ],
+          "pcb_port_192": [
+            "pcb_port_192"
+          ],
+          "pcb_port_203": [
+            "pcb_port_203"
+          ],
+          "pcb_port_210": [
+            "pcb_port_210"
+          ],
+          "pcb_port_301": [
+            "pcb_port_301"
+          ],
+          "pcb_port_211": [
+            "pcb_port_211"
+          ],
+          "pcb_port_303": [
+            "pcb_port_303"
+          ],
+          "pcb_port_213": [
+            "pcb_port_213"
+          ],
+          "pcb_port_280": [
+            "pcb_port_280"
+          ],
+          "pcb_port_214": [
+            "pcb_port_214"
+          ],
+          "pcb_port_317": [
+            "pcb_port_317"
+          ],
+          "pcb_port_267": [
+            "pcb_port_267"
+          ],
+          "pcb_port_327": [
+            "pcb_port_327"
+          ],
+          "pcb_port_269": [
+            "pcb_port_269"
+          ],
+          "pcb_port_304": [
+            "pcb_port_304"
+          ],
+          "pcb_port_305": [
+            "pcb_port_305"
+          ],
+          "pcb_port_319": [
+            "pcb_port_319"
+          ],
+          "pcb_port_318": [
+            "pcb_port_318"
+          ],
+          "pcb_port_326": [
+            "pcb_port_326"
+          ],
+          "pcb_port_4": [
+            "pcb_port_4"
+          ],
+          "pcb_port_17": [
+            "pcb_port_17"
+          ],
+          "pcb_port_19": [
+            "pcb_port_19"
+          ],
+          "pcb_port_20": [
+            "pcb_port_20"
+          ],
+          "pcb_port_23": [
+            "pcb_port_23"
+          ],
+          "pcb_port_29": [
+            "pcb_port_29"
+          ],
+          "pcb_port_36": [
+            "pcb_port_36"
+          ],
+          "pcb_port_38": [
+            "pcb_port_38"
+          ],
+          "pcb_port_47": [
+            "pcb_port_47"
+          ],
+          "pcb_port_53": [
+            "pcb_port_53"
+          ],
+          "pcb_port_63": [
+            "pcb_port_63"
+          ],
+          "pcb_port_70": [
+            "pcb_port_70"
+          ],
+          "pcb_port_74": [
+            "pcb_port_74"
+          ],
+          "pcb_port_85": [
+            "pcb_port_85"
+          ],
+          "pcb_port_87": [
+            "pcb_port_87"
+          ],
+          "pcb_port_88": [
+            "pcb_port_88"
+          ],
+          "pcb_port_97": [
+            "pcb_port_97"
+          ],
+          "pcb_port_100": [
+            "pcb_port_100"
+          ],
+          "pcb_port_102": [
+            "pcb_port_102"
+          ],
+          "pcb_port_106": [
+            "pcb_port_106"
+          ],
+          "pcb_port_108": [
+            "pcb_port_108"
+          ],
+          "pcb_port_111": [
+            "pcb_port_111"
+          ],
+          "pcb_port_113": [
+            "pcb_port_113"
+          ],
+          "pcb_port_127": [
+            "pcb_port_127"
+          ],
+          "pcb_port_132": [
+            "pcb_port_132"
+          ],
+          "pcb_port_135": [
+            "pcb_port_135"
+          ],
+          "pcb_port_147": [
+            "pcb_port_147"
+          ],
+          "pcb_port_148": [
+            "pcb_port_148"
+          ],
+          "pcb_port_149": [
+            "pcb_port_149"
+          ],
+          "pcb_port_150": [
+            "pcb_port_150"
+          ],
+          "pcb_port_151": [
+            "pcb_port_151"
+          ],
+          "pcb_port_158": [
+            "pcb_port_158"
+          ],
+          "pcb_port_164": [
+            "pcb_port_164"
+          ],
+          "pcb_port_169": [
+            "pcb_port_169"
+          ],
+          "pcb_port_170": [
+            "pcb_port_170"
+          ],
+          "pcb_port_174": [
+            "pcb_port_174"
+          ],
+          "pcb_port_175": [
+            "pcb_port_175"
+          ],
+          "pcb_port_176": [
+            "pcb_port_176"
+          ],
+          "pcb_port_187": [
+            "pcb_port_187"
+          ],
+          "pcb_port_188": [
+            "pcb_port_188"
+          ],
+          "pcb_port_191": [
+            "pcb_port_191"
+          ],
+          "pcb_port_194": [
+            "pcb_port_194"
+          ],
+          "pcb_port_199": [
+            "pcb_port_199"
+          ],
+          "pcb_port_204": [
+            "pcb_port_204"
+          ],
+          "pcb_port_216": [
+            "pcb_port_216"
+          ],
+          "pcb_port_218": [
+            "pcb_port_218"
+          ],
+          "pcb_port_220": [
+            "pcb_port_220"
+          ],
+          "pcb_port_222": [
+            "pcb_port_222"
+          ],
+          "pcb_port_223": [
+            "pcb_port_223"
+          ],
+          "pcb_port_224": [
+            "pcb_port_224"
+          ],
+          "pcb_port_228": [
+            "pcb_port_228"
+          ],
+          "pcb_port_229": [
+            "pcb_port_229"
+          ],
+          "pcb_port_231": [
+            "pcb_port_231"
+          ],
+          "pcb_port_233": [
+            "pcb_port_233"
+          ],
+          "pcb_port_235": [
+            "pcb_port_235"
+          ],
+          "pcb_port_237": [
+            "pcb_port_237"
+          ],
+          "pcb_port_244": [
+            "pcb_port_244"
+          ],
+          "pcb_port_245": [
+            "pcb_port_245"
+          ],
+          "pcb_port_252": [
+            "pcb_port_252"
+          ],
+          "pcb_port_253": [
+            "pcb_port_253"
+          ],
+          "pcb_port_254": [
+            "pcb_port_254"
+          ],
+          "pcb_port_255": [
+            "pcb_port_255"
+          ],
+          "pcb_port_256": [
+            "pcb_port_256"
+          ],
+          "pcb_port_257": [
+            "pcb_port_257"
+          ],
+          "pcb_port_259": [
+            "pcb_port_259"
+          ],
+          "pcb_port_261": [
+            "pcb_port_261"
+          ],
+          "pcb_port_263": [
+            "pcb_port_263"
+          ],
+          "pcb_port_264": [
+            "pcb_port_264"
+          ],
+          "pcb_port_265": [
+            "pcb_port_265"
+          ],
+          "pcb_port_273": [
+            "pcb_port_273"
+          ],
+          "pcb_port_275": [
+            "pcb_port_275"
+          ],
+          "pcb_port_277": [
+            "pcb_port_277"
+          ],
+          "pcb_port_279": [
+            "pcb_port_279"
+          ],
+          "pcb_port_281": [
+            "pcb_port_281"
+          ],
+          "pcb_port_283": [
+            "pcb_port_283"
+          ],
+          "pcb_port_285": [
+            "pcb_port_285"
+          ],
+          "pcb_port_287": [
+            "pcb_port_287"
+          ],
+          "pcb_port_289": [
+            "pcb_port_289"
+          ],
+          "pcb_port_290": [
+            "pcb_port_290"
+          ],
+          "pcb_port_291": [
+            "pcb_port_291"
+          ],
+          "pcb_port_295": [
+            "pcb_port_295"
+          ],
+          "pcb_port_297": [
+            "pcb_port_297"
+          ],
+          "pcb_port_298": [
+            "pcb_port_298"
+          ],
+          "pcb_port_302": [
+            "pcb_port_302"
+          ],
+          "pcb_port_306": [
+            "pcb_port_306"
+          ],
+          "pcb_port_308": [
+            "pcb_port_308"
+          ],
+          "pcb_port_310": [
+            "pcb_port_310"
+          ],
+          "pcb_port_311": [
+            "pcb_port_311"
+          ],
+          "pcb_port_312": [
+            "pcb_port_312"
+          ],
+          "pcb_port_316": [
+            "pcb_port_316"
+          ],
+          "pcb_port_321": [
+            "pcb_port_321"
+          ],
+          "pcb_port_325": [
+            "pcb_port_325"
+          ],
+          "pcb_port_329": [
+            "pcb_port_329"
+          ],
+          "pcb_port_331": [
+            "pcb_port_331"
+          ],
+          "pcb_port_333": [
+            "pcb_port_333"
+          ],
+          "pcb_port_335": [
+            "pcb_port_335"
+          ],
+          "pcb_port_339": [
+            "pcb_port_339"
+          ],
+          "pcb_port_341": [
+            "pcb_port_341"
+          ],
+          "pcb_port_166": [
+            "pcb_port_166"
+          ],
+          "pcb_port_56": [
+            "pcb_port_56"
+          ],
+          "pcb_port_64": [
+            "pcb_port_64"
+          ],
+          "pcb_port_104": [
+            "pcb_port_104"
+          ],
+          "pcb_port_193": [
+            "pcb_port_193"
+          ],
+          "pcb_port_13": [
+            "pcb_port_13"
+          ],
+          "pcb_port_41": [
+            "pcb_port_41"
+          ],
+          "pcb_port_57": [
+            "pcb_port_57"
+          ],
+          "pcb_port_69": [
+            "pcb_port_69"
+          ],
+          "pcb_port_118": [
+            "pcb_port_118"
+          ],
+          "pcb_port_189": [
+            "pcb_port_189"
+          ],
+          "pcb_port_217": [
+            "pcb_port_217"
+          ],
+          "pcb_port_219": [
+            "pcb_port_219"
+          ],
+          "pcb_port_221": [
+            "pcb_port_221"
+          ],
+          "pcb_port_230": [
+            "pcb_port_230"
+          ],
+          "pcb_port_234": [
+            "pcb_port_234"
+          ],
+          "pcb_port_258": [
+            "pcb_port_258"
+          ],
+          "pcb_port_266": [
+            "pcb_port_266"
+          ],
+          "pcb_port_268": [
+            "pcb_port_268"
+          ],
+          "pcb_port_270": [
+            "pcb_port_270"
+          ],
+          "pcb_port_271": [
+            "pcb_port_271"
+          ],
+          "pcb_port_274": [
+            "pcb_port_274"
+          ],
+          "pcb_port_276": [
+            "pcb_port_276"
+          ],
+          "pcb_port_284": [
+            "pcb_port_284"
+          ],
+          "pcb_port_286": [
+            "pcb_port_286"
+          ],
+          "pcb_port_288": [
+            "pcb_port_288"
+          ],
+          "pcb_port_299": [
+            "pcb_port_299"
+          ],
+          "pcb_port_300": [
+            "pcb_port_300"
+          ],
+          "pcb_port_307": [
+            "pcb_port_307"
+          ],
+          "pcb_port_309": [
+            "pcb_port_309"
+          ],
+          "pcb_port_323": [
+            "pcb_port_323"
+          ],
+          "pcb_port_330": [
+            "pcb_port_330"
+          ],
+          "pcb_port_336": [
+            "pcb_port_336"
+          ],
+          "pcb_port_152": [
+            "pcb_port_152"
+          ],
+          "pcb_port_153": [
+            "pcb_port_153"
+          ],
+          "pcb_port_154": [
+            "pcb_port_154"
+          ],
+          "pcb_port_155": [
+            "pcb_port_155"
+          ],
+          "pcb_port_68": [
+            "pcb_port_68"
+          ],
+          "pcb_port_161": [
+            "pcb_port_161"
+          ],
+          "pcb_port_62": [
+            "pcb_port_62"
+          ],
+          "pcb_port_65": [
+            "pcb_port_65"
+          ],
+          "pcb_port_112": [
+            "pcb_port_112"
+          ],
+          "pcb_port_137": [
+            "pcb_port_137"
+          ],
+          "pcb_port_138": [
+            "pcb_port_138"
+          ],
+          "pcb_port_144": [
+            "pcb_port_144"
+          ],
+          "pcb_port_145": [
+            "pcb_port_145"
+          ],
+          "pcb_port_146": [
+            "pcb_port_146"
+          ],
+          "pcb_port_195": [
+            "pcb_port_195"
+          ],
+          "pcb_port_198": [
+            "pcb_port_198"
+          ],
+          "pcb_port_183": [
+            "pcb_port_183"
+          ],
+          "pcb_port_209": [
+            "pcb_port_209"
+          ],
+          "pcb_port_212": [
+            "pcb_port_212"
+          ],
+          "pcb_port_215": [
+            "pcb_port_215"
+          ],
+          "pcb_port_232": [
+            "pcb_port_232"
+          ],
+          "pcb_port_262": [
+            "pcb_port_262"
+          ],
+          "pcb_port_282": [
+            "pcb_port_282"
+          ],
+          "pcb_port_167": [
+            "pcb_port_167"
+          ],
+          "pcb_port_205": [
+            "pcb_port_205"
+          ],
+          "pcb_port_119": [
+            "pcb_port_119"
+          ],
+          "pcb_port_126": [
+            "pcb_port_126"
+          ],
+          "pcb_port_133": [
+            "pcb_port_133"
+          ],
+          "pcb_port_173": [
+            "pcb_port_173"
+          ],
+          "pcb_port_83": [
+            "pcb_port_83"
+          ],
+          "pcb_port_128": [
+            "pcb_port_128"
+          ],
+          "pcb_port_131": [
+            "pcb_port_131"
+          ],
+          "pcb_port_172": [
+            "pcb_port_172"
+          ],
+          "pcb_port_124": [
+            "pcb_port_124"
+          ],
+          "pcb_port_196": [
+            "pcb_port_196"
+          ],
+          "pcb_port_42": [
+            "pcb_port_42"
+          ],
+          "pcb_port_43": [
+            "pcb_port_43"
+          ],
+          "pcb_port_44": [
+            "pcb_port_44"
+          ],
+          "pcb_port_55": [
+            "pcb_port_55"
+          ],
+          "pcb_port_99": [
+            "pcb_port_99"
+          ],
+          "pcb_port_185": [
+            "pcb_port_185"
+          ],
+          "pcb_port_197": [
+            "pcb_port_197"
+          ],
+          "pcb_port_201": [
+            "pcb_port_201"
+          ],
+          "pcb_port_225": [
+            "pcb_port_225"
+          ],
+          "pcb_port_226": [
+            "pcb_port_226"
+          ],
+          "pcb_port_227": [
+            "pcb_port_227"
+          ],
+          "pcb_port_238": [
+            "pcb_port_238"
+          ],
+          "pcb_port_243": [
+            "pcb_port_243"
+          ],
+          "pcb_port_246": [
+            "pcb_port_246"
+          ],
+          "pcb_port_251": [
+            "pcb_port_251"
+          ],
+          "pcb_port_278": [
+            "pcb_port_278"
+          ],
+          "pcb_port_184": [
+            "pcb_port_184"
+          ],
+          "pcb_port_202": [
+            "pcb_port_202"
+          ],
+          "pcb_port_110": [
+            "pcb_port_110"
+          ],
+          "pcb_port_120": [
+            "pcb_port_120"
+          ],
+          "pcb_port_207": [
+            "pcb_port_207"
+          ],
+          "pcb_port_260": [
+            "pcb_port_260"
+          ],
+          "pcb_port_320": [
+            "pcb_port_320"
+          ],
+          "pcb_port_332": [
+            "pcb_port_332"
+          ],
+          "pcb_port_338": [
+            "pcb_port_338"
+          ],
+          "pcb_port_342": [
+            "pcb_port_342"
+          ],
+          "pcb_port_143": [
+            "pcb_port_143"
+          ],
+          "pcb_port_163": [
+            "pcb_port_163"
+          ],
+          "pcb_port_239": [
+            "pcb_port_239"
+          ],
+          "pcb_port_313": [
+            "pcb_port_313"
+          ],
+          "pcb_port_314": [
+            "pcb_port_314"
+          ],
+          "pcb_port_315": [
+            "pcb_port_315"
+          ],
+          "pcb_port_78": [
+            "pcb_port_78"
+          ],
+          "pcb_port_247": [
+            "pcb_port_247"
+          ],
+          "pcb_port_292": [
+            "pcb_port_292"
+          ],
+          "pcb_port_293": [
+            "pcb_port_293"
+          ],
+          "pcb_port_294": [
+            "pcb_port_294"
+          ],
+          "pcb_port_186": [
+            "pcb_port_186"
+          ],
+          "pcb_port_125": [
+            "pcb_port_125"
+          ],
+          "pcb_port_171": [
+            "pcb_port_171"
+          ],
+          "pcb_port_177": [
+            "pcb_port_177"
+          ],
+          "pcb_port_206": [
+            "pcb_port_206"
+          ],
+          "pcb_port_134": [
+            "pcb_port_134"
+          ],
+          "pcb_port_156": [
+            "pcb_port_156"
+          ],
+          "pcb_port_159": [
+            "pcb_port_159"
+          ],
+          "pcb_port_272": [
+            "pcb_port_272"
+          ],
+          "pcb_port_296": [
+            "pcb_port_296"
+          ],
+          "pcb_port_337": [
+            "pcb_port_337"
+          ],
+          "pcb_port_328": [
+            "pcb_port_328"
+          ],
+          "pcb_port_324": [
+            "pcb_port_324"
+          ],
+          "pcb_port_240": [
+            "pcb_port_240"
+          ],
+          "pcb_port_241": [
+            "pcb_port_241"
+          ],
+          "pcb_port_242": [
+            "pcb_port_242"
+          ],
+          "pcb_port_248": [
+            "pcb_port_248"
+          ],
+          "pcb_port_249": [
+            "pcb_port_249"
+          ],
+          "pcb_port_250": [
+            "pcb_port_250"
+          ],
+          "pcb_port_340": [
+            "pcb_port_340"
+          ],
+          "pcb_port_334": [
+            "pcb_port_334"
+          ],
+          "pcb_port_322": [
+            "pcb_port_322"
+          ]
+        },
+        "limitations": [
+          "SRJ has no component bodies, courtyards, schematic geometry, pin specifications, board material, or stack thickness; those cannot be reconstructed or certified.",
+          "Noncircular SRJ oval footprints are represented as capsules (Circuit JSON pill/rotated_pill), consistent with PCB oval-pad geometry.",
+          "4 non-plated drill holes are restored from hash-verified source geometry; their SRJ routing envelopes are not reclassified as physical keepouts.",
+          "obstacle:258: several same-net terminals share this exact position/layer; pad provenance uses an equivalent colocated port while preserving every physical terminal.",
+          "obstacle:259: several same-net terminals share this exact position/layer; pad provenance uses an equivalent colocated port while preserving every physical terminal.",
+          "obstacle:264: several same-net terminals share this exact position/layer; pad provenance uses an equivalent colocated port while preserving every physical terminal.",
+          "obstacle:265: several same-net terminals share this exact position/layer; pad provenance uses an equivalent colocated port while preserving every physical terminal.",
+          "obstacle:266: several same-net terminals share this exact position/layer; pad provenance uses an equivalent colocated port while preserving every physical terminal.",
+          "obstacle:267: several same-net terminals share this exact position/layer; pad provenance uses an equivalent colocated port while preserving every physical terminal.",
+          "obstacle:272: several same-net terminals share this exact position/layer; pad provenance uses an equivalent colocated port while preserving every physical terminal.",
+          "obstacle:273: several same-net terminals share this exact position/layer; pad provenance uses an equivalent colocated port while preserving every physical terminal.",
+          "Original component identities are retained on pads, associated physical ports, and verified source holes, and in obstacleComponentIds provenance. SRJ has no component bodies or courtyards; no component records or missing geometry are fabricated."
+        ],
+        "verifiedSourceGeometry": {
+          "originalSrjSha256": "445a3e5a6f3109d6fb8620e515e8e76c36a09061c6fcd931cd5b50e6aa198513",
+          "sourceCircuitJson": {
+            "repository": "https://github.com/tscircuit/dataset-srj18",
+            "commit": "c0aad90256a95256fcac814f9f7da81a82a2fdea",
+            "path": "circuit-json/sample016-usb-c-power-adapter.json",
+            "sha256": "836877f24bfcd0033e3e90af00712e3e870a83189f99829b7df183772df7f951"
+          },
+          "importCorrection": {
+            "originalSrjSha256": "f323b21b2d833b61149d5041c04af8575c77b8cd3bb3340cba36c017872e6bf3",
+            "correctedSrjSha256": "445a3e5a6f3109d6fb8620e515e8e76c36a09061c6fcd931cd5b50e6aa198513",
+            "audit": {
+              "path": "imports/source-rotation-audit.json",
+              "sha256": "b105757f0f13aaf841ad8487d1bd66c0ae3b31aa01563a8d30d1fc98881ab913"
+            },
+            "changedObstacleIndices": [
+              85,
+              86,
+              219,
+              220
+            ],
+            "sourceKicad": {
+              "path": "kicad_pcb/sample016-usb-c-power-adapter.kicad_pcb",
+              "sha256": "f2ca55189e62f4f2638b7bde1058085ea6ab8bce9f7d846ca6946c1174d9c0e3"
+            }
+          },
+          "nonPlatedHoleCount": 4
+        }
+      },
+      "issueCount": 0,
+      "pcbIssueCount": 0,
+      "pcbIssueTypes": {},
+      "pcbIssues": [],
+      "otherIssues": [],
+      "circuitJsonSha256": "e27e025dae728da309ee45d92f025e0bf6cd3971cfdb9399d8f2dd6359ab5f89",
+      "elapsedTimeMs": 522.1078749999999
+    }
+  ]
+}

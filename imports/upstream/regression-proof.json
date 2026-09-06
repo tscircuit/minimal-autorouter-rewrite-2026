@@ -1,0 +1,184 @@
+{
+  "generatedAt": "2026-09-06T01:31:16.273Z",
+  "runtime": "1.4.1",
+  "publishedPackage": "kicad-to-circuit-json@0.0.113",
+  "publishedCommit": "b885c69d14feeb4edf77676e63219b0cc9826d66",
+  "archiveSha256": "933200b6f1aebb5621f9fd70a63f443a98e81e191efdf85590d8e86ac03a76a1",
+  "integrityMatchesDatasetLock": true,
+  "dependencies": {
+    "kicadts": "0.0.50",
+    "@tscircuit/circuit-json-util": "0.0.94",
+    "circuit-json": "0.0.446",
+    "transformation-matrix": "3.1.0",
+    "parsel-js": "1.2.2",
+    "zod": "3.25.76",
+    "format-si-unit": "0.0.7"
+  },
+  "currentMain": "cbdcf0aa112555f7c203977c5675ae945c286fe0",
+  "cases": [
+    {
+      "case": "top rotated footprint",
+      "source": "(kicad_pcb (version 20240108) (generator pcbnew)\n    (layers (0 \"F.Cu\" signal) (31 \"B.Cu\" signal) (44 \"Edge.Cuts\" user))\n    (gr_rect (start -30 -30) (end 30 30) (stroke (width 0.05) (type default)) (fill none) (layer \"Edge.Cuts\"))\n    (footprint \"Synthetic:Trapezoid\" (layer \"F.Cu\") (at 0 0 -90)\n      (uuid \"371b4a38-e91b-4d94-84f2-05087890be82\")\n      (property \"Reference\" \"C1\" (at 0 0) (layer \"F.SilkS\"))\n      (pad \"1\" smd trapezoid (at -3.4 0 270) (size 2.5 5.3) \n        (layers \"F.Cu\" \"F.Mask\" \"F.Paste\"))))",
+      "published": {
+        "pad": {
+          "type": "pcb_smtpad",
+          "pcb_smtpad_id": "pcb_smtpad_0",
+          "pcb_component_id": "pcb_component_0",
+          "x": -2.0818995585505003e-16,
+          "y": 3.4,
+          "width": 2.5,
+          "height": 5.3,
+          "layer": "top",
+          "pcb_port_id": "pcb_port_0",
+          "port_hints": [
+            "1"
+          ],
+          "shape": "rect"
+        },
+        "warnings": []
+      },
+      "fixed": {
+        "pad": {
+          "type": "pcb_smtpad",
+          "pcb_smtpad_id": "pcb_smtpad_0",
+          "pcb_component_id": "pcb_component_0",
+          "x": -2.0818995585505003e-16,
+          "y": 3.4,
+          "width": 5.3,
+          "height": 2.5,
+          "layer": "top",
+          "pcb_port_id": "pcb_port_0",
+          "port_hints": [
+            "1"
+          ],
+          "shape": "rect"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "case": "bottom arbitrary pad",
+      "source": "(kicad_pcb (version 20240108) (generator pcbnew)\n    (layers (0 \"F.Cu\" signal) (31 \"B.Cu\" signal) (44 \"Edge.Cuts\" user))\n    (gr_rect (start -30 -30) (end 30 30) (stroke (width 0.05) (type default)) (fill none) (layer \"Edge.Cuts\"))\n    (footprint \"Synthetic:Trapezoid\" (layer \"B.Cu\") (at 0 0 35)\n      (uuid \"371b4a38-e91b-4d94-84f2-05087890be82\")\n      (property \"Reference\" \"C1\" (at 0 0) (layer \"B.SilkS\"))\n      (pad \"1\" smd trapezoid (at -3.4 0 37) (size 2.5 5.3) \n        (layers \"B.Cu\" \"B.Mask\" \"B.Paste\"))))",
+      "published": {
+        "pad": {
+          "type": "pcb_smtpad",
+          "pcb_smtpad_id": "pcb_smtpad_0",
+          "pcb_component_id": "pcb_component_0",
+          "x": -2.785116950582572,
+          "y": -1.9501598835935565,
+          "width": 2.5,
+          "height": 5.3,
+          "layer": "bottom",
+          "pcb_port_id": "pcb_port_0",
+          "port_hints": [
+            "1"
+          ],
+          "shape": "rect"
+        },
+        "warnings": []
+      },
+      "fixed": {
+        "pad": {
+          "type": "pcb_smtpad",
+          "pcb_smtpad_id": "pcb_smtpad_0",
+          "pcb_component_id": "pcb_component_0",
+          "x": -2.785116950582572,
+          "y": -1.9501598835935565,
+          "width": 2.5,
+          "height": 5.3,
+          "layer": "bottom",
+          "pcb_port_id": "pcb_port_0",
+          "port_hints": [
+            "1"
+          ],
+          "shape": "rotated_rect",
+          "ccw_rotation": 37
+        },
+        "warnings": []
+      }
+    },
+    {
+      "case": "bottom right angle",
+      "source": "(kicad_pcb (version 20240108) (generator pcbnew)\n    (layers (0 \"F.Cu\" signal) (31 \"B.Cu\" signal) (44 \"Edge.Cuts\" user))\n    (gr_rect (start -30 -30) (end 30 30) (stroke (width 0.05) (type default)) (fill none) (layer \"Edge.Cuts\"))\n    (footprint \"Synthetic:Trapezoid\" (layer \"B.Cu\") (at 0 0 0)\n      (uuid \"371b4a38-e91b-4d94-84f2-05087890be82\")\n      (property \"Reference\" \"C1\" (at 0 0) (layer \"B.SilkS\"))\n      (pad \"1\" smd trapezoid (at -3.4 0 90) (size 2.5 5.3) \n        (layers \"B.Cu\" \"B.Mask\" \"B.Paste\"))))",
+      "published": {
+        "pad": {
+          "type": "pcb_smtpad",
+          "pcb_smtpad_id": "pcb_smtpad_0",
+          "pcb_component_id": "pcb_component_0",
+          "x": -3.4,
+          "y": 0,
+          "width": 2.5,
+          "height": 5.3,
+          "layer": "bottom",
+          "pcb_port_id": "pcb_port_0",
+          "port_hints": [
+            "1"
+          ],
+          "shape": "rect"
+        },
+        "warnings": []
+      },
+      "fixed": {
+        "pad": {
+          "type": "pcb_smtpad",
+          "pcb_smtpad_id": "pcb_smtpad_0",
+          "pcb_component_id": "pcb_component_0",
+          "x": -3.4,
+          "y": 0,
+          "width": 5.3,
+          "height": 2.5,
+          "layer": "bottom",
+          "pcb_port_id": "pcb_port_0",
+          "port_hints": [
+            "1"
+          ],
+          "shape": "rect"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "case": "tapered arbitrary pad",
+      "source": "(kicad_pcb (version 20240108) (generator pcbnew)\n    (layers (0 \"F.Cu\" signal) (31 \"B.Cu\" signal) (44 \"Edge.Cuts\" user))\n    (gr_rect (start -30 -30) (end 30 30) (stroke (width 0.05) (type default)) (fill none) (layer \"Edge.Cuts\"))\n    (footprint \"Synthetic:Trapezoid\" (layer \"F.Cu\") (at 0 0 0)\n      (uuid \"371b4a38-e91b-4d94-84f2-05087890be82\")\n      (property \"Reference\" \"C1\" (at 0 0) (layer \"F.SilkS\"))\n      (pad \"1\" smd trapezoid (at -3.4 0 37) (size 2.5 5.3) (rect_delta 0.8 0)\n        (layers \"F.Cu\" \"F.Mask\" \"F.Paste\"))))",
+      "published": {
+        "pad": {
+          "type": "pcb_smtpad",
+          "pcb_smtpad_id": "pcb_smtpad_0",
+          "pcb_component_id": "pcb_component_0",
+          "x": -3.4,
+          "y": 0,
+          "width": 2.5,
+          "height": 5.3,
+          "layer": "top",
+          "pcb_port_id": "pcb_port_0",
+          "port_hints": [
+            "1"
+          ],
+          "shape": "rect"
+        },
+        "warnings": []
+      },
+      "fixed": {
+        "pad": {
+          "type": "pcb_smtpad",
+          "pcb_smtpad_id": "pcb_smtpad_0",
+          "pcb_component_id": "pcb_component_0",
+          "x": -3.4,
+          "y": 0,
+          "width": 2.5,
+          "height": 6.1,
+          "layer": "top",
+          "pcb_port_id": "pcb_port_0",
+          "port_hints": [
+            "1"
+          ],
+          "shape": "rotated_rect",
+          "ccw_rotation": 37
+        },
+        "warnings": [
+          "Trapezoid pad 1 on pcb_component_0 has nonzero rect_delta; using its conservative rotated rectangle envelope"
+        ]
+      }
+    }
+  ]
+}

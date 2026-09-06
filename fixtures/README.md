@@ -8,6 +8,13 @@ Fifteen corresponding sample tests require completed routing, input preservation
 
 `assertSample.ts` independently joins touching same-net trace segments, vias, and pads. Its validator tests verify that matching labels do not hide gaps or missing vias. Clearance/DRC parity is separately measured by the benchmark evaluator; this connectivity checker is not a complete manufacturing DRC engine.
 
+Sample016 additionally offers **Corrected import** and **Original import** views
+in the same fixture file. The corrected source restores four pad orientations
+lost during import and completes 269 routing tasks with zero PCB issues. Its
+separate tests cover local, cold network, and warm network execution. The
+original view and certificate regression preserve the pinned benchmark case.
+See [import corrections](../imports/README.md).
+
 ## Vercel hosting
 
 The repository's `vercel.json` publishes `cosmos-export/` as a static site. Both

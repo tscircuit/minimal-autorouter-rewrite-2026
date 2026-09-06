@@ -19,11 +19,13 @@ a connector contact away from a cutline.
 | dataset-srj18/sample004 | Two pads are about 0.104 mm from the west outline | Confirm component-placement or board-outline changes. |
 | dataset-srj18/sample006 | 260 DDR5 edge contacts are 0.051 mm from the cutline against the default 0.2 mm | Establish the connector-specific fabrication rule; moving these contacts can change mating geometry. |
 | dataset-srj18/sample015 | Six pads are about 0.124–0.125 mm from the west outline | Confirm component-placement or board-outline changes. |
-| dataset-srj18/sample016 | The imported C43 pad envelope contains another net's terminal | Correct the upstream import's lost pad rotation in a separately identified derived input. |
+| dataset-srj18/sample016 | The original imported C43 pad envelope contains another net's terminal | Resolved in the [explicit corrected import](../imports/README.md); the pinned original retains its failure witness. |
 
-The sample016 investigation identifies an import error in the pinned SRJ, not
-a demonstrated short in the original KiCad board. The exact source evidence is
-in [known input limitations](known-input-limitations.md).
+The sample016 import error is now corrected in a separately identified input;
+all 269 connections route with zero PCB issues. It was not a demonstrated short
+in the original KiCad board. The exact source evidence is in
+[known input limitations](known-input-limitations.md). The other rows still need
+layout or manufacturing-rule decisions.
 
 The strict audit continues to report these findings. It does not reduce checker
 defaults, merge unrelated nets, omit offending pads, or alter benchmark inputs.

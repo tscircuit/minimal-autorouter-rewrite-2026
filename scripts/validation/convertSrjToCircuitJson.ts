@@ -10,6 +10,11 @@ import {
   getBoardLayers,
   getPointLayers,
 } from "../../lib/preparation/PrepareBoardSolver"
+import {assertSourceGeometryMatches, type VerifiedSourceGeometry} from "./sourceGeometry"
+
+export interface SrjConversionOptions {
+  sourceGeometry?: VerifiedSourceGeometry
+}
 
 type Element = Record<string, any>
 export interface SrjConversionCoverage {
@@ -25,6 +30,11 @@ export interface SrjConversionCoverage {
   obstacleComponentIds: Record<string, string>
   traceElementIds: Record<string, string[]>
   terminalElementIds: Record<string, string[]>
+  verifiedSourceGeometry?: {
+    originalSrjSha256: string
+    sourceCircuitJson: VerifiedSourceGeometry["sourceCircuitJson"]
+    nonPlatedHoleCount: number
+  }
   limitations: string[]
 }
 class Aliases {
@@ -120,7 +130,7 @@ function rectOutline(
 }
 
 /** Build only geometry and electrical information present in the SRJ. */
-function build(srj: SimpleRouteJson): {
+function build(srj: SimpleRouteJson, options: SrjConversionOptions = {}): {
   circuitJson: AnyCircuitElement[]
   coverage: SrjConversionCoverage
 } {
@@ -128,6 +138,8 @@ function build(srj: SimpleRouteJson): {
     srj && Array.isArray(srj.obstacles) && Array.isArray(srj.connections),
     "missing obstacles or connections",
   )
+  if(options.sourceGeometry) assertSourceGeometryMatches(srj,options.sourceGeometry)
+  const sourceHoles = new Map(options.sourceGeometry?.holes.map(hole=>[hole.obstacleIndex,hole]))
   const layers = getBoardLayers(srj.layerCount)
   demand(
     srj.jumpers === undefined || Array.isArray(srj.jumpers),
@@ -183,6 +195,14 @@ function build(srj: SimpleRouteJson): {
     while (usedIds.has(result)) result = `${base}__${suffix++}`
     usedIds.add(result)
     return result
+  }
+  if(options.sourceGeometry) {
+    coverage.verifiedSourceGeometry = {
+      originalSrjSha256:options.sourceGeometry.originalSrjSha256,
+      sourceCircuitJson:options.sourceGeometry.sourceCircuitJson,
+      nonPlatedHoleCount:sourceHoles.size,
+    }
+    coverage.limitations.push(`${sourceHoles.size} non-plated drill holes are restored from hash-verified source geometry; their SRJ routing envelopes are not reclassified as physical keepouts.`)
   }
   const validLayers = (values: string[]) =>
     Array.isArray(values) &&
@@ -499,6 +519,9 @@ function build(srj: SimpleRouteJson): {
         ? { ccw_rotation: rotation }
         : {}),
       ...(port ? { pcb_port_id: port.pcb.pcb_port_id } : {}),
+      ...(obstacle.componentId
+        ? { pcb_component_id: obstacle.componentId }
+        : {}),
     }
   }
   const padPortUses = new Map<Port, number>()
@@ -508,7 +531,18 @@ function build(srj: SimpleRouteJson): {
       emitted: string[] = []
     if (obstacle.componentId)
       coverage.obstacleComponentIds[sourceId] = obstacle.componentId
-    if (
+    const sourceHole=sourceHoles.get(index)
+    if(sourceHole) {
+      const holeId=id(sourceHole.hole.pcb_hole_id)
+      elements.push({
+        ...sourceHole.hole,
+        pcb_hole_id:holeId,
+        ...(sourceHole.sourceComponentId
+          ? {pcb_component_id:sourceHole.sourceComponentId}
+          : {}),
+      })
+      emitted.push(holeId)
+    } else if (
       names.length ||
       obstacle.circuitJsonMetadata?.pcb_smtpad_id ||
       obstacle.circuitJsonMetadata?.pcb_plated_hole_id ||
@@ -556,6 +590,22 @@ function build(srj: SimpleRouteJson): {
           true,
         )
       if (port) padPortUses.set(port, (padPortUses.get(port) ?? 0) + 1)
+      if (obstacle.componentId) {
+        // A source port may have several physical attachment positions. Preserve
+        // its declared component membership at each position without adding a body.
+        const associatedPorts = new Set([
+          ...(port ? [port] : []),
+          ...(metadataPort ? portAliases.get(metadataPort) ?? [] : []),
+        ])
+        for (const associated of associatedPorts) {
+          demand(
+            associated.pcb.pcb_component_id === undefined ||
+              associated.pcb.pcb_component_id === obstacle.componentId,
+            `conflicting component for physical port ${associated.pcb.pcb_port_id}`,
+          )
+          associated.pcb.pcb_component_id = obstacle.componentId
+        }
+      }
       if (colocated.length > 1)
         coverage.limitations.push(
           `${sourceId}: several same-net terminals share this exact position/layer; pad provenance uses an equivalent colocated port while preserving every physical terminal.`,
@@ -657,7 +707,7 @@ function build(srj: SimpleRouteJson): {
   const vias = new Map<string, Element>()
   if (Object.keys(coverage.obstacleComponentIds).length)
     coverage.limitations.push(
-      "Original component identities are preserved in obstacleComponentIds provenance; no dangling pcb_component_id references are emitted because SRJ has no component bodies to represent.",
+      "Original component identities are retained on pads, associated physical ports, and verified source holes, and in obstacleComponentIds provenance. SRJ has no component bodies or courtyards; no component records or missing geometry are fabricated.",
     )
   for (const trace of traces) {
     const net = netFor(traceNet.get(trace)!),
@@ -922,11 +972,16 @@ function build(srj: SimpleRouteJson): {
 
 export function convertSrjToCircuitJson(
   srj: SimpleRouteJson,
+  options: SrjConversionOptions = {},
 ): AnyCircuitElement[] {
-  return build(srj).circuitJson
+  return build(srj,options).circuitJson
 }
 export function describeConversionCoverage(
   srj: SimpleRouteJson,
+  options: SrjConversionOptions = {},
 ): SrjConversionCoverage {
-  return build(srj).coverage
+  return build(srj,options).coverage
+}
+export function convertSrjWithCoverage(srj: SimpleRouteJson, options: SrjConversionOptions = {}) {
+  return build(srj,options)
 }

@@ -1,0 +1,1968 @@
+{
+  "version": 1,
+  "kind": "verified-non-plated-holes",
+  "sourceRepository": "https://github.com/tscircuit/dataset-srj18",
+  "sourceCommit": "c0aad90256a95256fcac814f9f7da81a82a2fdea",
+  "sourceCoordinateRoundingDecimalPlaces": 6,
+  "samples": [
+    {
+      "sample": "sample001",
+      "originalSrjPath": "dataset-srj18/sample001.json",
+      "originalSrjSha256": "21a09454dd05b86464cd2d882ea96de7461260bd473e67c87a0e46011e508ea9",
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample001-arduino-leonardo.json",
+        "sha256": "8b5b851881f3e26fc08cb86af2601af66d70da05b67f9e5a1244f657997d46bb"
+      },
+      "obstacleCount": 279,
+      "layerCount": 2,
+      "holes": [
+        {
+          "obstacleIndex": 273,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -28.0372,
+              "y": 14.32
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_2"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_0",
+            "hole_shape": "circle",
+            "x": -28.0371999999996,
+            "y": 14.320000000000007,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_2"
+        },
+        {
+          "obstacleIndex": 274,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -28.0372,
+              "y": 8.54
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_2"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_1",
+            "hole_shape": "circle",
+            "x": -28.0371999999996,
+            "y": 8.540000000000006,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_2"
+        },
+        {
+          "obstacleIndex": 275,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -20.32,
+              "y": -24.13
+            },
+            "width": 3.2,
+            "height": 3.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_2",
+            "hole_shape": "circle",
+            "x": -20.319999999999624,
+            "y": -24.129999999999995,
+            "hole_diameter": 3.2000000000000455
+          }
+        },
+        {
+          "obstacleIndex": 276,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 31.75,
+              "y": -19.05
+            },
+            "width": 3.2,
+            "height": 3.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_3",
+            "hole_shape": "circle",
+            "x": 31.750000000000398,
+            "y": -19.049999999999997,
+            "hole_diameter": 3.1999999999999886
+          }
+        },
+        {
+          "obstacleIndex": 277,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 31.75,
+              "y": 8.89
+            },
+            "width": 3.2,
+            "height": 3.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_4",
+            "hole_shape": "circle",
+            "x": 31.750000000000398,
+            "y": 8.89,
+            "hole_diameter": 3.1999999999999886
+          }
+        },
+        {
+          "obstacleIndex": 278,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -19.05,
+              "y": 24.13
+            },
+            "width": 3.2,
+            "height": 3.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_5",
+            "hole_shape": "circle",
+            "x": -19.049999999999613,
+            "y": 24.13000000000001,
+            "hole_diameter": 3.1999999999999886
+          }
+        }
+      ]
+    },
+    {
+      "sample": "sample002",
+      "originalSrjPath": "dataset-srj18/sample002.json",
+      "originalSrjSha256": "2e2f6e8619e884afde2102e987cffcda8e7197ef2c63f8358aa5dd7cb14c8101",
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample002-arduino-mega-2560.json",
+        "sha256": "d3fb35bd172046019f34052a0e655eeae60aef8ba3d40398f3740f93e5d27dc7"
+      },
+      "obstacleCount": 411,
+      "layerCount": 2,
+      "holes": [
+        {
+          "obstacleIndex": 403,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -44.3594,
+              "y": 14.3328
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_61"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_0",
+            "hole_shape": "circle",
+            "x": -44.35940000000001,
+            "y": 14.332800000000006,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_61"
+        },
+        {
+          "obstacleIndex": 404,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -44.3594,
+              "y": 8.5528
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_61"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_1",
+            "hole_shape": "circle",
+            "x": -44.35940000000001,
+            "y": 8.552800000000005,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_61"
+        },
+        {
+          "obstacleIndex": 405,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 15.2656,
+              "y": -19.0372
+            },
+            "width": 3.2,
+            "height": 3.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_2",
+            "hole_shape": "circle",
+            "x": 15.265599999999978,
+            "y": -19.0372,
+            "hole_diameter": 3.2000000000000455
+          }
+        },
+        {
+          "obstacleIndex": 406,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 39.3956,
+              "y": 24.1428
+            },
+            "width": 3.2,
+            "height": 3.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_3",
+            "hole_shape": "circle",
+            "x": 39.3956,
+            "y": 24.14280000000001,
+            "hole_diameter": 3.1999999999999886
+          }
+        },
+        {
+          "obstacleIndex": 407,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 45.7456,
+              "y": -24.1172
+            },
+            "width": 3.2,
+            "height": 3.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_4",
+            "hole_shape": "circle",
+            "x": 45.745599999999996,
+            "y": -24.117199999999997,
+            "hole_diameter": 3.1999999999999886
+          }
+        },
+        {
+          "obstacleIndex": 408,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -35.5344,
+              "y": 24.1428
+            },
+            "width": 3.2,
+            "height": 3.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_5",
+            "hole_shape": "circle",
+            "x": -35.534400000000005,
+            "y": 24.14280000000001,
+            "hole_diameter": 3.1999999999999886
+          }
+        },
+        {
+          "obstacleIndex": 409,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 15.2656,
+              "y": 8.9028
+            },
+            "width": 3.2,
+            "height": 3.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_6",
+            "hole_shape": "circle",
+            "x": 15.265599999999978,
+            "y": 8.9028,
+            "hole_diameter": 3.2000000000000455
+          }
+        },
+        {
+          "obstacleIndex": 410,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -36.8044,
+              "y": -24.1172
+            },
+            "width": 3.2,
+            "height": 3.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_7",
+            "hole_shape": "circle",
+            "x": -36.8044,
+            "y": -24.117199999999997,
+            "hole_diameter": 3.1999999999999886
+          }
+        }
+      ]
+    },
+    {
+      "sample": "sample003",
+      "originalSrjPath": "dataset-srj18/sample003.json",
+      "originalSrjSha256": "c5abc751ef4ee68f0369df3d747174c527e47771fb673c61b72bbca0b93bc843",
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample003-arduino-micro.json",
+        "sha256": "2e469414953e60788abb5ea76f5512635c492593d55087ffdbe0ffb65c578bb9"
+      },
+      "obstacleCount": 211,
+      "layerCount": 4,
+      "holes": [
+        {
+          "obstacleIndex": 205,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -19.2461,
+              "y": 2.89
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_2"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_0",
+            "hole_shape": "circle",
+            "x": -19.246100000000013,
+            "y": 2.8900000000000006,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_2"
+        },
+        {
+          "obstacleIndex": 206,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -19.2461,
+              "y": -2.89
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_2"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_1",
+            "hole_shape": "circle",
+            "x": -19.246100000000013,
+            "y": -2.8900000000000006,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_2"
+        },
+        {
+          "obstacleIndex": 207,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 22.86,
+              "y": 7.62
+            },
+            "width": 1.2,
+            "height": 1.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_2",
+            "hole_shape": "circle",
+            "x": 22.859999999999985,
+            "y": 7.61999999999999,
+            "hole_diameter": 1.1999999999999886
+          }
+        },
+        {
+          "obstacleIndex": 208,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 22.86,
+              "y": -7.62
+            },
+            "width": 1.2,
+            "height": 1.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_3",
+            "hole_shape": "circle",
+            "x": 22.859999999999985,
+            "y": -7.6200000000000045,
+            "hole_diameter": 1.1999999999999886
+          }
+        },
+        {
+          "obstacleIndex": 209,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -22.86,
+              "y": 7.62
+            },
+            "width": 1.2,
+            "height": 1.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_4",
+            "hole_shape": "circle",
+            "x": -22.860000000000014,
+            "y": 7.61999999999999,
+            "hole_diameter": 1.200000000000017
+          }
+        },
+        {
+          "obstacleIndex": 210,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -22.86,
+              "y": -7.62
+            },
+            "width": 1.2,
+            "height": 1.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_5",
+            "hole_shape": "circle",
+            "x": -22.860000000000014,
+            "y": -7.6200000000000045,
+            "hole_diameter": 1.200000000000017
+          }
+        }
+      ]
+    },
+    {
+      "sample": "sample004",
+      "originalSrjPath": "dataset-srj18/sample004.json",
+      "originalSrjSha256": "be67af8cc71fb962e9c1cf6a6de00b416eb057750b52f4cdd0f95c46f930b083",
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample004-arduino-nano.json",
+        "sha256": "0f07cbeb5926d48762e1d03b695f60a90e23e8e3df76eccd289f71d242f7ef84"
+      },
+      "obstacleCount": 188,
+      "layerCount": 2,
+      "holes": [
+        {
+          "obstacleIndex": 182,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -17.0561,
+              "y": 2.89
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_9"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_0",
+            "hole_shape": "circle",
+            "x": -17.056100000000015,
+            "y": 2.8900000000000006,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_9"
+        },
+        {
+          "obstacleIndex": 183,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -17.0561,
+              "y": -2.89
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_9"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_1",
+            "hole_shape": "circle",
+            "x": -17.056100000000015,
+            "y": -2.8900000000000006,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_9"
+        },
+        {
+          "obstacleIndex": 184,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 20.32,
+              "y": -7.62
+            },
+            "width": 1.651,
+            "height": 1.651,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_2",
+            "hole_shape": "circle",
+            "x": 20.319999999999993,
+            "y": -7.61999999999999,
+            "hole_diameter": 1.6510000000000105
+          }
+        },
+        {
+          "obstacleIndex": 185,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -20.32,
+              "y": -7.62
+            },
+            "width": 1.651,
+            "height": 1.651,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_3",
+            "hole_shape": "circle",
+            "x": -20.32000000000002,
+            "y": -7.61999999999999,
+            "hole_diameter": 1.6510000000000105
+          }
+        },
+        {
+          "obstacleIndex": 186,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -20.32,
+              "y": 7.62
+            },
+            "width": 1.651,
+            "height": 1.651,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_4",
+            "hole_shape": "circle",
+            "x": -20.32000000000002,
+            "y": 7.6200000000000045,
+            "hole_diameter": 1.6510000000000105
+          }
+        },
+        {
+          "obstacleIndex": 187,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 20.32,
+              "y": 7.62
+            },
+            "width": 1.651,
+            "height": 1.651,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_5",
+            "hole_shape": "circle",
+            "x": 20.319999999999993,
+            "y": 7.6200000000000045,
+            "hole_diameter": 1.6510000000000105
+          }
+        }
+      ]
+    },
+    {
+      "sample": "sample005",
+      "originalSrjPath": "dataset-srj18/sample005.json",
+      "originalSrjSha256": "3027de7f902a95002172e25378e41c0c826f51e95155317dc97a55864df1b681",
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample005-arduino-uno.json",
+        "sha256": "02b2981a33f20cf166b1cc86eec2f31b5cd66519d3b60dbcd859315bee4b8da5"
+      },
+      "obstacleCount": 264,
+      "layerCount": 2,
+      "holes": [
+        {
+          "obstacleIndex": 258,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -28.0461,
+              "y": 14.32
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_16"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_0",
+            "hole_shape": "circle",
+            "x": -28.046099999999612,
+            "y": 14.320000000000007,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_16"
+        },
+        {
+          "obstacleIndex": 259,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -28.0461,
+              "y": 8.54
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_16"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_1",
+            "hole_shape": "circle",
+            "x": -28.046099999999612,
+            "y": 8.540000000000006,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_16"
+        },
+        {
+          "obstacleIndex": 260,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -19.05,
+              "y": 24.13
+            },
+            "width": 3.2,
+            "height": 3.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_2",
+            "hole_shape": "circle",
+            "x": -19.049999999999613,
+            "y": 24.13000000000001,
+            "hole_diameter": 3.1999999999999886
+          }
+        },
+        {
+          "obstacleIndex": 261,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 31.75,
+              "y": -19.05
+            },
+            "width": 3.2,
+            "height": 3.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_3",
+            "hole_shape": "circle",
+            "x": 31.750000000000398,
+            "y": -19.049999999999997,
+            "hole_diameter": 3.1999999999999886
+          }
+        },
+        {
+          "obstacleIndex": 262,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -20.32,
+              "y": -24.13
+            },
+            "width": 3.2,
+            "height": 3.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_4",
+            "hole_shape": "circle",
+            "x": -20.319999999999624,
+            "y": -24.129999999999995,
+            "hole_diameter": 3.2000000000000455
+          }
+        },
+        {
+          "obstacleIndex": 263,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 31.75,
+              "y": 8.89
+            },
+            "width": 3.2,
+            "height": 3.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": []
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_5",
+            "hole_shape": "circle",
+            "x": 31.750000000000398,
+            "y": 8.89,
+            "hole_diameter": 3.1999999999999886
+          }
+        }
+      ]
+    },
+    {
+      "sample": "sample006",
+      "originalSrjPath": "dataset-srj18/sample006.json",
+      "originalSrjSha256": "ccaa924e0b5430bd717ea42bf45712412dba9ecd672853bb7bd3c70d69ed3608",
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample006-ddr5-testbed.json",
+        "sha256": "16fdfcb2e0b2a9bf92359ee1ace59193f5f506a864217a416dd25f7fbefb9069"
+      },
+      "obstacleCount": 481,
+      "layerCount": 6,
+      "holes": [
+        {
+          "obstacleIndex": 479,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -32.801001,
+              "y": -11
+            },
+            "width": 1.8,
+            "height": 1.8,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_27"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_0",
+            "hole_shape": "circle",
+            "x": -32.8010010000026,
+            "y": -11,
+            "hole_diameter": 1.8
+          },
+          "sourceComponentId": "pcb_component_27"
+        },
+        {
+          "obstacleIndex": 480,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 32.798999,
+              "y": -11
+            },
+            "width": 1.8,
+            "height": 1.8,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_27"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_1",
+            "hole_shape": "circle",
+            "x": 32.798998999997394,
+            "y": -11,
+            "hole_diameter": 1.8
+          },
+          "sourceComponentId": "pcb_component_27"
+        }
+      ]
+    },
+    {
+      "sample": "sample007",
+      "originalSrjPath": "dataset-srj18/sample007.json",
+      "originalSrjSha256": "a995e7ec0bbf70d96837b56280b966d3b29e3f7c477126acd0820581106b66d5",
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample007-dual-gmsl-serializer-adapter.json",
+        "sha256": "eb93bdbf76bd627b3410675d175e278ae9d821d167e8bda03f60580b18469ad2"
+      },
+      "obstacleCount": 390,
+      "layerCount": 4,
+      "holes": []
+    },
+    {
+      "sample": "sample008",
+      "originalSrjPath": "dataset-srj18/sample008.json",
+      "originalSrjSha256": "86c0bebed1bfe8396c5e1eadaa486f4711a3c9efbed35fdfa65bf092555dd9fd",
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample008-ftdi-toolkit.json",
+        "sha256": "bac8eea2be5ac482d95c438cc4acb9c38041817096aec7c0dfbd8bbf83dbd85d"
+      },
+      "obstacleCount": 477,
+      "layerCount": 4,
+      "holes": [
+        {
+          "obstacleIndex": 475,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -20.6445,
+              "y": 2.279
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_15"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_0",
+            "hole_shape": "circle",
+            "x": -20.64449999999998,
+            "y": 2.2790000000000106,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_15"
+        },
+        {
+          "obstacleIndex": 476,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -20.6445,
+              "y": -3.502
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_15"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_1",
+            "hole_shape": "circle",
+            "x": -20.64449999999998,
+            "y": -3.5019999999999953,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_15"
+        }
+      ]
+    },
+    {
+      "sample": "sample009",
+      "originalSrjPath": "dataset-srj18/sample009.json",
+      "originalSrjSha256": "53167849b45863bb21382c13a0464851cdd6d2bd5a4988d9e41962b46c928556",
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample009-gmsl-serializer.json",
+        "sha256": "4c620b9abc19fa431c89ad8721ddf75a9fe25aba6414595893a6289edf521a9a"
+      },
+      "obstacleCount": 453,
+      "layerCount": 4,
+      "holes": []
+    },
+    {
+      "sample": "sample010",
+      "originalSrjPath": "dataset-srj18/sample010.json",
+      "originalSrjSha256": "54809fdc0cee2685cab2f539bbfc6a68f0714fab47c8982f50037ccc5d32ffdb",
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample010-hdmi-edid-debug-board.json",
+        "sha256": "13acac96d70e17f36ec85656be4ae9ace46e2a9fdbd880ffe52af7f28e11cab1"
+      },
+      "obstacleCount": 411,
+      "layerCount": 4,
+      "holes": [
+        {
+          "obstacleIndex": 409,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -21.224,
+              "y": 17.354
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_5"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_0",
+            "hole_shape": "circle",
+            "x": -21.224000000000018,
+            "y": 17.354,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_5"
+        },
+        {
+          "obstacleIndex": 410,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -21.224,
+              "y": 11.573
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_5"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_1",
+            "hole_shape": "circle",
+            "x": -21.224000000000018,
+            "y": 11.572999999999993,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_5"
+        }
+      ]
+    },
+    {
+      "sample": "sample011",
+      "originalSrjPath": "dataset-srj18/sample011.json",
+      "originalSrjSha256": "c30aee0833640f6f370ce83c0ad5fc9476d80c40442a7c69f5db6b28af168afd",
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample011-job-oculink-expansion.json",
+        "sha256": "b86c69b19e4a5928aa38c475a2d600ad25e5b8984971d8f80c4974cde101e3fb"
+      },
+      "obstacleCount": 434,
+      "layerCount": 4,
+      "holes": [
+        {
+          "obstacleIndex": 430,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -14.49125,
+              "y": -25.535466
+            },
+            "width": 1,
+            "height": 1,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_24"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_0",
+            "hole_shape": "circle",
+            "x": -14.491250000000008,
+            "y": -25.535465999999985,
+            "hole_diameter": 1
+          },
+          "sourceComponentId": "pcb_component_24"
+        },
+        {
+          "obstacleIndex": 431,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -3.12125,
+              "y": -25.535466
+            },
+            "width": 1,
+            "height": 1,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_24"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_1",
+            "hole_shape": "circle",
+            "x": -3.1212500000000034,
+            "y": -25.535465999999985,
+            "hole_diameter": 1
+          },
+          "sourceComponentId": "pcb_component_24"
+        },
+        {
+          "obstacleIndex": 432,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 6.402,
+              "y": 17.402
+            },
+            "width": 1.45,
+            "height": 1.45,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_37"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_2",
+            "hole_shape": "circle",
+            "x": 6.402000000000015,
+            "y": 17.402,
+            "hole_diameter": 1.45
+          },
+          "sourceComponentId": "pcb_component_37"
+        },
+        {
+          "obstacleIndex": 433,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 6.402,
+              "y": -17.398
+            },
+            "width": 1.45,
+            "height": 1.45,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_37"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_3",
+            "hole_shape": "circle",
+            "x": 6.402000000000015,
+            "y": -17.397999999999996,
+            "hole_diameter": 1.45
+          },
+          "sourceComponentId": "pcb_component_37"
+        }
+      ]
+    },
+    {
+      "sample": "sample012",
+      "originalSrjPath": "dataset-srj18/sample012.json",
+      "originalSrjSha256": "5c180cea68f6979bc583624a975ba23ca4429ee17d104fbec624d7f02360a34e",
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample012-oculink-pcie-adapter.json",
+        "sha256": "0de6b53165de430566cbb7cc8cb6e2a16fa79f1710e7b48d336e749a0519f37f"
+      },
+      "obstacleCount": 814,
+      "layerCount": 4,
+      "holes": [
+        {
+          "obstacleIndex": 806,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 16.491,
+              "y": 61.074
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_41"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_0",
+            "hole_shape": "circle",
+            "x": 16.490999999999985,
+            "y": 61.074,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_41"
+        },
+        {
+          "obstacleIndex": 807,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 10.71,
+              "y": 61.074
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_41"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_1",
+            "hole_shape": "circle",
+            "x": 10.710000000000008,
+            "y": 61.074,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_41"
+        },
+        {
+          "obstacleIndex": 808,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 1.87,
+              "y": 61.105
+            },
+            "width": 1,
+            "height": 1,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_50"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_2",
+            "hole_shape": "circle",
+            "x": 1.8700000000000045,
+            "y": 61.105,
+            "hole_diameter": 1
+          },
+          "sourceComponentId": "pcb_component_50"
+        },
+        {
+          "obstacleIndex": 809,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -9.5,
+              "y": 61.105
+            },
+            "width": 1,
+            "height": 1,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_50"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_3",
+            "hole_shape": "circle",
+            "x": -9.5,
+            "y": 61.105000000000004,
+            "hole_diameter": 1
+          },
+          "sourceComponentId": "pcb_component_50"
+        },
+        {
+          "obstacleIndex": 810,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 20.9,
+              "y": -66.17
+            },
+            "width": 1.2,
+            "height": 1.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_147"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_4",
+            "hole_shape": "circle",
+            "x": 20.900000000000006,
+            "y": -66.17000000000002,
+            "hole_diameter": 1.2
+          },
+          "sourceComponentId": "pcb_component_147"
+        },
+        {
+          "obstacleIndex": 811,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 20.9,
+              "y": -56.97
+            },
+            "width": 1.2,
+            "height": 1.2,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_147"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_5",
+            "hole_shape": "circle",
+            "x": 20.900000000000006,
+            "y": -56.97,
+            "hole_diameter": 1.2
+          },
+          "sourceComponentId": "pcb_component_147"
+        },
+        {
+          "obstacleIndex": 812,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -19.426,
+              "y": -10.951
+            },
+            "width": 1.25,
+            "height": 1.25,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_161"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_6",
+            "hole_shape": "circle",
+            "x": -19.425999999999988,
+            "y": -10.950999999999993,
+            "hole_diameter": 1.25
+          },
+          "sourceComponentId": "pcb_component_161"
+        },
+        {
+          "obstacleIndex": 813,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -19.426,
+              "y": 62.198
+            },
+            "width": 1.25,
+            "height": 1.25,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_161"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_7",
+            "hole_shape": "circle",
+            "x": -19.425999999999988,
+            "y": 62.19800000000001,
+            "hole_diameter": 1.25
+          },
+          "sourceComponentId": "pcb_component_161"
+        }
+      ]
+    },
+    {
+      "sample": "sample013",
+      "originalSrjPath": "dataset-srj18/sample013.json",
+      "originalSrjSha256": "37b01a5f7cf5ff8f3056ad2c72137085e7608f2444ddfc74d188813c6c0f2554",
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample013-ov5640-dual-camera-board.json",
+        "sha256": "b1077a8f12a1b91a00698e153406497227b04c65a09fadfaecd7a0883bf70534"
+      },
+      "obstacleCount": 372,
+      "layerCount": 4,
+      "holes": []
+    },
+    {
+      "sample": "sample014",
+      "originalSrjPath": "dataset-srj18/sample014.json",
+      "originalSrjSha256": "cd4fb3f2814dc459650c17ccc21bb1d72a852ab2301fa6c389c1f82305207919",
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample014-ov9281-camera-board.json",
+        "sha256": "0c050aebcfbae3a401e000b3a4aa0911161ffe65131e773b8b2120b9e2c1ab0d"
+      },
+      "obstacleCount": 369,
+      "layerCount": 4,
+      "holes": [
+        {
+          "obstacleIndex": 365,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -44.7525,
+              "y": -0.036
+            },
+            "width": 1.5,
+            "height": 1.5,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_79"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_0",
+            "hole_shape": "circle",
+            "x": -44.7525,
+            "y": -0.036000000000001364,
+            "hole_diameter": 1.5
+          },
+          "sourceComponentId": "pcb_component_79"
+        },
+        {
+          "obstacleIndex": 366,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -24.7525,
+              "y": -0.036
+            },
+            "width": 1.5,
+            "height": 1.5,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_79"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_1",
+            "hole_shape": "circle",
+            "x": -24.752499999999998,
+            "y": -0.036000000000001364,
+            "hole_diameter": 1.5
+          },
+          "sourceComponentId": "pcb_component_79"
+        },
+        {
+          "obstacleIndex": 367,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 25.02,
+              "y": -0.047
+            },
+            "width": 1.5,
+            "height": 1.5,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_80"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_2",
+            "hole_shape": "circle",
+            "x": 25.02000000000001,
+            "y": -0.046999999999997044,
+            "hole_diameter": 1.5
+          },
+          "sourceComponentId": "pcb_component_80"
+        },
+        {
+          "obstacleIndex": 368,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 45.02,
+              "y": -0.047
+            },
+            "width": 1.5,
+            "height": 1.5,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_80"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_3",
+            "hole_shape": "circle",
+            "x": 45.02000000000001,
+            "y": -0.046999999999997044,
+            "hole_diameter": 1.5
+          },
+          "sourceComponentId": "pcb_component_80"
+        }
+      ]
+    },
+    {
+      "sample": "sample015",
+      "originalSrjPath": "dataset-srj18/sample015.json",
+      "originalSrjSha256": "cd24268f1713fc03c4c032a937d666fe6fb4d772187190d611ce4e3013a8d6fe",
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample015-sdi-fiber-adapter.json",
+        "sha256": "d4cc2efe0af771e80ec71d3bc3b942b2d6021df406c5ebb17ec10f3203635b78"
+      },
+      "obstacleCount": 600,
+      "layerCount": 4,
+      "holes": [
+        {
+          "obstacleIndex": 596,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 28.574,
+              "y": -12.391
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_1"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_0",
+            "hole_shape": "circle",
+            "x": 28.574000000000012,
+            "y": -12.391000000000005,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_1"
+        },
+        {
+          "obstacleIndex": 597,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": 28.574,
+              "y": -6.61
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_1"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_1",
+            "hole_shape": "circle",
+            "x": 28.574000000000012,
+            "y": -6.609999999999999,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_1"
+        },
+        {
+          "obstacleIndex": 598,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -7.4,
+              "y": 2.15
+            },
+            "width": 1.6,
+            "height": 1.6,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_76"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_2",
+            "hole_shape": "circle",
+            "x": -7.400000000000006,
+            "y": 2.1500000000000057,
+            "hole_diameter": 1.6
+          },
+          "sourceComponentId": "pcb_component_76"
+        },
+        {
+          "obstacleIndex": 599,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -7.4,
+              "y": 11.75
+            },
+            "width": 1.6,
+            "height": 1.6,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_76"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_3",
+            "hole_shape": "circle",
+            "x": -7.400000000000006,
+            "y": 11.75,
+            "hole_diameter": 1.6
+          },
+          "sourceComponentId": "pcb_component_76"
+        }
+      ]
+    },
+    {
+      "sample": "sample016",
+      "originalSrjPath": "dataset-srj18/sample016.json",
+      "originalSrjSha256": "f323b21b2d833b61149d5041c04af8575c77b8cd3bb3340cba36c017872e6bf3",
+      "sourceCircuitJson": {
+        "path": "circuit-json/sample016-usb-c-power-adapter.json",
+        "sha256": "836877f24bfcd0033e3e90af00712e3e870a83189f99829b7df183772df7f951"
+      },
+      "obstacleCount": 371,
+      "layerCount": 4,
+      "holes": [
+        {
+          "obstacleIndex": 367,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -8.039115,
+              "y": -24.29682
+            },
+            "width": 1.7,
+            "height": 1.7,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_68"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_0",
+            "hole_shape": "circle",
+            "x": -8.039114999999981,
+            "y": -24.296820499999995,
+            "hole_diameter": 1.7
+          },
+          "sourceComponentId": "pcb_component_68"
+        },
+        {
+          "obstacleIndex": 368,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -5.539115,
+              "y": -24.29682
+            },
+            "width": 1.7,
+            "height": 1.7,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_68"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_1",
+            "hole_shape": "circle",
+            "x": -5.539114999999981,
+            "y": -24.296820499999995,
+            "hole_diameter": 1.7
+          },
+          "sourceComponentId": "pcb_component_68"
+        },
+        {
+          "obstacleIndex": 369,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -7.431115,
+              "y": 21.30968
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_89"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_2",
+            "hole_shape": "circle",
+            "x": -7.431114999999991,
+            "y": 21.3096795,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_89"
+        },
+        {
+          "obstacleIndex": 370,
+          "expectedObstacle": {
+            "type": "rect",
+            "center": {
+              "x": -1.650115,
+              "y": 21.30968
+            },
+            "width": 0.65,
+            "height": 0.65,
+            "layers": [
+              "top",
+              "inner1",
+              "inner2",
+              "bottom"
+            ],
+            "connectedTo": [],
+            "componentId": "pcb_component_89"
+          },
+          "hole": {
+            "type": "pcb_hole",
+            "pcb_hole_id": "pcb_hole_3",
+            "hole_shape": "circle",
+            "x": -1.6501149999999853,
+            "y": 21.3096795,
+            "hole_diameter": 0.65
+          },
+          "sourceComponentId": "pcb_component_89"
+        }
+      ]
+    }
+  ]
+}

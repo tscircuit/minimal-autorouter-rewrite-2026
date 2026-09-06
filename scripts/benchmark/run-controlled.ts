@@ -3,6 +3,7 @@ import { appendFile, mkdir, readFile, readdir, rename, writeFile } from "node:fs
 import { resolve } from "node:path"
 import { compareReports, type BenchmarkReport } from "./compare"
 import { readDatasetManifest, repositoryRoot } from "./data"
+import { AUTOROUTER_VERSION } from "../../lib/network/types"
 
 type ManagedChild = Pick<Bun.Subprocess, "pid" | "exitCode" | "kill" | "exited">
 type ServiceStatus = { autorouterVersion: string; cacheEntries: number; moduleSha256?: string; stats: Record<string, number> }
@@ -131,7 +132,7 @@ export async function runControlled(args: string[] = Bun.argv.slice(2)): Promise
         new Promise<never>((_, reject) => { timer = setTimeout(() => reject(new Error(`${flavor} service startup timed out`)), 15_000) }),
       ])
       const service: Service = { child, url, output, errors, initial: await status({ url }) }
-      const version = flavor === "baseline" ? "0.0.883" : "0.1.0"
+      const version = flavor === "baseline" ? "0.0.883" : AUTOROUTER_VERSION
       if (service.initial.autorouterVersion !== version) throw new Error(`${flavor} service announced the wrong protocol version`)
       if (flavor === "baseline" && service.initial.moduleSha256 !== frozen.baselineBundle) throw new Error("Baseline service loaded a different published bundle")
       if (service.initial.cacheEntries !== 0 || service.initial.stats.solverRuns !== 0 || service.initial.stats.cacheHits !== 0) throw new Error(`${flavor} cold service did not start empty`)

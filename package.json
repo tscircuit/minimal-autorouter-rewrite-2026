@@ -1,6 +1,6 @@
 {
   "name": "@tscircuit/minimal-autorouter-rewrite-2026",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "An independent solver-pattern implementation of the Pipeline9 autorouter interface",
   "license": "MIT",
@@ -44,5 +44,8 @@
     "tsup": "^8.3.6",
     "typescript": "^5.9.3",
     "vite": "^6.0.11"
+  },
+  "patchedDependencies": {
+    "@tscircuit/circuit-json-util@0.0.111": "patches/@tscircuit%2Fcircuit-json-util@0.0.111.patch"
   }
 }

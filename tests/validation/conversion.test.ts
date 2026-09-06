@@ -1,5 +1,6 @@
 import { describe, expect, test } from "bun:test"
 import { runAllChecks } from "@tscircuit/checks"
+import { getReadableNameForElement } from "@tscircuit/circuit-json-util"
 import type { AnyCircuitElement } from "circuit-json"
 import type {
   ConnectionPoint,
@@ -600,7 +601,13 @@ describe("independent SRJ to Circuit JSON conversion", () => {
     )
   })
 
-  test("component provenance remains available without dangling references that crash real overlap checks", async () => {
+  test("missing component names remain diagnosable through the persistent dependency patch", () => {
+    expect(getReadableNameForElement([], "missing_component")).toBe(
+      "unknown (could not find element with id missing_component)",
+    )
+  })
+
+  test("original component associations survive a real keepout overlap without fabricating component bodies", async () => {
     const input = simple()
     input.obstacles[0]!.componentId = "original_component_a"
     input.obstacles.push({
@@ -613,7 +620,10 @@ describe("independent SRJ to Circuit JSON conversion", () => {
       connectedTo: [],
     })
     const circuit = convertSrjToCircuitJson(input)
-    expect(circuit.some((element) => "pcb_component_id" in element)).toBe(false)
+    expect(byType(circuit, "pcb_component")).toHaveLength(0)
+    expect(byType(circuit, "source_component")).toHaveLength(0)
+    expect(byType(circuit, "pcb_port").find(port => port.pcb_port_id === "a"))
+      .toMatchObject({pcb_component_id:"original_component_a"})
     expect(describeConversionCoverage(input).obstacleComponentIds).toEqual({
       pad_a: "original_component_a",
     })
@@ -622,11 +632,27 @@ describe("independent SRJ to Circuit JSON conversion", () => {
       y: 0,
       width: 0.6,
       height: 0.6,
+      pcb_component_id:"original_component_a",
     })
     expect(
       (await checks(input)).some(
         (issue) => issue.type === "pcb_placement_error",
       ),
     ).toBe(true)
+  })
+
+  test("unrelated components retain their real overlapping copper finding", async () => {
+    const input: SimpleRouteJson = {
+      ...simple(), connections: [], traces: [],
+      obstacles: ["a", "b"].map((name, index) => ({
+        type:"rect", obstacleId:`pad_${name}`, componentId:`component_${name}`,
+        center:{x:index * .1,y:0}, width:.6, height:.6, layers:["top"],
+        connectedTo:[`net_${name}`],
+        circuitJsonMetadata:{pcb_smtpad_id:`pad_${name}`,pcb_port_id:`port_${name}`},
+      })),
+    }
+    const issues = await checks(input)
+    expect(issues.some(issue => issue.type === "pcb_footprint_overlap_error")).toBe(true)
+    expect(issues.some(issue => issue.type === "pcb_pad_pad_clearance_error")).toBe(true)
   })
 })

@@ -4,6 +4,7 @@ import {CopperMap} from "./CopperMap"
 import {distance} from "./geometry"
 import {RouteSearch} from "./RouteSearch"
 import {findTerminalContradiction} from "./findTerminalContradiction"
+import {CompletionRepairSolver} from "./CompletionRepairSolver"
 import type {RoutingProblem, RoutingTask} from "./types"
 
 /** Owns route order and retries; individual searches own geometric decisions. */
@@ -28,6 +29,7 @@ export class RoutingSolver extends BaseSolver {
   private strategy: "ordered" | "ripup" = "ordered"
   private completedPasses=0
   private totalRepairs=0
+  completionRepairSolver?: CompletionRepairSolver
 
   constructor(readonly problem: RoutingProblem) {
     super()
@@ -51,6 +53,7 @@ export class RoutingSolver extends BaseSolver {
   getConstructorParams(): [RoutingProblem] {return [this.problem]}
 
   _step(): void {
+    if(this.completionRepairSolver) {this.stepCompletion();return}
     if(this.index>=this.order.length) {this.finishPass();return}
     const task=this.order[this.index]!
     if(this.routes.some(trace=>trace.pcb_trace_id===`minimal_${task.id}`)) {this.advance();return}
@@ -77,7 +80,7 @@ export class RoutingSolver extends BaseSolver {
       }
       else {this.search=undefined;this.activeSubSolver=null}
     }
-    this.progress=(this.completedPasses+this.index/Math.max(1,this.order.length))/(this.maxPasses*2)
+    this.progress=(this.completedPasses+this.index/Math.max(1,this.order.length))/(this.maxPasses*2+1)
     this.stats={routed:this.routes.length,total:this.problem.tasks.length,pass:this.pass+1,failed:this.failures.length,ripups:this.repairs,totalRipups:this.totalRepairs,strategy:this.strategy,attempts:this.completedPasses+1}
   }
 
@@ -117,6 +120,47 @@ export class RoutingSolver extends BaseSolver {
 
   private advance(): void {this.index++;this.attempt=0;this.search=undefined;this.activeSubSolver=null}
 
+  private stepCompletion(): void {
+    const completion=this.completionRepairSolver!
+    if(!completion.solved&&!completion.failed) completion.step()
+    this.syncCompletion()
+  }
+
+  private syncCompletion(): void {
+    const completion=this.completionRepairSolver!
+    this.routes=completion.routes
+    this.unroutedTaskIds=completion.unroutedTaskIds
+    this.progress=(this.completedPasses+completion.progress)/(this.maxPasses*2+1)
+    this.stats={...this.stats,strategy:"completion",routed:this.routes.length,
+      total:this.problem.tasks.length,failed:this.unroutedTaskIds.length,completion:completion.stats}
+    if(completion.solved||completion.failed) {
+      this.solved=completion.solved;this.failed=completion.failed;this.error=completion.error
+      if(completion.failed) this.failedSubSolvers=[completion]
+      this.activeSubSolver=null
+    }
+  }
+
+  override tryFinalAcceptance(): void {
+    if(this.completionRepairSolver) {
+      this.completionRepairSolver.tryFinalAcceptance()
+      this.syncCompletion()
+      return
+    }
+    if(this.bestRoutes.length>this.routes.length) this.routes=[...this.bestRoutes]
+    const retained=new Set(this.routes.map(trace=>trace.pcb_trace_id))
+    this.unroutedTaskIds=this.problem.tasks.filter(task=>!retained.has(`minimal_${task.id}`)).map(task=>task.id)
+    this.solved=this.unroutedTaskIds.length===0
+    this.failed=!this.solved
+    if(this.activeSubSolver&&!this.activeSubSolver.solved&&!this.activeSubSolver.failed) {
+      this.activeSubSolver.failed=true
+      this.activeSubSolver.error="Routing parent reached its iteration limit"
+      this.failedSubSolvers=[this.activeSubSolver]
+    }
+    this.activeSubSolver=null
+    this.stats={...this.stats,routed:this.routes.length,total:this.problem.tasks.length,failed:this.unroutedTaskIds.length}
+    if(this.failed) this.error=`Could not route ${this.unroutedTaskIds.length} of ${this.problem.tasks.length} connections within the iteration limit`
+  }
+
   private finishPass(): void {
     if(this.failures.length<=this.bestFailures.length) {
       this.bestRoutes=[...this.routes];this.bestFailures=[...this.failures]
@@ -131,9 +175,10 @@ export class RoutingSolver extends BaseSolver {
       } else {
         this.routes=this.bestRoutes
         this.unroutedTaskIds=this.bestFailures.map(task=>task.id)
-        this.failed=true
-        this.stats={...this.stats,routed:this.routes.length,total:this.problem.tasks.length,failed:this.unroutedTaskIds.length}
-        this.error=`Could not route ${this.unroutedTaskIds.length} of ${this.problem.tasks.length} connections`
+        // Preserve the best valid copper and repair its remaining congestion
+        // instead of discarding it for another complete-board ordering pass.
+        this.completionRepairSolver=new CompletionRepairSolver(this.problem,this.bestRoutes)
+        this.activeSubSolver=this.completionRepairSolver
         return
       }
     } else {

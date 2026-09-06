@@ -39,7 +39,11 @@ The resulting [`RoutingProblem`](../lib/routing/types.ts) contains the normalize
 
 Each strategy permits five to eight passes according to effort. Each pair has three grid resolutions. Repair permits at most eight diagnostic attempts per pass and two per task in that pass. [`RouteSearch`](../lib/routing/RouteSearch.ts) performs weighted eight-neighbor layered A* with bounded expansions, advances at most 512 heap removals per search step, and uses exact endpoint connectors. Direct paths and visibility simplification are accepted only after continuous collision checks. These are search-work limits, not a wall-clock guarantee or a completeness/optimality claim.
 
+If both strategies remain incomplete, [`CompletionRepairSolver`](../lib/routing/CompletionRepairSolver.ts) validates and continues from the best partial result. It tries finer searches, protects recently placed routes from immediate displacement, and queues at most eight blocking movable routes per accepted repair. Collision attribution advances over bounded steps. The solver retains its best valid result and an exact unfinished-task ledger even when an outer iteration limit interrupts repair. This stage completes sample014 without changing its input or selecting settings by sample identity.
+
 [`CopperMap`](../lib/routing/CopperMap.ts) indexes nearby pads, wires, and vias; [`geometry`](../lib/routing/geometry.ts) supplies continuous distance and intersection operations. Grid occupancy alone never authorizes a segment. Checks include trace width, clearance, board boundaries, layer restrictions, and the via footprint on every copper layer. Same-net contact is allowed where appropriate; distinct same-net vias still require spacing. Rotated rectangles are supported. Oval obstacle collision checks deliberately use conservative rectangular envelopes, which can exclude otherwise feasible paths.
+
+Absent an explicit board-edge rule, copper retains 0.2 mm clearance from the boundary, matching the pinned PCB checker's default. An explicit zero remains authoritative. The same resolved value constrains wires, vias, rectangular bounds, and polygonal outlines in local routing, remote routing, and response validation.
 
 ## Local and network execution
 

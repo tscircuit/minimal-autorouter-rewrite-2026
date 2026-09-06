@@ -135,7 +135,7 @@ test("oval and rotated-pad envelopes do not create false contradiction certifica
 test("negotiation moves a blocking trace without relaxing final copper clearance",()=>{
  const problem=board();problem.srj.layerCount=1;problem.srj.bounds.maxY=30
  problem.tasks=[
-  {...task,id:"across",connectionName:"across",netName:"across",connectedNames:["across"],start:{x:.2,y:15,layer:"top"},end:{x:9.8,y:15,layer:"top"}},
+  {...task,id:"across",connectionName:"across",netName:"across",connectedNames:["across"],start:{x:.3,y:15,layer:"top"},end:{x:9.7,y:15,layer:"top"}},
   {...task,id:"vertical",connectionName:"vertical",netName:"vertical",connectedNames:["vertical"],start:{x:5,y:5,layer:"top"},end:{x:5,y:25,layer:"top"}},
  ]
  const solver=new RoutingSolver(problem);solver.solve()

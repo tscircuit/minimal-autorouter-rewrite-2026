@@ -2,7 +2,7 @@ import type { HighDensityIntraNodeRoute, NodeWithPortPoints } from "../types/hig
 import type { Obstacle } from "../types/srj-types"
 
 export const PIPELINE9_NETWORKED_SOLVE_POLICY = "ordinary_then_regional_without_fixed_copper_v1" as const
-export const AUTOROUTER_VERSION = "0.1.0"
+export const AUTOROUTER_VERSION = "0.1.1"
 export const DEFAULT_HD_CACHE2_SERVER_URL = "https://hd-cache2.tscircuit.com"
 export type Pipeline9NetworkedCacheSource = "cache" | "solver"
 export type Pipeline9NetworkedHighDensityNodeInput = {

@@ -109,3 +109,30 @@ The frozen implementation passed CI with 99 fresh tests, 84,504 assertions,
 typechecking, package build, and all 16 Cosmos fixture bundles. The declaration
 change additionally passes the compile-only external-type regression and all 16
 focused compatibility tests. No upstream tests or other datasets were copied.
+
+## 6. Full PCB checks and completion repair
+
+The first strict Circuit JSON audit exposed a missing default board-edge margin
+on generated copper. The router now resolves the same 0.2 mm default as the
+pinned PCB checks, including the entire via footprint. This removes 36 trace
+edge reports and one generated-via edge report while preserving explicit input
+rules and the original layout bytes.
+
+Repeatedly starting a whole-board search discarded useful progress on sample014.
+A separate completion solver now continues from revalidated retained copper,
+temporarily protects recent placements, and displaces a bounded set of movable
+blocking routes. The fresh sample014 regression requires all 238 routing tasks,
+independent physical connectivity, and zero PCB issues. Synthetic limit tests
+ensure a failed or interrupted repair still returns an exact task ledger.
+
+The source format also loses the distinction between some mechanical drills and
+keepout rectangles. Validation now restores 62 non-plated drill geometries from
+the checksum-verified original Circuit JSON of the same 16 allowed srj18 samples.
+It preserves component membership without inventing component bodies or copying
+old traces. This corrects sample012's false keepout finding. A one-line pinned
+utility patch fixes diagnostic formatting for absent component bodies; actual
+unrelated overlaps and keepout collisions remain errors.
+
+The cache protocol version advances to 0.1.1 so older route results cannot bypass
+the new routing rules. Historical reports remain historical; fresh candidate
+runs measure the revised implementation and audit real cold and warm service use.

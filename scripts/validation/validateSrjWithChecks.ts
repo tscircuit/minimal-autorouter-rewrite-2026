@@ -7,10 +7,15 @@ import * as circuitJsonSchemas from "circuit-json"
 import { any_circuit_element, type AnyCircuitElement } from "circuit-json"
 import type { SimpleRouteJson } from "../../lib/types/srj-types"
 import {
-  convertSrjToCircuitJson,
-  describeConversionCoverage,
+  convertSrjWithCoverage,
+  type SrjConversionOptions,
 } from "./convertSrjToCircuitJson"
 import { assertPhysicalConnectivity } from "./assertPhysicalConnectivity"
+import { assertSourcePreservation } from "./assertSourcePreservation"
+
+export interface SrjValidationOptions extends SrjConversionOptions {
+  originalSrj?: SimpleRouteJson
+}
 
 export const CHECKS_VERSION = "0.0.184"
 export const CIRCUIT_JSON_VERSION = "0.0.485"
@@ -20,6 +25,7 @@ const elementSchemas = {
   pcb_smtpad: circuitJsonSchemas.pcb_smtpad,
   pcb_plated_hole: circuitJsonSchemas.pcb_plated_hole,
   pcb_keepout: circuitJsonSchemas.pcb_keepout,
+  pcb_hole: circuitJsonSchemas.pcb_hole,
   pcb_via: circuitJsonSchemas.pcb_via,
   pcb_port: circuitJsonSchemas.pcb_port,
   source_port: circuitJsonSchemas.source_port,
@@ -87,27 +93,38 @@ export async function validateCircuitJson(circuitJson: AnyCircuitElement[]) {
 }
 
 /** Run the public checks on a schema-validated, independent SRJ conversion. */
-export async function validateSrjWithChecks(srj: SimpleRouteJson) {
+export async function validateSrjWithChecks(srj: SimpleRouteJson, options: SrjValidationOptions = {}) {
   let physicalConnectivityError: string | undefined
+  let sourcePreservationError: string | undefined
+  if (options.originalSrj !== undefined) {
+    try {
+      assertSourcePreservation(options.originalSrj, srj)
+    } catch (error) {
+      sourcePreservationError = error instanceof Error ? error.message : String(error)
+    }
+  }
   try {
     assertPhysicalConnectivity(srj)
   } catch (error) {
     physicalConnectivityError =
       error instanceof Error ? error.message : String(error)
   }
+  const {circuitJson,coverage} = convertSrjWithCoverage(srj,options)
   return {
-    ...(await validateCircuitJson(convertSrjToCircuitJson(srj))),
+    ...(await validateCircuitJson(circuitJson)),
     physicalConnectivityError,
-    coverage: describeConversionCoverage(srj),
+    sourcePreservationError,
+    coverage,
   }
 }
 
 export async function assertNoPcbIssues(
   srj: SimpleRouteJson,
   label = "Routed board",
+  options: SrjValidationOptions = {},
 ): Promise<void> {
-  const { pcbIssues, physicalConnectivityError } =
-    await validateSrjWithChecks(srj)
+  const { pcbIssues, physicalConnectivityError, sourcePreservationError } =
+    await validateSrjWithChecks(srj,options)
   if (pcbIssues.length) {
     const details = pcbIssues
       .slice(0, 10)
@@ -120,6 +137,8 @@ export async function assertNoPcbIssues(
       `${label}: @tscircuit/checks found ${pcbIssues.length} PCB issues\n${details}`,
     )
   }
+  if (sourcePreservationError)
+    throw new Error(`${label}: source preservation failed: ${sourcePreservationError}`)
   if (physicalConnectivityError)
     throw new Error(
       `${label}: independent physical connectivity failed: ${physicalConnectivityError}`,

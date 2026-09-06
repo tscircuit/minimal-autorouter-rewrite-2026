@@ -113,3 +113,71 @@ for (const validWidth of [true, false]) {
     }
   })
 }
+
+test("PCB validation CLI rejects omitted original requests even when the supplied output has zero PCB issues", async () => {
+  const directory = await mkdtemp(join(tmpdir(), "autorouter-source-check-"))
+  try {
+    const original: SimpleRouteJson = {
+      layerCount: 2,
+      minTraceWidth: 0.1,
+      bounds: { minX: -5, minY: -5, maxX: 5, maxY: 5 },
+      obstacles: [-2, 2].map((x, index) => ({
+        type: "rect",
+        center: { x, y: 0 },
+        width: 0.5,
+        height: 0.5,
+        layers: ["top"],
+        connectedTo: ["signal", `port_${index}`],
+      })),
+      connections: [{
+        name: "signal",
+        pointsToConnect: [-2, 2].map((x, index) => ({
+          x, y: 0, layer: "top", pcb_port_id: `port_${index}`,
+        })),
+      }],
+    }
+    const originalBytes = JSON.stringify(original) + "\n"
+    const inputPath = join(directory, "omitted.srj.json")
+    const sourcePath = join(directory, "original.srj.json")
+    const reportPath = join(directory, "report.json")
+    await Promise.all([
+      writeFile(sourcePath, originalBytes),
+      writeFile(inputPath, JSON.stringify({ ...original, connections: [], traces: [] }) + "\n"),
+    ])
+    const child = Bun.spawn([
+      execPath, "scripts/validation/run.ts",
+      "--input", inputPath, "--source", sourcePath, "--output", reportPath,
+    ], { cwd: repository, stdout: "pipe", stderr: "pipe" })
+    const timeout = setTimeout(() => child.kill(), 10_000)
+    try {
+      const [code, stdout, stderr] = await Promise.all([
+        child.exited,
+        new Response(child.stdout).text(),
+        new Response(child.stderr).text(),
+      ])
+      expect(stderr).toBe("")
+      expect(code).toBe(1)
+      expect(stdout).toContain("source failed:")
+      const report = JSON.parse(await readFile(reportPath, "utf8"))
+      expect(report.complete).toBe(true)
+      expect(report.passed).toBe(false)
+      expect(report.summary.pcbClean).toBe(0)
+      expect(report.results).toHaveLength(1)
+      const result = report.results[0]
+      expect(result.error).toBeUndefined()
+      expect(result.originalSourceSha256).toBe(hash(originalBytes))
+      expect(result.pcbIssueCount).toBe(0)
+      expect(result.pcbIssues).toEqual([])
+      expect(result.physicalConnectivityError).toBeUndefined()
+      expect(result.sourcePreservationError).toContain("terminal requirements changed")
+    } finally {
+      clearTimeout(timeout)
+      if (child.exitCode === null) {
+        child.kill()
+        await child.exited
+      }
+    }
+  } finally {
+    await rm(directory, { recursive: true, force: true })
+  }
+}, 20_000)

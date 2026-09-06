@@ -13,10 +13,12 @@ import {
   CIRCUIT_JSON_VERSION,
   validateSrjWithChecks,
 } from "./validateSrjWithChecks"
+import { getVerifiedSourceGeometry } from "./sourceGeometry"
 
 const options: Record<string, string> = {}
 const allowed = new Set([
   "input",
+  "source",
   "dataset",
   "samples",
   "output",
@@ -27,12 +29,14 @@ for (let index = 2; index < Bun.argv.length; index += 2) {
     value = Bun.argv[index + 1]
   if (!flag.startsWith("--") || !allowed.has(flag.slice(2)) || !value)
     throw new Error(
-      "Usage: bun scripts/validation/run.ts [--input ROUTED.srj.json | --dataset dataset01|dataset-srj18 --samples sample001,...] [--output REPORT.json] [--artifacts-dir DIRECTORY]",
+      "Usage: bun scripts/validation/run.ts [--input ROUTED.srj.json [--source ORIGINAL.srj.json] | --dataset dataset01|dataset-srj18 --samples sample001,...] [--output REPORT.json] [--artifacts-dir DIRECTORY]",
     )
   options[flag.slice(2)] = value
 }
 if (options.input && (options.dataset || options.samples))
   throw new Error("--input cannot be combined with dataset selection")
+if (options.source && !options.input)
+  throw new Error("--source requires --input; dataset sources are already pinned")
 const output = resolve(options.output ?? ".benchmark/pcb-validation.json")
 const artifacts = options["artifacts-dir"] && resolve(options["artifacts-dir"])
 const startedAt = new Date().toISOString()
@@ -45,11 +49,17 @@ const sourceFiles = [
   "scripts/benchmark/data.ts",
 ]
 for (const directory of ["lib", "scripts/validation"]) {
-  for await (const path of new Bun.Glob("**/*.ts").scan(
+  for await (const path of new Bun.Glob("**/*").scan(
     resolve(repositoryRoot, directory),
   ))
-    sourceFiles.push(`${directory}/${path}`)
+    if (/\.(ts|json)$/.test(path)) sourceFiles.push(`${directory}/${path}`)
 }
+const packageMetadata = JSON.parse(
+  await readFile(resolve(repositoryRoot, "package.json"), "utf8"),
+)
+sourceFiles.push(
+  ...Object.values(packageMetadata.patchedDependencies ?? {}) as string[],
+)
 const sourceSha256 = Object.fromEntries(
   await Promise.all(
     sourceFiles
@@ -88,6 +98,7 @@ async function checkpoint() {
               result.didSolve &&
               result.pcbIssueCount === 0 &&
               !result.error &&
+              !result.sourcePreservationError &&
               !result.physicalConnectivityError,
           ),
         summary: {
@@ -98,6 +109,7 @@ async function checkpoint() {
               result.didSolve &&
               result.pcbIssueCount === 0 &&
               !result.error &&
+              !result.sourcePreservationError &&
               !result.physicalConnectivityError,
           ).length,
           pcbIssues: results.reduce(
@@ -117,6 +129,7 @@ async function check(
   input: SimpleRouteJson,
   identity: { dataset: string; sample: string; sha256: string },
   shouldSolve: boolean,
+  originalSrjBytes?: Buffer,
 ) {
   const result: Record<string, unknown> = {
     ...identity,
@@ -145,11 +158,26 @@ async function check(
       await mkdir(dirname(prefix), { recursive: true })
       await writeFile(`${prefix}.routed.srj.json`, routedJson)
     }
-    const validation = await validateSrjWithChecks(routed)
+    const sourceGeometry = originalSrjBytes
+      ? getVerifiedSourceGeometry({
+          originalSrjBytes,
+          routedSrj: routed,
+          expectedOriginalSrjSha256: shouldSolve ? identity.sha256 : undefined,
+        })
+      : undefined
+    if (originalSrjBytes)
+      result.originalSourceSha256 = sha256(originalSrjBytes)
+    const validation = await validateSrjWithChecks(routed, {
+      sourceGeometry,
+      originalSrj: originalSrjBytes
+        ? JSON.parse(originalSrjBytes.toString()) as SimpleRouteJson
+        : undefined,
+    })
     result.validatedOutput = result.didSolve
     result.circuitJsonElementCount = validation.circuitJson.length
     result.coverage = validation.coverage
     result.physicalConnectivityError = validation.physicalConnectivityError
+    result.sourcePreservationError = validation.sourcePreservationError
     result.issueCount = validation.issues.length
     result.pcbIssueCount = validation.pcbIssues.length
     result.pcbIssueTypes = Object.fromEntries(
@@ -177,7 +205,7 @@ async function check(
   result.elapsedTimeMs = performance.now() - started
   results.push(result)
   console.log(
-    `${identity.dataset}/${identity.sample}: solved=${result.didSolve} PCB issues=${result.pcbIssueCount ?? "unavailable"} physical=${result.physicalConnectivityError ? "failed" : result.error ? "unavailable" : "passed"}${result.error ? ` ${result.error}` : ""}`,
+    `${identity.dataset}/${identity.sample}: solved=${result.didSolve} PCB issues=${result.pcbIssueCount ?? "unavailable"} physical=${result.physicalConnectivityError ? "failed" : result.error ? "unavailable" : "passed"}${result.sourcePreservationError ? ` source failed: ${result.sourcePreservationError}` : ""}${result.error ? ` ${result.error}` : ""}`,
   )
   await checkpoint()
 }
@@ -191,6 +219,7 @@ if (options.input) {
       sha256: createHash("sha256").update(bytes).digest("hex"),
     },
     false,
+    options.source ? await readFile(resolve(options.source)) : undefined,
   )
 } else {
   const manifest = await readDatasetManifest()
@@ -221,6 +250,7 @@ if (options.input) {
       input as SimpleRouteJson,
       { dataset, sample: sample.name, sha256: sample.sha256 },
       true,
+      await readFile(resolve(repositoryRoot, "datasets", sample.file)),
     )
   }
 }
@@ -233,6 +263,7 @@ if (
       !result.didSolve ||
       result.pcbIssueCount !== 0 ||
       result.error ||
+      result.sourcePreservationError ||
       result.physicalConnectivityError,
   )
 )

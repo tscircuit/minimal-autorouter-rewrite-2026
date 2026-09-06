@@ -20,20 +20,38 @@ Any conductor reaching this required top-layer terminal or its own pad necessari
 
 The recorded upstream Pipeline9 baseline marks sample016 solved but reports six relaxed DRC errors. Two errors specifically identify traces connected to `pcb_port_183` overlapping `pcb_smtpad_62`. This supports the source-geometry proof; the proof does not depend on upstream output.
 
-The sample016 test checks the pinned source hash, actual pad shapes/dimensions/layers, full containment, distinct electrical aliases, input immutability, and an explicit solver failure naming the terminal and obstructing pad. Fourteen other srj18 samples require completed routing and physical endpoint connectivity. Sample014 has the separate bounded-search regression described below. Benchmark reports retain sample016's failure rather than counting it as a successful route.
+The sample016 test checks the pinned source hash, actual pad shapes/dimensions/layers, full containment, distinct electrical aliases, input immutability, and an explicit solver failure naming the terminal and obstructing pad. The other fifteen srj18 samples require completed routing and physical endpoint connectivity. Sample014 additionally requires the full PCB checks to report no issues. Benchmark reports retain sample016's failure rather than counting it as a successful route.
+
+### The original KiCad source has different pad geometry
+
+Follow-up investigation located a conversion defect before this SRJ was
+generated. At the same pinned dataset commit
+`c0aad90256a95256fcac814f9f7da81a82a2fdea`, the original
+[KiCad C43 footprint](https://github.com/tscircuit/dataset-srj18/blob/c0aad90256a95256fcac814f9f7da81a82a2fdea/kicad_pcb/sample016-usb-c-power-adapter.kicad_pcb)
+is rotated −90°. Its pad 1 is a 2.5 × 5.3 mm trapezoid at local
+`(-3.4, 0, 270°)`. The intermediate Circuit JSON retains the component's
+rotation but emits pad62 as an unrotated 2.5 × 5.3 mm rectangle. The SRJ
+inherits that incorrect envelope.
+
+The KiCad pad's world-aligned envelope is 5.3 × 2.5 mm. With the existing
+pad center, that envelope no longer contains terminal183. Consequently, the
+certificate above proves that the **pinned SRJ is contradictory**; it does
+not prove that the original KiCad board contains that short. This is an
+import correction to make explicitly in a derived input, not a net merge,
+checker exception, or geometry change to hide in Pipeline9. The original
+benchmark bytes and their failure witness remain intact.
+
+Source SHA-256 values are
+`f2ca55189e62f4f2638b7bde1058085ea6ab8bce9f7d846ca6946c1174d9c0e3`
+(KiCad) and
+`836877f24bfcd0033e3e90af00712e3e870a83189f99829b7df183772df7f951`
+(intermediate Circuit JSON).
 
 
-## Bounded search on dataset-srj18 sample014
+## Completed routing on dataset-srj18 sample014
 
-Sample014 currently exhausts the routing search while retaining substantial valid copper. The upstream Pipeline9 baseline also fails to solve this sample. Unlike sample016, this board has no established geometric infeasibility certificate: the unresolved pairs can be routed individually, and the remaining challenge is simultaneous routing through crowded pad and via escape regions.
+Sample014 now completes all 238 routing tasks from a fresh Pipeline9 run and passes independent physical connectivity and the full PCB checks. Earlier benchmark reports recorded an honest partial-routing failure; those historical results are preserved.
 
-The engine first tries deterministic route-order negotiation, then starts a separate bounded strategy that can remove conflicting movable routes and reroute them. Fixed input pads and copper always remain hard constraints. Finer-grid and larger repair-budget experiments improved coverage but did not establish a complete solution; those experimental settings are not selected by sample identity in the implementation.
+After ordered routing and its first repair strategy exhaust their budgets, a separate solver continues from the best valid partial result. It can displace blocking movable routes and queue them again. Fixed pads and input copper remain hard constraints. A short protection window prevents immediately displacing the same newly placed routes, and finer searches resolve crowded escape regions. The strategy is bounded and applies to every input without sample-specific settings.
 
-The sample014 fixture test accepts a complete solution only when every source net has continuous copper connectivity. Its failure branch instead requires all of the following:
-
-- A bounded terminal failure with a specific routing error, a nonempty list of unfinished tasks, and no unsupported infeasibility claim.
-- An exact ledger: every required pair is represented once by either a retained trace or an unfinished task. Retained work must exceed unfinished work; this is a relative coverage floor, not a snapshot of one particular route count.
-- Independent validation of retained copper: finite coordinates, positive dimensions, valid layer transitions, endpoints at the requested physical terminals on the intended net, and clearance from unrelated pads, traces, and vias.
-- Input preservation, stable terminal state, and rejection of final-output access while the board remains unsolved.
-
-This test documents a bounded search limitation. It does not count partial routing as a successful benchmark result or assert that the board is impossible to route. Benchmark reports retain sample014 as a failure until every required connection is completed.
+The sample014 regression now requires complete routing, continuous physical copper, zero PCB issues, unchanged input, and stable terminal state. Separate synthetic tests exercise bounded failure and require every task to appear exactly once as retained copper or unfinished work, including when an outer solver reaches its iteration limit.

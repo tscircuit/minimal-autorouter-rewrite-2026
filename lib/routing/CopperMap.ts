@@ -22,8 +22,14 @@ export class CopperMap {
   private serial = 0
   private cellSize = 1
   private outline?: Point[]
+  private readonly boardEdgeClearance: number
 
   constructor(readonly problem: RoutingProblem) {
+    // Match the default copper-to-board rule used by the public PCB checks.
+    // This is an edge-to-edge distance; clear() adds the wire/via radius.
+    this.boardEdgeClearance = problem.srj.minBoardEdgeClearance ?? 0.2
+    if (!Number.isFinite(this.boardEdgeClearance) || this.boardEdgeClearance < 0)
+      throw new Error("minBoardEdgeClearance must be finite and nonnegative")
     this.layers = problem.srj.layerCount <= 1 ? ["top"] : ["top",
       ...Array.from({length: problem.srj.layerCount-2},(_,i)=>`inner${i+1}`),"bottom"]
     this.outline = problem.srj.outline && problem.srj.outline.length>=3 ? problem.srj.outline : undefined
@@ -98,12 +104,12 @@ export class CopperMap {
 
   clear(a: Point,b: Point,z: number,radius: number,task: RoutingTask,via=false): boolean {
     const {srj}=this.problem
-    const edge=radius+(srj.minBoardEdgeClearance??0)
+    const edge=radius+this.boardEdgeClearance
     if(Math.min(a.x,b.x)<srj.bounds.minX+edge-1e-8 || Math.max(a.x,b.x)>srj.bounds.maxX-edge+1e-8 ||
       Math.min(a.y,b.y)<srj.bounds.minY+edge-1e-8 || Math.max(a.y,b.y)>srj.bounds.maxY-edge+1e-8) return false
     if(this.outline && (!pointInPolygon(a,this.outline)||!pointInPolygon(b,this.outline))) return false
     const margin=this.problem.obstacleMargin
-    const queryRadius=radius+Math.max(margin,srj.minTraceToPadEdgeClearance??0,srj.minViaEdgeToPadEdgeClearance??0,srj.minBoardEdgeClearance??0)
+    const queryRadius=radius+Math.max(margin,srj.minTraceToPadEdgeClearance??0,srj.minViaEdgeToPadEdgeClearance??0,this.boardEdgeClearance)
     const seen=++this.serial
     const count=Math.max(1,Math.ceil(distance(a,b)/(this.cellSize/2)))
     for(let i=0;i<=count;i++) {

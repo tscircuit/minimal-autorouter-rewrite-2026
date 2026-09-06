@@ -1,71 +1,101 @@
-# Controlled benchmark results
+# Version 0.1.1 benchmark results
 
-The rewrite passes the local, cold-cache, and warm-cache comparisons against published `@tscircuit/capacity-autorouter@0.0.884`, including a **strict timing ratio of 1.0**. Each of the six runs contains the same 85 dataset01 and 16 dataset-srj18 inputs. All 93 baseline relaxed-DRC passes remain passes in every mode; the rewrite reaches 99. There are zero benchmark process timeouts across all 606 attempts.
+Fresh local, cold-cache, and warm-cache candidate runs all pass comparison with
+`@tscircuit/capacity-autorouter@0.0.884`, including a **strict timing ratio of
+1.0**. The rewrite preserves all 93 baseline relaxed-DRC passes and reaches
+**100 of 101** in every mode. There are zero candidate process timeouts across
+303 attempts. Sample014 now routes completely; sample016 retains its explicit
+contradictory-input failure.
 
-The run used Bun 1.4.1, an Apple M3 Pro on macOS (Darwin 25.6.0), and one worker at a time, from 2026-09-05 21:33:52 to 22:27:17 UTC. Source was frozen at [commit 6d4e332](https://github.com/tscircuit/minimal-autorouter-rewrite-2026/commit/6d4e33227f47064805518615c69b4dca3ae0d0c8). [The artifact index](controlled-final/README.md) records reports, hashes, service evidence, and provenance for later changes to public types.
+**The baseline timings are historical.** They come from the earlier six-run
+controlled measurement on this same recorded host; they were not rerun alongside
+version 0.1.1. The candidate measurements are fresh, serial, and use Bun 1.4.1,
+Apple M3 Pro, Darwin 25.6.0, and one worker at a time. Original input bytes, the
+baseline bundle, and the DRC oracle match the recorded hashes. Routing and
+harness source stayed unchanged during the candidate runs. See the
+[artifact index](candidate-pcb-fixes/README.md) for provenance and reproduction.
 
-## Raw results
+## Raw measurements
 
-Every supplied input remains in these tables. Time percentiles use completed solves and timed-out attempts; bounded solver failures that do not time out are excluded, matching the reference benchmark. Average vias use completed solves, including those with DRC errors. Times are seconds and exclude construction, imports, DRC, and artifact writes. See [the benchmark method](../docs/benchmark-method.md) for complete definitions.
+Every table retains all 85 dataset01 and 16 dataset-srj18 inputs. Times are
+seconds. Percentiles use completed solves and timed-out attempts; bounded
+failures without timeouts are excluded, matching the reference benchmark.
+Average vias use completed solves. These are the relaxed performance checks;
+the separate [full PCB audit](pcb-validation/README.md) passes 89 of 101 inputs.
 
 ### Pipeline9, local
 
 | Dataset | Implementation | Solved | DRC passed | p50 (s) | p95 (s) | Average vias |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| dataset01 | Baseline | 85/85 | 85/85 | 0.824 | 3.309 | 37.518 |
-| dataset01 | Rewrite | 85/85 | 85/85 | 0.039 | 0.239 | 33.541 |
-| dataset-srj18 | Baseline | 14/16 | 8/16 | 39.100 | 160.997 | 217.286 |
-| dataset-srj18 | Rewrite | 14/16 | 14/16 | 1.205 | 33.590 | 176.071 |
+| dataset01 | Historical baseline | 85/85 | 85/85 | 0.824 | 3.309 | 37.518 |
+| dataset01 | Rewrite 0.1.1 | 85/85 | 85/85 | 0.045 | 0.257 | 33.776 |
+| dataset-srj18 | Historical baseline | 14/16 | 8/16 | 39.100 | 160.997 | 217.286 |
+| dataset-srj18 | Rewrite 0.1.1 | 15/16 | 15/16 | 1.429 | 66.070 | 177.000 |
 
-[Baseline report](controlled-final/local-baseline.json) · [Rewrite report](controlled-final/local-rewrite.json) · [Strict comparison](controlled-final/comparison-local-strict.json)
+[Historical baseline](controlled-final/local-baseline.json) · [Fresh rewrite](candidate-pcb-fixes/local-rewrite.json) · [Strict comparison](candidate-pcb-fixes/comparison-local-strict.json)
 
 ### Pipeline9_Networked, cold cache
 
 | Dataset | Implementation | Solved | DRC passed | p50 (s) | p95 (s) | Average vias |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| dataset01 | Baseline | 85/85 | 85/85 | 0.941 | 3.717 | 37.518 |
-| dataset01 | Rewrite | 85/85 | 85/85 | 0.043 | 0.243 | 33.541 |
-| dataset-srj18 | Baseline | 14/16 | 8/16 | 33.335 | 189.025 | 217.286 |
-| dataset-srj18 | Rewrite | 14/16 | 14/16 | 2.658 | 43.461 | 176.071 |
+| dataset01 | Historical baseline | 85/85 | 85/85 | 0.941 | 3.717 | 37.518 |
+| dataset01 | Rewrite 0.1.1 | 85/85 | 85/85 | 0.057 | 0.411 | 33.776 |
+| dataset-srj18 | Historical baseline | 14/16 | 8/16 | 33.335 | 189.025 | 217.286 |
+| dataset-srj18 | Rewrite 0.1.1 | 15/16 | 15/16 | 3.694 | 78.189 | 177.000 |
 
-[Baseline report](controlled-final/cold-baseline.json) · [Rewrite report](controlled-final/cold-rewrite.json) · [Strict comparison](controlled-final/comparison-cold-strict.json)
+[Historical baseline](controlled-final/cold-baseline.json) · [Fresh rewrite](candidate-pcb-fixes/cold-rewrite.json) · [Strict comparison](candidate-pcb-fixes/comparison-cold-strict.json)
 
 ### Pipeline9_Networked, warm cache
 
 | Dataset | Implementation | Solved | DRC passed | p50 (s) | p95 (s) | Average vias |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| dataset01 | Baseline | 85/85 | 85/85 | 0.451 | 1.978 | 37.518 |
-| dataset01 | Rewrite | 85/85 | 85/85 | 0.019 | 0.034 | 33.541 |
-| dataset-srj18 | Baseline | 14/16 | 8/16 | 18.839 | 92.132 | 217.286 |
-| dataset-srj18 | Rewrite | 14/16 | 14/16 | 1.076 | 7.825 | 176.071 |
+| dataset01 | Historical baseline | 85/85 | 85/85 | 0.451 | 1.978 | 37.518 |
+| dataset01 | Rewrite 0.1.1 | 85/85 | 85/85 | 0.029 | 0.063 | 33.776 |
+| dataset-srj18 | Historical baseline | 14/16 | 8/16 | 18.839 | 92.132 | 217.286 |
+| dataset-srj18 | Rewrite 0.1.1 | 15/16 | 15/16 | 1.120 | 8.376 | 177.000 |
 
-[Baseline report](controlled-final/hot-baseline.json) · [Rewrite report](controlled-final/hot-rewrite.json) · [Strict comparison](controlled-final/comparison-hot-strict.json)
+[Historical baseline](controlled-final/hot-baseline.json) · [Fresh rewrite](candidate-pcb-fixes/hot-rewrite.json) · [Strict comparison](candidate-pcb-fixes/comparison-hot-strict.json)
 
-The solved/DRC counts and geometry metrics are identical across modes. Average returned trace length is 487.233 → 462.924 mm for dataset01 and 2171.315 → 1826.010 mm for srj18 (baseline → rewrite); length is an additional diagnostic, not an acceptance gate.
+The solved/DRC counts and aggregate geometry metrics are identical across modes.
+Average returned trace length is 487.233 → 463.267 mm for dataset01 and
+2171.315 → 1836.404 mm for srj18 (historical baseline → rewrite); length remains
+a diagnostic rather than an acceptance gate.
 
-## The two remaining failures
+## The retained source conflict
 
-Sample014 remains a bounded-search failure in both implementations. The rewrite solves sample015, which the baseline does not solve. Sample016 has an independently verified fixed-pad short: terminal `pcb_port_183` and its entire pad lie inside unrelated `pcb_smtpad_62`. The baseline marks sample016 solved with six DRC errors; the rewrite reports the source contradiction. [The input and routing limitations](../docs/known-input-limitations.md) distinguish these two cases.
+Sample016's pinned imported pad envelope contains an unrelated terminal. The
+baseline reports it solved with six DRC errors; the rewrite rejects it with a
+geometric witness. Original KiCad evidence traces the conflict to an import that
+lost a pad rotation. The fixed benchmark bytes remain unchanged. See
+[known input limitations](../docs/known-input-limitations.md).
 
-The comparator retains sample016 in raw results. Its only exception independently checks the exact input hash, fixed geometry, distinct intended nets, and matching failure witness before removing that input from both sides of the acceptance calculations. It never waives a baseline DRC pass. On the remaining 15 srj18 inputs, baseline completion/DRC counts are 13/8 and rewrite counts are 14/14. The eligible timing population and via averages are:
+The comparator's existing exception rechecks the exact sample hash, geometry,
+distinct nets, and failure witness before removing sample016 from both sides of
+acceptance calculations. It never waives a baseline DRC pass. The remaining
+15 srj18 inputs have baseline completion/DRC counts 13/8 and rewrite counts
+15/15. Each comparison records both raw and eligible statistics.
 
-| Mode | Baseline p50 / p95 (s) | Rewrite p50 / p95 (s) | Baseline average vias | Rewrite average vias |
-| --- | ---: | ---: | ---: | ---: |
-| local | 41.168 / 167.760 | 1.205 / 33.590 | 225.462 | 176.071 |
-| cold | 41.700 / 194.547 | 2.658 / 43.461 | 225.462 | 176.071 |
-| hot | 21.707 / 94.006 | 1.076 / 7.825 | 225.462 | 176.071 |
+## Real service and cache evidence
 
-## Remote cache evidence
+The matching version 0.1.1 loopback service starts with an empty cache under a
+fresh namespace. Each remote work item is a complete board. Client and server
+counters independently agree:
 
-Both loopback services started with empty caches under a fresh namespace. The rewrite caches complete board problems; the baseline caches its native high-density node problems. These are end-to-end Pipeline9_Networked measurements, not equal-sized per-node speed measurements. The rewrite needs the matching service that advertises its board contract. The baseline package version is 0.0.884, with embedded wire-protocol version 0.0.883; the rewrite service uses 0.1.0.
+| Pass | Batch HTTP calls | Single HTTP calls | Capability HTTP calls | Board helper executions | Cached board results | Local fallbacks |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Cold | 94 | 101 | 101 | 101 | 0 | 0 |
+| Warm | 94 | 7 | 101 | 0 | 101 | 0 |
 
-| Service | Cold requests / helper runs | Warm cache responses / requests | Warm helper runs | Client fallbacks, cold / warm |
-| --- | ---: | ---: | ---: | ---: |
-| Baseline, node inputs | 22,789 / 22,789 | 22,789 / 22,789 | 0 | 1,714 / 30 |
-| Rewrite, board inputs | 101 / 101 | 101 / 101 | 0 | 0 / 0 |
+All 101 boards, including the explicit sample016 failure, are evaluated remotely
+and subsequently retrieved from cache. Seven oversized inputs use the single
+endpoint for warm results. The service is stopped after measurement. No cache,
+transport, source-preservation, or comparison audit failures are recorded.
 
-Every rewrite sample, including failed samples014 and016, was remotely evaluated. Its warm run accepted all 101 cached results with no misses and no solver responses. Seven oversized board inputs used the single endpoint for valid cached responses; the other 94 used batch requests.
+The historical baseline service processed native high-density node problems,
+whereas this service handles complete boards. These are end-to-end public
+pipeline measurements with different work-unit sizes, not per-node comparisons
+or claims about the deployed public cache service. Historical baseline transport
+fallbacks remain recorded in the [original controlled evidence](controlled-final/README.md).
 
-The baseline's own client recorded 1,689 logical-timeout fallbacks and 25 invalid-response fallbacks during the cold run, affecting 22 samples. During the warm run it rejected 30 cached outputs across 21 samples, so its accepted client cache-hit count is 22,759 even though the service returned all 22,789 from cache. Its later received responses can overlap with logical-timeout fallback counts. These anomalies remain visible separately from actual solved/DRC outcomes; the baseline is not described as executing entirely remotely without fallback. Baseline samples014 and015 fail before the high-density stage and expose no remote metrics in either pass; they remain failed benchmark attempts. The rewrite has no network-audit issues in either pass.
-
-[controlled-run.json](controlled-final/controlled-run.json) records all initial/end counters, request totals, source checks, and the three passing comparisons. The additional strict comparisons remove the default 10% timing allowance. Earlier reports in this directory are development measurements and are superseded by these controlled results for acceptance.
+The original version 0.1.0 reports remain in `controlled-final/` as historical
+measurements. Version 0.1.1 timings supersede them for the current rewrite.

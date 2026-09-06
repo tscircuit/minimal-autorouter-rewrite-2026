@@ -9,11 +9,12 @@ fixed, sample014 completes, and sample012's original drill geometry is restored.
 The remaining findings require input-design decisions; see
 [PCB audit results](benchmarks/pcb-validation/README.md).
 
-The frozen version 0.1.0 local, cold-cache, and warm-cache comparisons preserve
-every reference relaxed-DRC pass: 99 passes versus 93 for
-`@tscircuit/capacity-autorouter@0.0.884`. These historical measurements are
-recorded separately from the revised runtime in
-[measured results](benchmarks/README.md).
+Fresh local, cold-cache, and warm-cache comparisons preserve every reference
+relaxed-DRC pass: **100 passes versus 93** for
+`@tscircuit/capacity-autorouter@0.0.884`. All strict timing and via-count gates pass.
+The baseline timings are reused historical measurements on the same recorded
+host; see [measured results](benchmarks/README.md) for that distinction and the
+full provenance.
 
 The design keeps the solver pattern: each stage exposes `step()`, progress,
 terminal state, and inspectable results. Named electrical connectivity, physical
@@ -92,22 +93,21 @@ differences from the original implementation.
 
 ## Benchmarking
 
-The frozen version 0.1.0 runs use Bun 1.4.1, one worker at a time, the same pinned
-relaxed-DRC evaluator, and unchanged source at commit `6d4e332`. These historical
-local Pipeline9 measurements predate the version 0.1.1 fixes:
+The current candidate runs use Bun 1.4.1, one worker at a time, the same pinned
+relaxed-DRC evaluator, and unchanged routing source. The baseline timings below
+are historical measurements on the matching host; rewrite timings are fresh.
 
 | Dataset | Reference DRC passes | Rewrite DRC passes | Reference median | Rewrite median | Mean vias, reference → rewrite |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| dataset01 | 85 / 85 | 85 / 85 | 824 ms | 39 ms | 37.52 → 33.54 |
-| dataset-srj18 | 8 / 16 | 14 / 16 | 39.10 s | 1.20 s | 217.29 → 176.07 |
+| dataset01 | 85 / 85 | 85 / 85 | 824 ms | 45 ms | 37.52 → 33.78 |
+| dataset-srj18 | 8 / 16 | 15 / 16 | 39.10 s | 1.43 s | 217.29 → 177.00 |
 
-Both implementations failed sample014 in that historical run. Version 0.1.1
-now completes it and passes the full PCB checks. The rewrite also completes
-sample015, which the reference fails, and rejects sample016 with an independently
-verified conflict in the imported pad geometry; the reference marks sample016
-solved with six DRC errors. All 16 samples
-remain in the raw reports. The exact-hash contradiction exception is explained
-in [known input limitations](docs/known-input-limitations.md).
+The rewrite now completes sample014 and passes its full PCB checks. It also
+completes sample015, which the reference fails, and rejects sample016 with an
+independently verified conflict in the imported pad geometry. The reference
+marks sample016 solved with six DRC errors. All 16 samples remain in the raw
+reports; the exact-hash contradiction exception is explained in
+[known input limitations](docs/known-input-limitations.md).
 
 Network measurements use matching loopback services. The rewrite sends each
 complete board remotely: cold performs 101 helper runs, and hot retrieves all
@@ -116,6 +116,6 @@ fallbacks. This measures the full public pipeline and does not claim performance
 on the deployed public cache service.
 
 See [all local and network results](benchmarks/README.md), the
-[controlled evidence](benchmarks/controlled-final/README.md), and the
+[current evidence](benchmarks/candidate-pcb-fixes/README.md), and the
 [reproduction method](docs/benchmark-method.md). Earlier development reports
 remain explicitly historical.

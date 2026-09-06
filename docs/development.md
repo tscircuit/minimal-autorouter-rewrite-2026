@@ -136,3 +136,13 @@ unrelated overlaps and keepout collisions remain errors.
 The cache protocol version advances to 0.1.1 so older route results cannot bypass
 the new routing rules. Historical reports remain historical; fresh candidate
 runs measure the revised implementation and audit real cold and warm service use.
+
+Fresh version 0.1.1 local, cold-cache, and warm-cache measurements all pass the
+strict timing ratio of 1.0 against the historical baseline on the matching host.
+Each mode now has 100 relaxed-DRC passes versus 93. Cold service counters prove
+101 board executions, followed by 101 warm cache results with zero helper
+executions and zero local fallbacks. Baseline timing reuse is explicitly recorded
+in [the current benchmark evidence](../benchmarks/candidate-pcb-fixes/README.md).
+The independent full PCB audit passes 89 of 101 original inputs; remaining
+completed-output findings all identify fixed pads, and sample016 remains an
+explicit source-import conflict.

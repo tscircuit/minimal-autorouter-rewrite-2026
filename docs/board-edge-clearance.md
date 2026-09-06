@@ -6,7 +6,7 @@ The strict PCB audit found 36 board-edge errors on newly generated trace segment
 
 The same collision map is used by local routing, the exact network board service, and network response validation. The request already includes the source clearance field, so no transport approximation or alternate routing model is needed.
 
-The package and network implementation version are **0.1.1** for this change. Versioned cache keys separate these routes from 0.1.0 results, and the service rejects requests for the old implementation before routing. The controlled benchmark reads the rewrite version from `AUTOROUTER_VERSION`; its upstream baseline remains pinned to 0.0.883.
+The package and network implementation version are **0.1.1** for this change. Versioned cache keys separate these routes from 0.1.0 results, and the service rejects requests for the old implementation before routing. The controlled benchmark reads the rewrite version from `AUTOROUTER_VERSION`; its upstream package baseline remains pinned to 0.0.884, with embedded wire-protocol version 0.0.883.
 
 ## Affected-sample verification
 
